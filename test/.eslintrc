@@ -1,0 +1,4 @@
+
+{
+  "extends": "plugin:bpmn-io/mocha"
+}
