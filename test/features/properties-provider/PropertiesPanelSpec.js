@@ -46,7 +46,7 @@ insertCSS('test.css', `
 `);
 
 
-describe('PropertiesPanel', function() {
+describe('<PropertiesPanel>', function() {
 
   var modelerContainer;
 

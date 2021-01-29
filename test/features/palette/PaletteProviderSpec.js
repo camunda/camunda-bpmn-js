@@ -35,7 +35,7 @@ const testModules = [
   modelingModule
 ];
 
-describe('PaletteProvider', function() {
+describe('<PaletteProvider>', function() {
 
   beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
 
