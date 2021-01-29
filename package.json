@@ -1,6 +1,6 @@
 {
   "name": "zeebe-bpmn-js",
-  "version": "0.4.0",
+  "version": "0.0.0",
   "description": "Zeebe extension modules for bpmn-js applications",
   "main": "lib/index.js",
   "scripts": {
