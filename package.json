@@ -33,12 +33,14 @@
   "license": "MIT",
   "dependencies": {
     "bpmn-js": "^8.1.0",
+    "bpmn-js-properties-panel": "^0.39.0",
+    "diagram-js": "^7.2.0",
     "inherits": "^2.0.4",
-    "min-dash": "^3.5.2"
+    "min-dash": "^3.5.2",
+    "zeebe-bpmn-moddle": "^0.4.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "diagram-js": "^7.2.0",
     "eslint": "^7.18.0",
     "eslint-plugin-bpmn-io": "^0.12.0",
     "karma": "^6.0.3",
