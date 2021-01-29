@@ -10,6 +10,8 @@ import Modeler from '../../../lib/Modeler';
 
 import simpleXML from '../../fixtures/simple.bpmn';
 
+var singleStart = window.__env__ && window.__env__.SINGLE_START === 'properties';
+
 insertCSS(
   'properties.css',
   require('bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css').default
@@ -32,6 +34,7 @@ insertCSS('test.css', `
 
   .properties-container {
     border-left: 1px solid #ccc;
+    background: #f8f8f8;
     overflow: auto;
   }
 
@@ -90,7 +93,7 @@ describe('<PropertiesPanel>', function() {
     });
   }
 
-  it('it should import simple process', function() {
+  (singleStart ? it.only : it)('it should import simple process', function() {
     return createModeler(simpleXML).then(function(result) {
 
       expect(result.error).not.to.exist;
