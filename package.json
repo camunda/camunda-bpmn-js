@@ -1,5 +1,5 @@
 {
-  "name": "zeebe-modeling-extensions",
+  "name": "zeebe-bpmn-js",
   "version": "0.4.0",
   "description": "Zeebe extension modules for bpmn-js applications",
   "main": "lib/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeebe-io/zeebe-modeling-extensions"
+    "url": "https://github.com/zeebe-io/zeebe-bpmn-js"
   },
   "keywords": [
     "bpmn",
