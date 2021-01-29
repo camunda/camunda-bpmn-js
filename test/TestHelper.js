@@ -24,6 +24,11 @@ insertCSS(
   require('bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css').default
 );
 
+insertCSS(
+  'minimap.css',
+  require('diagram-js-minimap/assets/diagram-js-minimap.css').default
+);
+
 export function bootstrapZeebeModeler(diagram, options, locals) {
   return bootstrapBpmnJS(Modeler, diagram, options, locals);
 }

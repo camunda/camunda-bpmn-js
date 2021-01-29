@@ -36,6 +36,7 @@
     "bpmn-js": "^8.1.0",
     "bpmn-js-properties-panel": "^0.39.0",
     "diagram-js": "^7.2.0",
+    "diagram-js-minimap": "^2.0.4",
     "inherits": "^2.0.4",
     "min-dash": "^3.5.2",
     "zeebe-bpmn-moddle": "^0.4.0"
