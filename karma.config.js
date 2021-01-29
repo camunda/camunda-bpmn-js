@@ -1,3 +1,5 @@
+var singleStart = process.env.SINGLE_START;
+
 // configures browsers to run test against
 // any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'IE', 'Safari ]
 var browsers =
@@ -19,7 +21,7 @@ var browsers =
 
 
 module.exports = function(karma) {
-  karma.set({
+  var config = {
 
     basePath: '.',
 
@@ -29,11 +31,11 @@ module.exports = function(karma) {
     ],
 
     files: [
-      { pattern: 'test/*.js', watched: false }
+      { pattern: 'test/**/*Spec.js', watched: false }
     ],
 
     preprocessors: {
-      'test/*.js': [ 'webpack', 'env' ]
+      'test/**/*Spec.js': [ 'webpack', 'env' ]
     },
 
     reporters: [ 'progress' ],
@@ -73,5 +75,12 @@ module.exports = function(karma) {
       },
       devtool: 'eval-source-map'
     }
-  });
+  };
+
+  if (singleStart) {
+    config.browsers = [].concat(config.browsers, 'Debug');
+    config.envPreprocessor = [].concat(config.envPreprocessor || [], 'SINGLE_START');
+  }
+
+  karma.set(config);
 };

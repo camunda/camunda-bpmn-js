@@ -7,7 +7,8 @@
     "all": "npm run lint && npm run test",
     "lint": "eslint .",
     "dev": "npm test -- --auto-watch --no-single-run",
-    "test": "karma start karma.config.js"
+    "test": "karma start karma.config.js",
+    "start": "SINGLE_START=modeler npm run dev"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "karma": "^6.0.3",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
+    "karma-debug-launcher": "0.0.4",
     "karma-env-preprocessor": "^0.1.1",
     "karma-firefox-launcher": "^2.1.0",
     "karma-mocha": "^2.0.1",
