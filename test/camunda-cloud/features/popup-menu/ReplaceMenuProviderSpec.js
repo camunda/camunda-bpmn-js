@@ -2,7 +2,7 @@ import {
   bootstrapZeebeModeler,
   getBpmnJS,
   inject
-} from '../../TestHelper';
+} from '../../../TestHelper';
 
 import {
   query as domQuery
@@ -13,9 +13,9 @@ import modelingModule from 'bpmn-js/lib/features/modeling';
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
 import paletteModule from 'bpmn-js/lib/features/palette';
 
-import zeebePaletteModule from '../../../lib/features/palette';
+import zeebePaletteModule from '../../../../lib/camunda-cloud/features/palette';
 
-import diagramXML from '../../fixtures/diagram.bpmn';
+import diagramXML from '../../../fixtures/diagram.bpmn';
 
 const testModules = [
   coreModule,

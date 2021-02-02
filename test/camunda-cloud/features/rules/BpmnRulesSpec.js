@@ -12,7 +12,7 @@ import {
   bootstrapZeebeModeler,
   getBpmnJS,
   inject
-} from '../../TestHelper';
+} from '../../../TestHelper';
 
 import {
   isString
@@ -23,9 +23,9 @@ import modelingModule from 'bpmn-js/lib/features/modeling';
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
 import paletteModule from 'bpmn-js/lib/features/palette';
 
-import rulesModule from '../../../lib/features/rules';
+import rulesModule from '../../../../lib/camunda-cloud/features/rules';
 
-import diagramXML from '../../fixtures/diagram.bpmn';
+import diagramXML from '../../../fixtures/diagram.bpmn';
 
 const testModules = [
   coreModule,

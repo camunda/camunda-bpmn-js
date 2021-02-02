@@ -4,11 +4,11 @@ import {
   clearBpmnJS,
   setBpmnJS,
   insertCSS
-} from '../../TestHelper';
+} from '../../../TestHelper';
 
-import Modeler from '../../../lib/Modeler';
+import Modeler from '../../../../lib/camunda-cloud/Modeler';
 
-import simpleXML from '../../fixtures/simple.bpmn';
+import simpleXML from '../../../fixtures/simple.bpmn';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'properties';
 

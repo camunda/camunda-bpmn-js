@@ -1,22 +1,22 @@
 import {
-  bootstrapModeler,
+  bootstrapZeebeModeler,
   inject
-} from 'bpmn-js/test/helper';
+} from '../../../TestHelper';
 
 import {
   getOutputParameters,
   getInputOutput
-} from '../../../lib/helper/InputOutputHelper';
+} from '../../../../lib/camunda-cloud/helper/InputOutputHelper';
 
 import {
   getCalledElement
-} from '../../../lib/helper/CalledElementHelper';
+} from '../../../../lib/camunda-cloud/helper/CalledElementHelper';
 
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
 import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 
-import zeebeModelingModules from '../../../lib/features/modeling';
+import zeebeModelingModules from '../../../../lib/camunda-cloud/features/modeling';
 
 import diagramXML from './process-call-activities.bpmn';
 
@@ -34,7 +34,7 @@ describe('features/modeling/behavior - update propagateAllChildVariables attribu
     zeebe: zeebeModdleExtensions
   };
 
-  beforeEach(bootstrapModeler(diagramXML, {
+  beforeEach(bootstrapZeebeModeler(diagramXML, {
     modules: testModules,
     moddleExtensions
   }));

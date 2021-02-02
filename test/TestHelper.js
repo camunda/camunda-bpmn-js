@@ -12,7 +12,7 @@ import {
   insertCSS
 } from 'bpmn-js/test/helper';
 
-import Modeler from '../lib/Modeler';
+import ZeebeModeler from '../lib/camunda-cloud/Modeler';
 
 insertCSS(
   'diagram.css',
@@ -30,7 +30,7 @@ insertCSS(
 );
 
 export function bootstrapZeebeModeler(diagram, options, locals) {
-  return bootstrapBpmnJS(Modeler, diagram, options, locals);
+  return bootstrapBpmnJS(ZeebeModeler, diagram, options, locals);
 }
 
 /**

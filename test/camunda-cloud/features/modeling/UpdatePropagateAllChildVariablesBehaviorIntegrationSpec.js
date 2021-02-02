@@ -2,16 +2,16 @@ import {
   bootstrapZeebeModeler,
   inject,
   triggerEvent
-} from '../../TestHelper';
+} from '../../../TestHelper';
 
 import {
   getOutputParameters,
   getInputOutput
-} from '../../../lib/helper/InputOutputHelper';
+} from '../../../../lib/camunda-cloud/helper/InputOutputHelper';
 
 import {
   getCalledElement
-} from '../../../lib/helper/CalledElementHelper';
+} from '../../../../lib/camunda-cloud/helper/CalledElementHelper';
 
 import TestContainer from 'mocha-test-container-support';
 
@@ -22,11 +22,11 @@ import {
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
-import propertiesProviderModule from '../../../lib/features/properties-provider';
+import propertiesProviderModule from '../../../../lib/camunda-cloud/features/properties-provider';
 import selectionModule from 'diagram-js/lib/features/selection';
 import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 
-import zeebeModelingModules from '../../../lib/features/modeling';
+import zeebeModelingModules from '../../../../lib/camunda-cloud/features/modeling';
 
 import diagramXML from './process-call-activities.bpmn';
 

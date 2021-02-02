@@ -1,7 +1,7 @@
 import {
   bootstrapZeebeModeler,
   inject
-} from '../../TestHelper';
+} from '../../../TestHelper';
 
 import {
   find
@@ -20,9 +20,9 @@ import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 import {
   getCalledElement,
   getCalledElements
-} from '../../../lib/helper/CalledElementHelper';
+} from '../../../../lib/camunda-cloud/helper/CalledElementHelper';
 
-import zeebeModelingModule from '../../../lib/features/modeling';
+import zeebeModelingModule from '../../../../lib/camunda-cloud/features/modeling';
 
 import emptyProcessDiagramXML from './process-empty.bpmn';
 
