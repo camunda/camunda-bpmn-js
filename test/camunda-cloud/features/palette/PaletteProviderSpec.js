@@ -35,7 +35,7 @@ const testModules = [
   modelingModule
 ];
 
-describe('<PaletteProvider>', function() {
+describe('camunda-cloud/features/modeling - Palette', function() {
 
   beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
 

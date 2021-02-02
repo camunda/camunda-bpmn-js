@@ -49,7 +49,7 @@ insertCSS('test.css', `
 `);
 
 
-describe('<PropertiesPanel>', function() {
+describe('camunda-cloud/features - PropertiesProvider', function() {
 
   var modelerContainer;
 

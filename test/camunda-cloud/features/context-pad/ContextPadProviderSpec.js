@@ -32,7 +32,7 @@ const testModules = [
   modelingModule
 ];
 
-describe('<ContextPadProvider>', function() {
+describe('camunda-cloud/features - ContextPad', function() {
 
   describe('expected entries', function() {
 

@@ -29,7 +29,7 @@ import emptyProcessDiagramXML from './process-empty.bpmn';
 import callActivitiesXML from './process-call-activities.bpmn';
 
 
-describe('features/modeling/behavior - create call activities', function() {
+describe('camunda-cloud/features/modeling - create call activities behavior', function() {
 
   const moddleExtensions = {
     zeebe: zeebeModdleExtensions

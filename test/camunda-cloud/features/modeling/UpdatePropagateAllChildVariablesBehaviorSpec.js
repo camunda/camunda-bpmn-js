@@ -21,7 +21,7 @@ import zeebeModelingModules from '../../../../lib/camunda-cloud/features/modelin
 import diagramXML from './process-call-activities.bpmn';
 
 
-describe('features/modeling/behavior - update propagateAllChildVariables attribute on call activities', function() {
+describe('camunda-cloud/features/modeling - update propagateAllChildVariables attribute on call activities', function() {
 
 
   const testModules = [

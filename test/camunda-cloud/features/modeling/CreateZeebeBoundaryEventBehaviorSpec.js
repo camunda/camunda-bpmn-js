@@ -13,7 +13,7 @@ import zeebeModelingModule from '../../../../lib/camunda-cloud/features/modeling
 import processDiagramXML from './process-empty.bpmn';
 
 
-describe('features/modeling/behavior - create boundary events', function() {
+describe('camunda-cloud/features/modeling - create boundary events behavior', function() {
 
   const testModules = [
     coreModule,

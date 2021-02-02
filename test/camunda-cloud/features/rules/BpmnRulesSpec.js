@@ -35,7 +35,7 @@ const testModules = [
   rulesModule
 ];
 
-describe('<BpmnRules>', function() {
+describe('camunda-cloud/features - BpmnRules', function() {
 
   describe('event create', function() {
 

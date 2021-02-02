@@ -12,7 +12,7 @@ import simpleXml from '../../fixtures/simple.bpmn';
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'modeler';
 
 
-describe('<Modeler>', function() {
+describe('<CamundaCloudModeler>', function() {
 
   var container;
 

@@ -26,7 +26,7 @@ const testModules = [
 ];
 
 
-describe('<ReplaceMenuProvider>', function() {
+describe('camunda-cloud/features - PopupMenu', function() {
 
   beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
 
