@@ -1,7 +1,7 @@
 {
-  "name": "zeebe-bpmn-js",
+  "name": "camunda-bpmn-js",
   "version": "0.0.0",
-  "description": "Zeebe extension modules for bpmn-js applications",
+  "description": "Embeddable Camunda modeling distributions based on bpmn-js",
   "main": "lib/index.js",
   "scripts": {
     "all": "npm run lint && npm run test",
@@ -13,12 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeebe-io/zeebe-bpmn-js"
+    "url": "https://github.com/camunda/camunda-bpmn-js"
   },
   "keywords": [
     "bpmn",
     "bpmn20",
+    "camunda",
     "zeebe",
+    "modeling",
     "bpmn-js"
   ],
   "author": {

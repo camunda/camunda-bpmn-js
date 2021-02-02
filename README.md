@@ -1,10 +1,10 @@
-# zeebe-bpmn-js
+# camunda-bpmn-js
 🚧👷‍♀️👷‍♂️🚧
 
 ## Usage
 
 ```js
-import Modeler from 'zeebe-bpmn-js/lib/Modeler';
+import Modeler from 'camunda-bpmn-js/lib/Modeler';
 
 const xml = '...'; // my BPMN 2.0 xml
 const modeler = new Modeler({
