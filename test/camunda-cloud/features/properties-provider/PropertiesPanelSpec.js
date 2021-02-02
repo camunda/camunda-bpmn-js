@@ -10,7 +10,7 @@ import Modeler from '../../../../lib/camunda-cloud/Modeler';
 
 import simpleXML from '../../../fixtures/simple.bpmn';
 
-var singleStart = window.__env__ && window.__env__.SINGLE_START === 'properties';
+var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-properties';
 
 insertCSS(
   'properties.css',

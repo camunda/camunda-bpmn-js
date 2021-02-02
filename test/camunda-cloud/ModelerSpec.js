@@ -3,13 +3,13 @@ import TestContainer from 'mocha-test-container-support';
 import {
   clearBpmnJS,
   setBpmnJS
-} from '../../TestHelper';
+} from '../TestHelper';
 
-import Modeler from '../../../lib/camunda-cloud/Modeler';
+import Modeler from '../../lib/camunda-cloud/Modeler';
 
-import simpleXml from '../../fixtures/simple.bpmn';
+import simpleXml from '../fixtures/simple.bpmn';
 
-var singleStart = window.__env__ && window.__env__.SINGLE_START === 'modeler';
+var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
 
 
 describe('<CamundaCloudModeler>', function() {
