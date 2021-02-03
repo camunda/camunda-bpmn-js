@@ -18,3 +18,5 @@ Embeddable Camunda modeling distributions based on [bpmn-js](https://github.com/
 ## License
 
 MIT
+
+Uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) licensed under the bpmn.io license.
