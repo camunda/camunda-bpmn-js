@@ -49,4 +49,40 @@ describe('<CamundaCloudModeler>', function() {
     });
   });
 
+
+  it('should inject mandatory modules', function() {
+
+    // when
+    return createModeler(simpleXml).then(function(result) {
+
+      var modeler = result.modeler;
+
+      // then
+      expect(modeler.get('zeebePaletteProvider')).to.exist;
+      expect(modeler.get('zeebeContextPadProvider')).to.exist;
+      expect(modeler.get('zeebeReplaceMenuProvider')).to.exist;
+      expect(modeler.get('bpmnRules')).to.exist;
+      expect(modeler.get('createZeebeBoundaryEventBehavior')).to.exist;
+      expect(modeler.get('createZeebeCallActivityBehavior')).to.exist;
+      expect(modeler.get('updatePropagateAllChildVariablesBehavior')).to.exist;
+      expect(modeler.get('zeebeModdleExtension')).to.exist;
+    });
+
+  });
+
+
+  it('should inject zeebe moddle descriptors', function() {
+
+    // when
+    return createModeler(simpleXml).then(function(result) {
+
+      var modeler = result.modeler,
+          moddle = modeler.get('moddle');
+
+      // then
+      expect(moddle.getPackage('zeebe')).to.exist;
+    });
+
+  });
+
 });
