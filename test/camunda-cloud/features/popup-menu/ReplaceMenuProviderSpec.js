@@ -16,7 +16,7 @@ import contextPadModule from 'bpmn-js/lib/features/context-pad';
 
 import paletteModule from 'bpmn-js/lib/features/palette';
 
-import zeebePaletteModule from 'lib/camunda-cloud/features/palette';
+import zeebeReplaceMenuProvider from 'lib/camunda-cloud/features/popup-menu';
 
 import diagramXML from 'test/fixtures/diagram.bpmn';
 
@@ -24,8 +24,8 @@ const testModules = [
   coreModule,
   paletteModule,
   contextPadModule,
-  zeebePaletteModule,
-  modelingModule
+  modelingModule,
+  zeebeReplaceMenuProvider
 ];
 
 
