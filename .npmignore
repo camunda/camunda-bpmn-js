@@ -1,3 +1,5 @@
 test
 .eslintrc
+coverage
+.github
 karma.conf.js

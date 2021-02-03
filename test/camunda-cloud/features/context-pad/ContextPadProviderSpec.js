@@ -13,9 +13,13 @@ import {
 } from 'min-dash';
 
 import coreModule from 'bpmn-js/lib/core';
+
 import modelingModule from 'bpmn-js/lib/features/modeling';
+
 import paletteModule from 'bpmn-js/lib/features/palette';
+
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
+
 import autoPlaceModule from 'bpmn-js/lib/features/auto-place';
 
 import zeebeContextPadModule from 'lib/camunda-cloud/features/context-pad';

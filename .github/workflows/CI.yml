@@ -31,6 +31,7 @@ jobs:
     - name: Build
       if: matrix.os == 'ubuntu-latest'
       env:
+        COVERAGE: 1
         TEST_BROWSERS: Firefox,ChromeHeadless
       run: xvfb-run npm run all
     - name: Build
@@ -38,3 +39,6 @@ jobs:
       env:
         TEST_BROWSERS: ChromeHeadless
       run: npm run all
+    - name: Upload Coverage
+      run: npx codecov
+      if: matrix.os == 'ubuntu-latest'

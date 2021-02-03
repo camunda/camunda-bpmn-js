@@ -2,11 +2,13 @@ var path = require('path');
 
 var singleStart = process.env.SINGLE_START;
 
+var coverage = process.env.COVERAGE;
+
 var basePath = '.';
 
 var absoluteBasePath = path.resolve(path.join(__dirname, basePath));
 
-var suite = 'test/suite.js';
+var suite = coverage ? 'test/coverage.js' : 'test/suite.js';
 
 // configures browsers to run test against
 // any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'Safari' ]
@@ -46,7 +48,13 @@ module.exports = function(karma) {
       [ suite ]: [ 'webpack', 'env' ]
     },
 
-    reporters: [ 'progress' ],
+    reporters: [ 'progress' ].concat(coverage ? 'coverage' : []),
+
+    coverageReporter: {
+      reporters: [
+        { type: 'lcov', subdir: '.' }
+      ]
+    },
 
     customLaunchers: {
       ChromeHeadless_Linux: {
@@ -74,7 +82,17 @@ module.exports = function(karma) {
             test: /\.(css|bpmn)$/,
             use: 'raw-loader'
           }
-        ]
+        ].concat(coverage ?
+          {
+            test: /\.js$/,
+            use: {
+              loader: 'istanbul-instrumenter-loader',
+              options: { esModules: true }
+            },
+            include: /lib\.*/,
+            exclude: /node_modules/
+          } : []
+        )
       },
       resolve: {
         modules: [
