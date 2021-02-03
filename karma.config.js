@@ -1,7 +1,7 @@
 var singleStart = process.env.SINGLE_START;
 
 // configures browsers to run test against
-// any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'IE', 'Safari ]
+// any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'Safari' ]
 var browsers =
   (process.env.TEST_BROWSERS || 'ChromeHeadless')
     .replace(/^\s+|\s+$/, '')
