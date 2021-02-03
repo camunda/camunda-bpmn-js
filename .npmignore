@@ -2,4 +2,5 @@ test
 .eslintrc
 coverage
 .github
-karma.conf.js
+karma.config.js
+.babelrc
