@@ -1,5 +1,7 @@
 var singleStart = process.env.SINGLE_START;
 
+var suite = 'test/suite.js';
+
 // configures browsers to run test against
 // any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'Safari' ]
 var browsers =
@@ -27,15 +29,15 @@ module.exports = function(karma) {
 
     frameworks: [
       'mocha',
-      'chai'
+      'sinon-chai'
     ],
 
     files: [
-      { pattern: 'test/**/*Spec.js', watched: false }
+      suite
     ],
 
     preprocessors: {
-      'test/**/*Spec.js': [ 'webpack', 'env' ]
+      [ suite ]: [ 'webpack', 'env' ]
     },
 
     reporters: [ 'progress' ],
