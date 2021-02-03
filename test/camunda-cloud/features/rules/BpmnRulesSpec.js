@@ -9,7 +9,7 @@
  */
 
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
 } from '../../../TestHelper';
@@ -39,7 +39,7 @@ describe('camunda-cloud/features - BpmnRules', function() {
 
   describe('event create', function() {
 
-    beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
+    beforeEach(bootstrapCamundaCloudModeler(diagramXML, { modules: testModules }));
 
     it('should attach IntermediateThrowEvent to Task', inject(function(elementFactory) {
 

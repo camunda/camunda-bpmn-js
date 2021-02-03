@@ -1,5 +1,5 @@
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   inject
 } from '../../../TestHelper';
 
@@ -34,7 +34,7 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
     zeebe: zeebeModdleExtensions
   };
 
-  beforeEach(bootstrapZeebeModeler(diagramXML, {
+  beforeEach(bootstrapCamundaCloudModeler(diagramXML, {
     modules: testModules,
     moddleExtensions
   }));

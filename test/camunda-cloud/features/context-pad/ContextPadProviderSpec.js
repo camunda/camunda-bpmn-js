@@ -1,5 +1,5 @@
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
 } from '../../../TestHelper';
@@ -36,7 +36,7 @@ describe('camunda-cloud/features - ContextPad', function() {
 
   describe('expected entries', function() {
 
-    beforeEach(bootstrapZeebeModeler(contextPadProviderXML, { modules: testModules }));
+    beforeEach(bootstrapCamundaCloudModeler(contextPadProviderXML, { modules: testModules }));
 
     function getContextPadEntries(elementId) {
       let entries;
@@ -255,7 +255,7 @@ describe('camunda-cloud/features - ContextPad', function() {
 
   describe('auto place', function() {
 
-    beforeEach(bootstrapZeebeModeler(diagramXML, {
+    beforeEach(bootstrapCamundaCloudModeler(diagramXML, {
       modules: testModules.concat(autoPlaceModule)
     }));
 
@@ -282,7 +282,7 @@ describe('camunda-cloud/features - ContextPad', function() {
 
   describe('disabled auto place', function() {
 
-    beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
+    beforeEach(bootstrapCamundaCloudModeler(diagramXML, { modules: testModules }));
 
     it('should default to drag start', inject(function(elementRegistry, contextPad, dragging) {
 

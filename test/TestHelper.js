@@ -12,7 +12,7 @@ import {
   insertCSS
 } from 'bpmn-js/test/helper';
 
-import ZeebeModeler from '../lib/camunda-cloud/Modeler';
+import CamundaCloudModeler from '../lib/camunda-cloud/Modeler';
 
 insertCSS(
   'diagram.css',
@@ -29,8 +29,8 @@ insertCSS(
   require('diagram-js-minimap/assets/diagram-js-minimap.css').default
 );
 
-export function bootstrapZeebeModeler(diagram, options, locals) {
-  return bootstrapBpmnJS(ZeebeModeler, diagram, options, locals);
+export function bootstrapCamundaCloudModeler(diagram, options, locals) {
+  return bootstrapBpmnJS(CamundaCloudModeler, diagram, options, locals);
 }
 
 /**

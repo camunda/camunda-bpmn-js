@@ -1,5 +1,5 @@
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
 } from '../../../TestHelper';
@@ -37,7 +37,7 @@ const testModules = [
 
 describe('camunda-cloud/features/modeling - Palette', function() {
 
-  beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
+  beforeEach(bootstrapCamundaCloudModeler(diagramXML, { modules: testModules }));
 
   it('should provide zeebe related entries', inject(function(canvas) {
 

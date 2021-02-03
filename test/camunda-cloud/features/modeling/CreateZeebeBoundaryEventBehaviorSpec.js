@@ -1,5 +1,5 @@
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   inject
 } from '../../../TestHelper';
 
@@ -23,7 +23,7 @@ describe('camunda-cloud/features/modeling - create boundary events behavior', fu
     zeebeModelingModule
   ];
 
-  beforeEach(bootstrapZeebeModeler(processDiagramXML, { modules: testModules }));
+  beforeEach(bootstrapCamundaCloudModeler(processDiagramXML, { modules: testModules }));
 
   it('should execute on attach', inject(function(canvas, elementFactory, modeling, bpmnFactory) {
 

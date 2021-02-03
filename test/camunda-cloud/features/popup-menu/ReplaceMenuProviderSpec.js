@@ -1,5 +1,5 @@
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
 } from '../../../TestHelper';
@@ -28,7 +28,7 @@ const testModules = [
 
 describe('camunda-cloud/features - PopupMenu', function() {
 
-  beforeEach(bootstrapZeebeModeler(diagramXML, { modules: testModules }));
+  beforeEach(bootstrapCamundaCloudModeler(diagramXML, { modules: testModules }));
 
   describe('events', function() {
 

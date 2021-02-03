@@ -1,5 +1,5 @@
 import {
-  bootstrapZeebeModeler,
+  bootstrapCamundaCloudModeler,
   inject
 } from '../../../TestHelper';
 
@@ -45,7 +45,7 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
         zeebeModelingModule
       ];
 
-      beforeEach(bootstrapZeebeModeler(emptyProcessDiagramXML, {
+      beforeEach(bootstrapCamundaCloudModeler(emptyProcessDiagramXML, {
         modules: testModules,
         moddleExtensions
       }));
@@ -95,7 +95,7 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
         copyPasteModule
       ];
 
-      beforeEach(bootstrapZeebeModeler(callActivitiesXML, {
+      beforeEach(bootstrapCamundaCloudModeler(callActivitiesXML, {
         modules: testModules,
         moddleExtensions
       }));
