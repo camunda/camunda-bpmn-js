@@ -4,7 +4,7 @@ import {
   inject,
   triggerEvent,
   triggerValue
-} from '../../../../TestHelper';
+} from 'test/TestHelper';
 
 import {
   getBusinessObject
@@ -30,13 +30,13 @@ import modelingModule from 'bpmn-js/lib/features/modeling';
 
 import propertiesPanelModule from 'bpmn-js-properties-panel';
 
-import propertiesProviderModule from '../../../../../lib/camunda-cloud/features/properties-provider';
+import propertiesProviderModule from 'lib/camunda-cloud/features/properties-provider';
 
 import selectionModule from 'diagram-js/lib/features/selection';
 
 import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 
-import customBehaviorModules from '../../../../../lib/camunda-cloud/features/modeling';
+import customBehaviorModules from 'lib/camunda-cloud/features/modeling';
 
 import diagramXML from './InputOutput.bpmn';
 

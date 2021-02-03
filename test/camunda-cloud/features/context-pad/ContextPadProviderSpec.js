@@ -2,7 +2,7 @@ import {
   bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
-} from '../../../TestHelper';
+} from 'test/TestHelper';
 
 import {
   query as domQuery
@@ -18,9 +18,9 @@ import paletteModule from 'bpmn-js/lib/features/palette';
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
 import autoPlaceModule from 'bpmn-js/lib/features/auto-place';
 
-import zeebeContextPadModule from '../../../../lib/camunda-cloud/features/context-pad';
+import zeebeContextPadModule from 'lib/camunda-cloud/features/context-pad';
 
-import diagramXML from '../../../fixtures/diagram.bpmn';
+import diagramXML from 'test/fixtures/diagram.bpmn';
 
 import contextPadProviderXML from './ContextPadProvider.bpmn';
 

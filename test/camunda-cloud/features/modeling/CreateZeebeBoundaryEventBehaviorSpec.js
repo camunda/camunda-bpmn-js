@@ -1,14 +1,14 @@
 import {
   bootstrapCamundaCloudModeler,
   inject
-} from '../../../TestHelper';
+} from 'test/TestHelper';
 
 import modelingModule from 'bpmn-js/lib/features/modeling';
 import coreModule from 'bpmn-js/lib/core';
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
 import paletteModule from 'bpmn-js/lib/features/palette';
 
-import zeebeModelingModule from '../../../../lib/camunda-cloud/features/modeling';
+import zeebeModelingModule from 'lib/camunda-cloud/features/modeling';
 
 import processDiagramXML from './process-empty.bpmn';
 

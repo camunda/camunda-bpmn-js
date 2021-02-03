@@ -1,4 +1,10 @@
+var path = require('path');
+
 var singleStart = process.env.SINGLE_START;
+
+var basePath = '.';
+
+var absoluteBasePath = path.resolve(path.join(__dirname, basePath));
 
 var suite = 'test/suite.js';
 
@@ -25,7 +31,7 @@ var browsers =
 module.exports = function(karma) {
   var config = {
 
-    basePath: '.',
+    basePath,
 
     frameworks: [
       'mocha',
@@ -72,7 +78,8 @@ module.exports = function(karma) {
       },
       resolve: {
         modules: [
-          'node_modules'
+          'node_modules',
+          absoluteBasePath
         ]
       },
       devtool: 'eval-source-map'

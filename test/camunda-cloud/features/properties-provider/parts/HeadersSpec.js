@@ -4,7 +4,7 @@ import {
   inject,
   triggerEvent,
   triggerValue
-} from '../../../../TestHelper';
+} from 'test/TestHelper';
 
 import TestContainer from 'mocha-test-container-support';
 
@@ -26,7 +26,7 @@ import selectionModule from 'diagram-js/lib/features/selection';
 
 import modelingModule from 'bpmn-js/lib/features/modeling';
 
-import propertiesProviderModule from '../../../../../lib/camunda-cloud/features/properties-provider';
+import propertiesProviderModule from 'lib/camunda-cloud/features/properties-provider';
 
 import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 

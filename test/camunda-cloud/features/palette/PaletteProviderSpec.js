@@ -2,7 +2,7 @@ import {
   bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
-} from '../../../TestHelper';
+} from 'test/TestHelper';
 
 import {
   getBusinessObject,
@@ -19,13 +19,16 @@ import {
 } from 'min-dom';
 
 import coreModule from 'bpmn-js/lib/core';
+
 import modelingModule from 'bpmn-js/lib/features/modeling';
+
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
+
 import paletteModule from 'bpmn-js/lib/features/palette';
 
-import zeebePaletteModule from '../../../../lib/camunda-cloud/features/palette';
+import zeebePaletteModule from 'lib/camunda-cloud/features/palette';
 
-import diagramXML from '../../../fixtures/diagram.bpmn';
+import diagramXML from 'test/fixtures/diagram.bpmn';
 
 const testModules = [
   coreModule,
