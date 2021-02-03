@@ -3,20 +3,23 @@ import {
   bootstrapCamundaCloudModeler,
   getBpmnJS,
   inject
-} from '../../../TestHelper';
+} from 'test/TestHelper';
 
 import {
   isString
 } from 'min-dash';
 
 import coreModule from 'bpmn-js/lib/core';
+
 import modelingModule from 'bpmn-js/lib/features/modeling';
+
 import contextPadModule from 'bpmn-js/lib/features/context-pad';
+
 import paletteModule from 'bpmn-js/lib/features/palette';
 
-import rulesModule from '../../../../lib/camunda-cloud/features/rules';
+import rulesModule from 'lib/camunda-cloud/features/rules';
 
-import diagramXML from '../../../fixtures/diagram.bpmn';
+import diagramXML from 'test/fixtures/diagram.bpmn';
 
 const testModules = [
   coreModule,
