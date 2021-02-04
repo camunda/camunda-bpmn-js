@@ -4,3 +4,5 @@ coverage
 .github
 karma.config.js
 .babelrc
+!dist
+tasks
