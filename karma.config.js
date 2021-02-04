@@ -12,23 +12,10 @@ var suite = coverage ? 'test/coverage.js' : 'test/suite.js';
 
 // configures browsers to run test against
 // any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'Safari' ]
-var browsers =
-  (process.env.TEST_BROWSERS || 'ChromeHeadless')
-    .replace(/^\s+|\s+$/, '')
-    .split(/\s*,\s*/g)
-    .map(function(browser) {
-      if (browser === 'ChromeHeadless') {
-        process.env.CHROME_BIN = require('puppeteer').executablePath();
+var browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
 
-        // workaround https://github.com/GoogleChrome/puppeteer/issues/290
-        if (process.platform === 'linux') {
-          return 'ChromeHeadless_Linux';
-        }
-      }
-
-      return browser;
-    });
-
+// use puppeteer provided Chrome for testing
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function(karma) {
   var config = {
@@ -56,18 +43,7 @@ module.exports = function(karma) {
       ]
     },
 
-    customLaunchers: {
-      ChromeHeadless_Linux: {
-        base: 'ChromeHeadless',
-        flags: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox'
-        ],
-        debug: true
-      }
-    },
-
-    browsers: browsers,
+    browsers,
 
     browserNoActivityTimeout: 30000,
 
