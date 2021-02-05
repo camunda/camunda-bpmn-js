@@ -1,8 +1,11 @@
-test
-.eslintrc
-coverage
-.github
-karma.config.js
-.babelrc
 !dist
+.github
+docs
 tasks
+test
+.eslintignore
+.eslintrc
+.babelrc
+karma.*.js
+rollup.config.js
+coverage
