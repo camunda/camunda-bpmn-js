@@ -9,7 +9,7 @@ Embeddable Camunda modeling distributions based on [bpmn-js](https://github.com/
 
 This project is designed to deliver different BPMN modeling distributions. Instead of creating custom Modeler implementations based on [bpmn-js](https://github.com/bpmn-io/bpmn-js), choose one of the existing packages to mirror the modeling experience of [Camunda's modeling](https://github.com/camunda/camunda-modeler/) products.
 
-Use a pre-packaged version
+Use a pre-packaged distribution
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/camunda-bpmn-js@0.1.0/dist/assets/camunda-platform-modeler.css" />
@@ -17,7 +17,7 @@ Use a pre-packaged version
 <script src="https://unpkg.com/camunda-bpmn-js@0.1.0/dist/camunda-platform-modeler.development.js"></script>
 ```
 
-or include it via npm
+or install it via npm
 
 ```js
 import BpmnModeler from 'camunda-bpmn-js/lib/camunda-platform/Modeler';
@@ -25,7 +25,7 @@ import BpmnModeler from 'camunda-bpmn-js/lib/camunda-platform/Modeler';
 import 'camunda-bpmn-js/dist/assets/camunda-platform-modeler.css';
 ```
 
-into your node-style web-application.
+into your web-application.
 
 ```js
 var bpmnModeler = new BpmnModeler({
