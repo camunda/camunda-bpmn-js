@@ -98,6 +98,23 @@ describe('camunda-cloud/features - PropertiesProvider', function() {
   });
 
 
+  describe('forms tab', function() {
+
+    it('should show forms group', inject(function(selection, elementRegistry) {
+
+      // given
+      const shape = elementRegistry.get('UserTask_1');
+
+      // when
+      selection.select(shape);
+
+      // then
+      shouldHaveGroup(container, 'forms', 'forms-properties');
+    }));
+
+  });
+
+
   describe('headers tab', function() {
 
     it('should show headers group', inject(function(selection, elementRegistry) {
