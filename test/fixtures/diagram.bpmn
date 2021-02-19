@@ -34,6 +34,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_0bqiybf" sourceRef="EventBasedGateway_1" targetRef="MessageTask_2" />
     <bpmn:task id="Task_1" />
     <bpmn:callActivity id="CallActivity_1" />
+    <bpmn:userTask id="UserTask_1" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1lw37ec">
@@ -76,6 +77,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ReceiveTask_1tj6cz3_di" bpmnElement="MessageTask_2">
         <dc:Bounds x="469" y="464" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1yr5rto_di" bpmnElement="UserTask_1">
+        <dc:Bounds x="1000" y="350" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_1xr3isb_di" bpmnElement="SubProcess_1" isExpanded="false">
         <dc:Bounds x="307" y="186" width="100" height="80" />
