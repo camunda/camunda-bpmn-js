@@ -80,6 +80,19 @@ describe('camunda-cloud/helper - input output helper', function() {
     });
 
 
+    it('should support UserTask', function() {
+
+      // given
+      const userTask = createElement('bpmn:UserTask');
+
+      // when
+      const supported = areInputParametersSupported(userTask);
+
+      // then
+      expect(supported).to.be.true;
+    });
+
+
     it('should NOT support ReceiveTask', function() {
 
       // given
@@ -226,6 +239,19 @@ describe('camunda-cloud/helper - input output helper', function() {
 
       // then
       expect(!!supported).to.be.true;
+    });
+
+
+    it('should support UserTask', function() {
+
+      // given
+      const userTask = createElement('bpmn:UserTask');
+
+      // when
+      const supported = areOutputParametersSupported(userTask);
+
+      // then
+      expect(supported).to.be.true;
     });
 
   });
