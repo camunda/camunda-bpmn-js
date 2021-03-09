@@ -10,9 +10,9 @@
     "test": "karma start karma.config.js",
     "distro": "rollup -c",
     "test:distro": "node tasks/test-distro.js",
-    "start:base": "SINGLE_START=base-modeler npm run dev",
-    "start:platform": "SINGLE_START=camunda-platform-modeler npm run dev",
-    "start:cloud": "SINGLE_START=camunda-cloud-modeler npm run dev"
+    "start:base": "cross-env SINGLE_START=base-modeler npm run dev",
+    "start:platform": "cross-env SINGLE_START=camunda-platform-modeler npm run dev",
+    "start:cloud": "cross-env SINGLE_START=camunda-cloud-modeler npm run dev"
   },
   "repository": {
     "type": "git",
@@ -57,6 +57,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.19.0",
     "eslint-plugin-bpmn-io": "^0.12.0",
     "execa": "^5.0.0",
