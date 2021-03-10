@@ -38,7 +38,7 @@ const testModules = [
   modelingModule
 ];
 
-describe('camunda-cloud/features/modeling - Palette', function() {
+describe('camunda-cloud/features - Palette', function() {
 
   beforeEach(bootstrapCamundaCloudModeler(diagramXML, { modules: testModules }));
 
