@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.0
+
+* `CHORE`: bump to `bpmn-js@8.2.1`
+* `CHORE`: bump to `bpmn-js-properties-panel@0.41.0`
+* `CHORE`: bump to `camunda-bpmn-moddle@5.0.0`
+
 ## 0.2.0
 
 * `FEAT`: add support for user tasks in cloud modeler ([#14](https://github.com/camunda/camunda-bpmn-js/pull/14))
