@@ -832,7 +832,7 @@ describe('camunda-cloud/features/properties-provider - input output property tab
       bo = getBusinessObject(shape);
 
       // assume
-      expect(getIOMapping(bo)).to.exist;
+      expect(getIOMapping(bo)).not.to.be.empty;
 
       // when
       clickRemoveInputParameterButton(container, 0);
@@ -845,7 +845,7 @@ describe('camunda-cloud/features/properties-provider - input output property tab
       it('should execute', function() {
 
         // then
-        expect(getIOMapping(bo)).not.to.exist;
+        expect(getIOMapping(bo)).to.be.empty;
       });
 
 
@@ -855,7 +855,7 @@ describe('camunda-cloud/features/properties-provider - input output property tab
         commandStack.undo();
 
         // then
-        expect(getIOMapping(bo)).to.exist;
+        expect(getIOMapping(bo)).not.to.be.empty;
       }));
 
 
@@ -866,7 +866,7 @@ describe('camunda-cloud/features/properties-provider - input output property tab
         commandStack.redo();
 
         // then
-        expect(getIOMapping(bo)).not.to.exist;
+        expect(getIOMapping(bo)).to.be.empty;
       }));
 
     });
@@ -1386,7 +1386,7 @@ const getOutputParameters = (bo) => {
 };
 
 const getElements = (bo, type, prop) => {
-  const elems = extensionElementsHelper.getExtensionElements(bo, type) || [];
+  const elems = extensionElementsHelper.getExtensionElements(bo, type);
   return !prop ? elems : (elems[0] || {})[prop] || [];
 };
 

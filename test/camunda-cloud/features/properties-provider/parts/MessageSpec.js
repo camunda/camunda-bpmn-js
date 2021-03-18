@@ -499,7 +499,7 @@ describe('camunda-cloud/features/properties-provider - message properties', func
         it('subscription definitions should not exist', function() {
 
           // then
-          expect(subscriptionDefinitions).to.be.undefined;
+          expect(subscriptionDefinitions).to.be.empty;
         });
       });
     });

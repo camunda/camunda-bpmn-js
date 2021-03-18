@@ -267,7 +267,7 @@ const getCalledElement = (bo) => {
     bo,
     'zeebe:CalledElement'
   );
-  return (extensions || [])[0];
+  return extensions[0];
 };
 
 const getGeneralTab = (container) => {
