@@ -83,7 +83,7 @@ describe('camunda-cloud/features/properties-provider - headers property tab', fu
       bo = getBusinessObject(shape);
 
       // assume
-      expect(getTaskHeaders(bo)).to.be.undefined;
+      expect(getTaskHeaders(bo)).to.be.empty;
 
       // when
       clickAddHeaderButton(container);
@@ -104,7 +104,7 @@ describe('camunda-cloud/features/properties-provider - headers property tab', fu
       commandStack.undo();
 
       // then
-      expect(getTaskHeaders(bo)).to.be.undefined;
+      expect(getTaskHeaders(bo)).to.be.empty;
 
     }));
 
@@ -239,7 +239,7 @@ describe('camunda-cloud/features/properties-provider - headers property tab', fu
     it('should execute', function() {
 
       // then
-      expect(getTaskHeaders(bo)).to.be.undefined;
+      expect(getTaskHeaders(bo)).to.be.empty;
 
     });
 
@@ -263,7 +263,7 @@ describe('camunda-cloud/features/properties-provider - headers property tab', fu
       commandStack.redo();
 
       // then
-      expect(getTaskHeaders(bo)).to.be.undefined;
+      expect(getTaskHeaders(bo)).to.be.empty;
 
     }));
 

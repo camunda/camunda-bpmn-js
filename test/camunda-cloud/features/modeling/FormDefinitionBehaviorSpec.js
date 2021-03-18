@@ -282,7 +282,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
 function getUserTaskForms(rootElement) {
   const businessObject = getBusinessObject(rootElement);
 
-  return getExtensionElements(businessObject, 'zeebe:UserTaskForm') || [];
+  return getExtensionElements(businessObject, 'zeebe:UserTaskForm');
 }
 
 function userTaskFormExists(id, userTaskForms) {

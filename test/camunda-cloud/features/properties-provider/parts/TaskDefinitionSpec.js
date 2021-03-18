@@ -86,7 +86,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
         bo = getBusinessObject(shape);
 
         // assume
-        expect(getTaskDefinitions(bo)).to.be.undefined;
+        expect(getTaskDefinitions(bo)).to.be.empty;
 
         const input = getInputField(container, 'camunda-taskDefinitionType', 'type');
 
@@ -97,7 +97,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
       it('should execute', function() {
 
         // then
-        expect(getTaskDefinitions(bo)).to.exist;
+        expect(getTaskDefinitions(bo)).not.to.be.empty;
 
       });
 
@@ -108,7 +108,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
         commandStack.undo();
 
         // then
-        expect(getTaskDefinitions(bo)).to.be.undefined;
+        expect(getTaskDefinitions(bo)).to.be.empty;
 
       }));
 
@@ -119,7 +119,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
         commandStack.redo();
 
         // then
-        expect(getTaskDefinitions(bo)).to.exist;
+        expect(getTaskDefinitions(bo)).not.to.be.empty;
 
       }));
 
@@ -287,7 +287,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
         bo = getBusinessObject(shape);
 
         // assume
-        expect(getTaskDefinitions(bo)).to.be.undefined;
+        expect(getTaskDefinitions(bo)).to.be.empty;
 
         const input = getInputField(container, 'camunda-taskDefinitionRetries', 'retries');
 
@@ -298,7 +298,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
       it('should execute', function() {
 
         // then
-        expect(getTaskDefinitions(bo)).to.exist;
+        expect(getTaskDefinitions(bo)).not.to.be.empty;
 
       });
 
@@ -309,7 +309,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
         commandStack.undo();
 
         // then
-        expect(getTaskDefinitions(bo)).to.be.undefined;
+        expect(getTaskDefinitions(bo)).to.be.empty;
 
       }));
 
@@ -320,7 +320,7 @@ describe('camunda-cloud/features/properties-provider - task definition propertie
         commandStack.redo();
 
         // then
-        expect(getTaskDefinitions(bo)).to.exist;
+        expect(getTaskDefinitions(bo)).not.to.be.empty;
 
       }));
     });
