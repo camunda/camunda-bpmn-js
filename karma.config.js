@@ -23,6 +23,7 @@ module.exports = function(karma) {
     basePath,
 
     frameworks: [
+      'webpack',
       'mocha',
       'sinon-chai'
     ],
