@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.0
+
+* `DEPS`: bump to `bpmn-js-properties-panel@0.42.0`
+* `DEPS`: bump to `camunda-bpmn-moddle@5.1.0`
+
 ## 0.4.0
 
 * `FEAT`: disable user task support for Cloud Modeler, can be enabled via `enableZeebeUserTasks` ([`9f782028`](https://github.com/camunda/camunda-bpmn-js/commit/9f7820284154b4ab0174f8c5eb745a3060f5c1ff))
