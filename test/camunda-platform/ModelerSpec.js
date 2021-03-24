@@ -109,7 +109,7 @@ describe('<CamundaPlatformModeler>', function() {
 
       // then
       expect(modeler.get('propertiesProvider')).to.exist;
-      expect(modeler.get('camundaModdleExtension')).to.exist;
+      expect(modeler.get('camundaCopyPasteBehavior')).to.exist;
     });
 
   });
