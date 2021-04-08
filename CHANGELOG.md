@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.1
+
+* `CHORE`: bump to `camunda-bpmn-moddle@5.1.1`
+
 ## 0.5.0
 
 * `CHORE`: bump to `bpmn-js-properties-panel@0.42.0`
