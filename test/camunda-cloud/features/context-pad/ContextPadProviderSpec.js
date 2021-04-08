@@ -197,6 +197,7 @@ describe('camunda-cloud/features - ContextPad', function() {
 
     it('should provide entries for TextAnnotations', function() {
       expect(getContextPadEntries('TextAnnotation_1')).to.be.eql([
+        'connect',
         'delete'
       ]);
     });
