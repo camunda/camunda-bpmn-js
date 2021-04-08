@@ -8,8 +8,9 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.5.0
 
-* `DEPS`: bump to `bpmn-js-properties-panel@0.42.0`
-* `DEPS`: bump to `camunda-bpmn-moddle@5.1.0`
+* `CHORE`: bump to `bpmn-js-properties-panel@0.42.0`
+* `CHORE`: bump to `camunda-bpmn-moddle@5.1.0`
+* `CHORE`: bump to `bpmn-js@8.3.0`
 
 ## 0.4.0
 
