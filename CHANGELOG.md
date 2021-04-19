@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.6.0
+
 * `FEAT`: re-enable user task support for Cloud Modeler
 
 ## 0.5.2
