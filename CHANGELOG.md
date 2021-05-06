@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.0
+
+* `DEPS`: bump to `bpmn-js@8.5.0`
+* `DEPS`: bump to `bpmn-js-properties-panel@0.43.0`
+* `DEPS`: bump to `diagram-js@7.3.0`
+* `DEPS`: bump to `zeebe-bpmn-moddle@0.6.0`
+
 ## 0.6.0
 
 * `FEAT`: re-enable user task support for Cloud Modeler
