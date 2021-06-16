@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_0rxge3k" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.3.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_0rxge3k" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
   <bpmn:process id="Process_1ianoxh" isExecutable="true">
     <bpmn:endEvent id="EndEvent_1" />
     <bpmn:serviceTask id="ServiceTask_1">
@@ -17,6 +17,33 @@
     <bpmn:callActivity id="CallActivity_1" />
     <bpmn:receiveTask id="ReceiveTask_1" />
     <bpmn:userTask id="UserTask_1" />
+    <bpmn:sendTask id="SendTask_1">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="inputSourceValue" target="inputTargetValue" />
+          <zeebe:output source="outputSourceValue" target="outputTargetValue" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:multiInstanceLoopCharacteristics />
+    </bpmn:sendTask>
+    <bpmn:scriptTask id="ScriptTask_1">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="inputSourceValue" target="inputTargetValue" />
+          <zeebe:output source="outputSourceValue" target="outputTargetValue" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:multiInstanceLoopCharacteristics />
+    </bpmn:scriptTask>
+    <bpmn:businessRuleTask id="BusinessRuleTask_1">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="inputSourceValue" target="inputTargetValue" />
+          <zeebe:output source="outputSourceValue" target="outputTargetValue" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:multiInstanceLoopCharacteristics />
+    </bpmn:businessRuleTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1ianoxh">
@@ -25,6 +52,15 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_0lveymx_di" bpmnElement="ServiceTask_1">
         <dc:Bounds x="160" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1y2b1aq_di" bpmnElement="SendTask_1">
+        <dc:Bounds x="580" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14xapja_di" bpmnElement="ScriptTask_1">
+        <dc:Bounds x="720" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0h4wcpz_di" bpmnElement="BusinessRuleTask_1">
+        <dc:Bounds x="860" y="90" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0o2zhob_di" bpmnElement="SubProcess_1" isExpanded="true">
         <dc:Bounds x="155" y="220" width="350" height="200" />

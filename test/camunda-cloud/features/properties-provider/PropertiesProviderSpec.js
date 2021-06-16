@@ -150,6 +150,48 @@ describe('camunda-cloud/features - PropertiesProvider', function() {
       }));
 
 
+      it('should show for sendTasks', inject(function(selection, elementRegistry) {
+
+        // given
+        const shape = elementRegistry.get('SendTask_1');
+
+        // when
+        selection.select(shape);
+
+        // then
+        shouldHaveGroup(container, 'input', 'input');
+        shouldHaveGroup(container, 'output', 'output');
+      }));
+
+
+      it('should show for scriptTasks', inject(function(selection, elementRegistry) {
+
+        // given
+        const shape = elementRegistry.get('ScriptTask_1');
+
+        // when
+        selection.select(shape);
+
+        // then
+        shouldHaveGroup(container, 'input', 'input');
+        shouldHaveGroup(container, 'output', 'output');
+      }));
+
+
+      it('should show for businessRuleTasks', inject(function(selection, elementRegistry) {
+
+        // given
+        const shape = elementRegistry.get('BusinessRuleTask_1');
+
+        // when
+        selection.select(shape);
+
+        // then
+        shouldHaveGroup(container, 'input', 'input');
+        shouldHaveGroup(container, 'output', 'output');
+      }));
+
+
       it('should show for callActivity', inject(function(selection, elementRegistry) {
 
         // given

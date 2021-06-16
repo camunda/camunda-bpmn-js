@@ -152,26 +152,23 @@ describe('camunda-cloud/features - PopupMenu', function() {
       // given
       const task = elementRegistry.get('Task_1');
 
+      // when
       openPopup(task);
 
-      const messageTaskEntry = queryEntry(popupMenu, 'replace-with-receive-task'),
-            serviceTaskEntry = queryEntry(popupMenu, 'replace-with-service-task'),
-            callActivityEntry = queryEntry(popupMenu, 'replace-with-call-activity'),
-            collapsedSubProcessEntry = queryEntry(popupMenu, 'replace-with-collapsed-subprocess'),
-            expandedSubProcessEntry = queryEntry(popupMenu, 'replace-with-expanded-subprocess'),
-            sequentialMultiInstanceEntry = queryEntry(popupMenu, 'toggle-parallel-mi'),
-            parallelMultiInstanceEntry = queryEntry(popupMenu, 'toggle-sequential-mi'),
-            userTaskEntry = queryEntry(popupMenu, 'replace-with-user-task');
-
       // then
-      expect(messageTaskEntry).to.exist;
-      expect(serviceTaskEntry).to.exist;
-      expect(callActivityEntry).to.exist;
-      expect(collapsedSubProcessEntry).to.exist;
-      expect(expandedSubProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.exist;
-      expect(parallelMultiInstanceEntry).to.exist;
-      expect(userTaskEntry).to.exist;
+      expectEntries(popupMenu, [
+        'replace-with-receive-task',
+        'replace-with-service-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
     }));
 
 
@@ -183,24 +180,20 @@ describe('camunda-cloud/features - PopupMenu', function() {
 
       openPopup(messageTask);
 
-      const taskEntry = queryEntry(popupMenu, 'replace-with-task'),
-            serviceTaskEntry = queryEntry(popupMenu, 'replace-with-service-task'),
-            callActivityEntry = queryEntry(popupMenu, 'replace-with-call-activity'),
-            collapsedSubProcessEntry = queryEntry(popupMenu, 'replace-with-collapsed-subprocess'),
-            expandedSubProcessEntry = queryEntry(popupMenu, 'replace-with-expanded-subprocess'),
-            sequentialMultiInstanceEntry = queryEntry(popupMenu, 'toggle-parallel-mi'),
-            parallelMultiInstanceEntry = queryEntry(popupMenu, 'toggle-sequential-mi'),
-            userTaskEntry = queryEntry(popupMenu, 'replace-with-user-task');
-
       // then
-      expect(taskEntry).to.exist;
-      expect(serviceTaskEntry).to.exist;
-      expect(callActivityEntry).to.exist;
-      expect(collapsedSubProcessEntry).to.exist;
-      expect(expandedSubProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.exist;
-      expect(parallelMultiInstanceEntry).to.exist;
-      expect(userTaskEntry).to.exist;
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-service-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
     }));
 
 
@@ -210,26 +203,101 @@ describe('camunda-cloud/features - PopupMenu', function() {
       // given
       const serviceTask = elementRegistry.get('ServiceTask_1');
 
+      // when
       openPopup(serviceTask);
 
-      const taskEntry = queryEntry(popupMenu, 'replace-with-task'),
-            receiveTaskEntry = queryEntry(popupMenu, 'replace-with-receive-task'),
-            callActivityEntry = queryEntry(popupMenu, 'replace-with-call-activity'),
-            collapsedSubProcessEntry = queryEntry(popupMenu, 'replace-with-collapsed-subprocess'),
-            expandedSubProcessEntry = queryEntry(popupMenu, 'replace-with-expanded-subprocess'),
-            sequentialMultiInstanceEntry = queryEntry(popupMenu, 'toggle-parallel-mi'),
-            parallelMultiInstanceEntry = queryEntry(popupMenu, 'toggle-sequential-mi'),
-            userTaskEntry = queryEntry(popupMenu, 'replace-with-user-task');
+      // then
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-receive-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
+    }));
+
+
+    it('should contain options for SendTask', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const serviceTask = elementRegistry.get('SendTask_1');
+
+      // when
+      openPopup(serviceTask);
 
       // then
-      expect(taskEntry).to.exist;
-      expect(receiveTaskEntry).to.exist;
-      expect(callActivityEntry).to.exist;
-      expect(collapsedSubProcessEntry).to.exist;
-      expect(expandedSubProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.exist;
-      expect(parallelMultiInstanceEntry).to.exist;
-      expect(userTaskEntry).to.exist;
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-receive-task',
+        'replace-with-service-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-script-task',
+        'replace-with-rule-task'
+      ]);
+    }));
+
+
+    it('should contain options for ScriptTask', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const serviceTask = elementRegistry.get('ScriptTask_1');
+
+      // when
+      openPopup(serviceTask);
+
+      // then
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-receive-task',
+        'replace-with-service-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
+    }));
+
+
+    it('should contain options for BusinessRuleTask', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const serviceTask = elementRegistry.get('BusinessRuleTask_1');
+
+      // when
+      openPopup(serviceTask);
+
+      // then
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-receive-task',
+        'replace-with-service-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-script-task',
+        'replace-with-send-task'
+      ]);
     }));
 
 
@@ -239,24 +307,22 @@ describe('camunda-cloud/features - PopupMenu', function() {
       // given
       const callActivity = elementRegistry.get('CallActivity_1');
 
+      // when
       openPopup(callActivity);
 
-      const taskEntry = queryEntry(popupMenu, 'replace-with-task'),
-            receiveTaskEntry = queryEntry(popupMenu, 'replace-with-receive-task'),
-            serviceTaskEntry = queryEntry(popupMenu, 'replace-with-service-task'),
-            collapsedSubProcessEntry = queryEntry(popupMenu, 'replace-with-collapsed-subprocess'),
-            expandedSubProcessEntry = queryEntry(popupMenu, 'replace-with-expanded-subprocess'),
-            sequentialMultiInstanceEntry = queryEntry(popupMenu, 'toggle-parallel-mi'),
-            parallelMultiInstanceEntry = queryEntry(popupMenu, 'toggle-sequential-mi');
-
       // then
-      expect(taskEntry).to.exist;
-      expect(receiveTaskEntry).to.exist;
-      expect(serviceTaskEntry).to.exist;
-      expect(collapsedSubProcessEntry).to.exist;
-      expect(expandedSubProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.exist;
-      expect(parallelMultiInstanceEntry).to.exist;
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-receive-task',
+        'replace-with-service-task',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
     }));
 
 
@@ -266,26 +332,23 @@ describe('camunda-cloud/features - PopupMenu', function() {
       // given
       const userTask = elementRegistry.get('UserTask_1');
 
+      // when
       openPopup(userTask);
 
-      const taskEntry = queryEntry(popupMenu, 'replace-with-task'),
-            serviceTaskEntry = queryEntry(popupMenu, 'replace-with-service-task'),
-            receiveTaskEntry = queryEntry(popupMenu, 'replace-with-receive-task'),
-            callActivityEntry = queryEntry(popupMenu, 'replace-with-call-activity'),
-            collapsedSubProcessEntry = queryEntry(popupMenu, 'replace-with-collapsed-subprocess'),
-            expandedSubProcessEntry = queryEntry(popupMenu, 'replace-with-expanded-subprocess'),
-            sequentialMultiInstanceEntry = queryEntry(popupMenu, 'toggle-parallel-mi'),
-            parallelMultiInstanceEntry = queryEntry(popupMenu, 'toggle-sequential-mi');
-
       // then
-      expect(taskEntry).to.exist;
-      expect(serviceTaskEntry).to.exist;
-      expect(receiveTaskEntry).to.exist;
-      expect(callActivityEntry).to.exist;
-      expect(collapsedSubProcessEntry).to.exist;
-      expect(expandedSubProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.exist;
-      expect(parallelMultiInstanceEntry).to.exist;
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-service-task',
+        'replace-with-receive-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
     }));
 
   });
@@ -354,26 +417,23 @@ describe('camunda-cloud/features - PopupMenu', function() {
       // given
       const subProcess = elementRegistry.get('SubProcess_1');
 
+      // when
       openPopup(subProcess);
 
-      const taskEntry = queryEntry(popupMenu, 'replace-with-task'),
-            receiveTaskEntry = queryEntry(popupMenu, 'replace-with-receive-task'),
-            serviceTaskEntry = queryEntry(popupMenu, 'replace-with-service-task'),
-            callActivityEntry = queryEntry(popupMenu, 'replace-with-call-activity'),
-            expandedSubProcessEntry = queryEntry(popupMenu, 'replace-with-expanded-subprocess'),
-            sequentialMultiInstanceEntry = queryEntry(popupMenu, 'toggle-parallel-mi'),
-            parallelMultiInstanceEntry = queryEntry(popupMenu, 'toggle-sequential-mi'),
-            userTaskEntry = queryEntry(popupMenu, 'replace-with-user-task');
-
       // then
-      expect(taskEntry).to.exist;
-      expect(receiveTaskEntry).to.exist;
-      expect(serviceTaskEntry).to.exist;
-      expect(callActivityEntry).to.exist;
-      expect(expandedSubProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.exist;
-      expect(parallelMultiInstanceEntry).to.exist;
-      expect(userTaskEntry).to.exist;
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-receive-task',
+        'replace-with-service-task',
+        'replace-with-call-activity',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-user-task',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
     }));
 
 
@@ -482,6 +542,19 @@ describe('camunda-cloud/features - PopupMenu', function() {
 
 
 // helper //////////
+
+/**
+ * Query popup menu to check if queries exist.
+ *
+ * @param {string[]} entries - ids of the expected entries
+ */
+function expectEntries(popupMenu, entries) {
+  for (const entryId of entries) {
+    const entry = queryEntry(popupMenu, entryId);
+
+    expect(entry, `Entry ${entryId} not found`).to.exist;
+  }
+}
 
 const queryEntry = (popupMenu, id) => {
   return domQuery('[data-id="' + id + '"]', popupMenu._current.container);

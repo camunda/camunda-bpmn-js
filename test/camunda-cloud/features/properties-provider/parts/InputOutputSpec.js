@@ -172,6 +172,96 @@ describe('camunda-cloud/features/properties-provider - input output property tab
     ));
 
 
+    it('should display input and output parameters for SendTask', inject(
+      function(selection, elementRegistry) {
+
+        // given
+        const shape = elementRegistry.get('SendTask_1');
+
+        // when
+        selection.select(shape);
+
+        // then
+        const inputOutputTab = getInputOutputTab(container),
+              inputParameterGroup = getInputParameterGroup(container),
+              outputParameterGroup = getOutputParameterGroup(container),
+              inputParameterAddButton = getAddInputParameterButton(container),
+              outputParameterAddButton = getAddOutputParameterButton(container);
+
+        expect(inputOutputTab).to.exist;
+        expect(inputOutputTab.className).not.to.contain(HIDE_CLASS);
+
+        expect(inputParameterGroup).to.exist;
+        expect(inputParameterGroup.className).not.to.contain(HIDE_CLASS);
+        expect(inputParameterAddButton).to.exist;
+
+        expect(outputParameterGroup).to.exist;
+        expect(outputParameterGroup.className).not.to.contain(HIDE_CLASS);
+        expect(outputParameterAddButton).to.exist;
+      }
+    ));
+
+
+    it('should display input and output parameters for ScriptTask', inject(
+      function(selection, elementRegistry) {
+
+        // given
+        const shape = elementRegistry.get('ScriptTask_1');
+
+        // when
+        selection.select(shape);
+
+        // then
+        const inputOutputTab = getInputOutputTab(container),
+              inputParameterGroup = getInputParameterGroup(container),
+              outputParameterGroup = getOutputParameterGroup(container),
+              inputParameterAddButton = getAddInputParameterButton(container),
+              outputParameterAddButton = getAddOutputParameterButton(container);
+
+        expect(inputOutputTab).to.exist;
+        expect(inputOutputTab.className).not.to.contain(HIDE_CLASS);
+
+        expect(inputParameterGroup).to.exist;
+        expect(inputParameterGroup.className).not.to.contain(HIDE_CLASS);
+        expect(inputParameterAddButton).to.exist;
+
+        expect(outputParameterGroup).to.exist;
+        expect(outputParameterGroup.className).not.to.contain(HIDE_CLASS);
+        expect(outputParameterAddButton).to.exist;
+      }
+    ));
+
+
+    it('should display input and output parameters for BusinessRuleTask', inject(
+      function(selection, elementRegistry) {
+
+        // given
+        const shape = elementRegistry.get('BusinessRuleTask_1');
+
+        // when
+        selection.select(shape);
+
+        // then
+        const inputOutputTab = getInputOutputTab(container),
+              inputParameterGroup = getInputParameterGroup(container),
+              outputParameterGroup = getOutputParameterGroup(container),
+              inputParameterAddButton = getAddInputParameterButton(container),
+              outputParameterAddButton = getAddOutputParameterButton(container);
+
+        expect(inputOutputTab).to.exist;
+        expect(inputOutputTab.className).not.to.contain(HIDE_CLASS);
+
+        expect(inputParameterGroup).to.exist;
+        expect(inputParameterGroup.className).not.to.contain(HIDE_CLASS);
+        expect(inputParameterAddButton).to.exist;
+
+        expect(outputParameterGroup).to.exist;
+        expect(outputParameterGroup.className).not.to.contain(HIDE_CLASS);
+        expect(outputParameterAddButton).to.exist;
+      }
+    ));
+
+
     it('should display input and output parameters for SubProcess', inject(
       function(selection, elementRegistry) {
 
