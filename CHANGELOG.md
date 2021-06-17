@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.0
+
+* `DEPS`: update to `bpmn-js@8.7.0`
+* `DEPS`: update to `bpmn-js-properties-panel@0.43.1`
+
 ## 0.8.0
 
 * `FEAT`: support business rule, send, and script tasks in Cloud Modeler ([#27](https://github.com/camunda/camunda-bpmn-js/pull/27))
