@@ -152,6 +152,19 @@ describe('camunda-cloud/features/properties-provider - call activity', function(
         expect(calledElement.processId).to.equal('foo');
       }));
 
+
+      it('should set to expression', function() {
+
+        // when
+        changeInputValue('=foo');
+
+        // then
+        const calledElement = getCalledElement(bo);
+
+        expect(calledElement).to.exist;
+        expect(calledElement.processId).to.equal('=foo');
+      });
+
     });
 
 
