@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.8.0
+
+* `FEAT`: support business rule, send, and script tasks in Cloud Modeler ([#27](https://github.com/camunda/camunda-bpmn-js/pull/27))
+* `FIX`: allow to pass expression as `bpmn:CallActivity#processId` in Cloud Modeler ([#28](https://github.com/camunda/camunda-bpmn-js/pull/28))
+* `DEPS`: bump to `bpmn-js@8.6.1`
+* `DEPS`: bump to `zeebe-bpmn-moddle@0.7.0`
+
 ## 0.7.0
 
 * `DEPS`: bump to `bpmn-js@8.5.0`
