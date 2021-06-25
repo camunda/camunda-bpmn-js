@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.1
+
+* `DEPS`: update to `bpmn-js@8.7.1`
+
 ## 0.9.0
 
 * `DEPS`: update to `bpmn-js@8.7.0`
