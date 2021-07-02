@@ -14,7 +14,8 @@ import {
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
 
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
+import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
+
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
@@ -29,7 +30,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
     camundaPlatformModelingModules,
     coreModule,
     modelingModule,
-    propertiesPanelCommandHandler
+    BpmnPropertiesPanelModule
   ];
 
   const moddleExtensions = {

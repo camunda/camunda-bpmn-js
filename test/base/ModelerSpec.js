@@ -14,7 +14,7 @@ import Modeler from 'lib/base/Modeler';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
-import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css';
+import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'base-modeler';
 
@@ -126,7 +126,7 @@ describe('<BaseModeler>', function() {
       expect(modeler.get('signavioBehavior')).to.exist;
       expect(modeler.get('disabledCollapsedSubprocessPopupProvider')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
-      expect(modeler.get('propertiesProvider')).to.exist;
+      expect(modeler.get('bpmnPropertiesProvider')).to.exist;
     });
 
   });
