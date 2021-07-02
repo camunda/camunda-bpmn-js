@@ -14,43 +14,37 @@ import Modeler from 'lib/camunda-cloud/Modeler';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
-import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css';
+import propertiesPanelCSS from '@bpmn-io/bpmn-properties-panel/dist/assets/properties-panel.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
 
 insertCSS(
-  'properties.css',
+  'properties-panel.css',
   propertiesPanelCSS
 );
 
-insertCSS('test.css', `
+insertCSS('test-panel.css', `
   .test-content-container {
     display: flex;
     flex-direction: row;
   }
 
-  .modeler-container,
-  .properties-container {
+  .canvas {
+    flex: 1;
+    position: relative;
+  }
+
+  .canvas, .properties {
+    overflow-y: auto;
+  }
+
+  .properties {
+    font-family: sans-serif;
+    position: relative;
+    flex: none;
     height: 100%;
-  }
-
-  .modeler-container {
-    width: 100%;
-  }
-
-  .properties-container {
-    border-left: 1px solid #ccc;
-    background: #f8f8f8;
-    overflow: auto;
-  }
-
-  .properties-container:empty {
-    display: none;
-  }
-
-  .properties-container .bpp-properties-panel {
-    padding-bottom: 70px;
-    min-height: 100%;
+    width: 250px;
+    border-left: solid 1px #cccccc;
   }
 `);
 
@@ -64,10 +58,10 @@ describe('<CamundaCloudModeler>', function() {
 
   beforeEach(function() {
     modelerContainer = document.createElement('div');
-    modelerContainer.classList.add('modeler-container');
+    modelerContainer.classList.add('canvas');
 
     propertiesContainer = document.createElement('div');
-    propertiesContainer.classList.add('properties-container');
+    propertiesContainer.classList.add('properties');
 
     const container = TestContainer.get(this);
 
