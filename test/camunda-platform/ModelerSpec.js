@@ -14,13 +14,19 @@ import Modeler from 'lib/camunda-platform/Modeler';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
-import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css';
+import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
+import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-platform-modeler';
 
 insertCSS(
   'properties.css',
   propertiesPanelCSS
+);
+
+insertCSS(
+  'element-templates.css',
+  elementTemplatesCSS
 );
 
 insertCSS('test.css', `
@@ -120,7 +126,8 @@ describe('<CamundaPlatformModeler>', function() {
       var modeler = result.modeler;
 
       // then
-      expect(modeler.get('propertiesProvider')).to.exist;
+      expect(modeler.get('propertiesPanel')).to.exist;
+      expect(modeler.get('camundaPlatformPropertiesProvider')).to.exist;
       expect(modeler.get('camundaCopyPasteBehavior')).to.exist;
       expect(modeler.get('updateCamundaExclusiveBehavior')).to.exist;
       expect(modeler.get('deleteRetryTimeCycleBehavior')).to.exist;

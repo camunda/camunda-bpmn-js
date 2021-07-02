@@ -3,7 +3,7 @@ import {
   inject
 } from 'test/TestHelper';
 
-import { getExtensionElements } from 'bpmn-js-properties-panel/lib/helper/ExtensionElementsHelper';
+import { getExtensionElements } from 'lib/camunda-cloud/helper/ExtensionElementsHelper';
 
 import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 

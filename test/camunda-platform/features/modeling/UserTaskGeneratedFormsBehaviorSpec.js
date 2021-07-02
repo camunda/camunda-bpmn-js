@@ -20,7 +20,7 @@ import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
 
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
+import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
 import diagramXML from './camunda-user-task-generated-forms-diagram.bpmn';
 
@@ -31,7 +31,7 @@ describe('camunda-platform/features/modeling - UserTaskGeneratedFormsBehavior', 
     camundaPlatformModelingModules,
     coreModule,
     modelingModule,
-    propertiesPanelCommandHandler
+    BpmnPropertiesPanelModule
   ];
 
   const moddleExtensions = {

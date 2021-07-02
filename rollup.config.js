@@ -32,9 +32,13 @@ const styles = [
     dest: 'dist/assets'
   },
   {
-    src: resolve('bpmn-js-properties-panel', '/dist/assets/bpmn-js-properties-panel.css'),
+    src: resolve('bpmn-js-properties-panel', '/dist/assets/properties-panel.css'),
     dest: 'dist/assets'
   },
+  {
+    src: resolve('bpmn-js-properties-panel', '/dist/assets/element-templates.css'),
+    dest: 'dist/assets'
+  }
 ].concat(domains.map(function(domain) {
   return {
     src: 'styles/' + domain + '-modeler.css',
