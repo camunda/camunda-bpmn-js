@@ -13,6 +13,7 @@ import {
 } from 'bpmn-js/test/helper';
 
 import CamundaCloudModeler from '../lib/camunda-cloud/Modeler';
+import CamundaPlatformModeler from '../lib/camunda-platform/Modeler';
 
 insertCSS(
   'diagram.css',
@@ -31,6 +32,10 @@ insertCSS(
 
 export function bootstrapCamundaCloudModeler(diagram, options, locals) {
   return bootstrapBpmnJS(CamundaCloudModeler, diagram, options, locals);
+}
+
+export function bootstrapCamundaPlatformModeler(diagram, options, locals) {
+  return bootstrapBpmnJS(CamundaPlatformModeler, diagram, options, locals);
 }
 
 /**
