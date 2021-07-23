@@ -111,6 +111,7 @@ describe('<CamundaPlatformModeler>', function() {
       expect(modeler.get('propertiesProvider')).to.exist;
       expect(modeler.get('camundaCopyPasteBehavior')).to.exist;
       expect(modeler.get('updateCamundaExclusiveBehavior')).to.exist;
+      expect(modeler.get('deleteRetryTimeCycleBehavior')).to.exist;
     });
 
   });
