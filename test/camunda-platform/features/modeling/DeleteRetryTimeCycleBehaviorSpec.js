@@ -340,6 +340,57 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
     });
 
 
+    describe('asyncBoth to false', function() {
+
+      let shape, businessObject;
+
+      beforeEach(inject(function(elementRegistry, modeling) {
+
+        // given
+        shape = elementRegistry.get('ServiceTask_3');
+        businessObject = getBusinessObject(shape);
+
+        // assume
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+
+        // when
+        modeling.updateProperties(shape, {
+          'camunda:asyncAfter': false,
+          'camunda:asyncBefore': false
+        });
+      }));
+
+
+      it('should execute', inject(function() {
+
+        // then
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+      }));
+
+
+      it('should undo', inject(function(commandStack) {
+
+        // when
+        commandStack.undo();
+
+        // then
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+      }));
+
+
+      it('should undo/redo', inject(function(commandStack) {
+
+        // when
+        commandStack.undo();
+        commandStack.redo();
+
+        // then
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+      }));
+
+    });
+
+
     describe('double async', function() {
 
       let shape, businessObject;
