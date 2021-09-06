@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0fjxb6c" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_1" isExecutable="true">
+    <bpmn:userTask id="UserTask_FormRef" camunda:formRef="invoice.form" camunda:formRefBinding="version" camunda:formRefVersion="1" />
+    <bpmn:startEvent id="StartEvent_FormRef" camunda:formRef="invoice.form" camunda:formRefBinding="version" camunda:formRefVersion="1" />
+    <bpmn:startEvent id="StartEvent_FormKey" camunda:formKey="embedded:deployment:FORM_NAME.html" />
+    <bpmn:userTask id="UserTask_FormKey" camunda:formKey="embedded:deployment:FORM_NAME.html" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="Activity_1oynd5u_di" bpmnElement="UserTask_FormRef">
+        <dc:Bounds x="260" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ghin1n_di" bpmnElement="StartEvent_FormRef">
+        <dc:Bounds x="152" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0b9cna2_di" bpmnElement="StartEvent_FormKey">
+        <dc:Bounds x="152" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pn8rby_di" bpmnElement="UserTask_FormKey">
+        <dc:Bounds x="260" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
