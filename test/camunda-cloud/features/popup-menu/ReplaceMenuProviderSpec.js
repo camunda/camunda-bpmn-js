@@ -122,6 +122,48 @@ describe('camunda-cloud/features - PopupMenu', function() {
       expect(messageThrowEventEntry).to.exist;
     }));
 
+    it('should contain options for MessageThrowEvent', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const messageThrowEvent = elementRegistry.get('MessageThrowEvent_1');
+
+      openPopup(messageThrowEvent);
+
+      const startEventEntry = queryEntry(popupMenu, 'replace-with-none-start'),
+            endEventEntry = queryEntry(popupMenu, 'replace-with-none-end'),
+            intermediateEventEntry = queryEntry(popupMenu, 'replace-with-none-intermediate-throw'),
+            timerEventEntry = queryEntry(popupMenu, 'replace-with-timer-intermediate-catch'),
+            messageCatchEventEntry = queryEntry(popupMenu, 'replace-with-message-intermediate-catch');
+
+      // then
+      expect(startEventEntry).to.exist;
+      expect(endEventEntry).to.exist;
+      expect(intermediateEventEntry).to.exist;
+      expect(timerEventEntry).to.exist;
+      expect(messageCatchEventEntry).to.exist;
+    }));
+
+    it('should contain options for MessageEndEvent', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const messageEndEvent = elementRegistry.get('MessageEndEvent_1');
+
+      openPopup(messageEndEvent);
+
+      const startEventEntry = queryEntry(popupMenu, 'replace-with-none-start'),
+            intermediateEventEntry = queryEntry(popupMenu, 'replace-with-none-intermediate-throw'),
+            errorEndEventEntry = queryEntry(popupMenu, 'replace-with-error-end'),
+            endEventEntry = queryEntry(popupMenu, 'replace-with-none-end');
+
+      // then
+      expect(startEventEntry).to.exist;
+      expect(intermediateEventEntry).to.exist;
+      expect(errorEndEventEntry).to.exist;
+      expect(endEventEntry).to.exist;
+    }));
+
 
     it('should contain options for BoundaryEvent', inject(function(
         popupMenu, elementRegistry) {
