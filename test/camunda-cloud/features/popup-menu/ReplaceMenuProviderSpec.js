@@ -66,12 +66,14 @@ describe('camunda-cloud/features - PopupMenu', function() {
 
       const startEventEntry = queryEntry(popupMenu, 'replace-with-none-start'),
             intermediateEventEntry = queryEntry(popupMenu, 'replace-with-none-intermediate-throw'),
-            errorEndEventEntry = queryEntry(popupMenu, 'replace-with-error-end');
+            errorEndEventEntry = queryEntry(popupMenu, 'replace-with-error-end'),
+            messageEndEventEntry = queryEntry(popupMenu, 'replace-with-message-end');
 
       // then
       expect(startEventEntry).to.exist;
       expect(intermediateEventEntry).to.exist;
       expect(errorEndEventEntry).to.exist;
+      expect(messageEndEventEntry).to.exist;
     }));
 
 
@@ -86,13 +88,15 @@ describe('camunda-cloud/features - PopupMenu', function() {
       const startEventEntry = queryEntry(popupMenu, 'replace-with-none-start'),
             endEventEntry = queryEntry(popupMenu, 'replace-with-none-end'),
             intermediateEventEntry = queryEntry(popupMenu, 'replace-with-none-intermediate-throw'),
-            messageEventEntry = queryEntry(popupMenu, 'replace-with-message-intermediate-catch');
+            messageEventEntry = queryEntry(popupMenu, 'replace-with-message-intermediate-catch'),
+            messageThrowEventEntry = queryEntry(popupMenu, 'replace-with-message-intermediate-throw');
 
       // then
       expect(startEventEntry).to.exist;
       expect(endEventEntry).to.exist;
       expect(intermediateEventEntry).to.exist;
       expect(messageEventEntry).to.exist;
+      expect(messageThrowEventEntry).to.exist;
     }));
 
 
@@ -107,13 +111,15 @@ describe('camunda-cloud/features - PopupMenu', function() {
       const startEventEntry = queryEntry(popupMenu, 'replace-with-none-start'),
             endEventEntry = queryEntry(popupMenu, 'replace-with-none-end'),
             intermediateEventEntry = queryEntry(popupMenu, 'replace-with-none-intermediate-throw'),
-            timerEventEntry = queryEntry(popupMenu, 'replace-with-timer-intermediate-catch');
+            timerEventEntry = queryEntry(popupMenu, 'replace-with-timer-intermediate-catch'),
+            messageThrowEventEntry = queryEntry(popupMenu, 'replace-with-message-intermediate-throw');
 
       // then
       expect(startEventEntry).to.exist;
       expect(endEventEntry).to.exist;
       expect(intermediateEventEntry).to.exist;
       expect(timerEventEntry).to.exist;
+      expect(messageThrowEventEntry).to.exist;
     }));
 
 
