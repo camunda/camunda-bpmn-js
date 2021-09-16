@@ -173,7 +173,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'replace-with-user-task',
         'replace-with-script-task',
         'replace-with-send-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task'
       ]);
     }));
 
@@ -198,7 +199,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'replace-with-user-task',
         'replace-with-script-task',
         'replace-with-send-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task'
       ]);
     }));
 
@@ -224,7 +226,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'replace-with-user-task',
         'replace-with-script-task',
         'replace-with-send-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task'
       ]);
     }));
 
@@ -250,7 +253,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'toggle-sequential-mi',
         'replace-with-user-task',
         'replace-with-script-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task'
       ]);
     }));
 
@@ -276,7 +280,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'toggle-sequential-mi',
         'replace-with-user-task',
         'replace-with-send-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task'
       ]);
     }));
 
@@ -302,7 +307,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'toggle-sequential-mi',
         'replace-with-user-task',
         'replace-with-script-task',
-        'replace-with-send-task'
+        'replace-with-send-task',
+        'replace-with-manual-task'
       ]);
     }));
 
@@ -327,7 +333,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'toggle-sequential-mi',
         'replace-with-script-task',
         'replace-with-send-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task',
       ]);
     }));
 
@@ -344,6 +351,32 @@ describe('camunda-cloud/features - PopupMenu', function() {
       // then
       expectEntries(popupMenu, [
         'replace-with-task',
+        'replace-with-service-task',
+        'replace-with-receive-task',
+        'replace-with-call-activity',
+        'replace-with-collapsed-subprocess',
+        'replace-with-expanded-subprocess',
+        'toggle-parallel-mi',
+        'toggle-sequential-mi',
+        'replace-with-script-task',
+        'replace-with-send-task',
+        'replace-with-rule-task'
+      ]);
+    }));
+
+    it('should contain options for ManualTask', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const manualTask = elementRegistry.get('ManualTask_1');
+
+      // when
+      openPopup(manualTask);
+
+      // then
+      expectEntries(popupMenu, [
+        'replace-with-task',
+        'replace-with-user-task',
         'replace-with-service-task',
         'replace-with-receive-task',
         'replace-with-call-activity',
@@ -438,7 +471,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
         'replace-with-user-task',
         'replace-with-script-task',
         'replace-with-send-task',
-        'replace-with-rule-task'
+        'replace-with-rule-task',
+        'replace-with-manual-task'
       ]);
     }));
 
