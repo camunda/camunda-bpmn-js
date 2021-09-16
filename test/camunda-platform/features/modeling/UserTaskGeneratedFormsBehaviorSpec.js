@@ -75,34 +75,38 @@ describe('camunda-platform/features/modeling - UserTaskGeneratedFormsBehavior', 
 
           describe(type, function() {
 
-            it('should delete camunda:FormField#values', inject(function(elementRegistry) {
+            describe('camunda:FormField#values', function() {
 
-              // when
-              const element = elementRegistry.get(`${ prefix }_1`);
+              it('should delete camunda:FormField#values', inject(function(elementRegistry) {
 
-              const businessObject = getFormField(element);
+                // when
+                const element = elementRegistry.get(`${ prefix }_1`);
 
-              // when
-              fn(element, businessObject, { 'camunda:type': 'boolean' });
+                const businessObject = getFormField(element);
 
-              // then
-              expect(businessObject.get('camunda:values')).to.be.empty;
-            }));
+                // when
+                fn(element, businessObject, { 'camunda:type': 'boolean' });
+
+                // then
+                expect(businessObject.get('camunda:values')).to.be.empty;
+              }));
 
 
-            it('should not delete camunda:FormField#values', inject(function(elementRegistry) {
+              it('should not delete camunda:FormField#values', inject(function(elementRegistry) {
 
-              // when
-              const element = elementRegistry.get(`${ prefix }_1`);
+                // when
+                const element = elementRegistry.get(`${ prefix }_1`);
 
-              const businessObject = getFormField(element);
+                const businessObject = getFormField(element);
 
-              // when
-              fn(element, businessObject, { 'camunda:type': 'enum' });
+                // when
+                fn(element, businessObject, { 'camunda:type': 'enum' });
 
-              // then
-              expect(businessObject.get('camunda:values')).not.to.be.empty;
-            }));
+                // then
+                expect(businessObject.get('camunda:values')).not.to.be.empty;
+              }));
+
+            });
 
           });
 
@@ -110,7 +114,52 @@ describe('camunda-platform/features/modeling - UserTaskGeneratedFormsBehavior', 
 
       });
 
+
+      describe('updating camunda:FormField#id', function() {
+
+        it('should update camunda:FormData#businessKey', inject(function(elementRegistry) {
+
+          // when
+          const element = elementRegistry.get('StartEvent_1');
+
+          const formData = getFormData(element),
+                formField = getFormField(element);
+
+          // when
+          fn(element, formField, { 'camunda:id': 'Foo' });
+
+          // then
+          expect(formData.get('camunda:businessKey')).to.equal('Foo');
+        }));
+
+      });
+
     });
+
+  });
+
+
+  describe('removing camunda:FormField', function() {
+
+    it('should remove camunda:FormData#businessKey', inject(function(commandStack, elementRegistry) {
+
+      // when
+      const element = elementRegistry.get('StartEvent_1');
+
+      const formData = getFormData(element),
+            formField = getFormField(element);
+
+      // when
+      commandStack.execute('properties-panel.update-businessobject-list', {
+        currentObject: formData,
+        element,
+        propertyName: 'fields',
+        objectsToRemove: [ formField ]
+      });
+
+      // then
+      expect(formData.get('camunda:businessKey')).not.to.exist;
+    }));
 
   });
 
@@ -118,15 +167,19 @@ describe('camunda-platform/features/modeling - UserTaskGeneratedFormsBehavior', 
 
 // helpers //////////
 
-function getFormField(element, index = 0) {
+function getFormData(element) {
   const businessObject = getBusinessObject(element);
 
   const extensionElements = businessObject.get('extensionElements'),
         values = extensionElements.get('values');
 
-  const formData = values.find((value) => {
+  return values.find((value) => {
     return is(value, 'camunda:FormData');
   });
+}
+
+function getFormField(element, index = 0) {
+  const formData = getFormData(element);
 
   return formData.get('camunda:fields')[ index ];
 }

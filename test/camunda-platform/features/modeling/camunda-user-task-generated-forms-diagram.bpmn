@@ -3,7 +3,7 @@
   <bpmn:process id="Process_1" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" camunda:formKey="embedded:deployment:FORM_NAME.html">
       <bpmn:extensionElements>
-        <camunda:formData>
+        <camunda:formData businessKey="FormField_1">
           <camunda:formField id="FormField_1" type="enum">
             <camunda:value id="Value_1" />
             <camunda:value id="Value_2" />
