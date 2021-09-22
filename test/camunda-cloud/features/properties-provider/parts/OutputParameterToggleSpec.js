@@ -108,7 +108,7 @@ describe('camunda-cloud/features/properties-provider - input output property tab
         // then
         const propagateAllChildVariablesToggle = getPropagateAllChildVariablesToggle(container);
 
-        expect(propagateAllChildVariablesToggle).to.not.exist;
+        expect(propagateAllChildVariablesToggle).not.to.exist;
       }));
 
   });

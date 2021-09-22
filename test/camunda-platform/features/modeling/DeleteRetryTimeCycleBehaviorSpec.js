@@ -3,20 +3,19 @@ import {
   inject
 } from 'test/TestHelper';
 
-import coreModule from 'bpmn-js/lib/core';
+import {
+  getBusinessObject,
+  is
+} from 'bpmn-js/lib/util/ModelUtil';
 
+import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
 
-import {
-  is,
-  getBusinessObject
-} from 'bpmn-js/lib/util/ModelUtil';
+import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
-
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import diagramXML from './camunda-failed-job-retry-time-cycle-diagram.bpmn';
 
@@ -39,19 +38,21 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
     moddleExtensions
   }));
 
+
   describe('properties-panel.update-businessobject', function() {
 
     describe('asyncBefore to false', function() {
 
-      let shape, context, businessObject;
+      let shape, businessObject;
 
       beforeEach(inject(function(elementRegistry, commandStack) {
 
         // given
         shape = elementRegistry.get('ServiceTask_1');
+
         businessObject = getBusinessObject(shape);
 
-        context = {
+        const context = {
           element: shape,
           businessObject: businessObject,
           properties: {
@@ -100,15 +101,16 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
     describe('asyncAfter to false', function() {
 
-      let shape, context, businessObject;
+      let shape, businessObject;
 
       beforeEach(inject(function(elementRegistry, commandStack) {
 
         // given
         shape = elementRegistry.get('ServiceTask_2');
+
         businessObject = getBusinessObject(shape);
 
-        context = {
+        const context = {
           element: shape,
           businessObject: businessObject,
           properties: {
@@ -162,6 +164,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('ServiceTask_3');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -211,6 +214,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('TimerCatchEvent_1');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -248,6 +252,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('ServiceTask_1');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -263,7 +268,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
       it('should execute', inject(function() {
 
         // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
       }));
 
 
@@ -284,7 +289,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
         commandStack.redo();
 
         // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
       }));
 
     });
@@ -298,6 +303,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('ServiceTask_2');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -313,7 +319,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
       it('should execute', inject(function() {
 
         // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
       }));
 
 
@@ -334,7 +340,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
         commandStack.redo();
 
         // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
       }));
 
     });
@@ -348,6 +354,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('ServiceTask_3');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -364,7 +371,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
       it('should execute', inject(function() {
 
         // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
       }));
 
 
@@ -385,7 +392,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
         commandStack.redo();
 
         // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
+        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
       }));
 
     });
@@ -399,6 +406,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('ServiceTask_3');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -440,6 +448,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 
         // given
         shape = elementRegistry.get('TimerCatchEvent_1');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -465,19 +474,20 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
 });
 
 
-// helper ///////////
+// helpers //////////
 
 function getFailedJobRetryTimeCycleBody(businessObject) {
-  const extElements = getExtensionElementsList(businessObject, 'camunda:FailedJobRetryTimeCycle');
+  const extensionElements = businessObject.get('extensionElements');
 
-  return extElements[0] && extElements[0].body;
-}
+  if (!extensionElements) {
+    return;
+  }
 
-function getExtensionElementsList(businessObject, type = undefined) {
-  const elements = ((businessObject.get('extensionElements') &&
-                  businessObject.get('extensionElements').get('values')) || []);
+  const failedJobRetryTimeCycle = extensionElements.get('values').find((value) => {
+    return is(value, 'camunda:FailedJobRetryTimeCycle');
+  });
 
-  return (elements.length && type) ?
-    elements.filter((value) => is(value, type)) :
-    elements;
+  if (failedJobRetryTimeCycle) {
+    return failedJobRetryTimeCycle.get('camunda:body');
+  }
 }

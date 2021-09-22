@@ -3,24 +3,16 @@ import {
   inject
 } from 'test/TestHelper';
 
-import {
-  find
-} from 'min-dash';
+import { getExtensionElements } from 'bpmn-js-properties-panel/lib/helper/ExtensionElementsHelper';
 
-import {
-  getExtensionElements
-} from 'bpmn-js-properties-panel/lib/helper/ExtensionElementsHelper';
+import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 
-import {
-  getBusinessObject
-} from 'bpmn-js/lib/util/ModelUtil';
-
-import modelingModule from 'bpmn-js/lib/features/modeling';
 import coreModule from 'bpmn-js/lib/core';
-
-import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
+import modelingModule from 'bpmn-js/lib/features/modeling';
 
 import zeebeModelingModule from 'lib/camunda-cloud/features/modeling';
+
+import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 
 import {
   getFormDefinition,
@@ -30,7 +22,7 @@ import {
 import diagramXML from './process-user-tasks.bpmn';
 
 
-describe('camunda-cloud/features/modeling - form definition behavior', function() {
+describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() {
 
   const moddleExtensions = {
     zeebe: zeebeModdleExtensions
@@ -46,6 +38,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
     modules: testModules,
     moddleExtensions
   }));
+
 
   describe('cleanup user task forms', function() {
 
@@ -64,11 +57,11 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('userTaskForm_1', userTaskForms)).to.be.false;
+        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
 
-      it('should undo', inject(function(canvas, elementRegistry, modeling, commandStack) {
+      it('should undo', inject(function(canvas, commandStack, elementRegistry, modeling) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -83,11 +76,11 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('userTaskForm_1', userTaskForms)).to.be.true;
+        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.true;
       }));
 
 
-      it('should redo', inject(function(canvas, elementRegistry, modeling, commandStack) {
+      it('should redo', inject(function(canvas, commandStack, elementRegistry, modeling) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -103,7 +96,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('userTaskForm_1', userTaskForms)).to.be.false;
+        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
     });
@@ -111,7 +104,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
 
     describe('on replace user task', function() {
 
-      it('should execute', inject(function(canvas, elementRegistry, bpmnReplace) {
+      it('should execute', inject(function(bpmnReplace, canvas, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -126,11 +119,11 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('userTaskForm_1', userTaskForms)).to.be.false;
+        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
 
-      it('should undo', inject(function(canvas, elementRegistry, bpmnReplace, commandStack) {
+      it('should undo', inject(function(bpmnReplace, canvas, commandStack, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -147,11 +140,11 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('userTaskForm_1', userTaskForms)).to.be.true;
+        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.true;
       }));
 
 
-      it('should redo', inject(function(canvas, elementRegistry, bpmnReplace, commandStack) {
+      it('should redo', inject(function(bpmnReplace, canvas, commandStack, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -169,7 +162,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('userTaskForm_1', userTaskForms)).to.be.false;
+        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
     });
@@ -181,7 +174,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
 
     describe('on copy user task', function() {
 
-      it('should execute', inject(function(canvas, elementRegistry, copyPaste) {
+      it('should execute', inject(function(canvas, copyPaste, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -210,13 +203,13 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
         const userTaskForm = getUserTaskForm(newElement);
 
         // then
-        expect(formDefinition).to.not.eql(oldFormDefinition);
+        expect(formDefinition).not.to.eql(oldFormDefinition);
 
-        expect(userTaskForm).to.not.eql(oldUserTaskForm);
+        expect(userTaskForm).not.to.eql(oldUserTaskForm);
       }));
 
 
-      it('should undo', inject(function(canvas, elementRegistry, copyPaste, commandStack) {
+      it('should undo', inject(function(canvas, commandStack, copyPaste, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -243,7 +236,7 @@ describe('camunda-cloud/features/modeling - form definition behavior', function(
       }));
 
 
-      it('should redo', inject(function(canvas, elementRegistry, copyPaste, commandStack) {
+      it('should redo', inject(function(canvas, commandStack, copyPaste, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -286,7 +279,7 @@ function getUserTaskForms(rootElement) {
 }
 
 function userTaskFormExists(id, userTaskForms) {
-  return !!find(userTaskForms, function(form) {
-    return form.get('id') === id;
+  return !!userTaskForms.find((userTaskForm) => {
+    return userTaskForm.get('zeebe:id') === id;
   });
 }

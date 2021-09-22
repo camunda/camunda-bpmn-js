@@ -3,19 +3,16 @@ import {
   inject
 } from 'test/TestHelper';
 
-import coreModule from 'bpmn-js/lib/core';
+import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 
+import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
 
-import {
-  getBusinessObject
-} from 'bpmn-js/lib/util/ModelUtil';
+import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
-
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import diagramXML from './camunda-exclusive-diagram.bpmn';
 
@@ -42,15 +39,16 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
     describe('asyncBefore to false', function() {
 
-      let shape, context, businessObject;
+      let shape, businessObject;
 
-      beforeEach(inject(function(elementRegistry, commandStack) {
+      beforeEach(inject(function(commandStack, elementRegistry) {
 
         // given
         shape = elementRegistry.get('ServiceTask_1');
+
         businessObject = getBusinessObject(shape);
 
-        context = {
+        const context = {
           element: shape,
           businessObject: businessObject,
           properties: {
@@ -99,15 +97,16 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
     describe('asyncAfter to false', function() {
 
-      let shape, context, businessObject;
+      let shape, businessObject;
 
-      beforeEach(inject(function(elementRegistry, commandStack) {
+      beforeEach(inject(function(commandStack, elementRegistry) {
 
         // given
         shape = elementRegistry.get('ServiceTask_2');
+
         businessObject = getBusinessObject(shape);
 
-        context = {
+        const context = {
           element: shape,
           businessObject: businessObject,
           properties: {
@@ -161,6 +160,7 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
         // given
         shape = elementRegistry.get('ServiceTask_3');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -214,6 +214,7 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
         // given
         shape = elementRegistry.get('ServiceTask_1');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -264,6 +265,7 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
         // given
         shape = elementRegistry.get('ServiceTask_2');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -314,6 +316,7 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
         // given
         shape = elementRegistry.get('ServiceTask_3');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -365,6 +368,7 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
 
         // given
         shape = elementRegistry.get('ServiceTask_3');
+
         businessObject = getBusinessObject(shape);
 
         // assume

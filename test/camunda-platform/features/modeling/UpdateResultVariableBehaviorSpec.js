@@ -3,19 +3,18 @@ import {
   inject
 } from 'test/TestHelper';
 
-import coreModule from 'bpmn-js/lib/core';
-
-import modelingModule from 'bpmn-js/lib/features/modeling';
-
 import {
   getBusinessObject
 } from 'bpmn-js/lib/util/ModelUtil';
 
+import coreModule from 'bpmn-js/lib/core';
+import modelingModule from 'bpmn-js/lib/features/modeling';
+
+import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
+
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
-
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import diagramXML from './camunda-result-variable-diagram.bpmn';
 
@@ -37,6 +36,7 @@ describe('camunda-platform/features/modeling - UpdateResultVariableBehavior', fu
     modules: testModules,
     moddleExtensions
   }));
+
 
   describe('properties-panel.update-businessobject', function() {
 
@@ -66,11 +66,11 @@ describe('camunda-platform/features/modeling - UpdateResultVariableBehavior', fu
       }));
 
 
-      it('should execute', inject(function() {
+      it('should execute', function() {
 
         // then
-        expect(businessObject.get('camunda:mapDecisionResult')).to.not.exist;
-      }));
+        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
+      });
 
 
       it('should undo', inject(function(commandStack) {
@@ -90,7 +90,7 @@ describe('camunda-platform/features/modeling - UpdateResultVariableBehavior', fu
         commandStack.redo();
 
         // then
-        expect(businessObject.get('camunda:mapDecisionResult')).to.not.exist;
+        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
       }));
 
     });
@@ -120,11 +120,11 @@ describe('camunda-platform/features/modeling - UpdateResultVariableBehavior', fu
       }));
 
 
-      it('should execute', inject(function() {
+      it('should execute', function() {
 
         // then
-        expect(businessObject.get('camunda:mapDecisionResult')).to.not.exist;
-      }));
+        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
+      });
 
 
       it('should undo', inject(function(commandStack) {
@@ -144,7 +144,7 @@ describe('camunda-platform/features/modeling - UpdateResultVariableBehavior', fu
         commandStack.redo();
 
         // then
-        expect(businessObject.get('camunda:mapDecisionResult')).to.not.exist;
+        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
       }));
 
     });

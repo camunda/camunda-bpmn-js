@@ -84,8 +84,8 @@ describe('camunda-cloud/features/properties-provider - forms definition properti
           selection.select(shape);
 
           // assume
-          expect(getUserTaskForm(shape)).to.not.exist;
-          expect(getFormDefinition(shape)).to.not.exist;
+          expect(getUserTaskForm(shape)).not.to.exist;
+          expect(getFormDefinition(shape)).not.to.exist;
 
           const textBox = getJSONField(container, 'form-json');
 
@@ -108,8 +108,8 @@ describe('camunda-cloud/features/properties-provider - forms definition properti
           commandStack.undo();
 
           // then
-          expect(getUserTaskForm(shape)).to.not.exist;
-          expect(getFormDefinition(shape)).to.not.exist;
+          expect(getUserTaskForm(shape)).not.to.exist;
+          expect(getFormDefinition(shape)).not.to.exist;
 
         }));
 
@@ -277,8 +277,8 @@ describe('camunda-cloud/features/properties-provider - forms definition properti
 
               // then
 
-              expect(getUserTaskForm(shape)).to.not.exist;
-              expect(getFormDefinition(shape)).to.not.exist;
+              expect(getUserTaskForm(shape)).not.to.exist;
+              expect(getFormDefinition(shape)).not.to.exist;
             });
 
 
@@ -300,8 +300,8 @@ describe('camunda-cloud/features/properties-provider - forms definition properti
               commandStack.redo();
 
               // then
-              expect(getUserTaskForm(shape)).to.not.exist;
-              expect(getFormDefinition(shape)).to.not.exist;
+              expect(getUserTaskForm(shape)).not.to.exist;
+              expect(getFormDefinition(shape)).not.to.exist;
             }));
 
           });

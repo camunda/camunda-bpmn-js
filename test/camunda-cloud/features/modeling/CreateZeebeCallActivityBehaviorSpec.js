@@ -11,9 +11,9 @@ import {
   is
 } from 'bpmn-js/lib/util/ModelUtil';
 
-import modelingModule from 'bpmn-js/lib/features/modeling';
 import copyPasteModule from 'diagram-js/lib/features/copy-paste';
 import coreModule from 'bpmn-js/lib/core';
+import modelingModule from 'bpmn-js/lib/features/modeling';
 
 import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 
@@ -29,7 +29,7 @@ import emptyProcessDiagramXML from './process-empty.bpmn';
 import callActivitiesXML from './process-call-activities.bpmn';
 
 
-describe('camunda-cloud/features/modeling - create call activities behavior', function() {
+describe('camunda-cloud/features/modeling - CreateCallActivitiesBehavior', function() {
 
   const moddleExtensions = {
     zeebe: zeebeModdleExtensions
@@ -51,8 +51,7 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
       }));
 
 
-      it('should execute when creating bpmn:CallActivity', inject(function(canvas,
-          modeling) {
+      it('should execute when creating bpmn:CallActivity', inject(function(canvas, modeling) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -64,12 +63,11 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
         const calledElementExtension = getCalledElement(newShape);
 
         expect(calledElementExtension).to.exist;
-        expect(calledElementExtension.propagateAllChildVariables).to.be.false;
+        expect(calledElementExtension.get('zeebe:propagateAllChildVariables')).to.be.false;
       }));
 
 
-      it('should not execute when creating bpmn:Task', inject(function(canvas,
-          modeling) {
+      it('should not execute when creating bpmn:Task', inject(function(canvas, modeling) {
 
         // given
         const rootElement = canvas.getRootElement();
@@ -80,7 +78,7 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
         // then
         const calledElementExtension = getCalledElement(newShape);
 
-        expect(calledElementExtension).to.be.undefined;
+        expect(calledElementExtension).not.to.exist;
       }));
 
     });
@@ -89,10 +87,10 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
     describe('when copying bpmn:CallActivity', function() {
 
       const testModules = [
+        copyPasteModule,
         coreModule,
         modelingModule,
-        zeebeModelingModule,
-        copyPasteModule
+        zeebeModelingModule
       ];
 
       beforeEach(bootstrapCamundaCloudModeler(callActivitiesXML, {
@@ -101,15 +99,16 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
       }));
 
 
-      it('should re-use existing extensionElements', inject(function(canvas,
-          elementRegistry, copyPaste) {
+      it('should re-use existing extensionElements', inject(function(canvas, copyPaste, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
+
         const callActivity = elementRegistry.get('CallActivity_1');
 
         // when
         copyPaste.copy(callActivity);
+
         const elements = copyPaste.paste({
           element: rootElement,
           point: {
@@ -119,25 +118,24 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
         });
 
         // then
-        const pastedCallActivity = find(elements, function(element) {
-          return is(element, 'bpmn:CallActivity');
-        });
+        const pastedCallActivity = find(elements, (element) => is(element, 'bpmn:CallActivity'));
 
         const calledElementExtensions = getCalledElements(pastedCallActivity);
 
-        expect(calledElementExtensions.length).to.equal(1);
+        expect(calledElementExtensions).to.have.length(1);
       }));
 
 
-      it('should not alter existing propagateAllChildVariables attribute', inject(function(canvas,
-          elementRegistry, copyPaste) {
+      it('should not alter existing propagateAllChildVariables attribute', inject(function(canvas, copyPaste, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
+
         const callActivity = elementRegistry.get('CallActivity_1');
 
         // when
         copyPaste.copy(callActivity);
+
         const elements = copyPaste.paste({
           element: rootElement,
           point: {
@@ -146,32 +144,30 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
           }
         });
 
-        // assume
-        const pastedCallActivity = find(elements, function(element) {
-          return is(element, 'bpmn:CallActivity');
-        });
+        // then
+        const pastedCallActivity = find(elements, (element) => is(element, 'bpmn:CallActivity'));
 
         const calledElementExtensions = getCalledElements(pastedCallActivity);
 
-        expect(calledElementExtensions.length).to.equal(1);
+        expect(calledElementExtensions).to.have.length(1);
 
-        // then
         const calledElementExtension = getCalledElement(pastedCallActivity);
 
         expect(calledElementExtension).to.exist;
-        expect(calledElementExtension.propagateAllChildVariables).to.be.true;
+        expect(calledElementExtension.get('zeebe:propagateAllChildVariables')).to.be.true;
       }));
 
 
-      it('should not alter existing processRef attribute', inject(function(canvas,
-          elementRegistry, copyPaste) {
+      it('should not alter existing processRef attribute', inject(function(canvas, copyPaste, elementRegistry) {
 
         // given
         const rootElement = canvas.getRootElement();
+
         const callActivity = elementRegistry.get('CallActivity_1');
 
         // when
         copyPaste.copy(callActivity);
+
         const elements = copyPaste.paste({
           element: rootElement,
           point: {
@@ -180,56 +176,53 @@ describe('camunda-cloud/features/modeling - create call activities behavior', fu
           }
         });
 
-        // assume
-        const pastedCallActivity = find(elements, function(element) {
-          return is(element, 'bpmn:CallActivity');
-        });
+        // then
+        const pastedCallActivity = find(elements, (element) => is(element, 'bpmn:CallActivity'));
 
         const calledElementExtensions = getCalledElements(pastedCallActivity);
 
-        expect(calledElementExtensions.length).to.equal(1);
+        expect(calledElementExtensions).to.have.length(1);
 
-        // then
         const calledElementExtension = getCalledElement(pastedCallActivity);
 
         expect(calledElementExtension).to.exist;
-        expect(calledElementExtension.processId).to.equal('ProcessRef_1');
+        expect(calledElementExtension.get('zeebe:processId')).to.equal('ProcessRef_1');
       }));
 
 
-      // a legacy CallActivity refers to a CallActivity which was created with
-      // a previous version and therefore does not have the propageteAllChildVariables
-      // attribute set yet
-      it('should not alter existing processRef attribute of legacy CallActivity', inject(function(canvas,
-          elementRegistry, copyPaste) {
+      // call activities created with older versions might not have zeebe:propagateAllChildVariables set
+      it('should not alter existing processRef attribute of legacy CallActivity', inject(
+        function(canvas, copyPaste, elementRegistry) {
 
-        // given
-        const rootElement = canvas.getRootElement();
-        const callActivity = elementRegistry.get('CallActivity_2');
+          // given
+          const rootElement = canvas.getRootElement();
 
-        // when
-        copyPaste.copy(callActivity);
-        const elements = copyPaste.paste({
-          element: rootElement,
-          point: {
-            x: 1000,
-            y: 1000
-          }
-        });
+          const callActivity = elementRegistry.get('CallActivity_2');
 
-        // assume
-        const pastedCallActivity = find(elements, function(element) {
-          return is(element, 'bpmn:CallActivity');
-        });
+          // when
+          copyPaste.copy(callActivity);
 
-        const calledElementExtensions = getCalledElements(pastedCallActivity);
-        expect(calledElementExtensions.length).to.equal(1);
+          const elements = copyPaste.paste({
+            element: rootElement,
+            point: {
+              x: 1000,
+              y: 1000
+            }
+          });
 
-        // then
-        const calledElementExtension = getCalledElement(pastedCallActivity);
-        expect(calledElementExtension).to.exist;
-        expect(calledElementExtension.processId).to.equal('ProcessRef_2');
-      }));
+          // then
+          const pastedCallActivity = find(elements, (element) => is(element, 'bpmn:CallActivity'));
+
+          const calledElementExtensions = getCalledElements(pastedCallActivity);
+
+          expect(calledElementExtensions).to.have.length(1);
+
+          const calledElementExtension = getCalledElement(pastedCallActivity);
+
+          expect(calledElementExtension).to.exist;
+          expect(calledElementExtension.get('zeebe:processId')).to.equal('ProcessRef_2');
+        }
+      ));
 
     });
 

@@ -5,7 +5,7 @@ import {
 
 import {
   getOutputParameters,
-  getInputOutput
+  getIoMapping
 } from 'lib/camunda-cloud/helper/InputOutputHelper';
 
 import {
@@ -17,13 +17,12 @@ import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 import diagramXML from './process-call-activities.bpmn';
 
 
-
-describe('camunda-cloud/features/modeling - update propagateAllChildVariables attribute on call activities', function() {
+describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBehavior', function() {
 
   beforeEach(bootstrapCamundaCloudModeler(diagramXML));
 
 
-  describe('remove outputParameters', function() {
+  describe('removing zeebe:OutputParameters when zeebe:propagateAllChildVariables is set to true', function() {
 
     let element;
 
@@ -49,7 +48,9 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
 
       // then
       const outputParameters = getOutputParameters(element);
-      expect(outputParameters.length).to.equal(0);
+
+      expect(outputParameters).to.exist;
+      expect(outputParameters).to.be.empty;
     }));
 
 
@@ -60,8 +61,9 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
 
       // then
       const outputParameters = getOutputParameters(element);
+
       expect(outputParameters).to.exist;
-      expect(outputParameters.length).to.equal(1);
+      expect(outputParameters).to.have.length(1);
     }));
 
 
@@ -73,13 +75,15 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
 
       // then
       const outputParameters = getOutputParameters(element);
-      expect(outputParameters.length).to.equal(0);
+
+      expect(outputParameters).to.exist;
+      expect(outputParameters).to.be.empty;
     }));
 
   });
 
 
-  describe('remove iOMapping', function() {
+  describe('removing zeebe:IoMapping when zeebe:propagateAllChildVariables is set to true', function() {
 
     let element;
 
@@ -104,8 +108,9 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
     it('should execute', inject(function() {
 
       // then
-      const inputOutput = getInputOutput(element);
-      expect(inputOutput).to.not.exist;
+      const ioMapping = getIoMapping(element);
+
+      expect(ioMapping).not.to.exist;
     }));
 
 
@@ -115,12 +120,14 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
       commandStack.undo();
 
       // then
-      const outputParameters = getOutputParameters(element);
-      expect(outputParameters).to.exist;
-      expect(outputParameters.length).to.equal(1);
+      const ioMapping = getIoMapping(element);
 
-      const inputOutput = getInputOutput(element);
-      expect(inputOutput).to.exist;
+      expect(ioMapping).to.exist;
+
+      const outputParameters = getOutputParameters(element);
+
+      expect(outputParameters).to.exist;
+      expect(outputParameters).to.have.length(1);
     }));
 
 
@@ -131,14 +138,15 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
       commandStack.redo();
 
       // then
-      const inputOutput = getInputOutput(element);
-      expect(inputOutput).to.not.exist;
+      const ioMapping = getIoMapping(element);
+
+      expect(ioMapping).not.to.exist;
     }));
 
   });
 
 
-  describe('set propagateAllChildVariables to false', function() {
+  describe('setting zeebe:propagateAllChildVariables to false on zeebe:Output added', function() {
 
     let element, calledElement;
 
@@ -166,7 +174,7 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
       commandStack.execute('properties-panel.update-businessobject-list', {
         element: element,
         currentObject: ioMapping,
-        propertyName: 'outputParameters',
+        propertyName: 'zeebe:outputParameters',
         objectsToAdd: [ bpmnFactory.create('zeebe:Output') ]
       });
     }));
@@ -175,7 +183,7 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
     it('should execute', inject(function() {
 
       // then
-      expect(calledElement.propagateAllChildVariables).to.equal(false);
+      expect(calledElement.get('propagateAllChildVariables')).to.equal(false);
     }));
 
 
@@ -185,7 +193,7 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
       commandStack.undo();
 
       // assume
-      expect(calledElement.propagateAllChildVariables).to.equal(true);
+      expect(calledElement.get('propagateAllChildVariables')).to.equal(true);
     }));
 
 
@@ -196,7 +204,7 @@ describe('camunda-cloud/features/modeling - update propagateAllChildVariables at
       commandStack.redo();
 
       // then
-      expect(calledElement.propagateAllChildVariables).to.equal(false);
+      expect(calledElement.get('propagateAllChildVariables')).to.equal(false);
     }));
 
   });
