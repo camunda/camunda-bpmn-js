@@ -592,8 +592,8 @@ describe('camunda-cloud/features - PopupMenu', function() {
 
       // then
       expect(subProcessEntry).to.exist;
-      expect(sequentialMultiInstanceEntry).to.not.exist;
-      expect(parallelMultiInstanceEntry).to.not.exist;
+      expect(sequentialMultiInstanceEntry).not.to.exist;
+      expect(parallelMultiInstanceEntry).not.to.exist;
     }));
 
 

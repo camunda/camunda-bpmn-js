@@ -3,20 +3,19 @@ import {
   inject
 } from 'test/TestHelper';
 
-import coreModule from 'bpmn-js/lib/core';
-
-import modelingModule from 'bpmn-js/lib/features/modeling';
-
 import {
   is,
   getBusinessObject
 } from 'bpmn-js/lib/util/ModelUtil';
 
+import coreModule from 'bpmn-js/lib/core';
+import modelingModule from 'bpmn-js/lib/features/modeling';
+
+import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
+
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
-
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import diagramXML from './camunda-error-event-definition-diagram.bpmn';
 
@@ -39,21 +38,23 @@ describe('camunda-platform/features/modeling - DeleteErrorEventDefinitionBehavio
     moddleExtensions
   }));
 
+
   describe('properties-panel.update-businessobject', function() {
 
     describe('camunda:type to non-external', function() {
 
-      let shape, context, businessObject;
+      let shape, businessObject;
 
       beforeEach(inject(function(elementRegistry, commandStack) {
 
         // given
         shape = elementRegistry.get('ServiceTask_1');
+
         businessObject = getBusinessObject(shape);
 
-        context = {
+        const context = {
           element: shape,
-          businessObject: businessObject,
+          businessObject,
           properties: {
             'camunda:type': 'foo'
           }
@@ -109,6 +110,7 @@ describe('camunda-platform/features/modeling - DeleteErrorEventDefinitionBehavio
 
         // given
         shape = elementRegistry.get('ServiceTask_1');
+
         businessObject = getBusinessObject(shape);
 
         // assume
@@ -155,17 +157,16 @@ describe('camunda-platform/features/modeling - DeleteErrorEventDefinitionBehavio
 });
 
 
-// helper ///////////
+// helpers //////////
 
 function getErrorEventDefinitions(businessObject) {
-  return getExtensionElementsList(businessObject, 'camunda:ErrorEventDefinition');
-}
+  const extensionElements = businessObject.get('extensionElements');
 
-function getExtensionElementsList(businessObject, type = undefined) {
-  const elements = ((businessObject.get('extensionElements') &&
-                  businessObject.get('extensionElements').get('values')) || []);
+  if (!extensionElements) {
+    return;
+  }
 
-  return (elements.length && type) ?
-    elements.filter((value) => is(value, type)) :
-    elements;
+  return extensionElements.get('values').filter((element) => {
+    return is(element, 'camunda:ErrorEventDefinition');
+  });
 }

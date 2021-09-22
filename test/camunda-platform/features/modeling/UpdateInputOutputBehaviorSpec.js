@@ -9,14 +9,13 @@ import {
 } from 'bpmn-js/lib/util/ModelUtil';
 
 import coreModule from 'bpmn-js/lib/core';
-
 import modelingModule from 'bpmn-js/lib/features/modeling';
+
+import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
-
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import diagramXML from './camunda-input-output-diagram.bpmn';
 
@@ -38,6 +37,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
     modules: testModules,
     moddleExtensions
   }));
+
 
   describe('element.updateProperties', function() {
 
@@ -80,7 +80,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         const properties = getProperties(businessObject);
 
         // assume
-        expect(getExtensionElementsList(businessObject)).to.have.length(2);
+        expect(getExtensionElements(businessObject)).to.have.length(2);
 
         inputOutput.set('inputParameters', []);
         extensionElements.set('values', [ inputOutput, properties ]);
@@ -91,7 +91,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         });
 
         // then
-        expect(getExtensionElementsList(businessObject)).to.have.length(1);
+        expect(getExtensionElements(businessObject)).to.have.length(1);
       })
     );
 
@@ -125,7 +125,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
       it('should execute', inject(function() {
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
 
@@ -146,7 +146,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         commandStack.redo();
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
     });
@@ -181,7 +181,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
       it('should execute', inject(function() {
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
 
@@ -202,7 +202,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         commandStack.redo();
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
     });
@@ -245,7 +245,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         const inputOutput = getInputOutput(businessObject);
 
         // assume
-        expect(getExtensionElementsList(businessObject)).to.have.length(2);
+        expect(getExtensionElements(businessObject)).to.have.length(2);
 
         // when
         modeling.updateModdleProperties(shape, inputOutput, {
@@ -253,7 +253,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         });
 
         // then
-        expect(getExtensionElementsList(businessObject)).to.have.length(1);
+        expect(getExtensionElements(businessObject)).to.have.length(1);
       })
     );
 
@@ -283,7 +283,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
       it('should execute', inject(function() {
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
 
@@ -304,7 +304,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         commandStack.redo();
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
     });
@@ -335,7 +335,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
       it('should execute', inject(function() {
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
 
@@ -356,7 +356,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         commandStack.redo();
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
     });
@@ -396,7 +396,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
     );
 
 
-    it('should NOT execute on recently added inputOutput',
+    it('should NOT remove newly added camunda:InputOutput',
       inject(function(elementRegistry, commandStack, bpmnFactory) {
 
         // given
@@ -443,13 +443,13 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         };
 
         // assume
-        expect(getExtensionElementsList(businessObject)).to.have.length(2);
+        expect(getExtensionElements(businessObject)).to.have.length(2);
 
         // when
         commandStack.execute('properties-panel.update-businessobject-list', context);
 
         // then
-        expect(getExtensionElementsList(businessObject)).to.have.length(1);
+        expect(getExtensionElements(businessObject)).to.have.length(1);
       })
     );
 
@@ -486,7 +486,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
       it('should execute', inject(function() {
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
 
@@ -507,7 +507,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         commandStack.redo();
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
     });
@@ -545,7 +545,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
       it('should execute', inject(function() {
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
 
@@ -566,7 +566,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
         commandStack.redo();
 
         // then
-        expect(getInputOutput(businessObject)).to.not.exist;
+        expect(getInputOutput(businessObject)).not.to.exist;
       }));
 
     });
@@ -576,7 +576,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
 });
 
 
-// helper //////////////////
+// helpers //////////
 
 function getOutputParameters(inputOutput) {
   return inputOutput.get('outputParameters');
@@ -587,18 +587,25 @@ function getInputParameters(inputOutput) {
 }
 
 function getInputOutput(businessObject) {
-  return (getExtensionElementsList(businessObject, 'camunda:InputOutput') || [])[0];
+  return getExtensionElements(businessObject, 'camunda:InputOutput')[ 0 ];
 }
 
 function getProperties(businessObject) {
-  return (getExtensionElementsList(businessObject, 'camunda:Properties') || [])[0];
+  return getExtensionElements(businessObject, 'camunda:Properties')[ 0 ];
 }
 
-function getExtensionElementsList(businessObject, type = undefined) {
-  const elements = ((businessObject.get('extensionElements') &&
-                  businessObject.get('extensionElements').get('values')) || []);
+function getExtensionElements(businessObject, type) {
+  const extensionElements = businessObject.get('extensionElements');
 
-  return (elements.length && type) ?
-    elements.filter((value) => is(value, type)) :
-    elements;
+  if (!extensionElements) {
+    return;
+  }
+
+  if (!type) {
+    return extensionElements.get('values');
+  }
+
+  return extensionElements.get('values').filter((element) => {
+    return is(element, type);
+  });
 }

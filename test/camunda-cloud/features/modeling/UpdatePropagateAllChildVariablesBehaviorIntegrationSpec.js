@@ -6,7 +6,7 @@ import {
 
 import {
   getOutputParameters,
-  getInputOutput
+  getIoMapping
 } from 'lib/camunda-cloud/helper/InputOutputHelper';
 
 import {
@@ -19,24 +19,21 @@ import {
   query as domQuery
 } from 'min-dom';
 
-import coreModule from 'bpmn-js/lib/core';
-
-import modelingModule from 'bpmn-js/lib/features/modeling';
-
-import propertiesPanelModule from 'bpmn-js-properties-panel';
-
-import propertiesProviderModule from 'lib/camunda-cloud/features/properties-provider';
-
 import selectionModule from 'diagram-js/lib/features/selection';
+
+import coreModule from 'bpmn-js/lib/core';
+import modelingModule from 'bpmn-js/lib/features/modeling';
+import propertiesPanelModule from 'bpmn-js-properties-panel';
 
 import zeebeModdleExtensions from 'zeebe-bpmn-moddle/resources/zeebe';
 
+import propertiesProviderModule from 'lib/camunda-cloud/features/properties-provider';
 import zeebeModelingModules from 'lib/camunda-cloud/features/modeling';
 
 import diagramXML from './process-call-activities.bpmn';
 
 
-describe('camunda-cloud/features/modeling - propagateAllChildVariables (integration tests)', function() {
+describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBehavior (integration tests)', function() {
 
   const testModules = [
     coreModule,
@@ -84,6 +81,7 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
 
           // when
           selection.select(shape);
+
           clickPropagateAllChildVariablesToggle(container);
         }));
 
@@ -190,6 +188,7 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
 
           // when
           selection.select(shape);
+
           clickPropagateAllChildVariablesToggle(container);
         }));
 
@@ -197,8 +196,8 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
         it('should execute', inject(function() {
 
           // then
-          const inputOutput = getInputOutput(shape);
-          expect(inputOutput).to.not.exist;
+          const inputOutput = getIoMapping(shape);
+          expect(inputOutput).not.to.exist;
         }));
 
 
@@ -212,7 +211,7 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
           expect(outputParameters).to.exist;
           expect(outputParameters.length).to.equal(1);
 
-          const inputOutput = getInputOutput(shape);
+          const inputOutput = getIoMapping(shape);
           expect(inputOutput).to.exist;
         }));
 
@@ -224,8 +223,8 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
           commandStack.redo();
 
           // then
-          const inputOutput = getInputOutput(shape);
-          expect(inputOutput).to.not.exist;
+          const inputOutput = getIoMapping(shape);
+          expect(inputOutput).not.to.exist;
         }));
 
       });
@@ -247,8 +246,8 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
         it('should execute', inject(function() {
 
           // then
-          const inputOutput = getInputOutput(shape);
-          expect(inputOutput).to.not.exist;
+          const inputOutput = getIoMapping(shape);
+          expect(inputOutput).not.to.exist;
         }));
 
 
@@ -262,7 +261,7 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
           expect(outputParameters).to.exist;
           expect(outputParameters.length).to.equal(1);
 
-          const inputOutput = getInputOutput(shape);
+          const inputOutput = getIoMapping(shape);
           expect(inputOutput).to.exist;
         }));
 
@@ -274,8 +273,8 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
           commandStack.redo();
 
           // then
-          const inputOutput = getInputOutput(shape);
-          expect(inputOutput).to.not.exist;
+          const inputOutput = getIoMapping(shape);
+          expect(inputOutput).not.to.exist;
         }));
 
       });
@@ -300,11 +299,13 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
         calledElement = getCalledElement(shape);
 
         // assume
-        const inputOutput = getInputOutput(shape);
-        expect(inputOutput).to.not.exist;
+        const inputOutput = getIoMapping(shape);
+
+        expect(inputOutput).not.to.exist;
 
         // when
         selection.select(shape);
+
         clickAddOutputParameterButton(container);
       }));
 
@@ -312,7 +313,7 @@ describe('camunda-cloud/features/modeling - propagateAllChildVariables (integrat
       it('should execute', inject(function() {
 
         // then
-        expect(calledElement.propagateAllChildVariables).to.equal(false);
+        expect(calledElement.get('propagateAllChildVariables')).to.equal(false);
       }));
 
 
@@ -364,6 +365,7 @@ const getAddOutputParameterButton = (container) => {
 
 const clickAddOutputParameterButton = (container) => {
   const addButton = getAddOutputParameterButton(container);
+
   triggerEvent(addButton, 'click');
 };
 

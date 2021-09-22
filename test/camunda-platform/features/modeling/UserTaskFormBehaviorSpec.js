@@ -7,19 +7,18 @@ import {
   getBpmnJS
 } from 'bpmn-js/test/helper';
 
-import coreModule from 'bpmn-js/lib/core';
-
-import modelingModule from 'bpmn-js/lib/features/modeling';
-
 import {
   getBusinessObject
 } from 'bpmn-js/lib/util/ModelUtil';
 
+import coreModule from 'bpmn-js/lib/core';
+import modelingModule from 'bpmn-js/lib/features/modeling';
+
+import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
+
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
 import camundaPlatformModelingModules from 'lib/camunda-platform/features/modeling';
-
-import propertiesPanelCommandHandler from 'bpmn-js-properties-panel/lib/cmd';
 
 import diagramXML from './camunda-user-task-forms-diagram.bpmn';
 
@@ -101,7 +100,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
             it('should execute', inject(function() {
 
               // then
-              expect(businessObject.get('camunda:formRef')).to.not.exist;
+              expect(businessObject.get('camunda:formRef')).not.to.exist;
               expect(businessObject.get('camunda:formRefBinding')).not.to.exist;
               expect(businessObject.get('camunda:formRefVersion')).not.to.exist;
             }));
@@ -126,7 +125,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
               commandStack.redo();
 
               // then
-              expect(businessObject.get('camunda:formRef')).to.not.exist;
+              expect(businessObject.get('camunda:formRef')).not.to.exist;
               expect(businessObject.get('camunda:formRefBinding')).not.to.exist;
               expect(businessObject.get('camunda:formRefVersion')).not.to.exist;
             }));
@@ -166,7 +165,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
             it('should execute', inject(function() {
 
               // then
-              expect(businessObject.get('camunda:formKey')).to.not.exist;
+              expect(businessObject.get('camunda:formKey')).not.to.exist;
             }));
 
 
@@ -187,7 +186,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
               commandStack.redo();
 
               // then
-              expect(businessObject.get('camunda:formKey')).to.not.exist;
+              expect(businessObject.get('camunda:formKey')).not.to.exist;
             }));
 
           });
