@@ -6,15 +6,21 @@ import {
   insertCSS
 } from 'test/TestHelper';
 
+import {
+  debounce
+} from 'min-dash';
+
 import Modeler from 'lib/base/Modeler';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
+
+import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'base-modeler';
 
 insertCSS(
   'properties.css',
-  require('bpmn-js-properties-panel/dist/assets/bpmn-js-properties-panel.css').default
+  propertiesPanelCSS
 );
 
 insertCSS('test.css', `
@@ -83,6 +89,12 @@ describe('<BaseModeler>', function() {
       },
       ...options
     });
+
+    singleStart && modeler.on('commandStack.changed', debounce(function() {
+      modeler.saveXML({ format: true }).then(function(result) {
+        console.log(result.xml);
+      });
+    }, 500));
 
     setBpmnJS(modeler);
 
