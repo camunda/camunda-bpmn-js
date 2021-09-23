@@ -95,6 +95,47 @@ describe('camunda-cloud/features - PropertiesProvider', function() {
       shouldHaveGroup(container, 'general', 'multiInstance');
     }));
 
+
+    it('should not show message props', inject(function(selection, elementRegistry) {
+
+      // given
+      const shape = elementRegistry.get('MessageEndEvent_1');
+
+      // when
+      selection.select(shape);
+
+      // then
+      shouldNotHaveDetailsProperty(container, 'event-definitions-message');
+    }));
+
+
+    it('should show task definition props', inject(function(selection, elementRegistry) {
+
+      // given
+      const shape = elementRegistry.get('MessageEndEvent_1');
+
+      // when
+      selection.select(shape);
+
+      // then
+      shouldHaveDetailsProperty(container, 'taskDefinitionType');
+      shouldHaveDetailsProperty(container, 'taskDefinitionRetries');
+    }));
+
+
+    it('should not show task definition props', inject(function(selection, elementRegistry) {
+
+      // given
+      const shape = elementRegistry.get('MessageStartEvent_1');
+
+      // when
+      selection.select(shape);
+
+      // then
+      shouldNotHaveDetailsProperty(container, 'taskDefinitionType');
+      shouldNotHaveDetailsProperty(container, 'taskDefinitionRetries');
+    }));
+
   });
 
 
@@ -120,15 +161,38 @@ describe('camunda-cloud/features - PropertiesProvider', function() {
     it('should show headers group', inject(function(selection, elementRegistry) {
 
       // given
-      const shape = elementRegistry.get('ServiceTask_1');
+      const shapes = [
+        elementRegistry.get('ServiceTask_1'),
+        elementRegistry.get('MessageEndEvent_1'),
+        elementRegistry.get('MessageThrowEvent_1'),
+      ];
 
       // when
-      selection.select(shape);
+      for (const shape of shapes) {
+        selection.select(shape);
 
-      // then
-      shouldHaveGroup(container, 'headers', 'headers-properties');
+        // then
+        shouldHaveGroup(container, 'headers', 'headers-properties');
+      }
     }));
 
+
+    it('should not show headers group', inject(async function(selection, elementRegistry) {
+
+      // given
+      const shapes = [
+        elementRegistry.get('EndEvent_1'),
+        elementRegistry.get('ThrowEvent_1'),
+      ];
+
+      // when
+      for (const shape of shapes) {
+        selection.select(shape);
+
+        // then
+        shouldNotHaveGroup(container, 'headers', 'headers-properties');
+      }
+    }));
   });
 
 
@@ -219,7 +283,26 @@ describe('camunda-cloud/features - PropertiesProvider', function() {
         shouldHaveGroup(container, 'output', 'output');
       }));
 
+
+      it('should show for zeebeServiceTask events', inject(function(selection, elementRegistry) {
+
+        // given
+        const shapes = [
+          elementRegistry.get('MessageEndEvent_1'),
+          elementRegistry.get('MessageThrowEvent_1'),
+        ];
+
+        // when
+        for (const shape of shapes) {
+          selection.select(shape);
+
+          // then
+          shouldHaveGroup(container, 'input', 'input');
+          shouldHaveGroup(container, 'output', 'output');
+        }
+      }));
     });
+
 
     describe('output group but not input group', function() {
 
@@ -240,7 +323,7 @@ describe('camunda-cloud/features - PropertiesProvider', function() {
       it('should show for events', inject(function(selection, elementRegistry) {
 
         // given
-        const shape = elementRegistry.get('EndEvent_1');
+        const shape = elementRegistry.get('MessageStartEvent_1');
 
         // when
         selection.select(shape);
@@ -268,6 +351,11 @@ function getGroup(container, tabName, groupName) {
   return domQuery(`div[data-group="${groupName}"]`, tab);
 }
 
+function getProperty(container, tabName, groupName, dataEntry) {
+  const group = getGroup(container, tabName, groupName);
+  return domQuery(`div[data-entry="${dataEntry}"]`, group);
+}
+
 const shouldHaveGroup = (container, tabName, groupName) => {
   const group = getGroup(container, tabName, groupName);
   expect(group).to.exist;
@@ -277,4 +365,15 @@ const shouldHaveGroup = (container, tabName, groupName) => {
 const shouldNotHaveGroup = (container, tabName, groupName) => {
   const group = getGroup(container, tabName, groupName);
   expect(domClasses(group).has('bpp-hidden')).to.be.true;
+};
+
+const shouldHaveDetailsProperty = (container, property) => {
+  const prop = getProperty(container, 'general', 'details', property);
+  expect(prop).to.exist;
+  expect(domClasses(prop).has('bpp-hidden')).to.be.false;
+};
+
+const shouldNotHaveDetailsProperty = (container, property) => {
+  const prop = getProperty(container, 'general', 'details', property);
+  expect(prop).to.not.exist;
 };
