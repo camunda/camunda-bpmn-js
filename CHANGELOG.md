@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.11.1
+
+* `CHORE`: ensure `dist` is built and tested before publish ([331584b4](https://github.com/camunda/camunda-bpmn-js/commit/331584b49c56841943a328761ebc7c89632f11fe))
+
 ## 0.11.0
 
 * `DEPS`: bump to `bpmn-js-properties-panel@0.45.0`
