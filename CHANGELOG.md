@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.11.0
+
+* `DEPS`: bump to `bpmn-js-properties-panel@0.45.0`
+* `DEPS`: bump to `camunda-bpmn-moddle@v6.1.0`
+
 ## 0.10.0
 
 * `FEAT`: update properties panel for Message Intermediate Throw Event and Message End Event for Cloud Modeler to support Zeebe 1.2 ([#55](https://github.com/camunda/camunda-bpmn-js/pull/55))
