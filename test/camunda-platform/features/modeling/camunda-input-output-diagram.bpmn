@@ -33,6 +33,9 @@
         </camunda:properties>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_empty">
+      <bpmn:extensionElements />
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
@@ -47,6 +50,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1xsfqdb_di" bpmnElement="ServiceTask_4">
         <dc:Bounds x="160" y="430" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_empty_di" bpmnElement="ServiceTask_empty">
+        <dc:Bounds x="160" y="540" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

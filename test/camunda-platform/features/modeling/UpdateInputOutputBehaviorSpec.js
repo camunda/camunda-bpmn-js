@@ -396,6 +396,35 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
     );
 
 
+    it('should NOT execute on recently added inputOutput',
+      inject(function(elementRegistry, commandStack, bpmnFactory) {
+
+        // given
+        const shape = elementRegistry.get('ServiceTask_empty');
+        const businessObject = getBusinessObject(shape);
+        const extensionElements = businessObject.get('extensionElements');
+
+        // assume
+        expect(getInputOutput(businessObject)).to.not.exist;
+
+        const inputOutput = bpmnFactory.create('camunda:InputOutput');
+
+        const context = {
+          element: shape,
+          currentObject: extensionElements,
+          propertyName: 'values',
+          objectsToAdd: [ inputOutput ]
+        };
+
+        // when
+        commandStack.execute('properties-panel.update-businessobject-list', context);
+
+        // then
+        expect(getInputOutput(businessObject)).to.exist;
+      })
+    );
+
+
     it('should keep other extension elements',
       inject(function(elementRegistry, commandStack) {
 
