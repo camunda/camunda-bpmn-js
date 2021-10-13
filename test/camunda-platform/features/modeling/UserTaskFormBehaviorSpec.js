@@ -199,6 +199,23 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
 
           describe(type, function() {
 
+            it('should default to <latest>', inject(function(elementRegistry) {
+
+              // when
+              const element = elementRegistry.get(`${ prefix }_FormKey`);
+
+              const businessObject = getBusinessObject(element);
+
+              // when
+              fn(element, { 'camunda:formRef': 'foo' });
+
+              // then
+              expect(businessObject.get('camunda:formRef')).to.equal('foo');
+              expect(businessObject.get('camunda:formRefBinding')).to.equal('latest');
+              expect(businessObject.get('camunda:formRefVersion')).not.to.exist;
+            }));
+
+
             it('should delete camunda:formRefVersion', inject(function(elementRegistry) {
 
               // when
