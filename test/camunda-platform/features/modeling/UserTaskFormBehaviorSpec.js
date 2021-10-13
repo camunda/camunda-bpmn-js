@@ -102,7 +102,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
 
               // then
               expect(businessObject.get('camunda:formRef')).to.not.exist;
-              expect(businessObject.get('camunda:formRefBinding')).to.equal('latest');
+              expect(businessObject.get('camunda:formRefBinding')).not.to.exist;
               expect(businessObject.get('camunda:formRefVersion')).not.to.exist;
             }));
 
@@ -127,7 +127,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
 
               // then
               expect(businessObject.get('camunda:formRef')).to.not.exist;
-              expect(businessObject.get('camunda:formRefBinding')).to.equal('latest');
+              expect(businessObject.get('camunda:formRefBinding')).not.to.exist;
               expect(businessObject.get('camunda:formRefVersion')).not.to.exist;
             }));
 
@@ -253,7 +253,7 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
 
               // then
               expect(businessObject.get('camunda:formRef')).not.to.exist;
-              expect(businessObject.get('camunda:formRefBinding')).to.equal('latest');
+              expect(businessObject.get('camunda:formRefBinding')).not.to.exist;
               expect(businessObject.get('camunda:formRefVersion')).not.to.exist;
             }));
 
