@@ -6,6 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.11.4
+
+### BPMN
+
+* `FIX`: gracefully handle incompatible properties providers
+* `FIX`: re-use ID of a copied element if available
+
+### General
+
+* `DEPS`: update to `camunda-bpmn-moddle@6.1.1`
+* `DEPS`: update to `bpmn-js-properties-panel@0.46.0`
+* `DEPS`: update to `bpmn-js@8.8.1`
+
 ## 0.11.3
 
 * `FIX`: correctly default to `camunda:formBindingRef=latest` ([#60](https://github.com/camunda/camunda-bpmn-js/pull/60))
