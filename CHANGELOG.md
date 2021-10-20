@@ -6,18 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-## 0.11.4
+## 0.11.5
 
-### BPMN
+* `FIX`: correct assignment of IDs when pasting multiple times
+* `DEPS`: update to `bpmn-js@8.8.2`
+
+## 0.11.4
 
 * `FIX`: gracefully handle incompatible properties providers
 * `FIX`: re-use ID of a copied element if available
-
-### General
-
 * `DEPS`: update to `camunda-bpmn-moddle@6.1.1`
 * `DEPS`: update to `bpmn-js-properties-panel@0.46.0`
 * `DEPS`: update to `bpmn-js@8.8.1`
+* `DEPS`: update to `diagram-js@7.5.0`
 
 ## 0.11.3
 
