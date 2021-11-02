@@ -13,6 +13,7 @@
     "start:base": "cross-env SINGLE_START=base-modeler npm run dev",
     "start:platform": "cross-env SINGLE_START=camunda-platform-modeler npm run dev",
     "start:cloud": "cross-env SINGLE_START=camunda-cloud-modeler npm run dev",
+    "prepare": "run-s distro",
     "prepublishOnly": "run-s distro test:distro"
   },
   "repository": {
