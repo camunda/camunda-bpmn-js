@@ -51,7 +51,7 @@
     "diagram-js-origin": "^1.3.2",
     "inherits": "^2.0.4",
     "min-dash": "^3.7.0",
-    "zeebe-bpmn-moddle": "^0.8.0"
+    "zeebe-bpmn-moddle": "^0.9.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",

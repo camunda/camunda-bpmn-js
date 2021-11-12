@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_148ykk6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Zeebe Modeler" exporterVersion="0.11.0">
+  <bpmn:process id="Process_0xvlok0" isExecutable="true">
+    <bpmn:businessRuleTask id="BusinessRuleTask_2" name="BusinessRuleTask_2">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="a" retries="b" />
+      </bpmn:extensionElements>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="BusinessRuleTask_1" name="BusinessRuleTask_1">
+      <bpmn:extensionElements>
+        <zeebe:calledDecision decisionId="a" resultVariable="b" />
+      </bpmn:extensionElements>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="BusinessRuleTask_3" name="BusinessRuleTask_3">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition />
+        <zeebe:taskHeaders>
+          <zeebe:header key="myKey" value="myValue" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+    </bpmn:businessRuleTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0xvlok0">
+      <bpmndi:BPMNShape id="Activity_1sv21p4_di" bpmnElement="BusinessRuleTask_2">
+        <dc:Bounds x="350" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01kz0ac_di" bpmnElement="BusinessRuleTask_1">
+        <dc:Bounds x="160" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_188bw2d_di" bpmnElement="BusinessRuleTask_3">
+        <dc:Bounds x="550" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
