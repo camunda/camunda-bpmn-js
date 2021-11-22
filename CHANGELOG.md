@@ -5,9 +5,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ## Unreleased
 
 ___Note:__ Yet to be released changes appear here._
+
+## 0.12.1
+
 * `DEPS`: update to `zeebe-bpmn-moddle@0.10.0`
 
-  ## 0.12.0
+## 0.12.0
 
 * `FEAT`: behavior for Cloud to ensure that `bpmn:BusinessRuleTask`s only have a `zeebe:CalledDecision` or
   `zeebe:TaskDefinition`/`zeebe:TaskHeaders` respectively. This supports the Zeebe 1.3 release ([#65](https://github.com/camunda/camunda-bpmn-js/issues/65))
