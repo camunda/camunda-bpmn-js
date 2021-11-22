@@ -5,6 +5,7 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ## Unreleased
 
 ___Note:__ Yet to be released changes appear here._
+* `DEPS`: update to `zeebe-bpmn-moddle@0.10.0`
 
   ## 0.12.0
 
