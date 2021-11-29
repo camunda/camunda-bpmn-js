@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_1mcvv1o" targetNamespace="http://bpmn.io/schema/bpmn">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_1mcvv1o" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <bpmn:process id="Process_1" isExecutable="true">
     <bpmn:extensionElements>
       <zeebe:userTaskForm id="UserTaskForm_1">{ components: [ { label: "field", key: "field" } ] }</zeebe:userTaskForm>
@@ -15,14 +15,49 @@
         <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2" />
       </bpmn:extensionElements>
     </bpmn:userTask>
+    <bpmn:userTask id="UserTask_3" name="UserTask_3">
+      <bpmn:extensionElements>
+        <zeebe:assignmentDefinition assignee="myAssignee" />
+        <zeebe:taskHeaders>
+          <zeebe:header key="myKey" value="myValue" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_4" name="UserTask_4">
+      <bpmn:extensionElements>
+        <zeebe:assignmentDefinition candidateGroups="myCandidateGroups" />
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_5" name="UserTask_5">
+      <bpmn:extensionElements>
+        <zeebe:assignmentDefinition assignee="a" candidateGroups="b" />
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+    <bpmn:userTask id="UserTask_6" name="UserTask_6">
+      <bpmn:extensionElements>
+        <zeebe:assignmentDefinition assignee="a" />
+      </bpmn:extensionElements>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
       <bpmndi:BPMNShape id="UserTask_1_di" bpmnElement="UserTask_1">
-        <dc:Bounds x="160" y="130" width="100" height="80" />
+        <dc:Bounds x="160" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_2_di" bpmnElement="UserTask_2">
-        <dc:Bounds x="160" y="250" width="100" height="80" />
+        <dc:Bounds x="160" y="200" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0x9faqw_di" bpmnElement="UserTask_3">
+        <dc:Bounds x="340" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gfzr06_di" bpmnElement="UserTask_4">
+        <dc:Bounds x="340" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18hunzl_di" bpmnElement="UserTask_5">
+        <dc:Bounds x="490" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_17cm5m1_di" bpmnElement="UserTask_6">
+        <dc:Bounds x="500" y="200" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
