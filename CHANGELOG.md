@@ -5,8 +5,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ## Unreleased
 
 ___Note:__ Yet to be released changes appear here._
+
+## 0.12.2
+
 * `FEAT`: behavior for Cloud to ensure that no empty `zeebe:AssignmentDefinitions`
-  remain in the model after modeling or propertyPanel operations
+  remain in the model after modeling or propertyPanel operations ([e26c486](https://github.com/camunda/camunda-bpmn-js/commit/e26c486bac3b54202fdf6c2b09d64483b52a2298))
 
 ## 0.12.1
 
