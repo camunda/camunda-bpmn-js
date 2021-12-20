@@ -5,6 +5,10 @@ import {
 } from 'test/TestHelper';
 
 import {
+  act
+} from '@bpmn-io/properties-panel/preact/test-utils';
+
+import {
   getOutputParameters,
   getIoMapping
 } from 'lib/camunda-cloud/helper/InputOutputHelper';
@@ -58,8 +62,14 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
     moddleExtensions
   }));
 
-  beforeEach(inject(function(propertiesPanel) {
-    propertiesPanel.attachTo(container);
+  beforeEach(inject(async function(propertiesPanel) {
+    await act(function() {
+      return propertiesPanel.attachTo(container);
+    });
+
+    // TODO @barmac: introduced to account for a bug in bpmn-js-properties-panel
+    // where the properties panel selection listener is not registered immediately
+    await sleep(10);
   }));
 
 
@@ -73,24 +83,26 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
       describe('<propagateAllChildVariables> explicitly set', function() {
 
-        beforeEach(inject(function(selection, elementRegistry) {
+        beforeEach(inject(async function(selection, elementRegistry) {
 
           // given
           shape = elementRegistry.get('CallActivity_3');
 
           // when
-          selection.select(shape);
+          await act(() => {
+            selection.select(shape);
+          });
 
-          clickPropagateAllChildVariablesToggle(container);
+          return clickPropagateAllChildVariablesToggle(container);
         }));
 
 
-        it('should execute', inject(function() {
+        it('should execute', function() {
 
           // then
           const outputParameters = getOutputParameters(shape);
           expect(outputParameters.length).to.equal(0);
-        }));
+        });
 
 
         it('should undo', inject(function(commandStack) {
@@ -121,23 +133,26 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
       describe('<propagateAllChildVariables> not explicitly set (legacy callActivity)', function() {
 
-        beforeEach(inject(function(selection, elementRegistry) {
+        beforeEach(inject(async function(selection, elementRegistry) {
 
           // given
           shape = elementRegistry.get('CallActivity_4');
 
           // when
-          selection.select(shape);
-          clickPropagateAllChildVariablesToggle(container);
+          await act(() => {
+            selection.select(shape);
+          });
+
+          return clickPropagateAllChildVariablesToggle(container);
         }));
 
 
-        it('should execute', inject(function() {
+        it('should execute', function() {
 
           // then
           const outputParameters = getOutputParameters(shape);
           expect(outputParameters.length).to.equal(0);
-        }));
+        });
 
 
         it('should undo', inject(function(commandStack) {
@@ -180,24 +195,26 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
       describe('<propagateAllChildVariables> explicitly set', function() {
 
-        beforeEach(inject(function(selection, elementRegistry) {
+        beforeEach(inject(async function(selection, elementRegistry) {
 
           // given
           shape = elementRegistry.get('CallActivity_5');
 
           // when
-          selection.select(shape);
+          await act(() => {
+            selection.select(shape);
+          });
 
-          clickPropagateAllChildVariablesToggle(container);
+          return clickPropagateAllChildVariablesToggle(container);
         }));
 
 
-        it('should execute', inject(function() {
+        it('should execute', function() {
 
           // then
           const inputOutput = getIoMapping(shape);
           expect(inputOutput).not.to.exist;
-        }));
+        });
 
 
         it('should undo', inject(function(commandStack) {
@@ -231,23 +248,26 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
       describe('<propagateAllChildVariables> not explicitly set (legacy callActivity)', function() {
 
-        beforeEach(inject(function(selection, elementRegistry) {
+        beforeEach(inject(async function(selection, elementRegistry) {
 
           // given
           shape = elementRegistry.get('CallActivity_6');
 
           // when
-          selection.select(shape);
-          clickPropagateAllChildVariablesToggle(container);
+          await act(() => {
+            selection.select(shape);
+          });
+
+          return clickPropagateAllChildVariablesToggle(container);
         }));
 
 
-        it('should execute', inject(function() {
+        it('should execute', function() {
 
           // then
           const inputOutput = getIoMapping(shape);
           expect(inputOutput).not.to.exist;
-        }));
+        });
 
 
         it('should undo', inject(function(commandStack) {
@@ -291,7 +311,7 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
       let shape, calledElement;
 
-      beforeEach(inject(function(selection, elementRegistry) {
+      beforeEach(inject(async function(selection, elementRegistry) {
 
         // given
         shape = elementRegistry.get('CallActivity_7');
@@ -303,17 +323,19 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
         expect(inputOutput).not.to.exist;
 
         // when
-        selection.select(shape);
+        await act(() => {
+          selection.select(shape);
+        });
 
-        clickAddOutputParameterButton(container);
+        return clickAddOutputParameterButton(container);
       }));
 
 
-      it('should execute', inject(function() {
+      it('should execute', function() {
 
         // then
         expect(calledElement.get('propagateAllChildVariables')).to.equal(false);
-      }));
+      });
 
 
       it('should undo', inject(function(commandStack) {
@@ -346,16 +368,19 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 // helper /////////
 
 const getPropagateAllChildVariablesToggle = (container) => {
-  return domQuery('#output-propagate-all-toggle', container);
+  return domQuery('input[name="propagateAllChildVariables"]', container);
 };
 
 const clickPropagateAllChildVariablesToggle = (container) => {
   const toggle = getPropagateAllChildVariablesToggle(container);
-  triggerEvent(toggle, 'click');
+
+  return act(() => {
+    triggerEvent(toggle, 'click');
+  });
 };
 
 const getAddButton = (container) => {
-  return domQuery('button[data-action="createElement"].bpp-input-output__add', container);
+  return domQuery('.bio-properties-panel-add-entry', container);
 };
 
 const getAddOutputParameterButton = (container) => {
@@ -365,17 +390,15 @@ const getAddOutputParameterButton = (container) => {
 const clickAddOutputParameterButton = (container) => {
   const addButton = getAddOutputParameterButton(container);
 
-  triggerEvent(addButton, 'click');
-};
-
-const getInputOutputTab = (container) => {
-  return domQuery('div[data-tab="input-output"]', container);
-};
-
-const getParameterGroup = (type, container) => {
-  return domQuery(`div[data-group="${type}"]`, getInputOutputTab(container));
+  return act(() => {
+    triggerEvent(addButton, 'click');
+  });
 };
 
 const getOutputParameterGroup = (container) => {
-  return getParameterGroup('output', container);
+  return domQuery('[data-group-id="group-outputs"]', container);
 };
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
