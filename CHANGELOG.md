@@ -6,6 +6,17 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.0
+
+* `FEAT`: support Zeebe 1.3 features ([#71](https://github.com/camunda/camunda-bpmn-js/issues/71))
+* `DEPS`: migrate to `bpmn-js-properties-panel@1.0.0-alpha.0` ([#71](https://github.com/camunda/camunda-bpmn-js/issues/71))
+* `DEPS`: update to `bpmn-js@8.8.3` ([#74](https://github.com/camunda/camunda-bpmn-js/pull/74))
+
+### Breaking Changes
+
+* Extensions to `bpmn-js-properties-panel@0.x` no longer work with the `1.x` series.
+  Read [the project's changelog for details](https://github.com/bpmn-io/bpmn-js-properties-panel/blob/next/CHANGELOG.md#breaking-changes).
+
 ## 0.12.2
 
 * `FEAT`: behavior for Cloud to ensure that no empty `zeebe:AssignmentDefinitions`
