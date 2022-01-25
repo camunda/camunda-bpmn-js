@@ -143,4 +143,19 @@ describe('<CamundaCloudModeler>', function() {
 
   });
 
+
+  it('should inject descriptionContextProvider', function() {
+
+    // when
+    return createModeler(simpleXml).then(function(result) {
+
+      var modeler = result.modeler,
+          propertiesPanel = modeler.get('propertiesPanel');
+
+      // then
+      expect(propertiesPanel._descriptionConfig).to.exist;
+    });
+
+  });
+
 });
