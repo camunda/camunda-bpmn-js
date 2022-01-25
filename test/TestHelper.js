@@ -155,7 +155,7 @@ export function selectedByOption(element, optionValue) {
 
   const options = domQueryAll('option', element);
 
-  for (let i = 0; i< options.length; i++) {
+  for (let i = 0; i < options.length; i++) {
 
     const option = options[i];
 
