@@ -3,16 +3,14 @@ import {
   inject
 } from 'test/TestHelper';
 
-import {
-  is
-} from 'bpmn-js/lib/util/ModelUtil';
+import { getExtensionElementsList } from '../../../../lib/util/ExtensionElementsUtil';
 
 import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 
 import diagramXML from './process-user-tasks.bpmn';
 
 
-describe('camunda-cloud/features/modeling - CleanUpAssignmentDefinitionBehavior', function() {
+describe('camunda-cloud/features/modeling - RemoveAssignmentDefinitionBehavior', function() {
 
   beforeEach(bootstrapCamundaCloudModeler(diagramXML));
 
@@ -31,10 +29,12 @@ describe('camunda-cloud/features/modeling - CleanUpAssignmentDefinitionBehavior'
         const assignmentDefinition = getAssignmentDefinition(element);
 
         // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: element,
-          businessObject: assignmentDefinition,
-          properties: { assignee: undefined }
+        commandStack.execute('element.updateModdleProperties', {
+          element,
+          moddleElement: assignmentDefinition,
+          properties: {
+            assignee: undefined
+          }
         });
       }));
 
@@ -88,10 +88,12 @@ describe('camunda-cloud/features/modeling - CleanUpAssignmentDefinitionBehavior'
         const assignmentDefinition = getAssignmentDefinition(element);
 
         // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: element,
-          businessObject: assignmentDefinition,
-          properties: { candidateGroups: undefined }
+        commandStack.execute('element.updateModdleProperties', {
+          element,
+          moddleElement: assignmentDefinition,
+          properties: {
+            candidateGroups: undefined
+          }
         });
       }));
 
@@ -145,10 +147,12 @@ describe('camunda-cloud/features/modeling - CleanUpAssignmentDefinitionBehavior'
         const assignmentDefinition = getAssignmentDefinition(element);
 
         // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: element,
-          businessObject: assignmentDefinition,
-          properties: { candidateGroups: undefined }
+        commandStack.execute('element.updateModdleProperties', {
+          element,
+          moddleElement: assignmentDefinition,
+          properties: {
+            candidateGroups: undefined
+          }
         });
       }));
 
@@ -159,93 +163,6 @@ describe('camunda-cloud/features/modeling - CleanUpAssignmentDefinitionBehavior'
         const assignmentDefintion = getAssignmentDefinition(element);
 
         expect(assignmentDefintion).to.exist;
-      }));
-
-    });
-
-
-    describe('removing empty extensionElements when assignmentDefintion was removed', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry) {
-
-        // given
-        element = elementRegistry.get('UserTask_6');
-
-        const assignmentDefinition = getAssignmentDefinition(element);
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: element,
-          businessObject: assignmentDefinition,
-          properties: { assignee: undefined }
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.not.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.exist;
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.not.exist;
-      }));
-
-    });
-
-
-    describe('NOT removing empty extensionElements when assignmentDefintion was removed', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry) {
-
-        // given
-        element = elementRegistry.get('UserTask_3');
-
-        const assignmentDefinition = getAssignmentDefinition(element);
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: element,
-          businessObject: assignmentDefinition,
-          properties: { assignee: undefined }
-        });
-      }));
-
-
-      it('should NOT execute', inject(function() {
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.exist;
       }));
 
     });
@@ -450,103 +367,11 @@ describe('camunda-cloud/features/modeling - CleanUpAssignmentDefinitionBehavior'
 
     });
 
-
-    describe('removing empty extensionElements when assignmentDefintion was removed', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry, modeling) {
-
-        // given
-        element = elementRegistry.get('UserTask_6');
-
-        const assignmentDefinition = getAssignmentDefinition(element);
-
-        // when
-        modeling.updateModdleProperties(element, assignmentDefinition, {
-          assignee: undefined
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.not.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.exist;
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.not.exist;
-      }));
-
-    });
-
-
-    describe('NOT removing empty extensionElements when assignmentDefintion was removed', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry, modeling) {
-
-        // given
-        element = elementRegistry.get('UserTask_3');
-
-        const assignmentDefinition = getAssignmentDefinition(element);
-
-        // when
-        modeling.updateModdleProperties(element, assignmentDefinition, {
-          assignee: undefined
-        });
-      }));
-
-
-      it('should NOT execute', inject(function() {
-
-        // then
-        const extensionElements = getBusinessObject(element).extensionElements;
-
-        expect(extensionElements).to.exist;
-      }));
-
-    });
-
   });
 
 });
 
-// helper ///////////////////////
-
-function getExtensionElementsList(businessObject, type = undefined) {
-  const elements = ((businessObject.get('extensionElements') &&
-                  businessObject.get('extensionElements').get('values')) || []);
-
-  return (elements.length && type) ?
-    elements.filter((value) => is(value, type)) :
-    elements;
-}
+// helpers //////////
 
 function getAssignmentDefinition(element) {
   const businessObject = getBusinessObject(element);
