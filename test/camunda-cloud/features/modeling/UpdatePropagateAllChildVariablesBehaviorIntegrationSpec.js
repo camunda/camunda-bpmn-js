@@ -69,21 +69,21 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
     // TODO @barmac: introduced to account for a bug in bpmn-js-properties-panel
     // where the properties panel selection listener is not registered immediately
-    await sleep(10);
+    await sleep();
   }));
 
 
-  describe('remove outputParameters', function() {
+  describe('remove zeebe:outputParameters', function() {
 
 
-    describe('when toggling on with outputParameters and inputParameters', function() {
+    describe('when toggling on with zeebe:outputParameters and zeebe:inputParameters', function() {
 
       let shape;
 
 
-      describe('<propagateAllChildVariables> explicitly set', function() {
+      describe('zeebe:propagateAllChildVariables explicitly set', function() {
 
-        beforeEach(inject(async function(selection, elementRegistry) {
+        beforeEach(inject(async function(elementRegistry, selection) {
 
           // given
           shape = elementRegistry.get('CallActivity_3');
@@ -101,7 +101,8 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
           // then
           const outputParameters = getOutputParameters(shape);
-          expect(outputParameters.length).to.equal(0);
+
+          expect(outputParameters).to.have.length(0);
         });
 
 
@@ -112,8 +113,9 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
           // then
           const outputParameters = getOutputParameters(shape);
+
           expect(outputParameters).to.exist;
-          expect(outputParameters.length).to.equal(1);
+          expect(outputParameters).to.have.length(1);
         }));
 
 
@@ -125,13 +127,14 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
           // then
           const outputParameters = getOutputParameters(shape);
-          expect(outputParameters.length).to.equal(0);
+
+          expect(outputParameters).to.have.length(0);
         }));
 
       });
 
 
-      describe('<propagateAllChildVariables> not explicitly set (legacy callActivity)', function() {
+      describe('zeebe:propagateAllChildVariables not explicitly set (legacy bpmn:CallActivity)', function() {
 
         beforeEach(inject(async function(selection, elementRegistry) {
 
@@ -151,7 +154,8 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
           // then
           const outputParameters = getOutputParameters(shape);
-          expect(outputParameters.length).to.equal(0);
+
+          expect(outputParameters).to.have.length(0);
         });
 
 
@@ -162,8 +166,9 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
           // then
           const outputParameters = getOutputParameters(shape);
+
           expect(outputParameters).to.exist;
-          expect(outputParameters.length).to.equal(1);
+          expect(outputParameters).to.have.length(1);
         }));
 
 
@@ -175,7 +180,8 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
           // then
           const outputParameters = getOutputParameters(shape);
-          expect(outputParameters.length).to.equal(0);
+
+          expect(outputParameters).to.have.length(0);
         }));
 
       });
@@ -185,7 +191,7 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
   });
 
 
-  describe('remove iOMapping', function() {
+  describe('remove zeebe:IoMapping', function() {
 
 
     describe('when toggling on with outputParameters', function() {
@@ -300,11 +306,10 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
     });
 
-
   });
 
 
-  describe('set propagateAllChildVariables to false', function() {
+  describe('set zeebe:propagateAllChildVariables to false', function() {
 
 
     describe('when adding output parameters', function() {
@@ -365,7 +370,7 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 });
 
 
-// helper /////////
+// helpers //////////
 
 const getPropagateAllChildVariablesToggle = (container) => {
   return domQuery('input[name="propagateAllChildVariables"]', container);
@@ -399,6 +404,6 @@ const getOutputParameterGroup = (container) => {
   return domQuery('[data-group-id="group-outputs"]', container);
 };
 
-function sleep(ms) {
+function sleep(ms = 10) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

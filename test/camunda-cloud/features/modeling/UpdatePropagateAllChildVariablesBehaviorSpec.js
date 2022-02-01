@@ -1,5 +1,6 @@
 import {
   bootstrapCamundaCloudModeler,
+  getBpmnJS,
   inject
 } from 'test/TestHelper';
 
@@ -22,190 +23,214 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
   beforeEach(bootstrapCamundaCloudModeler(diagramXML));
 
 
-  describe('removing zeebe:OutputParameters when zeebe:propagateAllChildVariables is set to true', function() {
+  [
+    'propagateAllChildVariables',
+    'zeebe:propagateAllChildVariables'
+  ].forEach((key) => {
 
-    let element;
+    describe(`removing zeebe:Output elements when zeebe:propagateAllChildVariables is set to true (${ key })`, function() {
 
-    beforeEach(inject(function(commandStack, elementRegistry) {
+      let element;
 
-      // given
-      element = elementRegistry.get('CallActivity_3');
+      beforeEach(inject(function(elementRegistry, modeling) {
 
-      const businessObject = getBusinessObject(element);
+        // given
+        element = elementRegistry.get('CallActivity_3');
 
-      // when
-      commandStack.execute('properties-panel.update-businessobject', {
-        businessObject,
-        element,
-        properties: {
-          propagateAllChildVariables: true
-        }
-      });
-    }));
+        // when
+        modeling.updateModdleProperties(element, getCalledElement(element), { [ key ]: true });
+      }));
 
 
-    it('should execute', inject(function() {
+      it('should execute', inject(function() {
 
-      // then
-      const outputParameters = getOutputParameters(element);
+        // then
+        const outputParameters = getOutputParameters(element);
 
-      expect(outputParameters).to.exist;
-      expect(outputParameters).to.be.empty;
-    }));
-
-
-    it('should undo', inject(function(commandStack) {
-
-      // when
-      commandStack.undo();
-
-      // then
-      const outputParameters = getOutputParameters(element);
-
-      expect(outputParameters).to.exist;
-      expect(outputParameters).to.have.length(1);
-    }));
+        expect(outputParameters).to.exist;
+        expect(outputParameters).to.be.empty;
+      }));
 
 
-    it('should undo/redo', inject(function(commandStack) {
+      it('should undo', inject(function(commandStack) {
 
-      // when
-      commandStack.undo();
-      commandStack.redo();
+        // when
+        commandStack.undo();
 
-      // then
-      const outputParameters = getOutputParameters(element);
+        // then
+        const outputParameters = getOutputParameters(element);
 
-      expect(outputParameters).to.exist;
-      expect(outputParameters).to.be.empty;
-    }));
-
-  });
+        expect(outputParameters).to.exist;
+        expect(outputParameters).to.have.length(1);
+      }));
 
 
-  describe('removing zeebe:IoMapping when zeebe:propagateAllChildVariables is set to true', function() {
+      it('should undo/redo', inject(function(commandStack) {
 
-    let element;
+        // when
+        commandStack.undo();
+        commandStack.redo();
 
-    beforeEach(inject(function(commandStack, elementRegistry) {
+        // then
+        const outputParameters = getOutputParameters(element);
 
-      // given
-      element = elementRegistry.get('CallActivity_5');
+        expect(outputParameters).to.exist;
+        expect(outputParameters).to.be.empty;
+      }));
 
-      const businessObject = getBusinessObject(element);
-
-      // when
-      commandStack.execute('properties-panel.update-businessobject', {
-        businessObject,
-        element,
-        properties: {
-          propagateAllChildVariables: true
-        }
-      });
-    }));
+    });
 
 
-    it('should execute', inject(function() {
+    describe(`removing zeebe:IoMapping when zeebe:propagateAllChildVariables is set to true (${ key })`, function() {
 
-      // then
-      const ioMapping = getIoMapping(element);
+      let element;
 
-      expect(ioMapping).not.to.exist;
-    }));
+      beforeEach(inject(function(elementRegistry, modeling) {
 
+        // given
+        element = elementRegistry.get('CallActivity_5');
 
-    it('should undo', inject(function(commandStack) {
-
-      // when
-      commandStack.undo();
-
-      // then
-      const ioMapping = getIoMapping(element);
-
-      expect(ioMapping).to.exist;
-
-      const outputParameters = getOutputParameters(element);
-
-      expect(outputParameters).to.exist;
-      expect(outputParameters).to.have.length(1);
-    }));
+        // when
+        modeling.updateModdleProperties(element, getCalledElement(element), { [ key ]: true });
+      }));
 
 
-    it('should undo/redo', inject(function(commandStack) {
+      it('should execute', inject(function() {
 
-      // when
-      commandStack.undo();
-      commandStack.redo();
+        // then
+        const ioMapping = getIoMapping(element);
 
-      // then
-      const ioMapping = getIoMapping(element);
+        expect(ioMapping).not.to.exist;
+      }));
 
-      expect(ioMapping).not.to.exist;
-    }));
+
+      it('should undo', inject(function(commandStack) {
+
+        // when
+        commandStack.undo();
+
+        // then
+        const ioMapping = getIoMapping(element);
+
+        expect(ioMapping).to.exist;
+
+        const outputParameters = getOutputParameters(element);
+
+        expect(outputParameters).to.exist;
+        expect(outputParameters).to.have.length(1);
+      }));
+
+
+      it('should undo/redo', inject(function(commandStack) {
+
+        // when
+        commandStack.undo();
+        commandStack.redo();
+
+        // then
+        const ioMapping = getIoMapping(element);
+
+        expect(ioMapping).not.to.exist;
+      }));
+
+    });
 
   });
 
 
-  describe('setting zeebe:propagateAllChildVariables to false on zeebe:Output added', function() {
-
-    let element, calledElement;
-
-    beforeEach(inject(function(bpmnFactory, commandStack, elementRegistry) {
-
-      // given
-      element = elementRegistry.get('CallActivity_7');
-
+  function addIoMapping(element) {
+    getBpmnJS().invoke(function(bpmnFactory, modeling) {
       const businessObject = getBusinessObject(element);
 
       const extensionElements = businessObject.get('extensionElements');
 
       const ioMapping = bpmnFactory.create('zeebe:IoMapping');
 
-      calledElement = getCalledElement(element);
+      const output = bpmnFactory.create('zeebe:Output');
 
-      // when
-      commandStack.execute('properties-panel.update-businessobject-list', {
-        element: element,
-        currentObject: extensionElements,
-        propertyName: 'values',
-        objectsToAdd: [ ioMapping ]
+      output.$parent = ioMapping;
+
+      ioMapping.set('zeebe:outputParameters', [ output ]);
+
+      modeling.updateModdleProperties(element, extensionElements, {
+        values: [ ...extensionElements.get('values'), ioMapping ]
+      });
+    });
+  }
+
+  function addOutput(element) {
+    getBpmnJS().invoke(function(bpmnFactory, modeling) {
+      const businessObject = getBusinessObject(element);
+
+      const extensionElements = businessObject.get('extensionElements');
+
+      const ioMapping = bpmnFactory.create('zeebe:IoMapping');
+
+      modeling.updateModdleProperties(element, extensionElements, {
+        values: [ ...extensionElements.get('values'), ioMapping ]
       });
 
-      commandStack.execute('properties-panel.update-businessobject-list', {
-        element: element,
-        currentObject: ioMapping,
-        propertyName: 'zeebe:outputParameters',
-        objectsToAdd: [ bpmnFactory.create('zeebe:Output') ]
+      const output = bpmnFactory.create('zeebe:Output');
+
+      output.$parent = ioMapping;
+
+      modeling.updateModdleProperties(element, ioMapping, {
+        'zeebe:outputParameters': [ ...ioMapping.get('zeebe:outputParameters'), ioMapping ]
       });
-    }));
+    });
+  }
 
 
-    it('should execute', inject(function() {
+  [
+    [ 'adding zeebe:IoMapping extension element with zeebe:Output', addIoMapping ],
+    [ 'adding zeebe:Output', addOutput ]
+  ].forEach(([ type, fn ]) => {
 
-      // then
-      expect(calledElement.get('propagateAllChildVariables')).to.equal(false);
-    }));
+    describe(`setting zeebe:propagateAllChildVariables to false when ${ type }`, function() {
+
+      let element,
+          calledElement;
+
+      beforeEach(inject(function(elementRegistry) {
+
+        // given
+        element = elementRegistry.get('CallActivity_7');
+
+        calledElement = getCalledElement(element);
+
+        // when
+        fn(element);
+      }));
 
 
-    it('should undo', inject(function(commandStack) {
+      it('should execute', inject(function() {
 
-      // when
-      commandStack.undo();
-
-      // assume
-      expect(calledElement.get('propagateAllChildVariables')).to.equal(true);
-    }));
+        // then
+        expect(calledElement.get('propagateAllChildVariables')).to.be.false;
+      }));
 
 
-    it('should undo/redo', inject(function(commandStack) {
+      it('should undo', inject(function(commandStack) {
 
-      // when
-      commandStack.undo();
-      commandStack.redo();
+        // when
+        commandStack.undo();
 
-      // then
-      expect(calledElement.get('propagateAllChildVariables')).to.equal(false);
-    }));
+        // assume
+        expect(calledElement.get('propagateAllChildVariables')).to.true;
+      }));
+
+
+      it('should undo/redo', inject(function(commandStack) {
+
+        // when
+        commandStack.undo();
+        commandStack.redo();
+
+        // then
+        expect(calledElement.get('propagateAllChildVariables')).to.be.false;
+      }));
+
+    });
 
   });
 
