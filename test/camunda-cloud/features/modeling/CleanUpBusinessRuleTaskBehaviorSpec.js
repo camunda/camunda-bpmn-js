@@ -3,11 +3,11 @@ import {
   inject
 } from 'test/TestHelper';
 
-import {
-  is
-} from 'bpmn-js/lib/util/ModelUtil';
-
 import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
+
+import { getExtensionElementsList } from '../../../../lib/util/ExtensionElementsUtil';
+
+import { getIoMapping } from '../../../../lib/camunda-cloud/helper/InputOutputHelper';
 
 import diagramXML from './process-businessRuleTask.bpmn';
 
@@ -17,494 +17,245 @@ describe('camunda-cloud/features/modeling - CleanUpBusinessRuleTaskBehavior', fu
   beforeEach(bootstrapCamundaCloudModeler(diagramXML));
 
 
-  describe('triggered via propertiesPanel', function() {
+  describe('removing zeebe:CalledDecision when zeebe:TaskDefinition is added', function() {
 
-    describe('removing zeebe:CalledDecision when zeebe:TaskDefinition is added', function() {
+    let element;
 
-      let element;
+    beforeEach(inject(function(bpmnFactory, elementRegistry, modeling) {
 
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory) {
+      // given
+      element = elementRegistry.get('BusinessRuleTask_1');
 
-        // given
-        element = elementRegistry.get('BusinessRuleTask_1');
+      const businessObject = getBusinessObject(element),
+            extensionElements = businessObject.get('extensionElements'),
+            taskDefinition = bpmnFactory.create('zeebe:TaskDefinition', { });
 
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              taskDefinition = bpmnFactory.create('zeebe:TaskDefinition', { });
+      taskDefinition.$parent = extensionElements;
 
-        taskDefinition.$parent = extensionElements;
+      // when
+      const values = extensionElements.get('values').concat(taskDefinition);
 
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', {
-          element: element,
-          currentObject: extensionElements,
-          propertyName: 'values',
-          objectsToAdd: [ taskDefinition ]
-        });
-      }));
+      modeling.updateModdleProperties(element, extensionElements, {
+        values
+      });
+    }));
 
 
-      it('should execute', inject(function() {
+    it('should execute', function() {
 
-        // then
-        const calledDecision = getCalledDecision(element);
+      // then
+      const calledDecision = getCalledDecision(element);
 
-        expect(calledDecision).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        const calledDecision = getCalledDecision(element);
-
-        expect(calledDecision).to.exist;
-        expect(calledDecision.decisionId).to.equal('a');
-        expect(calledDecision.resultVariable).to.equal('b');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        const calledDecision = getCalledDecision(element);
-
-        expect(calledDecision).not.to.exist;
-      }));
-
+      expect(calledDecision).not.to.exist;
     });
 
 
-    describe('removing zeebe:TaskDefinition when zeebe:CalledDecision is added', function() {
+    it('should undo', inject(function(commandStack) {
 
-      let element;
+      // when
+      commandStack.undo();
 
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory) {
+      // then
+      const calledDecision = getCalledDecision(element);
 
-        // given
-        element = elementRegistry.get('BusinessRuleTask_2');
-
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              calledDecision = bpmnFactory.create('zeebe:CalledDecision', { });
-
-        calledDecision.$parent = extensionElements;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', {
-          element: element,
-          currentObject: extensionElements,
-          propertyName: 'values',
-          objectsToAdd: [ calledDecision ]
-        });
-      }));
+      expect(calledDecision).to.exist;
+      expect(calledDecision.decisionId).to.equal('a');
+      expect(calledDecision.resultVariable).to.equal('b');
+    }));
 
 
-      it('should execute', inject(function() {
+    it('should undo/redo', inject(function(commandStack) {
 
-        // then
-        const taskDefiniton = getTaskDefinition(element);
+      // when
+      commandStack.undo();
+      commandStack.redo();
 
-        expect(taskDefiniton).not.to.exist;
-      }));
+      // then
+      const calledDecision = getCalledDecision(element);
 
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        const taskDefiniton = getTaskDefinition(element);
-
-        expect(taskDefiniton).to.exist;
-        expect(taskDefiniton.type).to.equal('a');
-        expect(taskDefiniton.retries).to.equal('b');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        const taskDefiniton = getTaskDefinition(element);
-
-        expect(taskDefiniton).not.to.exist;
-      }));
-
-    });
-
-
-    describe('removing zeebe:TaskHeaders when zeebe:CalledDecision is added', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory) {
-
-        // given
-        element = elementRegistry.get('BusinessRuleTask_3');
-
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              calledDecision = bpmnFactory.create('zeebe:CalledDecision', { });
-
-        calledDecision.$parent = extensionElements;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', {
-          element: element,
-          currentObject: extensionElements,
-          propertyName: 'values',
-          objectsToAdd: [ calledDecision ]
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        const taskHeaders = getTaskHeaders(element);
-
-        expect(taskHeaders).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        const taskHeaders = getTaskHeaders(element);
-
-        expect(taskHeaders).to.exist;
-        expect(taskHeaders.get('values')).to.have.length(1);
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        const taskHeaders = getTaskHeaders(element);
-
-        expect(taskHeaders).not.to.exist;
-      }));
-
-    });
-
-
-    describe('not removing zeebe:TaskDefinition when zeebe:IoMapping is added', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory) {
-
-        // given
-        element = elementRegistry.get('BusinessRuleTask_3');
-
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              ioMapping = bpmnFactory.create('zeebe:IoMapping', { });
-
-        ioMapping.$parent = extensionElements;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', {
-          element: element,
-          currentObject: extensionElements,
-          propertyName: 'values',
-          objectsToAdd: [ ioMapping ]
-        });
-      }));
-
-
-      it('should NOT execute', inject(function() {
-
-        // then
-        const taskHeaders = getTaskHeaders(element),
-              ioMapping = getIoMapping(element);
-
-        expect(taskHeaders).to.exist;
-        expect(ioMapping).to.exist;
-      }));
-
-    });
+      expect(calledDecision).not.to.exist;
+    }));
 
   });
 
 
-  describe('triggered via modelingAPI', function() {
+  describe('removing zeebe:TaskDefinition when zeebe:CalledDecision is added', function() {
 
-    describe('removing zeebe:CalledDecision when zeebe:TaskDefinition is added', function() {
+    let element;
 
-      let element;
+    beforeEach(inject(function(bpmnFactory, elementRegistry, modeling) {
 
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory, modeling) {
+      // given
+      element = elementRegistry.get('BusinessRuleTask_2');
 
-        // given
-        element = elementRegistry.get('BusinessRuleTask_1');
+      const businessObject = getBusinessObject(element),
+            extensionElements = businessObject.get('extensionElements'),
+            calledDecision = bpmnFactory.create('zeebe:CalledDecision', { });
 
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              taskDefinition = bpmnFactory.create('zeebe:TaskDefinition', { });
+      calledDecision.$parent = extensionElements;
 
-        taskDefinition.$parent = extensionElements;
+      // when
+      const values = extensionElements.get('values').concat(calledDecision);
 
-        // when
-        const values = extensionElements.get('values').concat(taskDefinition);
+      modeling.updateModdleProperties(element, extensionElements, {
+        values
+      });
+    }));
 
-        modeling.updateModdleProperties(element, extensionElements, {
-          values
-        });
-      }));
 
+    it('should execute', inject(function() {
 
-      it('should execute', inject(function(commandStack) {
+      // then
+      const taskDefiniton = getTaskDefinition(element);
 
-        // then
-        const calledDecision = getCalledDecision(element);
+      expect(taskDefiniton).not.to.exist;
+    }));
 
-        expect(calledDecision).not.to.exist;
-      }));
 
+    it('should undo', inject(function(commandStack) {
 
-      it('should undo', inject(function(commandStack) {
+      // when
+      commandStack.undo();
 
-        // when
-        commandStack.undo();
+      // then
+      const taskDefiniton = getTaskDefinition(element);
 
-        // then
-        const calledDecision = getCalledDecision(element);
+      expect(taskDefiniton).to.exist;
+      expect(taskDefiniton.type).to.equal('a');
+      expect(taskDefiniton.retries).to.equal('b');
+    }));
 
-        expect(calledDecision).to.exist;
-        expect(calledDecision.decisionId).to.equal('a');
-        expect(calledDecision.resultVariable).to.equal('b');
-      }));
 
+    it('should undo/redo', inject(function(commandStack) {
 
-      it('should undo/redo', inject(function(commandStack) {
+      // when
+      commandStack.undo();
+      commandStack.redo();
 
-        // when
-        commandStack.undo();
-        commandStack.redo();
+      // then
+      const taskDefiniton = getTaskDefinition(element);
 
-        // then
-        const calledDecision = getCalledDecision(element);
+      expect(taskDefiniton).not.to.exist;
+    }));
 
-        expect(calledDecision).not.to.exist;
-      }));
+  });
 
-    });
 
+  describe('removing zeebe:TaskHeaders when zeebe:CalledDecision is added', function() {
 
-    describe('removing zeebe:TaskDefinition when zeebe:CalledDecision is added', function() {
+    let element;
 
-      let element;
+    beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory, modeling) {
 
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory, modeling) {
+      // given
+      element = elementRegistry.get('BusinessRuleTask_3');
 
-        // given
-        element = elementRegistry.get('BusinessRuleTask_2');
+      const businessObject = getBusinessObject(element),
+            extensionElements = businessObject.get('extensionElements'),
+            calledDecision = bpmnFactory.create('zeebe:CalledDecision', { });
 
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              calledDecision = bpmnFactory.create('zeebe:CalledDecision', { });
+      calledDecision.$parent = extensionElements;
 
-        calledDecision.$parent = extensionElements;
+      // when
+      const values = extensionElements.get('values').concat(calledDecision);
 
-        // when
-        const values = extensionElements.get('values').concat(calledDecision);
+      modeling.updateModdleProperties(element, extensionElements, {
+        values
+      });
+    }));
 
-        modeling.updateModdleProperties(element, extensionElements, {
-          values
-        });
-      }));
 
+    it('should execute', inject(function() {
 
-      it('should execute', inject(function() {
+      // then
+      const taskHeaders = getTaskHeaders(element);
 
-        // then
-        const taskDefiniton = getTaskDefinition(element);
+      expect(taskHeaders).not.to.exist;
+    }));
 
-        expect(taskDefiniton).not.to.exist;
-      }));
 
+    it('should undo', inject(function(commandStack) {
 
-      it('should undo', inject(function(commandStack) {
+      // when
+      commandStack.undo();
 
-        // when
-        commandStack.undo();
+      // then
+      const taskHeaders = getTaskHeaders(element);
 
-        // then
-        const taskDefiniton = getTaskDefinition(element);
+      expect(taskHeaders).to.exist;
+      expect(taskHeaders.get('values')).to.have.length(1);
+    }));
 
-        expect(taskDefiniton).to.exist;
-        expect(taskDefiniton.type).to.equal('a');
-        expect(taskDefiniton.retries).to.equal('b');
-      }));
 
+    it('should undo/redo', inject(function(commandStack) {
 
-      it('should undo/redo', inject(function(commandStack) {
+      // when
+      commandStack.undo();
+      commandStack.redo();
 
-        // when
-        commandStack.undo();
-        commandStack.redo();
+      // then
+      const taskHeaders = getTaskHeaders(element);
 
-        // then
-        const taskDefiniton = getTaskDefinition(element);
+      expect(taskHeaders).not.to.exist;
+    }));
 
-        expect(taskDefiniton).not.to.exist;
-      }));
+  });
 
-    });
 
+  describe('not removing zeebe:TaskHeaders when zeebe:IoMapping is added', function() {
 
-    describe('removing zeebe:TaskHeaders when zeebe:CalledDecision is added', function() {
+    let element;
 
-      let element;
+    beforeEach(inject(function(bpmnFactory, elementRegistry, modeling) {
 
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory, modeling) {
+      // given
+      element = elementRegistry.get('BusinessRuleTask_3');
 
-        // given
-        element = elementRegistry.get('BusinessRuleTask_3');
+      const businessObject = getBusinessObject(element),
+            extensionElements = businessObject.get('extensionElements'),
+            ioMapping = bpmnFactory.create('zeebe:IoMapping');
 
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              calledDecision = bpmnFactory.create('zeebe:CalledDecision', { });
+      ioMapping.$parent = extensionElements;
 
-        calledDecision.$parent = extensionElements;
+      // when
+      const values = extensionElements.get('values').concat(ioMapping);
 
-        // when
-        const values = extensionElements.get('values').concat(calledDecision);
+      modeling.updateModdleProperties(element, extensionElements, {
+        values
+      });
+    }));
 
-        modeling.updateModdleProperties(element, extensionElements, {
-          values
-        });
-      }));
 
+    it('should NOT execute', inject(function() {
 
-      it('should execute', inject(function() {
+      // then
+      const taskHeaders = getTaskHeaders(element),
+            ioMapping = getIoMapping(element);
 
-        // then
-        const taskHeaders = getTaskHeaders(element);
-
-        expect(taskHeaders).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        const taskHeaders = getTaskHeaders(element);
-
-        expect(taskHeaders).to.exist;
-        expect(taskHeaders.get('values')).to.have.length(1);
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        const taskHeaders = getTaskHeaders(element);
-
-        expect(taskHeaders).not.to.exist;
-      }));
-
-    });
-
-
-    describe('not removing zeebe:TaskHeaders when zeebe:IoMapping is added', function() {
-
-      let element;
-
-      beforeEach(inject(function(commandStack, elementRegistry, bpmnFactory, modeling) {
-
-        // given
-        element = elementRegistry.get('BusinessRuleTask_3');
-
-        const businessObject = getBusinessObject(element),
-              extensionElements = businessObject.get('extensionElements'),
-              ioMapping = bpmnFactory.create('zeebe:IoMapping', { });
-
-        ioMapping.$parent = extensionElements;
-
-        // when
-        const values = extensionElements.get('values').concat(ioMapping);
-
-        modeling.updateModdleProperties(element, extensionElements, {
-          values
-        });
-      }));
-
-
-      it('should NOT execute', inject(function() {
-
-        // then
-        const taskHeaders = getTaskHeaders(element),
-              ioMapping = getIoMapping(element);
-
-        expect(taskHeaders).to.exist;
-        expect(ioMapping).to.exist;
-      }));
-
-    });
+      expect(taskHeaders).to.exist;
+      expect(ioMapping).to.exist;
+    }));
 
   });
 
 });
 
-// helper ///////////////////////
-
-function getExtensionElementsList(businessObject, type = undefined) {
-  const elements = ((businessObject.get('extensionElements') &&
-                  businessObject.get('extensionElements').get('values')) || []);
-
-  return (elements.length && type) ?
-    elements.filter((value) => is(value, type)) :
-    elements;
-}
+// helpers //////////
 
 function getCalledDecision(element) {
   const businessObject = getBusinessObject(element);
 
-  return getExtensionElementsList(businessObject, 'zeebe:CalledDecision')[0];
+  return getExtensionElementsList(businessObject, 'zeebe:CalledDecision')[ 0 ];
 }
 
 function getTaskDefinition(element) {
   const businessObject = getBusinessObject(element);
 
-  return getExtensionElementsList(businessObject, 'zeebe:TaskDefinition')[0];
+  return getExtensionElementsList(businessObject, 'zeebe:TaskDefinition')[ 0 ];
 }
 
 function getTaskHeaders(element) {
   const businessObject = getBusinessObject(element);
 
-  return getExtensionElementsList(businessObject, 'zeebe:TaskHeaders')[0];
-}
-
-function getIoMapping(element) {
-  const businessObject = getBusinessObject(element);
-
-  return getExtensionElementsList(businessObject, 'zeebe:IoMapping')[0];
+  return getExtensionElementsList(businessObject, 'zeebe:TaskHeaders')[ 0 ];
 }
