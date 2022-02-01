@@ -123,8 +123,6 @@ describe('<BaseModeler>', function() {
       // then
       expect(modeler.get('minimap')).to.exist;
       expect(modeler.get('alignToOrigin')).to.exist;
-      expect(modeler.get('signavioBehavior')).to.exist;
-      expect(modeler.get('disabledCollapsedSubprocessPopupProvider')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('bpmnPropertiesProvider')).to.exist;
     });
