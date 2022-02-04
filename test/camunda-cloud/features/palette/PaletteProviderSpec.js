@@ -5,7 +5,7 @@ import {
 } from 'test/TestHelper';
 
 import {
-  getBusinessObject,
+  getDi,
   is
 } from 'bpmn-js/lib/util/ModelUtil';
 
@@ -185,11 +185,11 @@ describe('camunda-cloud/features - Palette', function() {
           elements = context.data.elements,
           subProcess = elements[0],
           startEvent = elements[1],
-          bo = getBusinessObject(subProcess);
+          di = getDi(subProcess);
 
     expect(subProcess).to.exist;
     expect(is(subProcess, 'bpmn:SubProcess')).to.be.true;
-    expect(bo.di.isExpanded).to.be.true;
+    expect(di.isExpanded).to.be.true;
 
     expect(startEvent).to.exist;
     expect(is(startEvent, 'bpmn:StartEvent')).to.be.true;
