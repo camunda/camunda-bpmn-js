@@ -1,5 +1,6 @@
 import {
   bootstrapCamundaPlatformModeler,
+  getBpmnJS,
   inject
 } from 'test/TestHelper';
 
@@ -39,114 +40,84 @@ describe('camunda-platform/features/modeling - UpdateResultVariableBehavior', fu
   }));
 
 
-  describe('properties-panel.update-businessobject', function() {
-
-    describe('resultVariable to empty', function() {
-
-      let shape, context, businessObject;
-
-      beforeEach(inject(function(elementRegistry, commandStack) {
-
-        // given
-        shape = elementRegistry.get('BusinessRuleTask_1');
-        businessObject = getBusinessObject(shape);
-
-        context = {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
-            'camunda:resultVariable': ''
-          }
-        };
-
-        // assume
-        expect(businessObject.get('camunda:mapDecisionResult')).to.eql('collectEntries');
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', context);
-      }));
-
-
-      it('should execute', function() {
-
-        // then
-        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
-      });
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(businessObject.get('camunda:mapDecisionResult')).to.eql('collectEntries');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
-      }));
-
+  function updateProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateProperties(element, properties);
     });
+  }
 
-  });
+  function updateModdleProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateModdleProperties(element, getBusinessObject(element), properties);
+    });
+  }
+
+  [
+    [ 'element.updateProperties', updateProperties ],
+    [ 'element.updateModdleProperties', updateModdleProperties ],
+  ].forEach(([ command, fn ]) => {
+
+    describe(command, function() {
+
+      [
+        [ 'empty string', '' ],
+        [ 'undefined', undefined ]
+      ].forEach(([ name, value ]) => {
+
+        describe(`setting camunda:resultVariable to ${ name }`, function() {
+
+          let element,
+              businessObject;
+
+          beforeEach(inject(function(elementRegistry) {
+
+            // given
+            element = elementRegistry.get('BusinessRuleTask_1');
+
+            businessObject = getBusinessObject(element);
+
+            // assume
+            expect(businessObject.get('camunda:mapDecisionResult')).to.equal('collectEntries');
+
+            // when
+            fn(element, {
+              'camunda:resultVariable': value
+            });
+          }));
 
 
-  describe('element.updateProperties', function() {
+          it('should execute', function() {
 
-    describe('resultVariable to empty', function() {
+            // then
+            // camunda:mapDecisionResult default value is resultList
+            expect(businessObject.get('camunda:mapDecisionResult')).to.equal('resultList');
+          });
 
-      let shape, businessObject;
 
-      beforeEach(inject(function(elementRegistry, modeling) {
+          it('should undo', inject(function(commandStack) {
 
-        // given
-        shape = elementRegistry.get('BusinessRuleTask_1');
-        businessObject = getBusinessObject(shape);
+            // when
+            commandStack.undo();
 
-        // assume
-        expect(businessObject.get('camunda:mapDecisionResult')).to.eql('collectEntries');
+            // then
+            expect(businessObject.get('camunda:mapDecisionResult')).to.equal('collectEntries');
+          }));
 
-        // when
-        modeling.updateProperties(shape, {
-          'camunda:resultVariable': ''
+
+          it('should undo/redo', inject(function(commandStack) {
+
+            // when
+            commandStack.undo();
+            commandStack.redo();
+
+            // then
+            // camunda:mapDecisionResult default value is resultList
+            expect(businessObject.get('camunda:mapDecisionResult')).to.equal('resultList');
+          }));
+
         });
-      }));
 
-
-      it('should execute', function() {
-
-        // then
-        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
       });
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(businessObject.get('camunda:mapDecisionResult')).to.eql('collectEntries');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(businessObject.get('camunda:mapDecisionResult')).not.to.exist;
-      }));
 
     });
 
