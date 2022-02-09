@@ -1,5 +1,6 @@
 import {
   bootstrapCamundaPlatformModeler,
+  getBpmnJS,
   inject
 } from 'test/TestHelper';
 
@@ -7,8 +8,6 @@ import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
-
-import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
@@ -22,8 +21,7 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
   const testModules = [
     camundaPlatformModelingModules,
     coreModule,
-    modelingModule,
-    BpmnPropertiesPanelModule
+    modelingModule
   ];
 
   const moddleExtensions = {
@@ -35,351 +33,193 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
     moddleExtensions
   }));
 
-  describe('properties-panel.update-businessobject', function() {
 
-    describe('asyncBefore to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(commandStack, elementRegistry) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_1');
-
-        businessObject = getBusinessObject(shape);
-
-        const context = {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
-            'camunda:asyncBefore': false,
-            'camunda:async': undefined
-          }
-        };
-
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
+  function updateProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateProperties(element, properties);
     });
+  }
 
-
-    describe('asyncAfter to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(commandStack, elementRegistry) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_2');
-
-        businessObject = getBusinessObject(shape);
-
-        const context = {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
-            'camunda:asyncAfter': false
-          }
-        };
-
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
+  function updateModdleProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateModdleProperties(element, getBusinessObject(element), properties);
     });
+  }
 
 
-    describe('double async', function() {
+  [
+    [ 'element.updateProperties', updateProperties ],
+    [ 'element.updateModdleProperties', updateModdleProperties ],
+  ].forEach(([ command, fn ]) => {
 
-      let shape, businessObject;
+    describe(command, function() {
 
-      beforeEach(inject(function(elementRegistry) {
+      describe('camunda:asyncAfter set to false', function() {
 
-        // given
-        shape = elementRegistry.get('ServiceTask_3');
+        let element,
+            businessObject;
 
-        businessObject = getBusinessObject(shape);
+        beforeEach(inject(function(elementRegistry) {
 
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
+          // given
+          element = elementRegistry.get('ServiceTask_2');
 
+          businessObject = getBusinessObject(element);
 
-      it('should not execute when asyncBefore stays', inject(function(commandStack) {
+          // assume
+          expect(businessObject.get('camunda:exclusive')).to.be.false;
 
-        // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
+          // when
+          fn(element, {
             'camunda:asyncAfter': false
-          }
-        });
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
+          });
+        }));
 
 
-      it('should not execute when asyncAfter stays', inject(function(commandStack) {
+        it('should execute', inject(function() {
 
-        // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.true;
+        }));
+
+
+        it('should undo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.false;
+        }));
+
+
+        it('should undo/redo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+          commandStack.redo();
+
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.true;
+        }));
+
+      });
+
+
+      describe('camunda:asyncBefore set to false', function() {
+
+        let element,
+            businessObject;
+
+        beforeEach(inject(function(elementRegistry) {
+
+          // given
+          element = elementRegistry.get('ServiceTask_1');
+
+          businessObject = getBusinessObject(element);
+
+          // assume
+          expect(businessObject.get('camunda:exclusive')).to.be.false;
+
+          // when
+          fn(element, {
             'camunda:asyncBefore': false
-          }
-        });
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
-
-    });
-
-  });
+          });
+        }));
 
 
-  describe('element.updateProperties', function() {
+        it('should execute', inject(function() {
 
-    describe('asyncBefore to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_1');
-
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-
-        // when
-        modeling.updateProperties(shape, {
-          'camunda:asyncBefore': false
-        });
-      }));
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.true;
+        }));
 
 
-      it('should execute', inject(function() {
+        it('should undo', inject(function(commandStack) {
 
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
+          // when
+          commandStack.undo();
 
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.false;
+        }));
 
 
-      it('should undo/redo', inject(function(commandStack) {
+        it('should undo/redo', inject(function(commandStack) {
 
-        // when
-        commandStack.undo();
-        commandStack.redo();
+          // when
+          commandStack.undo();
+          commandStack.redo();
 
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.true;
+        }));
 
-    });
-
-
-    describe('asyncAfter to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_2');
-
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-
-        // when
-        modeling.updateProperties(shape, {
-          'camunda:asyncAfter': false
-        });
-      }));
+      });
 
 
-      it('should execute', inject(function() {
+      describe('both camunda:asyncAfter and camunda:asyncBefore set to false', function() {
 
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
+        let element,
+            businessObject;
 
+        beforeEach(inject(function(elementRegistry) {
 
-      it('should undo', inject(function(commandStack) {
+          // given
+          element = elementRegistry.get('ServiceTask_3');
 
-        // when
-        commandStack.undo();
+          businessObject = getBusinessObject(element);
 
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
+          // assume
+          expect(businessObject.get('camunda:exclusive')).to.be.false;
 
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
-    });
+          // when
+          fn(element, {
+            'camunda:asyncAfter': false,
+            'camunda:asyncBefore': false
+          });
+        }));
 
 
-    describe('asyncBoth to false', function() {
+        it('should execute', inject(function() {
 
-      let shape, businessObject;
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.true;
+        }));
 
-      beforeEach(inject(function(elementRegistry, modeling) {
+
+        it('should undo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.false;
+        }));
+
+
+        it('should undo/redo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+          commandStack.redo();
+
+          // then
+          expect(businessObject.get('camunda:exclusive')).to.be.true;
+        }));
+
+      });
+
+
+      it('should not execute when asyncBefore stays', inject(function(elementRegistry) {
 
         // given
-        shape = elementRegistry.get('ServiceTask_3');
+        const element = elementRegistry.get('ServiceTask_3');
 
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
+        const businessObject = getBusinessObject(element);
 
         // when
-        modeling.updateProperties(shape, {
-          'camunda:asyncAfter': false,
-          'camunda:asyncBefore': false
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(businessObject.get('camunda:exclusive')).to.be.true;
-      }));
-
-    });
-
-
-    describe('double async', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_3');
-
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(businessObject.get('camunda:exclusive')).to.be.false;
-      }));
-
-
-      it('should not execute when asyncBefore stays', inject(function(modeling) {
-
-        // when
-        modeling.updateProperties(shape, {
+        fn(element, {
           'camunda:asyncAfter': false
         });
 
@@ -388,10 +228,15 @@ describe('camunda-platform/features/modeling - UpdateCamundaExclusiveBehavior', 
       }));
 
 
-      it('should not execute when asyncAfter stays', inject(function(modeling) {
+      it('should not execute when asyncAfter stays', inject(function(elementRegistry) {
+
+        // given
+        const element = elementRegistry.get('ServiceTask_3');
+
+        const businessObject = getBusinessObject(element);
 
         // when
-        modeling.updateProperties(shape, {
+        fn(element, {
           'camunda:asyncBefore': false
         });
 
