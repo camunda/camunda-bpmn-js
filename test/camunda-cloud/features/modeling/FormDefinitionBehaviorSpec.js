@@ -3,7 +3,7 @@ import {
   inject
 } from 'test/TestHelper';
 
-import { getExtensionElements } from 'lib/camunda-cloud/helper/ExtensionElementsHelper';
+import { getExtensionElementsList } from '../../../../lib/util/ExtensionElementsUtil';
 
 import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
 
@@ -57,7 +57,7 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
+        expect(hasUsertaskForm('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
 
@@ -76,7 +76,7 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.true;
+        expect(hasUsertaskForm('UserTaskForm_1', userTaskForms)).to.be.true;
       }));
 
 
@@ -96,7 +96,7 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
+        expect(hasUsertaskForm('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
     });
@@ -119,7 +119,7 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
+        expect(hasUsertaskForm('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
 
@@ -140,7 +140,7 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.true;
+        expect(hasUsertaskForm('UserTaskForm_1', userTaskForms)).to.be.true;
       }));
 
 
@@ -162,7 +162,7 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
         // then
         const userTaskForms = getUserTaskForms(rootElement);
 
-        expect(userTaskFormExists('UserTaskForm_1', userTaskForms)).to.be.false;
+        expect(hasUsertaskForm('UserTaskForm_1', userTaskForms)).to.be.false;
       }));
 
     });
@@ -270,15 +270,15 @@ describe('camunda-cloud/features/modeling - FormDefinitionBehavior', function() 
 });
 
 
-// helpers ///////////////////
+// helpers //////////
 
 function getUserTaskForms(rootElement) {
   const businessObject = getBusinessObject(rootElement);
 
-  return getExtensionElements(businessObject, 'zeebe:UserTaskForm');
+  return getExtensionElementsList(businessObject, 'zeebe:UserTaskForm');
 }
 
-function userTaskFormExists(id, userTaskForms) {
+function hasUsertaskForm(id, userTaskForms) {
   return !!userTaskForms.find((userTaskForm) => {
     return userTaskForm.get('zeebe:id') === id;
   });
