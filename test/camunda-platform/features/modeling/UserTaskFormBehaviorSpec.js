@@ -54,20 +54,10 @@ describe('camunda-platform/features/modeling - UserTaskFormsBehavior', function(
     });
   }
 
-  function updateBusinessObject(element, properties) {
-    getBpmnJS().invoke(function(commandStack) {
-      commandStack.execute('properties-panel.update-businessobject', {
-        element,
-        businessObject: getBusinessObject(element),
-        properties
-      });
-    });
-  }
 
   [
     [ 'element.updateProperties', updateProperties ],
-    [ 'element.updateModdleProperties', updateModdleProperties ],
-    [ 'properties-panel.update-businessobject', updateBusinessObject ],
+    [ 'element.updateModdleProperties', updateModdleProperties ]
   ].forEach(([ command, fn ]) => {
 
     describe(command, function() {
