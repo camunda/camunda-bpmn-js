@@ -1,5 +1,6 @@
 import {
   bootstrapCamundaPlatformModeler,
+  getBpmnJS,
   inject
 } from 'test/TestHelper';
 
@@ -10,8 +11,6 @@ import {
 
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
-
-import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
@@ -25,8 +24,7 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
   const testModules = [
     camundaPlatformModelingModules,
     coreModule,
-    modelingModule,
-    BpmnPropertiesPanelModule
+    modelingModule
   ];
 
   const moddleExtensions = {
@@ -38,386 +36,209 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
     moddleExtensions
   }));
 
-
-  describe('properties-panel.update-businessobject', function() {
-
-    describe('asyncBefore to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, commandStack) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_1');
-
-        businessObject = getBusinessObject(shape);
-
-        const context = {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
-            'camunda:asyncBefore': false,
-            'camunda:async': undefined
-          }
-        };
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
-      }));
-
+  function updateProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateProperties(element, properties);
     });
+  }
 
-
-    describe('asyncAfter to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, commandStack) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_2');
-
-        businessObject = getBusinessObject(shape);
-
-        const context = {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
-            'camunda:asyncAfter': false
-          }
-        };
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.be.undefined;
-      }));
-
+  function updateModdleProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateModdleProperties(element, getBusinessObject(element), properties);
     });
+  }
 
 
-    describe('double async', function() {
+  [
+    [ 'element.updateProperties', updateProperties ],
+    [ 'element.updateModdleProperties', updateModdleProperties ],
+  ].forEach(([ command, fn ]) => {
 
-      let shape, businessObject;
+    describe(command, function() {
 
-      beforeEach(inject(function(elementRegistry) {
+      describe('camunda:asyncAfter to false', function() {
 
-        // given
-        shape = elementRegistry.get('ServiceTask_3');
+        let element,
+            businessObject;
 
-        businessObject = getBusinessObject(shape);
+        beforeEach(inject(function(elementRegistry) {
 
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
+          // given
+          element = elementRegistry.get('ServiceTask_2');
 
+          businessObject = getBusinessObject(element);
 
-      it('should not execute when asyncBefore stays', inject(function(commandStack) {
+          // assume
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
 
-        // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
+          // when
+          fn(element, {
             'camunda:asyncAfter': false
-          }
-        });
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
+          });
+        }));
 
 
-      it('should not execute when asyncAfter stays', inject(function(commandStack) {
+        it('should execute', inject(function() {
 
-        // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
+        }));
+
+
+        it('should undo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+        }));
+
+
+        it('should undo/redo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+          commandStack.redo();
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
+        }));
+
+      });
+
+
+      describe('camunda:asyncBefore set to false', function() {
+
+        let element,
+            businessObject;
+
+        beforeEach(inject(function(elementRegistry) {
+
+          // given
+          element = elementRegistry.get('ServiceTask_1');
+
+          businessObject = getBusinessObject(element);
+
+          // assume
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+
+          // when
+          fn(element, {
             'camunda:asyncBefore': false
-          }
-        });
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-    });
+          });
+        }));
 
 
-    describe('with TimerEventDefinition', function() {
+        it('should execute', inject(function() {
 
-      let shape, businessObject;
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
+        }));
 
-      beforeEach(inject(function(elementRegistry) {
+
+        it('should undo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+        }));
+
+
+        it('should undo/redo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+          commandStack.redo();
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
+        }));
+
+      });
+
+
+      describe('both camunda:asyncAfter and camunda:asyncBefore set to false', function() {
+
+        let element,
+            businessObject;
+
+        beforeEach(inject(function(elementRegistry) {
+
+          // given
+          element = elementRegistry.get('ServiceTask_3');
+
+          businessObject = getBusinessObject(element);
+
+          // assume
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+
+          // when
+          fn(element, {
+            'camunda:asyncAfter': false,
+            'camunda:asyncBefore': false
+          });
+        }));
+
+
+        it('should execute', inject(function() {
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
+        }));
+
+
+        it('should undo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+        }));
+
+
+        it('should undo/redo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+          commandStack.redo();
+
+          // then
+          expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
+        }));
+
+      });
+
+
+      it('should not execute when if camunda:asyncAfter set to true', inject(function(elementRegistry) {
 
         // given
-        shape = elementRegistry.get('TimerCatchEvent_1');
+        const shape = elementRegistry.get('ServiceTask_3');
 
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should not execute', inject(function(commandStack) {
+        const businessObject = getBusinessObject(shape);
 
         // when
-        commandStack.execute('properties-panel.update-businessobject', {
-          element: shape,
-          businessObject: businessObject,
-          properties: {
-            'camunda:asyncAfter': false
-          }
-        });
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-    });
-
-  });
-
-
-  describe('element.updateProperties', function() {
-
-    describe('asyncBefore to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_1');
-
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-
-        // when
-        modeling.updateProperties(shape, {
+        fn(shape, {
           'camunda:asyncBefore': false
         });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
 
         // then
         expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
       }));
 
 
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
-      }));
-
-    });
-
-
-    describe('asyncAfter to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
+      it('should not execute when if camunda:asyncBefore set to true', inject(function(elementRegistry) {
 
         // given
-        shape = elementRegistry.get('ServiceTask_2');
+        const element = elementRegistry.get('ServiceTask_3');
 
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
+        const businessObject = getBusinessObject(element);
 
         // when
-        modeling.updateProperties(shape, {
-          'camunda:asyncAfter': false
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
-      }));
-
-    });
-
-
-    describe('asyncBoth to false', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_3');
-
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-
-        // when
-        modeling.updateProperties(shape, {
-          'camunda:asyncAfter': false,
-          'camunda:asyncBefore': false
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).not.to.exist;
-      }));
-
-    });
-
-
-    describe('double async', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_3');
-
-        businessObject = getBusinessObject(shape);
-
-        // assume
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should not execute when asyncBefore stays', inject(function(modeling) {
-
-        // when
-        modeling.updateProperties(shape, {
+        fn(element, {
           'camunda:asyncAfter': false
         });
 
@@ -426,40 +247,18 @@ describe('camunda-platform/features/modeling - DeleteRetryTimeCycleBehavior', fu
       }));
 
 
-      it('should not execute when asyncAfter stays', inject(function(modeling) {
-
-        // when
-        modeling.updateProperties(shape, {
-          'camunda:asyncBefore': false
-        });
-
-        // then
-        expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-    });
-
-
-    describe('with TimerEventDefinition', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry) {
+      it('should not execute if has camunda:TimerEventDefinition', inject(function(elementRegistry, modeling) {
 
         // given
-        shape = elementRegistry.get('TimerCatchEvent_1');
+        const element = elementRegistry.get('TimerCatchEvent_1');
 
-        businessObject = getBusinessObject(shape);
+        const businessObject = getBusinessObject(element);
 
         // assume
         expect(getFailedJobRetryTimeCycleBody(businessObject)).to.equal('2');
-      }));
-
-
-      it('should not execute', inject(function(modeling) {
 
         // when
-        modeling.updateProperties(shape, {
+        modeling.updateProperties(element, {
           'camunda:asyncAfter': false
         });
 
