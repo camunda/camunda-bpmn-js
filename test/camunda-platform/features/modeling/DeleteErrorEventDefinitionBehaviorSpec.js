@@ -1,5 +1,6 @@
 import {
   bootstrapCamundaPlatformModeler,
+  getBpmnJS,
   inject
 } from 'test/TestHelper';
 
@@ -38,117 +39,75 @@ describe('camunda-platform/features/modeling - DeleteErrorEventDefinitionBehavio
     moddleExtensions
   }));
 
-
-  describe('properties-panel.update-businessobject', function() {
-
-    describe('camunda:type to non-external', function() {
-
-      let shape, businessObject;
-
-      beforeEach(inject(function(elementRegistry, commandStack) {
-
-        // given
-        shape = elementRegistry.get('ServiceTask_1');
-
-        businessObject = getBusinessObject(shape);
-
-        const context = {
-          element: shape,
-          businessObject,
-          properties: {
-            'camunda:type': 'foo'
-          }
-        };
-
-        // assume
-        expect(getErrorEventDefinitions(businessObject)).to.have.length(3);
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getErrorEventDefinitions(businessObject)).to.be.empty;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getErrorEventDefinitions(businessObject)).to.have.length(3);
-      }));
-
-
-      it('should undo/redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getErrorEventDefinitions(businessObject)).to.be.empty;
-      }));
-
+  function updateProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateProperties(element, properties);
     });
+  }
 
-  });
+  function updateModdleProperties(element, properties) {
+    getBpmnJS().invoke(function(modeling) {
+      modeling.updateModdleProperties(element, getBusinessObject(element), properties);
+    });
+  }
 
+  [
+    [ 'element.updateProperties', updateProperties ],
+    [ 'element.updateModdleProperties', updateModdleProperties ],
+  ].forEach(([ command, fn ]) => {
 
-  describe('element.updateProperties', function() {
+    describe(command, function() {
 
-    describe('camunda:type to non-external', function() {
+      describe('camunda:type to non-external', function() {
 
-      let shape, businessObject;
+        let businessObject,
+            element;
 
-      beforeEach(inject(function(elementRegistry, modeling) {
+        beforeEach(inject(function(elementRegistry) {
 
-        // given
-        shape = elementRegistry.get('ServiceTask_1');
+          // given
+          element = elementRegistry.get('ServiceTask_1');
 
-        businessObject = getBusinessObject(shape);
+          businessObject = getBusinessObject(element);
 
-        // assume
-        expect(getErrorEventDefinitions(businessObject)).to.have.length(3);
+          // assume
+          expect(getErrorEventDefinitions(businessObject)).to.have.length(3);
 
-        // when
-        modeling.updateProperties(shape, {
-          'camunda:type': 'foo'
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getErrorEventDefinitions(businessObject)).to.be.empty;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getErrorEventDefinitions(businessObject)).to.have.length(3);
-      }));
+          // when
+          fn(element, {
+            'camunda:type': 'foo'
+          });
+        }));
 
 
-      it('should undo/redo', inject(function(commandStack) {
+        it('should execute', inject(function() {
 
-        // when
-        commandStack.undo();
-        commandStack.redo();
+          // then
+          expect(getErrorEventDefinitions(businessObject)).to.be.empty;
+        }));
 
-        // then
-        expect(getErrorEventDefinitions(businessObject)).to.be.empty;
-      }));
+
+        it('should undo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+
+          // then
+          expect(getErrorEventDefinitions(businessObject)).to.have.length(3);
+        }));
+
+
+        it('should undo/redo', inject(function(commandStack) {
+
+          // when
+          commandStack.undo();
+          commandStack.redo();
+
+          // then
+          expect(getErrorEventDefinitions(businessObject)).to.be.empty;
+        }));
+
+      });
 
     });
 
