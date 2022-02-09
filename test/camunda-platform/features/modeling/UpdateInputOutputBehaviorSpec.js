@@ -3,16 +3,12 @@ import {
   inject
 } from 'test/TestHelper';
 
-import {
-  getBusinessObject,
-  is
-} from 'bpmn-js/lib/util/ModelUtil';
+import { getBusinessObject } from 'bpmn-js/lib/util/ModelUtil';
+
+import { getInputOutput } from '../../../../lib/camunda-platform/helper/InputOutputHelper';
 
 import coreModule from 'bpmn-js/lib/core';
 import modelingModule from 'bpmn-js/lib/features/modeling';
-
-import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
-
 
 import camundaModdleExtensions from 'camunda-bpmn-moddle/resources/camunda';
 
@@ -26,8 +22,7 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
   const testModules = [
     camundaPlatformModelingModules,
     coreModule,
-    modelingModule,
-    BpmnPropertiesPanelModule
+    modelingModule
   ];
 
   const moddleExtensions = {
@@ -40,573 +35,145 @@ describe('camunda-platform/features/modeling - UpdateInputOutputBehavior', funct
   }));
 
 
-  describe('element.updateProperties', function() {
+  describe('remove camunda:InputOuput when removing camunda:InputParameter', function() {
 
-    it('should NOT execute if there are still parameters',
-      inject(function(elementRegistry, modeling) {
+    let businessObject;
 
-        // given
-        const shape = elementRegistry.get('ServiceTask_3');
-        const businessObject = getBusinessObject(shape);
-        const extensionElements = businessObject.get('extensionElements');
+    beforeEach(inject(function(elementRegistry, modeling) {
 
-        const inputOutput = getInputOutput(businessObject);
+      // given
+      const shape = elementRegistry.get('ServiceTask_1');
 
-        // assume
-        expect(inputOutput).to.exist;
+      businessObject = getBusinessObject(shape);
 
-        inputOutput.set('inputParameters', []);
-        extensionElements.set('values', [ inputOutput ]);
+      const inputOutput = getInputOutput(businessObject);
 
-        // when
-        modeling.updateProperties(shape, {
-          extensionElements
-        });
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      })
-    );
+      // when
+      modeling.updateModdleProperties(shape, inputOutput, {
+        inputParameters: []
+      });
+    }));
 
 
-    it('should keep other extension elements',
-      inject(function(elementRegistry, modeling) {
+    it('should execute', inject(function() {
 
-        // given
-        const shape = elementRegistry.get('ServiceTask_4');
-        const businessObject = getBusinessObject(shape);
-        const extensionElements = businessObject.get('extensionElements');
-
-        const inputOutput = getInputOutput(businessObject);
-        const properties = getProperties(businessObject);
-
-        // assume
-        expect(getExtensionElements(businessObject)).to.have.length(2);
-
-        inputOutput.set('inputParameters', []);
-        extensionElements.set('values', [ inputOutput, properties ]);
-
-        // when
-        modeling.updateProperties(shape, {
-          extensionElements
-        });
-
-        // then
-        expect(getExtensionElements(businessObject)).to.have.length(1);
-      })
-    );
+      // then
+      expect(getInputOutput(businessObject)).not.to.exist;
+    }));
 
 
-    describe('delete last input parameter', function() {
+    it('should undo', inject(function(commandStack) {
 
-      let businessObject;
+      // when
+      commandStack.undo();
 
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_1');
-        businessObject = getBusinessObject(shape);
-        const extensionElements = businessObject.get('extensionElements');
-
-        const inputOutput = getInputOutput(businessObject);
-
-        // assume
-        expect(inputOutput).to.exist;
-
-        inputOutput.set('inputParameters', []);
-        extensionElements.set('values', [ inputOutput ]);
-
-        // when
-        modeling.updateProperties(shape, {
-          extensionElements
-        });
-      }));
+      // then
+      expect(getInputOutput(businessObject)).to.exist;
+    }));
 
 
-      it('should execute', inject(function() {
+    it('should redo', inject(function(commandStack) {
 
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
+      // when
+      commandStack.undo();
+      commandStack.redo();
 
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      }));
-
-
-      it('should redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-    });
-
-
-    describe('delete last output parameter', function() {
-
-      let businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_2');
-        businessObject = getBusinessObject(shape);
-        const extensionElements = businessObject.get('extensionElements');
-
-        const inputOutput = getInputOutput(businessObject);
-
-        // assume
-        expect(inputOutput).to.exist;
-
-        inputOutput.set('outputParameters', []);
-        extensionElements.set('values', [ inputOutput ]);
-
-        // when
-        modeling.updateProperties(shape, {
-          extensionElements
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      }));
-
-
-      it('should redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-    });
+      // then
+      expect(getInputOutput(businessObject)).not.to.exist;
+    }));
 
   });
 
 
-  describe('element.updateModdleProperties', function() {
+  describe('remove camunda:InputOuput when removing camunda:InputParameter', function() {
 
-    it('should NOT execute if there are still parameters',
-      inject(function(elementRegistry, modeling) {
+    let businessObject;
 
-        // given
-        const shape = elementRegistry.get('ServiceTask_3');
-        const businessObject = getBusinessObject(shape);
+    beforeEach(inject(function(elementRegistry, modeling) {
 
-        const inputOutput = getInputOutput(businessObject);
+      // given
+      const shape = elementRegistry.get('ServiceTask_2');
 
-        // assume
-        expect(inputOutput).to.exist;
+      businessObject = getBusinessObject(shape);
 
-        // when
-        modeling.updateModdleProperties(shape, inputOutput, {
-          inputParameters: []
-        });
+      const inputOutput = getInputOutput(businessObject);
 
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      })
-    );
+      // when
+      modeling.updateModdleProperties(shape, inputOutput, {
+        outputParameters: []
+      });
+    }));
 
 
-    it('should keep other extension elements',
-      inject(function(elementRegistry, modeling) {
+    it('should execute', inject(function() {
 
-        // given
-        const shape = elementRegistry.get('ServiceTask_4');
-        const businessObject = getBusinessObject(shape);
-
-        const inputOutput = getInputOutput(businessObject);
-
-        // assume
-        expect(getExtensionElements(businessObject)).to.have.length(2);
-
-        // when
-        modeling.updateModdleProperties(shape, inputOutput, {
-          inputParameters: []
-        });
-
-        // then
-        expect(getExtensionElements(businessObject)).to.have.length(1);
-      })
-    );
+      // then
+      expect(getInputOutput(businessObject)).not.to.exist;
+    }));
 
 
-    describe('delete last input parameter', function() {
+    it('should undo', inject(function(commandStack) {
 
-      let businessObject;
+      // when
+      commandStack.undo();
 
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_1');
-        businessObject = getBusinessObject(shape);
-
-        const inputOutput = getInputOutput(businessObject);
-
-        // assume
-        expect(inputOutput).to.exist;
-
-        // when
-        modeling.updateModdleProperties(shape, inputOutput, {
-          inputParameters: []
-        });
-      }));
+      // then
+      expect(getInputOutput(businessObject)).to.exist;
+    }));
 
 
-      it('should execute', inject(function() {
+    it('should redo', inject(function(commandStack) {
 
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
+      // when
+      commandStack.undo();
+      commandStack.redo();
 
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      }));
-
-
-      it('should redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-    });
-
-
-    describe('delete last output parameter', function() {
-
-      let businessObject;
-
-      beforeEach(inject(function(elementRegistry, modeling) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_2');
-        businessObject = getBusinessObject(shape);
-
-        const inputOutput = getInputOutput(businessObject);
-
-        // assume
-        expect(inputOutput).to.exist;
-
-        // when
-        modeling.updateModdleProperties(shape, inputOutput, {
-          outputParameters: []
-        });
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      }));
-
-
-      it('should redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-    });
+      // then
+      expect(getInputOutput(businessObject)).not.to.exist;
+    }));
 
   });
 
 
+  it('should not remove camunda:InputOuput when remaining camunda:InputParameter',
+    inject(function(elementRegistry, modeling) {
 
-  describe('properties-panel.update-businessobject-list', function() {
+      // given
+      const shape = elementRegistry.get('ServiceTask_3');
 
-    it('should NOT execute if there are still parameters',
-      inject(function(elementRegistry, commandStack) {
+      const businessObject = getBusinessObject(shape);
 
-        // given
-        const shape = elementRegistry.get('ServiceTask_3');
-        const businessObject = getBusinessObject(shape);
+      const inputOutput = getInputOutput(businessObject);
 
-        const inputOutput = getInputOutput(businessObject);
-        const inputParameters = getInputParameters(inputOutput);
+      // when
+      modeling.updateModdleProperties(shape, inputOutput, {
+        outputParameters: []
+      });
 
-        const context = {
-          element: shape,
-          currentObject: inputOutput,
-          propertyName: 'inputParameters',
-          objectsToRemove: inputParameters
-        };
+      // then
+      expect(getInputOutput(businessObject)).to.exist;
+    })
+  );
 
-        // assume
-        expect(inputOutput).to.exist;
 
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', context);
+  it('should not remove camunda:InputOuput when remaining camunda:OutputParameter',
+    inject(function(elementRegistry, modeling) {
 
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      })
-    );
+      // given
+      const shape = elementRegistry.get('ServiceTask_3');
 
+      const businessObject = getBusinessObject(shape);
 
-    it('should NOT remove newly added camunda:InputOutput',
-      inject(function(elementRegistry, commandStack, bpmnFactory) {
+      const inputOutput = getInputOutput(businessObject);
 
-        // given
-        const shape = elementRegistry.get('ServiceTask_empty');
-        const businessObject = getBusinessObject(shape);
-        const extensionElements = businessObject.get('extensionElements');
+      // when
+      modeling.updateModdleProperties(shape, inputOutput, {
+        inputParameters: []
+      });
 
-        // assume
-        expect(getInputOutput(businessObject)).to.not.exist;
-
-        const inputOutput = bpmnFactory.create('camunda:InputOutput');
-
-        const context = {
-          element: shape,
-          currentObject: extensionElements,
-          propertyName: 'values',
-          objectsToAdd: [ inputOutput ]
-        };
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', context);
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      })
-    );
-
-
-    it('should keep other extension elements',
-      inject(function(elementRegistry, commandStack) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_4');
-        const businessObject = getBusinessObject(shape);
-
-        const inputOutput = getInputOutput(businessObject);
-        const inputParameters = getInputParameters(inputOutput);
-
-        const context = {
-          element: shape,
-          currentObject: inputOutput,
-          propertyName: 'inputParameters',
-          objectsToRemove: inputParameters
-        };
-
-        // assume
-        expect(getExtensionElements(businessObject)).to.have.length(2);
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', context);
-
-        // then
-        expect(getExtensionElements(businessObject)).to.have.length(1);
-      })
-    );
-
-
-    describe('delete last input parameter', function() {
-
-      let businessObject;
-
-      beforeEach(inject(function(elementRegistry, commandStack) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_1');
-
-        businessObject = getBusinessObject(shape);
-
-        const inputOutput = getInputOutput(businessObject);
-        const inputParameters = getInputParameters(inputOutput);
-
-        const context = {
-          element: shape,
-          currentObject: inputOutput,
-          propertyName: 'inputParameters',
-          objectsToRemove: inputParameters
-        };
-
-        // assume
-        expect(inputOutput).to.exist;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      }));
-
-
-      it('should redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-    });
-
-
-    describe('delete last output parameter', function() {
-
-      let businessObject;
-
-      beforeEach(inject(function(elementRegistry, commandStack) {
-
-        // given
-        const shape = elementRegistry.get('ServiceTask_2');
-
-        businessObject = getBusinessObject(shape);
-
-        const inputOutput = getInputOutput(businessObject);
-        const outputParameters = getOutputParameters(inputOutput);
-
-        const context = {
-          element: shape,
-          currentObject: inputOutput,
-          propertyName: 'outputParameters',
-          objectsToRemove: outputParameters
-        };
-
-        // assume
-        expect(inputOutput).to.exist;
-
-        // when
-        commandStack.execute('properties-panel.update-businessobject-list', context);
-      }));
-
-
-      it('should execute', inject(function() {
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-
-      it('should undo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-
-        // then
-        expect(getInputOutput(businessObject)).to.exist;
-      }));
-
-
-      it('should redo', inject(function(commandStack) {
-
-        // when
-        commandStack.undo();
-        commandStack.redo();
-
-        // then
-        expect(getInputOutput(businessObject)).not.to.exist;
-      }));
-
-    });
-
-  });
+      // then
+      expect(getInputOutput(businessObject)).to.exist;
+    })
+  );
 
 });
-
-
-// helpers //////////
-
-function getOutputParameters(inputOutput) {
-  return inputOutput.get('outputParameters');
-}
-
-function getInputParameters(inputOutput) {
-  return inputOutput.get('inputParameters');
-}
-
-function getInputOutput(businessObject) {
-  return getExtensionElements(businessObject, 'camunda:InputOutput')[ 0 ];
-}
-
-function getProperties(businessObject) {
-  return getExtensionElements(businessObject, 'camunda:Properties')[ 0 ];
-}
-
-function getExtensionElements(businessObject, type) {
-  const extensionElements = businessObject.get('extensionElements');
-
-  if (!extensionElements) {
-    return;
-  }
-
-  if (!type) {
-    return extensionElements.get('values');
-  }
-
-  return extensionElements.get('values').filter((element) => {
-    return is(element, type);
-  });
-}
