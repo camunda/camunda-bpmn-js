@@ -3,10 +3,6 @@ import {
   inject
 } from 'test/TestHelper';
 
-import {
-  getBpmnJS
-} from 'bpmn-js/test/helper';
-
 import coreModule from 'bpmn-js/lib/core';
 
 import modelingModule from 'bpmn-js/lib/features/modeling';
@@ -43,98 +39,73 @@ describe('camunda-platform/features/modeling - UserTaskGeneratedFormsBehavior', 
     moddleExtensions
   }));
 
-  function updateModdleProperties(element, moddleElement, properties) {
-    getBpmnJS().invoke(function(modeling) {
-      modeling.updateModdleProperties(element, moddleElement, properties);
-    });
-  }
-
-  function updateBusinessObject(element, businessObject, properties) {
-    getBpmnJS().invoke(function(commandStack) {
-      commandStack.execute('properties-panel.update-businessobject', {
-        element,
-        businessObject,
-        properties
-      });
-    });
-  }
-
   [
-    [ 'element.updateModdleProperties', updateModdleProperties ],
-    [ 'properties-panel.update-businessobject', updateBusinessObject ]
-  ].forEach(([ command, fn ]) => {
+    [ 'start event', 'StartEvent' ],
+    [ 'user task', 'UserTask' ]
+  ].forEach(([ type, prefix ]) => {
 
-    describe(command, function() {
+    describe('setting camunda:FormField#type to boolean', function() {
 
-      [
-        [ 'start event', 'StartEvent' ],
-        [ 'user task', 'UserTask' ]
-      ].forEach(([ type, prefix ]) => {
+      describe(type, function() {
 
-        describe('setting camunda:FormField#type to boolean', function() {
+        describe('camunda:FormField#values', function() {
 
-          describe(type, function() {
+          it('should delete camunda:FormField#values', inject(function(elementRegistry, modeling) {
 
-            describe('camunda:FormField#values', function() {
+            // when
+            const element = elementRegistry.get(`${ prefix }_1`);
 
-              it('should delete camunda:FormField#values', inject(function(elementRegistry) {
+            const businessObject = getFormField(element);
 
-                // when
-                const element = elementRegistry.get(`${ prefix }_1`);
+            // when
+            modeling.updateModdleProperties(element, businessObject, { 'camunda:type': 'boolean' });
 
-                const businessObject = getFormField(element);
-
-                // when
-                fn(element, businessObject, { 'camunda:type': 'boolean' });
-
-                // then
-                expect(businessObject.get('camunda:values')).to.be.empty;
-              }));
+            // then
+            expect(businessObject.get('camunda:values')).to.be.empty;
+          }));
 
 
-              it('should not delete camunda:FormField#values', inject(function(elementRegistry) {
+          it('should not delete camunda:FormField#values', inject(function(elementRegistry, modeling) {
 
-                // when
-                const element = elementRegistry.get(`${ prefix }_1`);
+            // when
+            const element = elementRegistry.get(`${ prefix }_1`);
 
-                const businessObject = getFormField(element);
+            const businessObject = getFormField(element);
 
-                // when
-                fn(element, businessObject, { 'camunda:type': 'enum' });
+            // when
+            modeling.updateModdleProperties(element, businessObject, { 'camunda:type': 'enum' });
 
-                // then
-                expect(businessObject.get('camunda:values')).not.to.be.empty;
-              }));
-
-            });
-
-          });
+            // then
+            expect(businessObject.get('camunda:values')).not.to.be.empty;
+          }));
 
         });
 
       });
 
+    });
 
-      describe('updating camunda:FormField#id', function() {
+  });
 
-        it('should update camunda:FormData#businessKey', inject(function(elementRegistry) {
 
-          // when
-          const element = elementRegistry.get('StartEvent_1');
+  describe('updating camunda:FormField#id', function() {
 
-          const formData = getFormData(element),
-                formField = getFormField(element);
+    it('should update camunda:FormData#businessKey', inject(function(elementRegistry, modeling) {
 
-          // when
-          fn(element, formField, { 'camunda:id': 'Foo' });
+      // when
+      const element = elementRegistry.get('StartEvent_1');
 
-          // then
-          expect(formData.get('camunda:businessKey')).to.equal('Foo');
-        }));
+      const formData = getFormData(element),
+            formField = getFormField(element);
 
+      // when
+      modeling.updateModdleProperties(element, formField, {
+        'camunda:id': 'Foo'
       });
 
-    });
+      // then
+      expect(formData.get('camunda:businessKey')).to.equal('Foo');
+    }));
 
   });
 
@@ -146,15 +117,15 @@ describe('camunda-platform/features/modeling - UserTaskGeneratedFormsBehavior', 
       // when
       const element = elementRegistry.get('StartEvent_1');
 
-      const formData = getFormData(element),
-            formField = getFormField(element);
+      const formData = getFormData(element);
 
       // when
-      commandStack.execute('properties-panel.update-businessobject-list', {
-        currentObject: formData,
+      commandStack.execute('element.updateModdleProperties', {
         element,
-        propertyName: 'fields',
-        objectsToRemove: [ formField ]
+        moddleElement: formData,
+        properties: {
+          fields: []
+        }
       });
 
       // then
