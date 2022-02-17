@@ -15,12 +15,18 @@ import Modeler from 'lib/camunda-cloud/Modeler';
 import simpleXml from 'test/fixtures/simple.bpmn';
 
 import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
+import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
 
 insertCSS(
   'properties-panel.css',
   propertiesPanelCSS
+);
+
+insertCSS(
+  'element-templates.css',
+  elementTemplatesCSS
 );
 
 insertCSS('test-panel.css', `
@@ -124,6 +130,22 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('zeebeModdleExtension')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('zeebePropertiesProvider')).to.exist;
+    });
+
+  });
+
+
+  it('should inject element templates modules', function() {
+
+    // when
+    return createModeler(simpleXml).then(function(result) {
+
+      var modeler = result.modeler;
+
+      // then
+      expect(modeler.get('elementTemplatesLoader')).to.exist;
+      expect(modeler.get('elementTemplates')).to.exist;
+      expect(modeler.get('elementTemplatesPropertiesProvider')).to.exist;
     });
 
   });
