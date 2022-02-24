@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.3
+
+* `FEAT`: add cloud element templates ([#95](https://github.com/camunda/camunda-bpmn-js/pull/95))
+* `DEPS`: update to `bpmn-js@9.0.2`
+* `DEPS`: update to `@bpmn-io/properties-panel@0.11.0`
+* `DEPS`: update to `bpmn-properties-panel@1.0.0-alpha.5`
+* `DEPS`: update to `zeebe-bpmn-moddle@0.11.0`
+
 ## 0.13.0-alpha.2
 
 * `FEAT`: add support for drilldown ([#89](https://github.com/camunda/camunda-bpmn-js/pull/89))
