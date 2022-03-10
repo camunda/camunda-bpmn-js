@@ -372,12 +372,19 @@ describe('camunda-cloud/features/modeling - UpdatePropagateAllChildVariablesBeha
 
 // helpers //////////
 
-const getPropagateAllChildVariablesToggle = (container) => {
-  return domQuery('input[name="propagateAllChildVariables"]', container);
+const getPropagateAllChildVariablesToggle = async (container) => {
+  let input;
+  do {
+    await act(() => {
+      input = domQuery('input[name="propagateAllChildVariables"]', container);
+    });
+  } while (!input);
+
+  return input;
 };
 
-const clickPropagateAllChildVariablesToggle = (container) => {
-  const toggle = getPropagateAllChildVariablesToggle(container);
+const clickPropagateAllChildVariablesToggle = async (container) => {
+  const toggle = await getPropagateAllChildVariablesToggle(container);
 
   return act(() => {
     triggerEvent(toggle, 'click');
