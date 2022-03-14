@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1fzts6i" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0-alpha.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="1.3.0">
+  <bpmn:process id="Process_0ps0tyx" isExecutable="true">
+    <bpmn:serviceTask id="ServiceTask_1" zeebe:modelerTemplate="foo">
+      <bpmn:extensionElements>
+        <zeebe:modelerTemplateIcon><![CDATA[<svg xmlns="http://www.w3.org/2000/svg"><path d="m 10.896735,24.374985 h 2.51615 v -5.552881 h 2.125711 l 3.036732,5.552881 h 2.841515 l -3.383788,-5.921627 c 1.691894,-0.585656 2.819823,-1.908804 2.819823,-4.056207 0,-3.166877 -2.27755,-4.208042 -5.227517,-4.208042 h -4.728626 z m 2.51615,-7.548447 v -4.620172 h 1.952185 c 1.952184,0 3.015041,0.563965 3.015041,2.190785 0,1.605131 -1.062857,2.429387 -3.015041,2.429387 z" style="fill: black; stroke-width: 2px; stroke: none;"></path></svg>]]></zeebe:modelerTemplateIcon>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0ps0tyx">
+      <bpmndi:BPMNShape id="Activity_1xo9fed_di" bpmnElement="ServiceTask_1">
+        <dc:Bounds x="180" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

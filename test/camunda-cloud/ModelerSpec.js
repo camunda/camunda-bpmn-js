@@ -105,7 +105,7 @@ describe('<CamundaCloudModeler>', function() {
   }
 
   (singleStart ? it.only : it)('should import simple process', function() {
-    return createModeler(simpleXml).then(function(result) {
+    return createModeler(require('test/fixtures/zeebe.bpmn').default).then(function(result) {
 
       expect(result.error).not.to.exist;
     });
