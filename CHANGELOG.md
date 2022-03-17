@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.4
+
+* `FIX`: move properties panel deps to peer dependencies
+* `CHORE`: add prepare script
+* `DEPS`: update to `bpmn-js@9.0.3`
+
 ## 0.13.0-alpha.3
 
 * `FEAT`: add cloud element templates ([#95](https://github.com/camunda/camunda-bpmn-js/pull/95))
