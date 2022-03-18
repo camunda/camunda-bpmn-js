@@ -30,6 +30,11 @@ insertCSS(
   require('diagram-js-minimap/assets/diagram-js-minimap.css').default
 );
 
+insertCSS(
+  'chooser.css',
+  require('@bpmn-io/element-template-chooser/lib/ElementTemplateChooser.css').default
+);
+
 export function bootstrapCamundaCloudModeler(diagram, options, locals) {
   return bootstrapBpmnJS(CamundaCloudModeler, diagram, options, locals);
 }

@@ -12,12 +12,16 @@ import {
 
 import Modeler from 'lib/camunda-cloud/Modeler';
 
+import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
+
 import simpleXml from 'test/fixtures/simple.bpmn';
 
 import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
+
+var startIcons = window.__env__ && window.__env__.SINGLE_START === 'icons-demo';
 
 insertCSS(
   'properties-panel.css',
@@ -75,21 +79,28 @@ describe('<CamundaCloudModeler>', function() {
     container.appendChild(propertiesContainer);
   });
 
-  function createModeler(xml) {
+  function createModeler(xml, options = {}) {
+
+    const {
+      additionalModules,
+      elementTemplates
+    } = options;
 
     clearBpmnJS();
 
     modeler = new Modeler({
       container: modelerContainer,
+      additionalModules,
       keyboard: {
         bindTo: document
       },
       propertiesPanel: {
         parent: propertiesContainer
-      }
+      },
+      elementTemplates
     });
 
-    singleStart && modeler.on('commandStack.changed', debounce(function() {
+    (singleStart || startIcons) && modeler.on('commandStack.changed', debounce(function() {
       modeler.saveXML({ format: true }).then(function(result) {
         console.log(result.xml);
       });
@@ -105,9 +116,23 @@ describe('<CamundaCloudModeler>', function() {
   }
 
   (singleStart ? it.only : it)('should import simple process', function() {
-    return createModeler(require('test/fixtures/zeebe.bpmn').default).then(function(result) {
+    return createModeler(require('test/fixtures/simple.bpmn').default).then(function(result) {
 
       expect(result.error).not.to.exist;
+    });
+  });
+
+
+  // TODO(pinussilvestrus): remove me, demo only.
+  (startIcons ? it.only : it)('integration - template icons', function() {
+
+    // given
+    var templates = require('test/fixtures/icon-templates.json');
+
+    // when
+    return createModeler(require('test/fixtures/icons.bpmn').default, {
+      additionalModules: [ ElementTemplateChooserModule ],
+      elementTemplates: templates
     });
   });
 

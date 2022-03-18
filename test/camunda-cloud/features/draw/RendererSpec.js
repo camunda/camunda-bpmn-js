@@ -26,7 +26,7 @@ describe('camunda-cloud/features - Renderer', function() {
 
   beforeEach(bootstrapCamundaCloudModeler(diagramXML, { modules: testModules }));
 
-  it.only('should render icon', inject(function(elementRegistry) {
+  it('should render icon', inject(function(elementRegistry) {
 
     // given
     const gfx = elementRegistry.getGraphics('ServiceTask_1');
