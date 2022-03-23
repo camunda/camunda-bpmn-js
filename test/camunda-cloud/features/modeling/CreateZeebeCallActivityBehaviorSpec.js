@@ -8,6 +8,7 @@ import {
 } from 'min-dash';
 
 import {
+  getBusinessObject,
   is
 } from 'bpmn-js/lib/util/ModelUtil';
 
@@ -60,9 +61,13 @@ describe('camunda-cloud/features/modeling - CreateCallActivitiesBehavior', funct
         const newShape = modeling.createShape({ type: 'bpmn:CallActivity' }, { x: 100, y: 100 }, rootElement);
 
         // then
-        const calledElementExtension = getCalledElement(newShape);
+        const businessObject = getBusinessObject(newShape),
+              extensionElements = businessObject.get('extensionElements'),
+              calledElementExtension = getCalledElement(newShape);
 
         expect(calledElementExtension).to.exist;
+        expect(extensionElements).to.exist;
+        expect(calledElementExtension.$parent).to.equal(extensionElements);
         expect(calledElementExtension.get('zeebe:propagateAllChildVariables')).to.be.false;
       }));
 
@@ -120,9 +125,13 @@ describe('camunda-cloud/features/modeling - CreateCallActivitiesBehavior', funct
         // then
         const pastedCallActivity = find(elements, (element) => is(element, 'bpmn:CallActivity'));
 
-        const calledElementExtensions = getCalledElements(pastedCallActivity);
+        const businessObject = getBusinessObject(pastedCallActivity),
+              extensionElements = businessObject.get('extensionElements'),
+              calledElementExtension = getCalledElement(pastedCallActivity);
 
-        expect(calledElementExtensions).to.have.length(1);
+        expect(calledElementExtension).to.exist;
+        expect(extensionElements).to.exist;
+        expect(calledElementExtension.$parent).to.equal(extensionElements);
       }));
 
 
