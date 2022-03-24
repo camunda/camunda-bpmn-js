@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.5
+
+* `DEPS`: update to `@bpmn-io/properties-panel@0.12.0`
+* `DEPS`: update to `bpmn-properties-panel@1.0.0-alpha.7`
+
 ## 0.13.0-alpha.4
 
 * `FIX`: move properties panel deps to peer dependencies
