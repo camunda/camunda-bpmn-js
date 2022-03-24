@@ -62,6 +62,9 @@ insertCSS('test.css', `
 
 describe('<CamundaPlatformModeler>', function() {
 
+  // CI (windows) takes its time
+  this.timeout(5000);
+
   var modelerContainer;
 
   var propertiesContainer;
