@@ -56,6 +56,9 @@ insertCSS('test.css', `
 
 describe('<BaseModeler>', function() {
 
+  // CI (windows) takes its time
+  this.timeout(5000);
+
   var modelerContainer;
 
   var propertiesContainer;
@@ -106,6 +109,7 @@ describe('<BaseModeler>', function() {
   }
 
   (singleStart ? it.only : it)('should import simple process', function() {
+
     return createModeler(simpleXml).then(function(result) {
 
       expect(result.error).not.to.exist;
