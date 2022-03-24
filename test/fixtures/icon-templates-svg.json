@@ -32,7 +32,7 @@
     ],
     "properties": [],
     "icon": {
-      "contents": "<svg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.714 8.545h6.87v6.87h-6.87v-6.87Z' fill='#fff'/><path d='M1.714 8.545h6.87v6.87h-6.87v-6.87Z' fill='#99E1F4'/><path d='M8.585 15.415h6.83v6.83h-6.83v-6.83Z' fill='#fff'/><path d='M8.585 15.415h6.83v6.83h-6.83v-6.83Z' fill='#99E1F4'/><path d='M1.714 22.246h6.87v.04h-6.87v-.04Zm0-6.83h6.87v6.83h-6.87v-6.83Z' fill='#1A82E2'/><path d='M8.585 1.714h6.83v6.83h-6.83v-6.83Zm6.83 6.87h6.87v6.83h-6.87v-6.83Z' fill='#00B3E3'/><path d='M8.585 15.415h6.83v-6.87h-6.83v6.87Z' fill='#009DD9'/><path d='M15.415 1.714h6.87v6.83h-6.87v-6.83Zm0 6.831h6.87v.04h-6.87v-.04Z' fill='#1A82E2'/></svg>"
+      "contents": "<svg width=24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.714 8.545h6.87v6.87h-6.87v-6.87Z' fill='#fff'/><path d='M1.714 8.545h6.87v6.87h-6.87v-6.87Z' fill='#99E1F4'/><path d='M8.585 15.415h6.83v6.83h-6.83v-6.83Z' fill='#fff'/><path d='M8.585 15.415h6.83v6.83h-6.83v-6.83Z' fill='#99E1F4'/><path d='M1.714 22.246h6.87v.04h-6.87v-.04Zm0-6.83h6.87v6.83h-6.87v-6.83Z' fill='#1A82E2'/><path d='M8.585 1.714h6.83v6.83h-6.83v-6.83Zm6.83 6.87h6.87v6.83h-6.87v-6.83Z' fill='#00B3E3'/><path d='M8.585 15.415h6.83v-6.87h-6.83v6.87Z' fill='#009DD9'/><path d='M15.415 1.714h6.87v6.83h-6.87v-6.83Zm0 6.831h6.87v.04h-6.87v-.04Z' fill='#1A82E2'/></svg>"
     }
   },
   {

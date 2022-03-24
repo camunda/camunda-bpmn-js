@@ -51,6 +51,7 @@
     "diagram-js-origin": "^1.3.2",
     "inherits": "^2.0.4",
     "min-dash": "^3.8.1",
+    "tiny-svg": "^2.2.3",
     "zeebe-bpmn-moddle": "camunda-cloud/zeebe-bpmn-moddle#template-icons-props"
   },
   "devDependencies": {
