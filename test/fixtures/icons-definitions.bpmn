@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_148ykk6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Zeebe Modeler" exporterVersion="0.11.0">
+  <bpmn:extensionElements>
+    <zeebe:modelerTemplateIcons>
+      <zeebe:modelerTemplateIcon id="Icon_icon.template.sendgrid18">data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.14264 5.69666H5.72264V10.2767H1.14264V5.69666V5.69666Z' fill='white'/%3E%3Cpath d='M1.14264 5.69666H5.72264V10.2767H1.14264V5.69666V5.69666Z' fill='%2399E1F4'/%3E%3Cpath d='M5.72333 10.2767H10.2767V14.83H5.72333V10.2767V10.2767Z' fill='white'/%3E%3Cpath d='M5.72333 10.2767H10.2767V14.83H5.72333V10.2767V10.2767Z' fill='%2399E1F4'/%3E%3Cpath d='M1.14264 14.8307H5.72264V14.8573H1.14264V14.8307V14.8307ZM1.14264 10.2773H5.72264V14.8307H1.14264V10.2773V10.2773Z' fill='%231A82E2'/%3E%3Cpath d='M5.72333 1.14267H10.2767V5.696H5.72333V1.14267V1.14267ZM10.2767 5.72267H14.8567V10.276H10.2767V5.72267V5.72267Z' fill='%2300B3E3'/%3E%3Cpath d='M5.72333 10.2767H10.2767V5.69666H5.72333V10.2767Z' fill='%23009DD9'/%3E%3Cpath d='M10.2767 1.14267H14.8567V5.696H10.2767V1.14267V1.14267ZM10.2767 5.69667H14.8567V5.72334H10.2767V5.69667Z' fill='%231A82E2'/%3E%3C/svg%3E</zeebe:modelerTemplateIcon>
+      <zeebe:modelerTemplateIcon id="Icon_icon.template.jira">data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m22.249 11.412-9.343-9.036L12 1.5 4.967 8.302l-3.216 3.11a.812.812 0 0 0 0 1.176l6.426 6.214L12 22.5l7.033-6.802.109-.106 3.107-3.004a.812.812 0 0 0 0-1.176ZM12 15.104 8.79 12 12 8.895 15.21 12 12 15.104Z' fill='%232684FF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 8.895a5.107 5.107 0 0 1-.023-7.37L4.953 8.316l3.823 3.698L12 8.895Z' fill='url(%23Type=Productivity, Size=jira__a)'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.218 11.992 12 15.105a5.142 5.142 0 0 1 1.584 3.697c0 1.387-.57 2.718-1.584 3.698l7.042-6.81-3.824-3.698Z' fill='url(%23Type=Productivity, Size=jira__b)'/%3E%3Cdefs%3E%3ClinearGradient id='Type=Productivity, Size=jira__a' x1='11.427' y1='5.755' x2='6.072' y2='8.093' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='.18' stop-color='%230052CC'/%3E%3Cstop offset='1' stop-color='%232684FF'/%3E%3C/linearGradient%3E%3ClinearGradient id='Type=Productivity, Size=jira__b' x1='12.613' y1='18.209' x2='17.958' y2='15.888' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='.18' stop-color='%230052CC'/%3E%3Cstop offset='1' stop-color='%232684FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E</zeebe:modelerTemplateIcon>
+      <zeebe:modelerTemplateIcon id="Icon_icon.template.dominos">data:image/svg+xml,&lt;svg width='24' height='24' xmlns:svg='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns%23' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='svg2' x='0px' y='0px' viewBox='18.5 18.2 162.9 163.7' enable-background='new 18.5 18.2 162.9 163.7' xml:space='preserve'&gt;&lt;path id='path3022' fill='%23FFFFFF' d='M71,70.9l49.6-49.6c3.7-3.7,7.9-4.4,12.4,0l46.1,46.1c3.3,3.3,3,8.3,0,11.3L78.8,178.9 c-3.6,3.6-8.3,4.2-12.5,0l-45.1-45.1c-3.6-3.6-3.3-9.3,0-12.6L71,70.9z'/&gt;&lt;path id='path3000' fill='%23006491' d='M71.8,76l51.9,51.9l-47.2,47.2c-2.9,2.9-5.9,3-8.9,0l-43.2-43.2c-2.7-2.7-2.5-5.7,0-8.2 L71.8,76z'/&gt;&lt;path id='path3002' fill='%23E31837' d='M127,124.8L75.1,72.9l47.2-47.2c2.9-2.9,5.9-3,8.9,0l43.2,43.2c2.7,2.7,2.5,5.7,0,8.2 L127,124.8z'/&gt;&lt;circle fill='%23FFFFFF' cx='126.7' cy='73' r='12.8'/&gt;&lt;circle fill='%23FFFFFF' cx='90.8' cy='127.9' r='12.8'/&gt;&lt;circle fill='%23FFFFFF' cx='53.4' cy='127.9' r='12.8'/&gt;&lt;/svg&gt;</zeebe:modelerTemplateIcon>
+    </zeebe:modelerTemplateIcons>
+  </bpmn:extensionElements>
+  <bpmn:process id="Process_0xvlok0" isExecutable="true">
+    <bpmn:serviceTask id="Activity_08bosyf" zeebe:modelerTemplate="icon.template.sendgrid18" />
+    <bpmn:serviceTask id="Activity_1qngx4t" zeebe:modelerTemplate="icon.template.jira" />
+    <bpmn:serviceTask id="Activity_10up7u1" zeebe:modelerTemplate="icon.template.dominos" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0xvlok0">
+      <bpmndi:BPMNShape id="Activity_0gumynm_di" bpmnElement="Activity_08bosyf">
+        <dc:Bounds x="160" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0a3xzau_di" bpmnElement="Activity_1qngx4t">
+        <dc:Bounds x="160" y="200" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0uwl8ce_di" bpmnElement="Activity_10up7u1">
+        <dc:Bounds x="160" y="310" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

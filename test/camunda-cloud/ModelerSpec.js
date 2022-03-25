@@ -130,7 +130,7 @@ describe('<CamundaCloudModeler>', function() {
     var templates = require('test/fixtures/icon-templates-data-uri.json');
 
     // when
-    return createModeler(require('test/fixtures/icons-data-uri.bpmn').default, {
+    return createModeler(require('test/fixtures/icons-definitions.bpmn').default, {
       additionalModules: [ ElementTemplateChooserModule ],
       elementTemplates: templates
     });
