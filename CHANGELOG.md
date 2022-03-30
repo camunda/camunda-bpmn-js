@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.7
+
+* `FIX`: update peer dependencies ([#103](https://github.com/camunda/camunda-bpmn-js/pull/103))
+
 ## 0.13.0-alpha.6
 
 * `FIX`: set $parent when creating zeebe:CalledElement element ([#99](https://github.com/camunda/camunda-bpmn-js/pull/99))
