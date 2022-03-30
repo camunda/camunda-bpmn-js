@@ -4,7 +4,7 @@
   "description": "Embeddable Camunda modeling distributions based on bpmn-js",
   "main": "lib/index.js",
   "scripts": {
-    "all": "run-s lint test distro test:distro",
+    "all": "run-s clean lint test distro test:distro",
     "lint": "eslint .",
     "dev": "npm test -- --auto-watch --no-single-run",
     "test": "karma start karma.config.js",
