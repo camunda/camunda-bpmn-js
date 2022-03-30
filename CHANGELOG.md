@@ -6,10 +6,27 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.6
+
+* `FIX`: set $parent when creating zeebe:CalledElement element ([#99](https://github.com/camunda/camunda-bpmn-js/pull/99))
+* `DEPS`: update to `@bpmn-io/properties-panel@0.13.1`
+* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.9`
+
+# Properties Panel
+
+* `FEAT`: allow showing entries and errors through events ([#137](https://github.com/bpmn-io/properties-panel/pull/137))
+* `FEAT`: allow opening groups per default ([#139](https://github.com/bpmn-io/properties-panel/pull/139))
+* `FEAT`: add documentation ref ([#141](https://github.com/bpmn-io/properties-panel/pull/141))
+* `FEAT`: add show callbacks to show entries and errors ([#601](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/601))
+* `FEAT`: open element template custom groups ([#621](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/621))
+* `FEAT`: display template name in header ([#627](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/627))
+* `FEAT`: add documentation ref to header ([#629](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/629))
+* `FIX`: copy versioned element template ([#632](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/632))
+
 ## 0.13.0-alpha.5
 
 * `DEPS`: update to `@bpmn-io/properties-panel@0.12.0`
-* `DEPS`: update to `bpmn-properties-panel@1.0.0-alpha.7`
+* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.7`
 
 ## 0.13.0-alpha.4
 
@@ -22,7 +39,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: add cloud element templates ([#95](https://github.com/camunda/camunda-bpmn-js/pull/95))
 * `DEPS`: update to `bpmn-js@9.0.2`
 * `DEPS`: update to `@bpmn-io/properties-panel@0.11.0`
-* `DEPS`: update to `bpmn-properties-panel@1.0.0-alpha.5`
+* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.5`
 * `DEPS`: update to `zeebe-bpmn-moddle@0.11.0`
 
 ## 0.13.0-alpha.2
