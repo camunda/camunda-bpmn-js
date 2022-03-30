@@ -8,6 +8,8 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.13.0-alpha.7
 
+_Re-publish of v0.13.0-alpha.6 with fixed distro._
+
 * `FIX`: update peer dependencies ([#103](https://github.com/camunda/camunda-bpmn-js/pull/103))
 
 ## 0.13.0-alpha.6
