@@ -133,6 +133,7 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('zeebeModdleExtension')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('zeebePropertiesProvider')).to.exist;
+      expect(modeler.get('elementTemplatesIconsRenderer')).to.exist;
     });
 
   });
