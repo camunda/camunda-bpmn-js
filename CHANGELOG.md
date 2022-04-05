@@ -6,6 +6,21 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0-alpha.8
+
+* `FEAT`: support element template custom icons ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
+* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.12` ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
+* `DEPS`: update to `diagram-js@8.2.1` ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
+* `DEPS`: update to `camunda-bpmn-moddle@6.1.2` ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
+* `DEPS`: update to `zeebe-bpmn-moddle@0.12.0` ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
+* `DEPS`: update to `@bpmn-io/element-templates-icons-renderer@0.1.2` ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
+
+### Key changes in Properties Panel
+
+* `FEAT`: apply element template icons ([#641](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/641))
+* `FEAT`: change task type when element template is applied ([#648](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/648))
+* `FEAT`: display element template icons in header ([#650](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/650))
+
 ## 0.13.0-alpha.7
 
 _Re-publish of v0.13.0-alpha.6 with fixed distro._
@@ -18,7 +33,7 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 * `DEPS`: update to `@bpmn-io/properties-panel@0.13.1`
 * `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.9`
 
-# Properties Panel
+### Key changes in Properties Panel
 
 * `FEAT`: allow showing entries and errors through events ([#137](https://github.com/bpmn-io/properties-panel/pull/137))
 * `FEAT`: allow opening groups per default ([#139](https://github.com/bpmn-io/properties-panel/pull/139))
