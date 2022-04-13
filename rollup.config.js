@@ -10,6 +10,8 @@ import { terser } from 'rollup-plugin-terser';
 
 import copy from 'rollup-plugin-copy';
 
+const { capitalize, getAllCombinations } = require('./util/index');
+
 const outputDir = 'dist';
 
 const domains = [
@@ -17,6 +19,14 @@ const domains = [
   'camunda-cloud',
   'camunda-platform'
 ];
+
+const distributions = [
+  'modeler',
+  'viewer',
+  'navigatedViewer'
+];
+
+const buildMatrix = getAllCombinations(domains, distributions);
 
 const styles = [
   {
@@ -43,24 +53,26 @@ const styles = [
     src: resolve('bpmn-js-properties-panel', '/dist/assets/element-templates.css'),
     dest: 'dist/assets'
   }
-].concat(domains.map(function(domain) {
+].concat(buildMatrix.map(function([ domain, dist ]) {
   return {
-    src: 'styles/' + domain + '-modeler.css',
+    src: `styles/${domain}-${dist}.css`,
     dest: 'dist/assets'
   };
 }));
 
-const distros = domains.map(function(domain) {
+const distros = buildMatrix.map(function([ domain, dist ]) {
   return {
-    input: domain + '/Modeler',
-    output: domain + '-modeler'
+    name: 'Bpmn' + capitalize(dist),
+    input: `${domain}/${capitalize(dist)}`,
+    output: `${domain}-${dist}`
   };
 });
 
 const configs = distros.reduce(function(configs, distro) {
   const {
     input,
-    output
+    output,
+    name
   } = distro;
 
   return [
@@ -68,7 +80,7 @@ const configs = distros.reduce(function(configs, distro) {
     {
       input: `./lib/${input}.js`,
       output: {
-        name: 'BpmnModeler',
+        name: name,
         file: `${outputDir}/${output}.development.js`,
         format: 'umd'
       },
@@ -79,7 +91,7 @@ const configs = distros.reduce(function(configs, distro) {
     {
       input: `./lib/${input}.js`,
       output: {
-        name: 'BpmnModeler',
+        name: name,
         file: `${outputDir}/${output}.production.min.js`,
         format: 'umd'
       },

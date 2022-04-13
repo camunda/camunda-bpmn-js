@@ -1,4 +1,25 @@
+const { getAllCombinations } = require('../util');
+
 var execSync = require('execa').sync;
+
+const domains = [
+  'base',
+  'camunda-cloud',
+  'camunda-platform'
+];
+
+const distributions = [
+  'modeler',
+  'viewer',
+  'navigatedViewer'
+];
+
+const environments = [
+  'development',
+  'production'
+];
+
+const testMatrix = getAllCombinations(domains, distributions, environments);
 
 var failures = 0;
 
@@ -26,14 +47,9 @@ function runTest(variant, env) {
 
 function test() {
 
-  runTest('base-modeler', 'development');
-  runTest('base-modeler', 'production');
-
-  runTest('camunda-cloud-modeler', 'development');
-  runTest('camunda-cloud-modeler', 'production');
-
-  runTest('camunda-platform-modeler', 'development');
-  runTest('camunda-platform-modeler', 'production');
+  testMatrix.forEach(function([ domain, dist, env ]) {
+    runTest(`${domain}-${dist}`, env);
+  });
 
   if (failures) {
     process.exit(1);
