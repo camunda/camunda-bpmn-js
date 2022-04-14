@@ -11,7 +11,7 @@ function getAllCombinations() {
     return;
   }
 
-  var combinations = getAllCombinations(...rest);
+  const combinations = getAllCombinations(...rest);
 
   return first.reduce((acc, cur) => {
 
@@ -27,7 +27,13 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function toKebabCase(string) {
+  return string.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+
 module.exports = {
   getAllCombinations,
-  capitalize
+  capitalize,
+  toKebabCase
 };

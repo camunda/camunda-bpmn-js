@@ -1,4 +1,4 @@
-describe('camunda-cloud-navigatedViewer', function() {
+describe('camunda-cloud-navigated-viewer', function() {
 
   it('should expose globals', function() {
 

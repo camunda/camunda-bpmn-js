@@ -14,7 +14,7 @@ import NavigatedViewer from 'lib/camunda-cloud/NavigatedViewer';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
-var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-navigatedViewer';
+var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-navigated-viewer';
 
 insertCSS('test-panel.css', `
   .test-content-container {

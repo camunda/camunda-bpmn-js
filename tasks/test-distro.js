@@ -1,4 +1,4 @@
-const { getAllCombinations } = require('../util');
+const { getAllCombinations, toKebabCase } = require('../util');
 
 var execSync = require('execa').sync;
 
@@ -48,7 +48,7 @@ function runTest(variant, env) {
 function test() {
 
   testMatrix.forEach(function([ domain, dist, env ]) {
-    runTest(`${domain}-${dist}`, env);
+    runTest(`${domain}-${toKebabCase(dist)}`, env);
   });
 
   if (failures) {
@@ -58,3 +58,4 @@ function test() {
 
 
 test();
+

@@ -10,7 +10,7 @@ import { terser } from 'rollup-plugin-terser';
 
 import copy from 'rollup-plugin-copy';
 
-const { capitalize, getAllCombinations } = require('./util/index');
+const { capitalize, getAllCombinations, toKebabCase } = require('./util/index');
 
 const outputDir = 'dist';
 
@@ -55,7 +55,7 @@ const styles = [
   }
 ].concat(buildMatrix.map(function([ domain, dist ]) {
   return {
-    src: `styles/${domain}-${dist}.css`,
+    src: `styles/${domain}-${toKebabCase(dist)}.css`,
     dest: 'dist/assets'
   };
 }));
@@ -64,7 +64,7 @@ const distros = buildMatrix.map(function([ domain, dist ]) {
   return {
     name: 'Bpmn' + capitalize(dist),
     input: `${domain}/${capitalize(dist)}`,
-    output: `${domain}-${dist}`
+    output: `${domain}-${toKebabCase(dist)}`
   };
 });
 
