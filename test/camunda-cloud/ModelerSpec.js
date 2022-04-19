@@ -127,13 +127,17 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('zeebeContextPadProvider')).to.exist;
       expect(modeler.get('zeebeReplaceMenuProvider')).to.exist;
       expect(modeler.get('bpmnRules')).to.exist;
-      expect(modeler.get('createZeebeBoundaryEventBehavior')).to.exist;
-      expect(modeler.get('createZeebeCallActivityBehavior')).to.exist;
-      expect(modeler.get('updatePropagateAllChildVariablesBehavior')).to.exist;
       expect(modeler.get('zeebeModdleExtension')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('zeebePropertiesProvider')).to.exist;
       expect(modeler.get('elementTemplatesIconsRenderer')).to.exist;
+
+      // behaviors
+      expect(modeler.get('cleanUpBusinessRuleTaskBehavior')).to.exist;
+      expect(modeler.get('createZeebeCallActivityBehavior')).to.exist;
+      expect(modeler.get('formDefinitionBehavior')).to.exist;
+      expect(modeler.get('removeAssignmentDefinitionBehavior')).to.exist;
+      expect(modeler.get('updatePropagateAllChildVariablesBehavior')).to.exist;
     });
 
   });

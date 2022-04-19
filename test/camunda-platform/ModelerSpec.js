@@ -130,10 +130,15 @@ describe('<CamundaPlatformModeler>', function() {
 
       // then
       expect(modeler.get('propertiesPanel')).to.exist;
-      expect(modeler.get('camundaPlatformPropertiesProvider')).to.exist;
-      expect(modeler.get('camundaCopyPasteBehavior')).to.exist;
-      expect(modeler.get('updateCamundaExclusiveBehavior')).to.exist;
+
+      // behaviors
+      expect(modeler.get('deleteErrorEventDefinitionBehavior')).to.exist;
       expect(modeler.get('deleteRetryTimeCycleBehavior')).to.exist;
+      expect(modeler.get('updateCamundaExclusiveBehavior')).to.exist;
+      expect(modeler.get('updateResultVariableBehavior')).to.exist;
+      expect(modeler.get('updateInputOutputBehavior')).to.exist;
+      expect(modeler.get('userTaskFormsBehavior')).to.exist;
+      expect(modeler.get('userTaskGeneratedFormsBehavior')).to.exist;
     });
 
   });
