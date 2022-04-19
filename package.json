@@ -14,6 +14,10 @@
     "start:base": "cross-env SINGLE_START=base-modeler npm run dev",
     "start:platform": "cross-env SINGLE_START=camunda-platform-modeler npm run dev",
     "start:cloud": "cross-env SINGLE_START=camunda-cloud-modeler npm run dev",
+    "start:platform-viewer": "cross-env SINGLE_START=camunda-platform-viewer npm run dev",
+    "start:cloud-viewer": "cross-env SINGLE_START=camunda-cloud-viewer npm run dev",
+    "start:platform-navigated-viewer": "cross-env SINGLE_START=camunda-platform-navigated-viewer npm run dev",
+    "start:cloud-navigated-viewer": "cross-env SINGLE_START=camunda-cloud-navigated-viewer npm run dev",
     "prepublishOnly": "run-s test:distro",
     "prepare": "run-s clean distro"
   },
