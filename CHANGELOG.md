@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0
+
+* `FEAT`: add viewer distributions ([#115](https://github.com/camunda/camunda-bpmn-js/pull/115))
+* `CHORE`: import behaviors from camunda-bpmn-js-behaviors ([#116](https://github.com/camunda/camunda-bpmn-js/pull/116))
+* `DEPS`: update to `bpmn-js-disable-collapsed-subprocess@0.1.4` ([#112](https://github.com/camunda/camunda-bpmn-js/pull/112))
+* `DEPS`: update to `bpmn-js-properties-panel@1.1.0` ([03b659](https://github.com/camunda/camunda-bpmn-js/pull/123/commits/03b659da729364abf97ccc2dba421d83e9f5c48e))
+
 ## 0.13.0-alpha.8
 
 * `FEAT`: support element template custom icons ([#108](https://github.com/camunda/camunda-bpmn-js/pull/108))
