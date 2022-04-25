@@ -126,8 +126,8 @@ function copyStyles(styles) {
   return copy({
     targets: styles.map(function(sheet) {
       return {
-        src: sheet.src,
-        dest: sheet.dest
+        src: pathNormalize(sheet.src),
+        dest: pathNormalize(sheet.dest)
       };
     })
   });
@@ -137,4 +137,8 @@ function resolve(module, sub) {
   var pkg = require.resolve(module + '/package.json');
 
   return path.dirname(pkg) + sub;
+}
+
+function pathNormalize(string) {
+  return path.normalize(string).split('\\').join('/');
 }
