@@ -1,3 +1,6 @@
+const fs = require('fs'),
+      path = require('path');
+
 const { getAllCombinations, toKebabCase } = require('../util');
 
 var execSync = require('execa').sync;
@@ -17,6 +20,24 @@ const distributions = [
 const environments = [
   'development',
   'production'
+];
+
+const assets = [
+  'bpmn-font/bpmn.css',
+  'base-modeler.css',
+  'base-navigated-viewer.css',
+  'base-viewer.css',
+  'bpmn-js.css',
+  'camunda-cloud-modeler.css',
+  'camunda-cloud-navigated-viewer.css',
+  'camunda-cloud-viewer.css',
+  'camunda-platform-modeler.css',
+  'camunda-platform-navigated-viewer.css',
+  'camunda-platform-viewer.css',
+  'diagram-js-minimap.css',
+  'diagram-js.css',
+  'element-templates.css',
+  'properties-panel.css'
 ];
 
 const testMatrix = getAllCombinations(domains, distributions, environments);
@@ -45,11 +66,25 @@ function runTest(variant, env) {
   }
 }
 
+function testAssets(assets) {
+  assets.forEach(asset => {
+    try {
+      fs.accessSync(path.resolve('./dist/assets/', asset));
+    } catch (err) {
+      console.error('asset', asset, 'not found');
+
+      failures++;
+    }
+  });
+}
+
 function test() {
 
   testMatrix.forEach(function([ domain, dist, env ]) {
     runTest(`${domain}-${toKebabCase(dist)}`, env);
   });
+
+  testAssets(assets);
 
   if (failures) {
     process.exit(1);
