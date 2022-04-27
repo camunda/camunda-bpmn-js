@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.1
+
+_Re-publish of v0.13.0 with fixed distro._
+
+* `FIX`: fix distro on Windows ([#125](https://github.com/camunda/camunda-bpmn-js/pull/125))
+
 ## 0.13.0
 
 * `FEAT`: add viewer distributions ([#115](https://github.com/camunda/camunda-bpmn-js/pull/115))
