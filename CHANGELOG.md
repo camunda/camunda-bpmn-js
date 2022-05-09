@@ -6,6 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.2
+
+* `DEPS`: update to `bpmn-js-properties-panel@1.1.1`
+* `DEPS`: update to `@bpmn-io/properties-panel@0.13.2`
+
+### Key changes in Properties Panel
+
+* `FIX`: remove unnecessary scroll padding ([#145](https://github.com/bpmn-io/properties-panel/pull/145))
+* `FIX`: keep existing configuration after template apply ([#661](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/661))
+* `FIX`: always override `hidden` configuration on template apply ([#661](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/661))
+* `FIX`: do not render non-existing values in element template ([#676](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/676))
+* `FIX`: pick-up correct element template icon ([#670](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/670))
+
 ## 0.13.1
 
 _Re-publish of v0.13.0 with fixed distro._
