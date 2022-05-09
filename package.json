@@ -99,5 +99,11 @@
   "peerDependencies": {
     "@bpmn-io/properties-panel": "0.13.x",
     "bpmn-js-properties-panel": "1.x"
-  }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "styles",
+    "util"
+  ]
 }
