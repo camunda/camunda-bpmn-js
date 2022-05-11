@@ -12,10 +12,18 @@ import {
 
 import Modeler from 'lib/camunda-cloud/Modeler';
 
+import diagramXml from './ModelerSpec.simple.bpmn';
+
 import simpleXml from 'test/fixtures/simple.bpmn';
 
 import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
+
+import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
+
+import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
+
+import elementTemplates from './element-templates.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
 
@@ -27,6 +35,11 @@ insertCSS(
 insertCSS(
   'element-templates.css',
   elementTemplatesCSS
+);
+
+insertCSS(
+  'element-templates-chooser.css',
+  elementTemplatesChooserCSS
 );
 
 insertCSS('test-panel.css', `
@@ -87,6 +100,9 @@ describe('<CamundaCloudModeler>', function() {
       keyboard: {
         bindTo: document
       },
+      additionalModules: [
+        ElementTemplateChooserModule
+      ],
       propertiesPanel: {
         parent: propertiesContainer
       }
@@ -108,9 +124,21 @@ describe('<CamundaCloudModeler>', function() {
   }
 
   (singleStart ? it.only : it)('should import simple process', function() {
-    return createModeler(simpleXml).then(function(result) {
+    return createModeler(diagramXml).then(function(result) {
 
-      expect(result.error).not.to.exist;
+      const {
+        error,
+        modeler
+      } = result;
+
+      // then
+      expect(error).not.to.exist;
+
+      // but when
+      modeler.get('elementTemplatesLoader').setTemplates(elementTemplates);
+
+      // then
+      // expect happy modeling
     });
   });
 
