@@ -60,6 +60,7 @@
     "zeebe-bpmn-moddle": "^0.12.1"
   },
   "devDependencies": {
+    "@bpmn-io/element-template-chooser": "0.0.5",
     "@bpmn-io/properties-panel": "^0.13.2",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
