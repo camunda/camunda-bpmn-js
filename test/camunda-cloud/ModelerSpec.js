@@ -43,6 +43,10 @@ insertCSS(
 );
 
 insertCSS('test-panel.css', `
+  html {
+    font-family: sans-serif;
+  }
+
   .test-content-container {
     display: flex;
     flex-direction: row;
@@ -58,7 +62,6 @@ insertCSS('test-panel.css', `
   }
 
   .properties {
-    font-family: sans-serif;
     position: relative;
     flex: none;
     height: 100%;
