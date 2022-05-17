@@ -6,6 +6,20 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.14.0
+
+* `DEPS`: update to `@bpmn-io/element-templates-icons-renderer@0.2.0`
+
+### Key changes in Modeling
+
+* `FEAT`: enforce rectangular element template icon size ([#4](https://github.com/bpmn-io/element-templates-icons-renderer/issues/4))
+* `FIX`: remove `label` property on empty label ([#1637](https://github.com/bpmn-io/bpmn-js/issues/1637))
+* `FIX`: create drilldown overlays on `viewer.open` ([`574a67438`](https://github.com/bpmn-io/bpmn-js/commit/574a674381d6449b509396b6d17c4ca94674ea1c))
+* `FIX`: render data association inside collapsed sub-processes ([#1619](https://github.com/bpmn-io/bpmn-js/issues/1619))
+* `FIX`: preserve multi-instance properties when toggling between parallel and sequential ([#1581](https://github.com/bpmn-io/bpmn-js/issues/1581))
+* `FIX`: correct hanging sequence flow label after collapsing sub-process ([#1617](https://github.com/bpmn-io/bpmn-js/issues/1617))
+* `FIX`: correct start event not added to newly created sub-process ([#1631](https://github.com/bpmn-io/bpmn-js/issues/1631))
+
 ## 0.13.2
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.1.1`
