@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.15.0
+
+* `DEPS`: update to `bpmn-js@9.3.0`
+* `DEPS`: update to `diagram-js@8.7.0`
+* `DEPS`: update to `bpmn-js-properties-panel@1.2.0`
+
 ## 0.14.0
 
 * `DEPS`: update to `@bpmn-io/element-templates-icons-renderer@0.2.0`
