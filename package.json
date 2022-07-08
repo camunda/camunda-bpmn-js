@@ -98,7 +98,7 @@
     "webpack": "^5.20.1"
   },
   "peerDependencies": {
-    "@bpmn-io/properties-panel": "0.13.x",
+    "@bpmn-io/properties-panel": "0.15.x",
     "bpmn-js-properties-panel": "1.x"
   },
   "files": [
