@@ -14,11 +14,35 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js@9.3.1`
 
+### Key changes in Modeling
+
+* `FIX`: properly size icons for distribute/align menu ([bpmn-js#1694](https://github.com/bpmn-io/bpmn-js/pull/1694))
+
 ## 0.15.0
 
 * `DEPS`: update to `bpmn-js@9.3.0`
 * `DEPS`: update to `diagram-js@8.7.0`
 * `DEPS`: update to `bpmn-js-properties-panel@1.2.0`
+
+### Key changes in Modeling
+
+* `FEAT`: allow to select participant and subprocess via click on body ([bpmn-js#1646](https://github.com/bpmn-io/bpmn-js/pull/1646))
+* `FEAT`: clearly distinguish select and hover states ([bpmn-js#1616](https://github.com/bpmn-io/bpmn-js/issues/1616))
+* `FEAT`: allow text annotation on sequence flows ([bpmn-js#1652](https://github.com/bpmn-io/bpmn-js/pull/1652))
+* `FEAT`: add multi-element context pad ([bpmn-js#1525](https://github.com/bpmn-io/bpmn-js/pull/1525))
+* `FEAT`: add aligment and distribution menu ([bpmn-js#1680](https://github.com/bpmn-io/bpmn-js/issues/1680), [#1691](https://github.com/bpmn-io/bpmn-js/issues/1691))
+* `FEAT`: rework select and hover interaction on the diagram ([bpmn-js#1616](https://github.com/bpmn-io/bpmn-js/issues/1616), [diagram-js#640](https://github.com/bpmn-io/diagram-js/pull/640), [diagram-js#643](https://github.com/bpmn-io/diagram-js/pull/643))
+* `FEAT`: rework diagram interaction handles ([diagram-js#640](https://github.com/bpmn-io/diagram-js/pull/640))
+* `FIX`: complete direct editing when selection changes ([bpmn-js#1648](https://github.com/bpmn-io/bpmn-js/pull/1648))
+* `FIX`: cancel direct editing before shape deletion ([bpmn-js#1677](https://github.com/bpmn-io/bpmn-js/issues/1677))
+* `FIX`: set correct label color when batch coloring elements ([bpmn-js#1653](https://github.com/bpmn-io/bpmn-js/issues/1653))
+* `FIX`: always reconnect labels and associations ([bpmn-js#1659](https://github.com/bpmn-io/bpmn-js/pull/1659))
+
+### Key changes in Properties Panel
+
+* `FEAT`: enable multi-select state ([bpmn-props-panel#687](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/678))
+* `FEAT`: display timestamp for template versions ([bpmn-props-panel#698](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/698))
+* `FIX`: fixed error when field injection for execution listener is created ([bpmn-props-panel#710](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/710)
 
 ## 0.14.0
 
