@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.15.3
+
+* `FIX`: remove `@bpmn-io/properties-panel` peer dependency as it is transitive ([#147](https://github.com/camunda/camunda-bpmn-js/pull/147))
+
 ## 0.15.2
 
 * `CHORE`: bumped properties-panel peer deps
