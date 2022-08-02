@@ -61,11 +61,11 @@
   },
   "devDependencies": {
     "@bpmn-io/element-template-chooser": "0.0.5",
-    "@bpmn-io/properties-panel": "^0.15.0",
+    "@bpmn-io/properties-panel": "^0.18.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
-    "bpmn-js-properties-panel": "^1.2.0",
+    "bpmn-js-properties-panel": "^1.4.0",
     "chai": "^4.2.0",
     "cross-env": "^7.0.3",
     "del-cli": "^4.0.1",
