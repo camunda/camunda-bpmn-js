@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js-properties-panel@1.4.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@0.18.0`
+
+### Key changes in Properties Panel
+
+* `FEAT`: add FEEL editor for FEEL properties ([#158](https://github.com/bpmn-io/properties-panel/pull/158))
+
 ## 0.15.3
 
 * `FIX`: remove `@bpmn-io/properties-panel` peer dependency as it is transitive ([#147](https://github.com/camunda/camunda-bpmn-js/pull/147))
