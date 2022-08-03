@@ -8,10 +8,12 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.4.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@0.18.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.1.1`
 
 ### Key changes in Properties Panel
 
 * `FEAT`: add FEEL editor for FEEL properties ([#158](https://github.com/bpmn-io/properties-panel/pull/158))
+* `FIX`: do not update empty business key ([#2](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/2))
 
 ## 0.15.3
 
