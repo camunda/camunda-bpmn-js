@@ -60,11 +60,14 @@
     "zeebe-bpmn-moddle": "^0.12.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.13",
     "@bpmn-io/element-template-chooser": "0.0.5",
     "@bpmn-io/properties-panel": "^0.18.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-istanbul": "^6.1.1",
     "bpmn-js-properties-panel": "^1.4.0",
     "chai": "^4.2.0",
     "cross-env": "^7.0.3",
@@ -72,7 +75,6 @@
     "eslint": "^7.32.0",
     "eslint-plugin-bpmn-io": "^0.13.0",
     "execa": "^5.0.0",
-    "istanbul-instrumenter-loader": "^3.0.1",
     "karma": "^6.3.16",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
