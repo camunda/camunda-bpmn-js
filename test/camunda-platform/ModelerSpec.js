@@ -132,6 +132,7 @@ describe('<CamundaPlatformModeler>', function() {
       expect(modeler.get('propertiesPanel')).to.exist;
 
       // behaviors
+      expect(modeler.get('copyPasteBehavior')).to.exist;
       expect(modeler.get('deleteErrorEventDefinitionBehavior')).to.exist;
       expect(modeler.get('deleteRetryTimeCycleBehavior')).to.exist;
       expect(modeler.get('updateCamundaExclusiveBehavior')).to.exist;
