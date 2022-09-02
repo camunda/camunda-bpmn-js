@@ -6,6 +6,35 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.17.0
+
+* `DEPS`: update to `bpmn-js@9.4.0`
+* `DEPS`: update to `diagram-js@8.9.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.2.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@0.15.0`
+* `DEPS`: update to `camunda-bpmn-moddle@7.0.1`
+* `DEPS`: update to `bpmn-js-properties-panel@1.16.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@0.20.0`
+
+### Key changes in Modeling
+
+* `FEAT`: support `zeebe:property`
+* `FEAT`: allow clipboard to be serialized
+* `FIX`: make clipboard contents immutable ([#1707](https://github.com/bpmn-io/bpmn-js/pull/1707))
+* `FIX`: only claim existing IDs ([#1707](https://github.com/bpmn-io/bpmn-js/pull/1707))
+* `FIX`: move labels when collapsing sub-process ([#1695](https://github.com/bpmn-io/bpmn-js/issues/1695))
+* `FIX`: assign default size when expanding element ([#1687](https://github.com/bpmn-io/bpmn-js/issues/1687))
+* `FIX`: render sequence flows always on top ([#1716](https://github.com/bpmn-io/bpmn-js/issues/1716))
+* `FIX`: preserve `isExecutable` flag when deleting pool ([#149](https://github.com/camunda/camunda-bpmn-js/issues/149))
+
+### Key changes in Properties Panel
+
+* `FEAT`: support `zeebe:property` ([#731](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/731))
+* `FIX`: copy full `FEEL` expression ([#728](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/728))
+* `FIX`: don't serialize `zeebe:taskHeader` template bindings without a value ([#684](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/684))
+* `FIX`: render sticky headers correctly ([#726](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/726))
+* `FIX`: prevent undo events from affecting the wrong element ([#712](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/712))
+
 ## 0.16.1
 
 * `DEPS`: update to `bpmn-js@9.3.2`
