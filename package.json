@@ -47,7 +47,7 @@
   "dependencies": {
     "@bpmn-io/align-to-origin": "^0.7.0",
     "@bpmn-io/element-templates-icons-renderer": "^0.2.0",
-    "bpmn-js": "^9.4.0",
+    "bpmn-js": "^9.4.1",
     "bpmn-js-disable-collapsed-subprocess": "^0.1.5",
     "bpmn-js-executable-fix": "^0.1.4",
     "camunda-bpmn-js-behaviors": "^0.2.0",
