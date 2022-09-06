@@ -62,7 +62,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@bpmn-io/element-template-chooser": "0.0.5",
-    "@bpmn-io/properties-panel": "^0.20.0",
+    "@bpmn-io/properties-panel": "^0.20.1",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
