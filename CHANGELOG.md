@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.17.1
+
+* `DEPS`: update to `@bpmn-io/properties-panel@0.20.1`
+
+### Key changes in Properties Panel
+* `FIX`: show FEEL syntax errors ([#173](https://github.com/bpmn-io/properties-panel/pull/173))
+* `FIX`: focus FEEL container on click ([#179](https://github.com/bpmn-io/properties-panel/pull/179))
+
 ## 0.17.0
 
 * `DEPS`: update to `bpmn-js@9.4.0`
