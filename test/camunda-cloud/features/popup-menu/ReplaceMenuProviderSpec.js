@@ -122,6 +122,7 @@ describe('camunda-cloud/features - PopupMenu', function() {
       expect(messageThrowEventEntry).to.exist;
     }));
 
+
     it('should contain options for MessageThrowEvent', inject(function(
         popupMenu, elementRegistry) {
 
@@ -143,6 +144,7 @@ describe('camunda-cloud/features - PopupMenu', function() {
       expect(timerEventEntry).to.exist;
       expect(messageCatchEventEntry).to.exist;
     }));
+
 
     it('should contain options for MessageEndEvent', inject(function(
         popupMenu, elementRegistry) {
@@ -406,6 +408,7 @@ describe('camunda-cloud/features - PopupMenu', function() {
       ]);
     }));
 
+
     it('should contain options for ManualTask', inject(function(
         popupMenu, elementRegistry) {
 
@@ -446,10 +449,12 @@ describe('camunda-cloud/features - PopupMenu', function() {
       openPopup(eventBasedGateway);
 
       const exclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-exclusive-gateway'),
+            inclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-inclusive-gateway'),
             parallelGatewayEntry = queryEntry(popupMenu, 'replace-with-parallel-gateway');
 
       // then
       expect(exclusiveGatewayEntry).to.exist;
+      expect(inclusiveGatewayEntry).to.exist;
       expect(parallelGatewayEntry).to.exist;
     }));
 
@@ -462,12 +467,14 @@ describe('camunda-cloud/features - PopupMenu', function() {
 
       openPopup(parallelGateway);
 
-      const exclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-exclusive-gateway'),
-            eventBasedGatewayEntry = queryEntry(popupMenu, 'replace-with-event-based-gateway');
+      const eventBasedGatewayEntry = queryEntry(popupMenu, 'replace-with-event-based-gateway'),
+            exclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-exclusive-gateway'),
+            inclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-inclusive-gateway');
 
       // then
-      expect(exclusiveGatewayEntry).to.exist;
       expect(eventBasedGatewayEntry).to.exist;
+      expect(exclusiveGatewayEntry).to.exist;
+      expect(inclusiveGatewayEntry).to.exist;
     }));
 
 
@@ -479,12 +486,52 @@ describe('camunda-cloud/features - PopupMenu', function() {
 
       openPopup(exclusiveGateway);
 
-      const parallelGatewayEntry = queryEntry(popupMenu, 'replace-with-parallel-gateway'),
-            eventBasedGatewayEntry = queryEntry(popupMenu, 'replace-with-event-based-gateway');
+      const eventBasedGatewayEntry = queryEntry(popupMenu, 'replace-with-event-based-gateway'),
+            inclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-inclusive-gateway'),
+            parallelGatewayEntry = queryEntry(popupMenu, 'replace-with-parallel-gateway');
 
       // then
-      expect(parallelGatewayEntry).to.exist;
       expect(eventBasedGatewayEntry).to.exist;
+      expect(inclusiveGatewayEntry).to.exist;
+      expect(parallelGatewayEntry).to.exist;
+    }));
+
+
+    it('should contain options for ExclusiveGateway', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const exclusiveGateway = elementRegistry.get('ExclusiveGateway_1');
+
+      openPopup(exclusiveGateway);
+
+      const eventBasedGatewayEntry = queryEntry(popupMenu, 'replace-with-event-based-gateway'),
+            inclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-inclusive-gateway'),
+            parallelGatewayEntry = queryEntry(popupMenu, 'replace-with-parallel-gateway');
+
+      // then
+      expect(eventBasedGatewayEntry).to.exist;
+      expect(inclusiveGatewayEntry).to.exist;
+      expect(parallelGatewayEntry).to.exist;
+    }));
+
+
+    it('should contain options for InclusiveGateway', inject(function(
+        popupMenu, elementRegistry) {
+
+      // given
+      const inclusiveGateway = elementRegistry.get('InclusiveGateway_1');
+
+      openPopup(inclusiveGateway);
+
+      const eventBasedGatewayEntry = queryEntry(popupMenu, 'replace-with-event-based-gateway'),
+            exclusiveGatewayEntry = queryEntry(popupMenu, 'replace-with-exclusive-gateway'),
+            parallelGatewayEntry = queryEntry(popupMenu, 'replace-with-parallel-gateway');
+
+      // then
+      expect(eventBasedGatewayEntry).to.exist;
+      expect(exclusiveGatewayEntry).to.exist;
+      expect(parallelGatewayEntry).to.exist;
     }));
 
   });
@@ -618,6 +665,7 @@ describe('camunda-cloud/features - PopupMenu', function() {
       expect(messageNonInterruptingEntry).to.exist;
       expect(timerNonInterruptingEntry).to.exist;
     }));
+
   });
 
 });
