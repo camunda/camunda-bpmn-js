@@ -100,7 +100,7 @@
     "webpack": "^5.20.1"
   },
   "peerDependencies": {
-    "bpmn-js-properties-panel": "1.x"
+    "bpmn-js-properties-panel": "^1.7.0"
   },
   "files": [
     "dist",
