@@ -6,6 +6,20 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.18.0
+
+* `FEAT`: add inclusive gateway replacement option ([#162](https://github.com/camunda/camunda-bpmn-js/pull/162))
+* `DEPS`: update to `bpmn-js-properties-panel@1.7.0`
+
+### Key changes in Properties Panel
+
+* `FEAT`: show conditions group if source is inclusive gateway ([#756](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/756))
+* `FEAT`: support element template properties without default value ([#763](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/763))
+* `FEAT`: support deprecated element templates ([#766](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/766))
+* `FIX`: support `zeebe:property` binding for creation of elements from element templates ([#762](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/762))
+* `FIX`: support conditional properties for creation of elements from element templates ([#762](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/762))
+* `CHORE`: remove default values from _Variable assignment value_ of _Input_ and _Output_ ([#757](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/757))
+
 ## 0.17.2
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.6.1`
@@ -15,6 +29,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `@bpmn-io/properties-panel@0.20.1`
 
 ### Key changes in Properties Panel
+
 * `FIX`: show FEEL syntax errors ([#173](https://github.com/bpmn-io/properties-panel/pull/173))
 * `FIX`: focus FEEL container on click ([#179](https://github.com/bpmn-io/properties-panel/pull/179))
 
