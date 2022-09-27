@@ -67,13 +67,15 @@ describe('camunda-cloud/features - PopupMenu', function() {
       const startEventEntry = queryEntry(popupMenu, 'replace-with-none-start'),
             intermediateEventEntry = queryEntry(popupMenu, 'replace-with-none-intermediate-throw'),
             errorEndEventEntry = queryEntry(popupMenu, 'replace-with-error-end'),
-            messageEndEventEntry = queryEntry(popupMenu, 'replace-with-message-end');
+            messageEndEventEntry = queryEntry(popupMenu, 'replace-with-message-end'),
+            terminateEndEventEntry = queryEntry(popupMenu, 'replace-with-terminate-end');
 
       // then
       expect(startEventEntry).to.exist;
       expect(intermediateEventEntry).to.exist;
       expect(errorEndEventEntry).to.exist;
       expect(messageEndEventEntry).to.exist;
+      expect(terminateEndEventEntry).to.exist;
     }));
 
 
