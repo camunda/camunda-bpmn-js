@@ -1,6 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "github>bpmn-io/renovate-config:recommended",
+    ":reviewer(camunda/modeling-dev)"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "bpmn-js.*",
+        "diagram-js.*"
+      ],
+      "groupName": "modeling dependencies",
+      "groupSlug": "modeling"
+    }
   ]
 }
