@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 var path = require('path');
 
 var singleStart = process.env.SINGLE_START;

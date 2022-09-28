@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 // configures browsers to run test against
 // any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'Safari' ]
 var browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
