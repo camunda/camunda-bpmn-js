@@ -10,7 +10,8 @@
         "@camunda/.*",
         "bpmn-js.*",
         "diagram-js.*",
-        "camunda.*"
+        "camunda.*",
+        "zeebe.*"
       ],
       "groupName": "modeling dependencies",
       "groupSlug": "modeling"
