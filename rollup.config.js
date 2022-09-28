@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 import path from 'path';
 
 import nodeResolve from '@rollup/plugin-node-resolve';
