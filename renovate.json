@@ -6,8 +6,11 @@
   "packageRules": [
     {
       "matchPackagePatterns": [
+        "@bpmn-io/.*",
+        "@camunda/.*",
         "bpmn-js.*",
-        "diagram-js.*"
+        "diagram-js.*",
+        "camunda.*"
       ],
       "groupName": "modeling dependencies",
       "groupSlug": "modeling"
