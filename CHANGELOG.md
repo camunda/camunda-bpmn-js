@@ -6,6 +6,16 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.19.0
+
+* `FEAT`: support modeling of terminate end events in Camunda 8 ([#167](https://github.com/camunda/camunda-bpmn-js/pull/167))
+* `DEPS`: update to `bpmn-js-properties-panel@1.8.1`
+
+### Key changes in Properties Panel
+
+* `FEAT`: support cron expressions for timer cycle ([#772](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/772))
+* `FIX`: unset timer type correctly ([#775](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/775))
+
 ## 0.18.0
 
 * `FEAT`: add inclusive gateway replacement option ([#162](https://github.com/camunda/camunda-bpmn-js/pull/162))
