@@ -6,6 +6,16 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.20.0
+
+* `DEPS`: update to `bpmn-js@10`
+* `DEPS`: update to `bpmn-js-properties-panel@1.8.2`
+* `DEPS`: update modeling dependencies
+
+### Key changes in Properties Panel
+
+* `FIX`: correct replace removing valid dropdown property ([#767](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/767))
+
 ## 0.19.0
 
 * `FEAT`: support modeling of terminate end events in Camunda 8 ([#167](https://github.com/camunda/camunda-bpmn-js/pull/167))
