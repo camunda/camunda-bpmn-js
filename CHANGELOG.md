@@ -6,6 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.21.0
+
+_Dependency clean-ups; no notable new features._
+
+* `DEPS`: update to `bpmn-js@10.2.0"
+* `DEPS`: update to `bpmn-js-disable-collapsed-subprocess@0.1.7"
+* `DEPS`: update to `bpmn-js-executable-fix@0.2.0"
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.2.2"
+
 ## 0.20.0
 
 * `DEPS`: update to `bpmn-js@10`
