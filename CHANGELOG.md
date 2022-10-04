@@ -10,12 +10,14 @@ ___Note:__ Yet to be released changes appear here._
 
 _Dependency clean-ups; no notable new features._
 
-* `DEPS`: update to `bpmn-js@10.2.0"
-* `DEPS`: update to `bpmn-js-disable-collapsed-subprocess@0.1.7"
-* `DEPS`: update to `bpmn-js-executable-fix@0.2.0"
-* `DEPS`: update to `camunda-bpmn-js-behaviors@0.2.2"
+* `DEPS`: update to `bpmn-js@10.2.0`
+* `DEPS`: update to `bpmn-js-disable-collapsed-subprocess@0.1.7`
+* `DEPS`: update to `bpmn-js-executable-fix@0.2.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.2.2`
 
 ## 0.20.0
+
+_Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.io/blog/posts/2022-migration-to-es2018.html)._
 
 * `DEPS`: update to `bpmn-js@10`
 * `DEPS`: update to `bpmn-js-properties-panel@1.8.2`
@@ -24,6 +26,10 @@ _Dependency clean-ups; no notable new features._
 ### Key changes in Properties Panel
 
 * `FIX`: correct replace removing valid dropdown property ([#767](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/767))
+
+### Breaking Changes
+
+* Core libraries target changed to ES2018. Checkout the [migration guide](https://bpmn.io/blog/posts/2022-migration-to-es2018.html).
 
 ## 0.19.0
 
