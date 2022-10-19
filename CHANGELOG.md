@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.21.1
+
+* `FIX`: remove _Cycle_ option of _Timer_ _Type_ of interrupting timer start event ([#802](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/802))
+* `FIX`: remove timer expression if not allowed after element changed ([#15](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/15))
+
+* `DEPS`: update to `bpmn-js-properties-panel@1.10.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.3.0`
+
 ## 0.21.0
 
 _Dependency clean-ups; no notable new features._
