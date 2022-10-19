@@ -13,11 +13,12 @@ _Dependency clean-ups; no notable new features._
 * `DEPS`: update to `bpmn-js@10.2.0`
 * `DEPS`: update to `bpmn-js-disable-collapsed-subprocess@0.1.7`
 * `DEPS`: update to `bpmn-js-executable-fix@0.2.0`
-* `DEPS`: update to `camunda-bpmn-js-behaviors@0.2.2`
+* `DEPS`: update to `bpmn-js-properties-panel@1.10.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.3.0`
 
 ## 0.20.0
 
-_Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.io/blog/posts/2022-migration-to-es2018.html)._
+_Upgrade library target to ES2018. Check out the [migration guide](https://bpmn.io/blog/posts/2022-migration-to-es2018.html)._
 
 * `DEPS`: update to `bpmn-js@10`
 * `DEPS`: update to `bpmn-js-properties-panel@1.8.2`

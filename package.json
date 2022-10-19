@@ -68,7 +68,7 @@
     "@rollup/plugin-node-resolve": "^14.0.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-istanbul": "^6.1.1",
-    "bpmn-js-properties-panel": "^1.9.0",
+    "bpmn-js-properties-panel": "^1.10.0",
     "chai": "^4.3.6",
     "cross-env": "^7.0.3",
     "del-cli": "^5.0.0",
@@ -100,7 +100,7 @@
     "webpack": "^5.74.0"
   },
   "peerDependencies": {
-    "bpmn-js-properties-panel": "^1.7.0"
+    "bpmn-js-properties-panel": ">= 1.10.0"
   },
   "files": [
     "dist",
