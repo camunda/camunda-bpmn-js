@@ -154,9 +154,6 @@ describe('<CamundaCloudModeler>', function() {
       var modeler = result.modeler;
 
       // then
-      expect(modeler.get('zeebePaletteProvider')).to.exist;
-      expect(modeler.get('zeebeContextPadProvider')).to.exist;
-      expect(modeler.get('zeebeReplaceMenuProvider')).to.exist;
       expect(modeler.get('bpmnRules')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('zeebePropertiesProvider')).to.exist;
@@ -185,21 +182,6 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('elementTemplatesLoader')).to.exist;
       expect(modeler.get('elementTemplates')).to.exist;
       expect(modeler.get('elementTemplatesPropertiesProvider')).to.exist;
-    });
-
-  });
-
-
-  it('should disable drilldown', function() {
-
-    // when
-    return createModeler(simpleXml).then(function(result) {
-
-      var modeler = result.modeler;
-
-      // then
-      expect(modeler.get('disabledCollapsedSubprocessPopupProvider')).to.exist;
-      expect(modeler.get('drilldownOverlayBehavior')).not.to.exist;
     });
 
   });
