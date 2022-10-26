@@ -107,20 +107,6 @@ describe('<CamundaCloudNavigatedViewer>', function() {
   });
 
 
-  it('should disable drilldown', function() {
-
-    // when
-    return createViewer(simpleXml).then(function(result) {
-
-      var modeler = result.modeler;
-
-      // then
-      expect(modeler.get('drilldownOverlayBehavior')).not.to.exist;
-    });
-
-  });
-
-
   it('should inject zeebe moddle descriptors', function() {
 
     // when

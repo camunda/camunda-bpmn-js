@@ -12,8 +12,6 @@ This includes a set of extension modules, as follows
   * [diagram-js-origin](https://github.com/bpmn-io/diagram-js-origin) - A point of origin cross and contour for diagram-js (disabled as default)
   * [@bpmn-io/align-to-origin](https://github.com/bpmn-io/align-to-origin) - Nicely align your diagrams to the coordinate origin (enabled as default)
   * [bpmn-js-executable-fix](https://github.com/bpmn-io/bpmn-js-executable-fix) - bpmn-js extension which makes sure that `isExecutable` is set on `bpmn:Process`
-  * [bpmn-js-signavio-compat](https://github.com/bpmn-io/bpmn-js-signavio-compat) - Interoperate with Signavio exported diagrams
-  * [bpmn-js-disable-collapsed-subprocess](https://github.com/bpmn-io/bpmn-js-disable-collapsed-subprocess) - A bpmn-js extension which disables modeling collapsed subprocess via replace menu
   * [bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel) - A properties panel extension for bpmn-js that adds the ability to edit technical properties
   * a generic [BPMN properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/bpmn)
 
