@@ -6,6 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.22.0
+
+* `FEAT`: cloud modeler allows modeling of all elements ([#196](https://github.com/camunda/camunda-bpmn-js/pull/196))
+* `DEPS`: update to `diagram-js@10`
+
+### Breaking Changes
+
+* cloud modeler allows modeling of elements not supported by the engine; use [`@camunda/linting`](https://github.com/camunda/linting) to indicate elements supported by engine
+
 ## 0.21.1
 
 * `FIX`: remove _Cycle_ option of _Timer_ _Type_ of interrupting timer start event ([#802](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/802))
