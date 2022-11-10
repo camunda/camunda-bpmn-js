@@ -13,13 +13,12 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Breaking Changes
 
-* cloud modeler allows modeling of elements not supported by the engine; use [`@camunda/linting`](https://github.com/camunda/linting) to indicate elements supported by engine
+* Cloud modeler allows modeling of elements not supported by the engine; use [`@camunda/linting`](https://github.com/camunda/linting) to indicate elements supported by engine
 
 ## 0.21.1
 
 * `FIX`: remove _Cycle_ option of _Timer_ _Type_ of interrupting timer start event ([#802](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/802))
 * `FIX`: remove timer expression if not allowed after element changed ([#15](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/15))
-
 * `DEPS`: update to `bpmn-js-properties-panel@1.10.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@0.3.0`
 
