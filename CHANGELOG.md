@@ -6,6 +6,21 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+
+## 0.23.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@1.11.1`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@0.4.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@0.16.0`
+
+### Key changes in Modeling
+
+`FEAT`: do not remove assignment if `zeebe:candidateUsers` set ([#20](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/20))
+
+### Key changes in Properties Panel
+
+* `FEAT`: add candidate users entry to assignment group ([#776](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/776))
+
 ## 0.22.0
 
 * `FEAT`: cloud modeler allows modeling of all elements ([#196](https://github.com/camunda/camunda-bpmn-js/pull/196))
