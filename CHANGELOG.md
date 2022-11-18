@@ -9,6 +9,11 @@ ___Note:__ Yet to be released changes appear here._
 ## 0.23.1
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.11.2`
+* `DEPS`: update to `bpmn-js@10.3.0`
+
+### Key changes in Modeling
+
+* `FIX`: correct various space tool related issues ([#1344](https://github.com/bpmn-io/bpmn-js/pull/1344), [#1302](https://github.com/bpmn-io/bpmn-js/issues/1302))
 
 ### Key changes in Properties Panel
 
