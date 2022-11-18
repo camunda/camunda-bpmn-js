@@ -1,6 +1,6 @@
 {
   "name": "camunda-bpmn-js",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "Embeddable Camunda modeling distributions based on bpmn-js",
   "main": "lib/index.js",
   "scripts": {
