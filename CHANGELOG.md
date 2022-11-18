@@ -22,7 +22,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Modeling
 
-`FEAT`: do not remove assignment if `zeebe:candidateUsers` set ([#20](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/20))
+* `FEAT`: do not remove assignment if `zeebe:candidateUsers` set ([#20](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/20))
 
 ### Key changes in Properties Panel
 
