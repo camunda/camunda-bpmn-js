@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.23.1
+
+* `DEPS`: update to `bpmn-js-properties-panel@1.11.2`
+
+### Key changes in Properties Panel
+
+* `FIX`: ensure `ImplementationProps` does not remove empty properties ([#811](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/811))
 
 ## 0.23.0
 
