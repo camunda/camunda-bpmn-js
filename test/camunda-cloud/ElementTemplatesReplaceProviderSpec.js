@@ -91,7 +91,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       }));
 
 
-      it.skip('template task -> task', inject(function(elementRegistry, elementTemplates) {
+      it('template task -> task', inject(function(elementRegistry, elementTemplates) {
 
         // given
         const task = elementRegistry.get('Task_1');
