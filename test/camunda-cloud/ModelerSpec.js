@@ -19,9 +19,8 @@ import simpleXml from 'test/fixtures/simple.bpmn';
 import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 
-import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
-
-import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
+import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
+import ConnectorsExtensionModule from 'bpmn-js-connectors-extension';
 
 import elementTemplates from './element-templates.json';
 
@@ -38,8 +37,8 @@ insertCSS(
 );
 
 insertCSS(
-  'element-templates-chooser.css',
-  elementTemplatesChooserCSS
+  'connectors-extension.css',
+  connectorsExtensionCSS
 );
 
 insertCSS('test-panel.css', `
@@ -103,8 +102,11 @@ describe('<CamundaCloudModeler>', function() {
       keyboard: {
         bindTo: document
       },
+      connectorsExtension: {
+        appendAnything: true
+      },
       additionalModules: [
-        ElementTemplateChooserModule
+        ConnectorsExtensionModule
       ],
       propertiesPanel: {
         parent: propertiesContainer
