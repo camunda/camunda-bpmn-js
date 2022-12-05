@@ -1,0 +1,869 @@
+[
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Mail Task",
+    "id": "com.camunda.example.MailTask",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "label": "Implementation Type",
+        "type": "String",
+        "value": "com.mycompany.MailTaskImpl",
+        "editable": false,
+        "binding": {
+          "type": "property",
+          "name": "camunda:class"
+        }
+      },
+      {
+        "label": "Sender",
+        "type": "String",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "sender"
+        },
+        "constraints": {
+          "notEmpty": true,
+          "pattern": {
+            "value": "^[A-z0-9._%+-]+@[A-z0-9.-]+\\.[A-z]{2,}$",
+            "message": "Must be a valid email."
+          }
+        }
+      },
+      {
+        "label": "Receivers",
+        "type": "String",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "receivers"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Template",
+        "description": "By the way, you can use <a href=\"https://freemarker.apache.org/\">freemarker templates</a> here",
+        "value": "Hello ${firstName}!",
+        "type": "Text",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "messageBody",
+          "scriptFormat": "freemarker"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Result Status",
+        "description": "The process variable to which to assign the send result to",
+        "value": "mailSendResult",
+        "type": "String",
+        "binding": {
+          "type": "camunda:outputParameter",
+          "source": "${ resultStatus }"
+        }
+      },
+      {
+        "label": "Send Async?",
+        "type": "Boolean",
+        "value": true,
+        "binding": {
+          "type": "property",
+          "name": "camunda:asyncBefore"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Mail Task (Groups)",
+    "id": "com.camunda.example.MailTask-groups",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "label": "Implementation Type",
+        "type": "String",
+        "group": "definition",
+        "value": "com.mycompany.MailTaskImpl",
+        "editable": false,
+        "binding": {
+          "type": "property",
+          "name": "camunda:class"
+        }
+      },
+      {
+        "label": "Sender",
+        "type": "String",
+        "group": "request",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "sender"
+        },
+        "constraints": {
+          "notEmpty": true,
+          "pattern": {
+            "value": "^[A-z0-9._%+-]+@[A-z0-9.-]+\\.[A-z]{2,}$",
+            "message": "Must be a valid email."
+          }
+        }
+      },
+      {
+        "label": "Receivers",
+        "type": "String",
+        "group": "request",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "receivers"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Template",
+        "description": "By the way, you can use <a href=\"https://freemarker.apache.org/\">freemarker templates</a> here",
+        "value": "Hello ${firstName}!",
+        "type": "Text",
+        "group": "request",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "messageBody",
+          "scriptFormat": "freemarker"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Result Status",
+        "description": "The process variable to which to assign the send result to",
+        "value": "mailSendResult",
+        "type": "String",
+        "group": "result",
+        "binding": {
+          "type": "camunda:outputParameter",
+          "source": "${ resultStatus }"
+        }
+      },
+      {
+        "label": "Send Async?",
+        "type": "Boolean",
+        "group": "definition",
+        "value": true,
+        "binding": {
+          "type": "property",
+          "name": "camunda:asyncBefore"
+        }
+      }
+    ],
+    "groups": [
+      {
+        "id": "definition",
+        "label": "Task definition"
+      },
+      {
+        "id": "request",
+        "label": "Request payload"
+      },
+      {
+        "id": "result",
+        "label": "Result mapping"
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "ConnectorGetTask",
+    "id": "my.connector.http.get.Task",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "properties": [],
+    "scopes": [
+      {
+        "type": "camunda:Connector",
+        "properties": [
+          {
+            "label": "ConnectorId",
+            "type": "String",
+            "value": "My Connector HTTP - GET",
+            "binding": {
+              "type": "property",
+              "name": "connectorId"
+            }
+          },
+          {
+            "label": "Method",
+            "type": "String",
+            "value": "GET",
+            "binding": {
+              "type": "camunda:inputParameter",
+              "name": "method"
+            }
+          },
+          {
+            "label": "URL",
+            "type": "String",
+            "value": "https://bpmn.io",
+            "binding": {
+              "type": "camunda:inputParameter",
+              "name": "url"
+            }
+          },
+          {
+            "label": "Response",
+            "type": "String",
+            "value": "wsResponse",
+            "binding": {
+              "type": "camunda:outputParameter",
+              "source": "${S(response)}",
+              "scriptFormat": "freemarker"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "AsyncAwesomeTask",
+    "id": "com.camunda.example.AwesomeTask",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "properties": [
+      {
+        "label": "Are you awesome?",
+        "type": "Boolean",
+        "value": true,
+        "binding": {
+          "type": "property",
+          "name": "camunda:asyncBefore"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Custom ServiceTask",
+    "id": "com.camunda.example.CustomServiceTask",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "label": "Delegate to Call",
+        "type": "String",
+        "editable": false,
+        "value": "com.camunda.example.FooDelegate",
+        "binding": {
+          "type": "property",
+          "name": "camunda:delegateExpression"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Custom ServiceTask (Entries visible)",
+    "id": "com.camunda.example.CustomServiceTask-entriesVisible",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "entriesVisible": true,
+    "properties": [
+      {
+        "label": "Delegate to Call",
+        "type": "Hidden",
+        "value": "com.camunda.example.FooDelegate",
+        "binding": {
+          "type": "property",
+          "name": "camunda:delegateExpression"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "VIP-Order Path",
+    "id": "e.com.merce.FastPath",
+    "appliesTo": [
+      "bpmn:SequenceFlow"
+    ],
+    "properties": [
+      {
+        "label": "VIP-Ordering",
+        "type": "String",
+        "editable": false,
+        "value": "${ customer.vip }",
+        "binding": {
+          "type": "property",
+          "name": "conditionExpression"
+        }
+      },
+      {
+        "label": "Label",
+        "type": "Text",
+        "value": "YEY YEA!",
+        "binding": {
+          "type": "property",
+          "name": "name"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "WS Caller Task",
+    "id": "com.camunda.example.WsCaller",
+    "description": "Requires the user to provide a Web Service URL.",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "label": "Web Service URL",
+        "description": "Specify the url of the web service to talk to.",
+        "type": "String",
+        "binding": {
+          "type": "camunda:property",
+          "name": "webServiceUrl"
+        },
+        "constraints": {
+          "notEmpty": true,
+          "pattern": {
+            "value": "^https://.*",
+            "message": "Must be https URL."
+          }
+        }
+      },
+      {
+        "type": "Hidden",
+        "value": "com.camunda.example.WsCaller",
+        "binding": {
+          "type": "property",
+          "name": "camunda:class"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Check Invoice Task",
+    "id": "com.camunda.example.CheckInvoiceTask",
+    "appliesTo": [
+      "bpmn:UserTask"
+    ],
+    "properties": [
+      {
+        "label": "Candidate Users",
+        "description": "Users able to carry out this task",
+        "type": "String",
+        "value": "Walt, Jeff, Lisa",
+        "binding": {
+          "type": "property",
+          "name": "camunda:candidateUsers"
+        },
+        "constraints": {
+          "notEmpty": true,
+          "pattern": {
+            "value": "\\s*(\\w+,\\s?)*\\w+\\s*",
+            "message": "Use comma separated list of user names"
+          }
+        }
+      },
+      {
+        "label": "Candidate Groups",
+        "description": "Groups able to carry out this task",
+        "type": "String",
+        "value": "Backoffice",
+        "binding": {
+          "type": "property",
+          "name": "camunda:candidateGroups"
+        },
+        "constraints": {
+          "notEmpty": true,
+          "pattern": {
+            "value": "\\s*(\\w+,\\s?)*\\w+\\s*",
+            "message": "Use comma separated list of group names"
+          }
+        }
+      },
+      {
+        "label": "Task Priority",
+        "type": "Dropdown",
+        "value": "50",
+        "choices": [
+          { "name": "low", "value": "20" },
+          { "name": "medium", "value": "50" },
+          { "name": "height", "value": "100" }
+        ],
+        "binding": {
+          "type": "property",
+          "name": "camunda:priority"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Caller",
+    "id": "com.camunda.example.Caller",
+    "appliesTo": [
+      "bpmn:CallActivity"
+    ],
+    "properties": [
+      {
+        "label": "Called Process",
+        "type": "String",
+        "editable": false,
+        "value": "calledProcess",
+        "binding": {
+          "type": "property",
+          "name": "calledElement"
+        }
+      },
+      {
+        "label": "Input source variable",
+        "type": "String",
+        "value": "var_local_1",
+        "binding": {
+          "type": "camunda:in",
+          "target": "var_called_source_1"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Input source variable local scope",
+        "type": "String",
+        "value": "var_local_2",
+        "binding": {
+          "type": "camunda:in",
+          "target": "var_called_source_2",
+          "variables": "local"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Input sourceExpression local scope",
+        "type": "String",
+        "value": "${ var_local + 2 }",
+        "binding": {
+          "type": "camunda:in",
+          "target": "var_called_expr_1",
+          "variables": "local",
+          "expression": true
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Output target (source variable)",
+        "type": "String",
+        "value": "var_called_1",
+        "binding": {
+          "type": "camunda:out",
+          "source": "var_local_source_1"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Output target (source variable local scope)",
+        "type": "String",
+        "value": "var_called_2",
+        "binding": {
+          "type": "camunda:out",
+          "source": "var_local_source_2",
+          "variables": "local"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Input sourceExpression",
+        "type": "String",
+        "value": "${ expr_local }",
+        "binding": {
+          "type": "camunda:in",
+          "target": "var_called_expr_2",
+          "expression": true
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Output target (sourceExpression)",
+        "type": "String",
+        "value": "var_local_expr_1",
+        "binding": {
+          "type": "camunda:out",
+          "sourceExpression": "${ expr_called_1 }"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Output target (sourceExpression local scope)",
+        "type": "String",
+        "value": "var_local_expr_2",
+        "binding": {
+          "type": "camunda:out",
+          "sourceExpression": "${ expr_called_2 }",
+          "variables": "local"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "label": "Input business key",
+        "description": "Provide the expression retrieving the business key.",
+        "type": "String",
+        "value": "${ execution.processBusinessKey }",
+        "binding": {
+          "type": "camunda:in:businessKey"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Caller All IO",
+    "id": "com.camunda.example.CallerAllIO",
+    "appliesTo": [
+      "bpmn:CallActivity"
+    ],
+    "properties": [
+      {
+        "label": "Called Process",
+        "type": "String",
+        "editable": false,
+        "value": "calledProcess",
+        "binding": {
+          "type": "property",
+          "name": "calledElement"
+        }
+      },
+      {
+        "label": "Input all",
+        "type": "Hidden",
+        "binding": {
+          "type": "camunda:in",
+          "variables": "all"
+        }
+      },
+      {
+        "label": "Output all",
+        "type": "Hidden",
+        "binding": {
+          "type": "camunda:out",
+          "variables": "all"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Caller All IO Local",
+    "id": "com.camunda.example.CallerAllIOLocal",
+    "appliesTo": [
+      "bpmn:CallActivity"
+    ],
+    "properties": [
+      {
+        "label": "Called Process",
+        "type": "String",
+        "editable": false,
+        "value": "calledProcess",
+        "binding": {
+          "type": "property",
+          "name": "calledElement"
+        }
+      },
+      {
+        "label": "Input all local",
+        "type": "Hidden",
+        "binding": {
+          "type": "camunda:in",
+          "variables": "local"
+        }
+      },
+      {
+        "label": "Output all local",
+        "type": "Hidden",
+        "binding": {
+          "type": "camunda:out",
+          "variables": "local"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Execution Listener",
+    "id": "com.camunda.example.ExecutionListener",
+    "appliesTo": [
+      "bpmn:Activity",
+      "bpmn:Event",
+      "bpmn:Gateway"
+    ],
+    "properties": [
+      {
+        "value": "println execution.eventName",
+        "type": "Hidden",
+        "binding": {
+          "type": "camunda:executionListener",
+          "event": "start",
+          "scriptFormat": "groovy"
+        }
+      },
+      {
+        "value": "println end",
+        "type": "Hidden",
+        "binding": {
+          "type": "camunda:executionListener",
+          "event": "end",
+          "scriptFormat": "groovy"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Field Injections",
+    "id": "com.camunda.example.FieldInjections",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "label": "Field Injection String",
+        "type": "String",
+        "value": "My Field Injection Value",
+        "binding": {
+          "type": "camunda:field",
+          "name": "fieldInjectionString",
+          "expression": false
+        }
+      },
+      {
+        "label": "Field Injection Expression",
+        "type": "String",
+        "value": "${fieldInjectionExpression}",
+        "binding": {
+          "type": "camunda:field",
+          "name": "fieldInjectionExpression",
+          "expression": true
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Default Rendering",
+    "id": "com.camunda.example.DefaultRendering",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "label": "Input Parameter",
+        "binding": {
+          "type": "camunda:inputParameter",
+          "name": "processVar"
+        }
+      },
+      {
+        "label": "Output Parameter",
+        "binding": {
+          "type": "camunda:outputParameter",
+          "source": "outputParam"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "External Service Task (with Errors)",
+    "id": "com.camunda.example.ExternalServiceTaskWithErrors",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "binding": {
+          "name": "camunda:type",
+          "type": "property"
+        },
+        "type": "Hidden",
+        "value": "external"
+      },
+      {
+        "binding": {
+          "name": "camunda:topic",
+          "type": "property"
+        },
+        "label": "External Task Topic",
+        "type": "String",
+        "value": "task-topic"
+      },
+      {
+        "value": "expression-value",
+        "label": "Error Expression",
+        "type": "String",
+        "binding": {
+          "type": "camunda:errorEventDefinition",
+          "errorRef": "Error_1"
+        }
+      }
+    ],
+    "scopes": [
+      {
+        "type": "bpmn:Error",
+        "id": "Error_1",
+        "properties": [
+          {
+            "value": "error-code",
+            "label": "Error Code",
+            "binding": {
+              "type": "property",
+              "name": "errorCode"
+            }
+          },
+          {
+            "value": "error-message",
+            "label": "Error Message",
+            "binding": {
+              "type": "property",
+              "name": "camunda:errorMessage"
+            }
+          },
+          {
+            "value": "error-name",
+            "label": "Error Name",
+            "binding": {
+              "type": "property",
+              "name": "name"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Default Errors Rendering",
+    "id": "com.camunda.example.DefaultErrorsRendering",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "properties": [
+      {
+        "type": "Hidden",
+        "value": "external",
+        "binding": {
+          "type": "property",
+          "name": "camunda:type"
+        }
+      },
+      {
+        "value": "${true}",
+        "binding": {
+          "type": "camunda:errorEventDefinition",
+          "errorRef": "error-1"
+        }
+      }
+    ],
+    "scopes": [
+      {
+        "type": "bpmn:Error",
+        "id": "error-1",
+        "properties": [
+          {
+            "type": "Hidden",
+            "value": "500",
+            "binding": {
+              "type": "property",
+              "name": "errorCode"
+            }
+          },
+          {
+            "type": "Hidden",
+            "value": "an example error",
+            "binding": {
+              "type": "property",
+              "name": "camunda:errorMessage"
+            }
+          },
+          {
+            "type": "Hidden",
+            "value": "myError",
+            "binding": {
+              "type": "property",
+              "name": "name"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Element Type",
+    "id": "com.camunda.example.ElementType",
+    "description": "An example element template that changes the element type.",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "elementType": {
+      "value": "bpmn:ServiceTask"
+    },
+    "documentationRef": "https://docs.camunda.io/docs/components/modeler/desktop-modeler/element-templates/defining-templates/",
+    "properties": [
+      {
+        "type": "Hidden",
+        "value": "Change element type",
+        "binding": {
+          "type": "property",
+          "name": "name"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
+    "name": "Documentation URL",
+    "id": "com.camunda.example.DocumentationRef",
+    "description": "An example element template with documentation URL.",
+    "appliesTo": [
+      "bpmn:ServiceTask"
+    ],
+    "documentationRef": "https://docs.camunda.io/docs/components/modeler/desktop-modeler/element-templates/",
+    "properties": [
+      {
+        "type": "Hidden",
+        "value": "With documentationRef",
+        "binding": {
+          "type": "property",
+          "name": "name"
+        }
+      }
+    ]
+  }
+]
