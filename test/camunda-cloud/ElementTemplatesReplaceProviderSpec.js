@@ -19,7 +19,11 @@ import templates from './ElementTemplatesReplaceProvider.element-templates.json'
 describe('<ElementTemplatesReplaceProvider>', function() {
 
   beforeEach(bootstrapCamundaCloudModeler(
-    diagramXML
+    diagramXML, {
+      elementTemplatesReplaceProvider: {
+        replaceWithTemplates: true
+      }
+    }
   ));
 
   beforeEach(inject(function(elementTemplates) {
