@@ -21,7 +21,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
   beforeEach(bootstrapCamundaCloudModeler(
     diagramXML, {
       elementTemplatesReplaceProvider: {
-        replaceWithTemplates: true
+        enabled: true
       }
     }
   ));
