@@ -6,6 +6,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.24.0
+* `DEPS`: update to `bpmn-js@11.0.1`
+* `DEPS`: update to `diagram-js@11.1.1`
+* `DEPS`: update modeling dependencies
+
+### Key changes in Modeling
+* `FEAT`: provide templates as replace menu entries ([#207](https://github.com/camunda/camunda-bpmn-js/pull/207))
+* `FEAT`: replace with templates available through feature flag ([#214](https://github.com/camunda/camunda-bpmn-js/pull/214))
+
+### Breaking Changes
+* New popup menu UI introduced with `diagram-js@11` / `bpmn-js@11`. See [`diagram-js` breaking changes and migration guide](https://github.com/bpmn-io/diagram-js/blob/develop/CHANGELOG.md#breaking-changes).
+
 ## 0.23.1
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.11.2`
