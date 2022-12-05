@@ -105,6 +105,9 @@ describe('<CamundaCloudModeler>', function() {
       connectorsExtension: {
         appendAnything: true
       },
+      elementTemplatesReplaceProvider: {
+        enabled: true
+      },
       additionalModules: [
         ConnectorsExtensionModule
       ],
