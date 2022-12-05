@@ -21,6 +21,8 @@ import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/e
 
 import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
 
+import elementTemplates from './element-templates.json';
+
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-platform-modeler';
 
 insertCSS(
@@ -125,11 +127,20 @@ describe('<CamundaPlatformModeler>', function() {
     });
   }
 
-  (singleStart ? it.only : it)('should import simple process', function() {
-    return createModeler(simpleXml).then(function(result) {
 
-      expect(result.error).not.to.exist;
-    });
+  (singleStart ? it.only : it)('should import simple process', async function() {
+    const {
+      error
+    } = await createModeler(simpleXml);
+
+    // then
+    expect(error).not.to.exist;
+
+    // but when
+    modeler.get('elementTemplatesLoader').setTemplates(elementTemplates);
+
+    // then
+    // expect happy modeling
   });
 
 
