@@ -113,6 +113,37 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
     });
 
+
+    describe('should handle non-existing replace options', function() {
+
+      it('bpmn:Group', inject(function(elementRegistry, selection) {
+
+        // given
+        const group = elementRegistry.get('GROUP');
+
+        // when
+        selection.select(group);
+
+        // then
+        // no error
+      }));
+
+
+      it('bpmn:SubProcess', inject(function(elementRegistry, selection) {
+
+        // given
+        const subProcess = elementRegistry.get('SUB_PROCESS');
+
+        // when
+        openPopup(subProcess);
+
+        // then
+        const entries = getTemplateEntries();
+        expect(entries).to.be.empty;
+      }));
+
+    });
+
   });
 
 
