@@ -15,6 +15,8 @@ import {
 import diagramXML from './ElementTemplatesReplaceProvider.bpmn';
 import templates from './ElementTemplatesReplaceProvider.element-templates.json';
 
+import { isString } from 'min-dash';
+
 
 describe('<ElementTemplatesReplaceProvider>', function() {
 
@@ -64,11 +66,13 @@ describe('<ElementTemplatesReplaceProvider>', function() {
     it('should not display applied element template', inject(function(elementRegistry, elementTemplates) {
 
       // given
-      const task = elementRegistry.get('ServiceTask_1');
-      const appliedTask = elementTemplates.applyTemplate(task, templates[0]);
+      const task = applyTemplate(
+        'ServiceTask_1',
+        'io.camunda.connectors.HttpJson.v1.noAuth'
+      );
 
       // when
-      openPopup(appliedTask);
+      openPopup(task);
 
       // then
       const entries = getTemplateEntries();
@@ -81,11 +85,13 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       it('template service task -> service task', inject(function(elementRegistry, elementTemplates) {
 
         // given
-        const task = elementRegistry.get('ServiceTask_1');
-        const appliedTask = elementTemplates.applyTemplate(task, templates[templates[0]]);
+        const element = applyTemplate(
+          'ServiceTask_1',
+          'io.camunda.connectors.HttpJson.v1.noAuth'
+        );
 
         // when
-        openPopup(appliedTask);
+        openPopup(element);
 
         // then
         const entries = Object.keys(getEntries());
@@ -98,11 +104,13 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       it('template task -> task', inject(function(elementRegistry, elementTemplates) {
 
         // given
-        const task = elementRegistry.get('Task_1');
-        const appliedTask = elementTemplates.applyTemplate(task, templates[templates[templates.length - 1]]);
+        const element = applyTemplate(
+          'Task_1',
+          'example.TaskTemplate'
+        );
 
         // when
-        openPopup(appliedTask);
+        openPopup(element);
 
         // then
         const entries = Object.keys(getEntries());
@@ -111,10 +119,29 @@ describe('<ElementTemplatesReplaceProvider>', function() {
         expect(entryIndex).to.eql(0);
       }));
 
+
+      it('template transaction -> transaction', inject(function(elementRegistry, elementTemplates) {
+
+        // given
+        const element = applyTemplate(
+          'SUB_PROCESS',
+          'example.TransactionTemplate'
+        );
+
+        // when
+        openPopup(element);
+
+        // then
+        const entries = Object.keys(getEntries());
+        const entryIndex = entries.indexOf('replace-with-transaction');
+
+        expect(entryIndex).to.eql(0);
+      }));
+
     });
 
 
-    describe('should handle non-existing replace options', function() {
+    describe('should handle non-existing template', function() {
 
       it('bpmn:Group', inject(function(elementRegistry, selection) {
 
@@ -126,20 +153,6 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
         // then
         // no error
-      }));
-
-
-      it('bpmn:SubProcess', inject(function(elementRegistry, selection) {
-
-        // given
-        const subProcess = elementRegistry.get('SUB_PROCESS');
-
-        // when
-        openPopup(subProcess);
-
-        // then
-        const entries = getTemplateEntries();
-        expect(entries).to.be.empty;
       }));
 
     });
@@ -364,4 +377,24 @@ function getTemplateEntries() {
   const entryIds = Object.keys(entries);
 
   return entryIds.filter(entry => entry.startsWith('replace-with-template'));
+}
+
+
+function applyTemplate(element, template) {
+
+  return getBpmnJS().invoke(function(elementTemplates, elementRegistry) {
+
+    if (isString(element)) {
+      element = elementRegistry.get(element);
+    }
+
+    if (isString(template)) {
+      template = templates.find(t => t.id === template);
+    }
+
+    expect(element).to.exist;
+    expect(template).to.exist;
+
+    return elementTemplates.applyTemplate(element, template);
+  });
 }
