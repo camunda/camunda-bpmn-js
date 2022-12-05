@@ -80,6 +80,20 @@ describe('<ElementTemplatesReplaceProvider>', function() {
     }));
 
 
+    it('should not display unlink on plain task', inject(function(elementRegistry) {
+
+      // given
+      const task = elementRegistry.get('Task_1');
+
+      // when
+      openPopup(task);
+
+      // then
+      const entries = Object.keys(getEntries());
+      expect(entries).not.to.include('replace-unlink-element-template');
+    }));
+
+
     describe('display options to reset to plain element in correct order', function() {
 
       it('template service task -> service task', inject(function(elementRegistry, elementTemplates) {
