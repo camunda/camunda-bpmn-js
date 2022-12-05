@@ -47,7 +47,7 @@
   "dependencies": {
     "@bpmn-io/align-to-origin": "^0.7.0",
     "@bpmn-io/element-templates-icons-renderer": "^0.3.0",
-    "bpmn-js": "^11.0.1",
+    "bpmn-js": "^11.0.3",
     "bpmn-js-executable-fix": "^0.2.0",
     "camunda-bpmn-js-behaviors": "^0.4.0",
     "camunda-bpmn-moddle": "^7.0.1",
