@@ -95,7 +95,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
         // then
         const entries = Object.keys(getEntries());
-        const entryIndex = entries.indexOf('replace-with-service-task');
+        const entryIndex = entries.indexOf('replace-unlink-element-template');
 
         expect(entryIndex).to.eql(6);
       }));
@@ -114,7 +114,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
         // then
         const entries = Object.keys(getEntries());
-        const entryIndex = entries.indexOf('replace-with-task');
+        const entryIndex = entries.indexOf('replace-unlink-element-template');
 
         expect(entryIndex).to.eql(0);
       }));
@@ -133,7 +133,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
         // then
         const entries = Object.keys(getEntries());
-        const entryIndex = entries.indexOf('replace-with-transaction');
+        const entryIndex = entries.indexOf('replace-unlink-element-template');
 
         expect(entryIndex).to.eql(0);
       }));
@@ -272,7 +272,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
       // when
       openPopup(task);
-      triggerAction('replace-with-service-task');
+      triggerAction('replace-unlink-element-template');
 
       // then
       expect(isTemplateApplied(task, template)).to.be.false;
