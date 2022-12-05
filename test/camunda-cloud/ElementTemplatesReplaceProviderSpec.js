@@ -190,7 +190,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
       // given
       const template = templates[0];
-      const entry = getEntry(`replace-with-template-${template.id}`);
+      const entry = getEntry(`replace.template-${template.id}`);
 
       // then
       expect(entry.name).to.eql(template.name);
@@ -201,7 +201,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
       // given
       const template = templates[0];
-      const entry = getEntry(`replace-with-template-${template.id}`);
+      const entry = getEntry(`replace.template-${template.id}`);
 
       // then
       expect(entry.imageUrl).to.eql(template.icon.contents);
@@ -212,7 +212,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
       // given
       const template = templates[0];
-      const entry = getEntry(`replace-with-template-${template.id}`);
+      const entry = getEntry(`replace.template-${template.id}`);
 
       // then
       expect(entry.description).to.eql(template.description);
@@ -223,7 +223,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
       // given
       const template = templates[0];
-      const entry = getEntry(`replace-with-template-${template.id}`);
+      const entry = getEntry(`replace.template-${template.id}`);
 
       // then
       expect(entry.documentationRef).to.eql(template.documentationRef);
@@ -267,7 +267,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       // when
       openPopup(task);
 
-      triggerAction(`replace-with-template-${template.id}`);
+      triggerAction(`replace.template-${template.id}`);
 
       // then
       expect(isTemplateApplied(task, template)).to.be.true;
@@ -282,7 +282,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       const template = templates[0];
 
       openPopup(task);
-      triggerAction(`replace-with-template-${template.id}`);
+      triggerAction(`replace.template-${template.id}`);
 
       // when
       openPopup(task);
@@ -300,7 +300,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       const template = templates[0];
 
       openPopup(task);
-      triggerAction(`replace-with-template-${template.id}`);
+      triggerAction(`replace.template-${template.id}`);
 
       // when
       commandStack.undo();
@@ -317,7 +317,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       const template = templates[0];
 
       openPopup(task);
-      triggerAction(`replace-with-template-${template.id}`);
+      triggerAction(`replace.template-${template.id}`);
 
       // when
       commandStack.undo();
@@ -390,7 +390,7 @@ function getTemplateEntries() {
   const entries = getEntries();
   const entryIds = Object.keys(entries);
 
-  return entryIds.filter(entry => entry.startsWith('replace-with-template'));
+  return entryIds.filter(entry => entry.startsWith('replace.template'));
 }
 
 
