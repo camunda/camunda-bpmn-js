@@ -65,10 +65,10 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
       // given
       const task = elementRegistry.get('ServiceTask_1');
-      elementTemplates.applyTemplate(task, templates[0]);
+      const appliedTask = elementTemplates.applyTemplate(task, templates[0]);
 
       // when
-      openPopup(task);
+      openPopup(appliedTask);
 
       // then
       const entries = getTemplateEntries();
@@ -82,10 +82,10 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
         // given
         const task = elementRegistry.get('ServiceTask_1');
-        elementTemplates.applyTemplate(task, templates[templates[0]]);
+        const appliedTask = elementTemplates.applyTemplate(task, templates[templates[0]]);
 
         // when
-        openPopup(task);
+        openPopup(appliedTask);
 
         // then
         const entries = Object.keys(getEntries());
@@ -99,10 +99,10 @@ describe('<ElementTemplatesReplaceProvider>', function() {
 
         // given
         const task = elementRegistry.get('Task_1');
-        elementTemplates.applyTemplate(task, templates[templates[templates.length - 1]]);
+        const appliedTask = elementTemplates.applyTemplate(task, templates[templates[templates.length - 1]]);
 
         // when
-        openPopup(task);
+        openPopup(appliedTask);
 
         // then
         const entries = Object.keys(getEntries());
