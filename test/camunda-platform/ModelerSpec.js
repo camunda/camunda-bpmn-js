@@ -17,6 +17,10 @@ import simpleXml from 'test/fixtures/simple.bpmn';
 import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 
+import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
+
+import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
+
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-platform-modeler';
 
 insertCSS(
@@ -27,6 +31,11 @@ insertCSS(
 insertCSS(
   'element-templates.css',
   elementTemplatesCSS
+);
+
+insertCSS(
+  'element-templates-chooser.css',
+  elementTemplatesChooserCSS
 );
 
 insertCSS('test.css', `
@@ -95,7 +104,10 @@ describe('<CamundaPlatformModeler>', function() {
       },
       propertiesPanel: {
         parent: propertiesContainer
-      }
+      },
+      additionalModules: [
+        ElementTemplateChooserModule
+      ]
     });
 
     singleStart && modeler.on('commandStack.changed', debounce(function() {
