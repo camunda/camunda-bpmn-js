@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.24.1
+
+* `FIX`: ensure interoperability with connectors extension ([#211](https://github.com/camunda/camunda-bpmn-js/issues/211))
+* `DEPS`: update to `bpmn-js@11.0.5`
+
 ## 0.24.0
 * `DEPS`: update to `bpmn-js@11.0.1`
 * `DEPS`: update to `diagram-js@11.1.1`
