@@ -20,13 +20,7 @@ import { isString } from 'min-dash';
 
 describe('<ElementTemplatesReplaceProvider>', function() {
 
-  beforeEach(bootstrapCamundaCloudModeler(
-    diagramXML, {
-      elementTemplatesReplaceProvider: {
-        enabled: true
-      }
-    }
-  ));
+  beforeEach(bootstrapCamundaCloudModeler(diagramXML));
 
   beforeEach(inject(function(elementTemplates) {
     elementTemplates.set(templates);
