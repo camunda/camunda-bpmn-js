@@ -18,6 +18,7 @@ import simpleXml from 'test/fixtures/simple.bpmn';
 
 import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
+import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
 import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
 import ConnectorsExtensionModule from 'bpmn-js-connectors-extension';
@@ -34,6 +35,11 @@ insertCSS(
 insertCSS(
   'element-templates.css',
   elementTemplatesCSS
+);
+
+insertCSS(
+  'color-picker.css',
+  colorPickerCSS
 );
 
 insertCSS(
