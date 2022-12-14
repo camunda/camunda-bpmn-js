@@ -20,8 +20,9 @@ import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
-import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
-import ConnectorsExtensionModule from 'bpmn-js-connectors-extension';
+import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
+
+import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
 
 import elementTemplates from './element-templates.json';
 
@@ -43,8 +44,8 @@ insertCSS(
 );
 
 insertCSS(
-  'connectors-extension.css',
-  connectorsExtensionCSS
+  'element-templates-chooser.css',
+  elementTemplatesChooserCSS
 );
 
 insertCSS('test-panel.css', `
@@ -108,11 +109,8 @@ describe('<CamundaCloudModeler>', function() {
       keyboard: {
         bindTo: document
       },
-      connectorsExtension: {
-        appendAnything: true
-      },
       additionalModules: [
-        ConnectorsExtensionModule
+        ElementTemplateChooserModule
       ],
       propertiesPanel: {
         parent: propertiesContainer
