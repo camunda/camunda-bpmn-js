@@ -39,7 +39,8 @@ const assets = [
   'diagram-js-minimap.css',
   'diagram-js.css',
   'element-templates.css',
-  'properties-panel.css'
+  'properties-panel.css',
+  'color-picker.css'
 ];
 
 const testMatrix = getAllCombinations(domains, distributions, environments);

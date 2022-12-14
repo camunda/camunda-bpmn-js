@@ -52,6 +52,10 @@ const styles = [
     dest: 'dist/assets'
   },
   {
+    src: resolve('bpmn-js-color-picker', '/colors/color-picker.css'),
+    dest: 'dist/assets'
+  },
+  {
     src: resolve('bpmn-js-properties-panel', '/dist/assets/element-templates.css'),
     dest: 'dist/assets'
   }

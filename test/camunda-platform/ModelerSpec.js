@@ -18,6 +18,7 @@ import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-
 import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-templates.css';
 
 import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
+import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
 import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
 
@@ -26,13 +27,18 @@ import elementTemplates from './element-templates.json';
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-platform-modeler';
 
 insertCSS(
-  'properties.css',
+  'properties-panel.css',
   propertiesPanelCSS
 );
 
 insertCSS(
   'element-templates.css',
   elementTemplatesCSS
+);
+
+insertCSS(
+  'color-picker.css',
+  colorPickerCSS
 );
 
 insertCSS(
