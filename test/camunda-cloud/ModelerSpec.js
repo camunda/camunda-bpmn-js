@@ -3,8 +3,13 @@ import TestContainer from 'mocha-test-container-support';
 import {
   clearBpmnJS,
   setBpmnJS,
-  insertCSS
+  insertCSS,
+  inject
 } from 'test/TestHelper';
+
+import {
+  queryAll as domQueryAll
+} from 'min-dom';
 
 import {
   debounce
@@ -21,12 +26,15 @@ import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-te
 import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
 import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
+import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
 
 import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
+import ConnectorsExtensionModule from 'bpmn-js-connectors-extension';
 
-import elementTemplates from './element-templates.json';
+import templates from './element-templates.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
+var connectorsExtension = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-connectors-extension';
 
 insertCSS(
   'properties-panel.css',
@@ -46,6 +54,11 @@ insertCSS(
 insertCSS(
   'element-templates-chooser.css',
   elementTemplatesChooserCSS
+);
+
+insertCSS(
+  'connectors-extension.css',
+  connectorsExtensionCSS
 );
 
 insertCSS('test-panel.css', `
@@ -100,7 +113,7 @@ describe('<CamundaCloudModeler>', function() {
     container.appendChild(propertiesContainer);
   });
 
-  function createModeler(xml) {
+  function createModeler(xml, additionalModules = []) {
 
     clearBpmnJS();
 
@@ -110,7 +123,8 @@ describe('<CamundaCloudModeler>', function() {
         bindTo: document
       },
       additionalModules: [
-        ElementTemplateChooserModule
+        ElementTemplateChooserModule,
+        ...additionalModules
       ],
       propertiesPanel: {
         parent: propertiesContainer
@@ -144,7 +158,7 @@ describe('<CamundaCloudModeler>', function() {
       expect(error).not.to.exist;
 
       // but when
-      modeler.get('elementTemplatesLoader').setTemplates(elementTemplates);
+      modeler.get('elementTemplatesLoader').setTemplates(templates);
 
       // then
       // expect happy modeling
@@ -219,6 +233,85 @@ describe('<CamundaCloudModeler>', function() {
       // then
       expect(propertiesPanel._descriptionConfig).to.exist;
     });
+
+  });
+
+
+  describe('integration with connectors extension', function() {
+
+    let modeler;
+
+    const additionalModules = [
+      ConnectorsExtensionModule
+    ];
+
+    beforeEach(function() {
+      return createModeler(diagramXml, additionalModules).then(
+        function(result) {
+          modeler = result.modeler;
+          modeler.get('elementTemplatesLoader').setTemplates(templates);
+        });
+    });
+
+
+    (connectorsExtension ? it.only : it)('should import simple process', function() {
+
+      // then
+      expect(modeler.get('connectorsExtension')).to.exist;
+    });
+
+
+    it('templates are not duplicated', inject(function(elementRegistry, replaceMenu) {
+
+      // given
+      const task = elementRegistry.get('Activity_08bosyf');
+
+      // when
+      replaceMenu.open(task, {
+        x: task.x, y: task.y
+      });
+
+      // then
+      const entries = domQueryAll('[data-entry-id^="replace.template-"]');
+      expect(entries).to.have.length(5);
+
+    }));
+
+
+    it('templates are not duplicated', inject(function(elementRegistry, replaceMenu) {
+
+      // given
+      const task = elementRegistry.get('Activity_08bosyf');
+
+      // when
+      replaceMenu.open(task, {
+        x: task.x, y: task.y
+      });
+
+      // then
+      const entries = domQueryAll('[data-entry-id^="replace.template-"]');
+      expect(entries).to.have.length(5);
+
+    }));
+
+
+    it('unlink template option is not duplicated', inject(function(elementRegistry, replaceMenu, elementTemplates) {
+
+      // given
+
+      const task = elementRegistry.get('Activity_08bosyf');
+      elementTemplates.applyTemplate(task, templates[0]);
+
+      // when
+      replaceMenu.open(task, {
+        x: task.x, y: task.y
+      });
+
+      // then
+      const unlinkEntries = domQueryAll('[data-entry-id="replace-unlink-element-template"]');
+
+      expect(unlinkEntries).to.have.lengthOf(1);
+    }));
 
   });
 
