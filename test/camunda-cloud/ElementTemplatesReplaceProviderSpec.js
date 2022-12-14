@@ -187,7 +187,7 @@ describe('<ElementTemplatesReplaceProvider>', function() {
       const entry = getEntry(`replace.template-${template.id}`);
 
       // then
-      expect(entry.name).to.eql(template.name);
+      expect(entry.label).to.eql(template.name);
     }));
 
 
