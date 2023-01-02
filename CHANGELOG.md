@@ -6,6 +6,20 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.0.0
+
+* `DEPS`: update to `bpmn-js@11.1.0`
+* `DEPS`: update to `diagram-js@11.4.1`
+
+### Key changes in Modeling
+
+* `FEAT`: integrate `bpmn-js-color-picker` ([#221](https://github.com/camunda/camunda-bpmn-js/pull/221))
+* `FEAT`: allow to unlink element template in replace menu ([#219](https://github.com/camunda/camunda-bpmn-js/pull/219))
+* `FEAT`: remove feature flag from replace with templates ([#219](https://github.com/camunda/camunda-bpmn-js/pull/219))
+* `FEAT`: add shortcut for opening replace menu ([#1782](https://github.com/bpmn-io/bpmn-js/issues/1782))
+* `FIX`: template name is used as label for replace menu ([#222](https://github.com/camunda/camunda-bpmn-js/pull/222))
+* `CHORE`: move shared replace feature to dedicated sub-directory ([#219](https://github.com/camunda/camunda-bpmn-js/pull/219))
+
 ## 0.24.1
 
 * `FIX`: ensure interoperability with connectors extension ([#211](https://github.com/camunda/camunda-bpmn-js/issues/211))
