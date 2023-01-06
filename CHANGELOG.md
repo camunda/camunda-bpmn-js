@@ -6,6 +6,16 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.1.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@1.15.0`
+* `DEPS`: update to `bpmn-js@11.1.1`
+
+### Key changes in Properties Panel
+
+* `FEAT`: support FEEL expression editing on `bpmn:Script` task ([bpmn-js-properties-panel#825](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/825))
+* `FIX`: workaround Grammarly breaking textarea components ([bpmn-js-properties-panel#810](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/810))
+
 ## 1.0.0
 
 * `DEPS`: update to `bpmn-js@11.1.0`
@@ -26,15 +36,18 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `bpmn-js@11.0.5`
 
 ## 0.24.0
+
 * `DEPS`: update to `bpmn-js@11.0.1`
 * `DEPS`: update to `diagram-js@11.1.1`
 * `DEPS`: update modeling dependencies
 
 ### Key changes in Modeling
+
 * `FEAT`: provide templates as replace menu entries ([#207](https://github.com/camunda/camunda-bpmn-js/pull/207))
 * `FEAT`: replace with templates available through feature flag ([#214](https://github.com/camunda/camunda-bpmn-js/pull/214))
 
 ### Breaking Changes
+
 * New popup menu UI introduced with `diagram-js@11` / `bpmn-js@11`. See [`diagram-js` breaking changes and migration guide](https://github.com/bpmn-io/diagram-js/blob/develop/CHANGELOG.md#breaking-changes).
 
 ## 0.23.1
