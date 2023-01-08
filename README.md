@@ -2,8 +2,7 @@
 
 [![CI](https://github.com/camunda/camunda-bpmn-js/workflows/CI/badge.svg)](https://github.com/camunda/camunda-bpmn-js/actions?query=workflow%3ACI)
 
-
-Embeddable Camunda modeling distributions based on [bpmn-js](https://github.com/bpmn-io/bpmn-js). 
+Embeddable Camunda modeling distributions based on [bpmn-js](https://github.com/bpmn-io/bpmn-js).
 
 ## Usage
 
@@ -47,10 +46,9 @@ try {
 }
 ```
 
-
 Checkout [the docs](./docs/DISTRIBUTIONS.md) to learn more about the available distributions.
-## Build and Run
 
+## Build and Run
 
 Prepare the project by installing all dependencies:
 
