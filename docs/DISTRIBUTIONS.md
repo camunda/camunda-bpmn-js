@@ -4,16 +4,16 @@ This document lists and describes all available distributions.
 
 ## Base Modeler
 
-This delivers the basic BPMN modeling experience of the [Camunda Modeler](https://github.com/camunda/camunda-modeler/), without any process engine specific behaviors. 
+This delivers the basic BPMN modeling experience of the [Camunda Modeler](https://github.com/camunda/camunda-modeler/), without any process engine specific behaviors.
 
 This includes a set of extension modules, as follows
 
-  * [diagram-js-minimap](https://github.com/bpmn-io/diagram-js-minimap) - A minimap for diagram-js
-  * [diagram-js-origin](https://github.com/bpmn-io/diagram-js-origin) - A point of origin cross and contour for diagram-js (disabled as default)
-  * [@bpmn-io/align-to-origin](https://github.com/bpmn-io/align-to-origin) - Nicely align your diagrams to the coordinate origin (enabled as default)
-  * [bpmn-js-executable-fix](https://github.com/bpmn-io/bpmn-js-executable-fix) - bpmn-js extension which makes sure that `isExecutable` is set on `bpmn:Process`
-  * [bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel) - A properties panel extension for bpmn-js that adds the ability to edit technical properties
-  * a generic [BPMN properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/bpmn)
+* [diagram-js-minimap](https://github.com/bpmn-io/diagram-js-minimap) - A minimap for diagram-js
+* [diagram-js-origin](https://github.com/bpmn-io/diagram-js-origin) - A point of origin cross and contour for diagram-js (disabled as default)
+* [@bpmn-io/align-to-origin](https://github.com/bpmn-io/align-to-origin) - Nicely align your diagrams to the coordinate origin (enabled as default)
+* [bpmn-js-executable-fix](https://github.com/bpmn-io/bpmn-js-executable-fix) - bpmn-js extension which makes sure that `isExecutable` is set on `bpmn:Process`
+* [bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel) - A properties panel extension for bpmn-js that adds the ability to edit technical properties
+* a generic [BPMN properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/bpmn)
 
 Install and import the Modeler via npm to include it in your application.
 
@@ -32,12 +32,12 @@ var bpmnModeler = new BpmnModeler({
 
 ## Camunda Platform Modeler
 
-This delivers a distribution to mirror the modeling experience of the Camunda Modeler to work on the Camunda Platform. 
+This delivers a distribution to mirror the modeling experience of the Camunda Modeler to work on the Camunda Platform.
 
 The Modeler includes all extensions provided by the [base distribution](#base-modeler). To provide the Camunda Platform specific properties, it includes additionally:
 
-  * [camunda-bpmn-moddle](https://github.com/camunda/camunda-bpmn-moddle) - Camunda moddle extensions for BPMN 2.0
-  * a Camunda specific [BPMN properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/camunda)
+* [camunda-bpmn-moddle](https://github.com/camunda/camunda-bpmn-moddle) - Camunda moddle extensions for BPMN 2.0
+* a Camunda specific [BPMN properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/camunda)
 
 ```js
 import BpmnModeler from 'camunda-bpmn-js/lib/camunda-platform/Modeler';
@@ -58,9 +58,9 @@ This delivers a distribution to mirror the modeling experience of the Camunda Mo
 
 The Modeler includes all extensions provided by the [base distribution](#base-modeler). To provide the Camunda Cloud specific properties, it includes additionally:
 
-  * [zeebe-bpmn-moddle](https://github.com/zeebe-io/zeebe-bpmn-moddle) - Zeebe moddle extensions for BPMN 2.0
-  * a Zeebe specific [BPMN properties provider](https://github.com/camunda/camunda-bpmn-js/tree/main/lib/camunda-cloud/features/properties-provider)
-  * several Zeebe specific [modeling controls and behaviors](https://github.com/camunda/camunda-bpmn-js/tree/main/lib/camunda-cloud/features)
+* [zeebe-bpmn-moddle](https://github.com/zeebe-io/zeebe-bpmn-moddle) - Zeebe moddle extensions for BPMN 2.0
+* a Zeebe specific [BPMN properties provider](https://github.com/camunda/camunda-bpmn-js/tree/main/lib/camunda-cloud/features/properties-provider)
+* several Zeebe specific [modeling controls and behaviors](https://github.com/camunda/camunda-bpmn-js/tree/main/lib/camunda-cloud/features)
 
 ```js
 import BpmnModeler from 'camunda-bpmn-js/lib/camunda-cloud/Modeler';

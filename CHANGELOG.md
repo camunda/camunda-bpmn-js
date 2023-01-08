@@ -36,12 +36,12 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Properties Panel
 
-* `FEAT`: add FEEL expression implementation for Script Task ([bpmn-js-properties-panel#825](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/825))
-* `FEAT`: allow to set error code as FEEL expression ([bpmn-js-properties-panel#836](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/836))
-* `FIX`: workaround Grammarly breaking textarea components ([bpmn-js-properties-panel#810](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/810))
-* `FIX`: serialize templated properties in stable order ([bpmn-js-properties-panel#838](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/838))
-* `FIX`: do not sort IO mappings alphabetically ([bpmn-js-properties-panel#845](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/845), [bpmn-js-properties-panel#843](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/843))
-* `FIX`: correct element template defined `Dropdown` showing incorrect value ([bpmn-js-properties-panel@`b3248fea`](https://github.com/bpmn-io/bpmn-js-properties-panel/commit/b3248fea0a19dabca7a9b969121cf07fba7a8f0a))
+* `FEAT`: add FEEL expression implementation for Script Task ([bpmn-io/bpmn-js-properties-panel#825](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/825))
+* `FEAT`: allow to set error code as FEEL expression ([bpmn-io/bpmn-js-properties-panel#836](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/836))
+* `FIX`: workaround Grammarly breaking textarea components ([bpmn-io/bpmn-js-properties-panel#810](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/810))
+* `FIX`: serialize templated properties in stable order ([bpmn-io/bpmn-js-properties-panel#838](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/838))
+* `FIX`: do not sort IO mappings alphabetically ([bpmn-io/bpmn-js-properties-panel#845](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/845), [bpmn-io/bpmn-js-properties-panel#843](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/843))
+* `FIX`: correct element template defined `Dropdown` showing incorrect value ([bpmn-io/bpmn-js-properties-panel@`b3248fea`](https://github.com/bpmn-io/bpmn-js-properties-panel/commit/b3248fea0a19dabca7a9b969121cf07fba7a8f0a))
 
 ## 1.0.0
 
@@ -53,7 +53,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: integrate `bpmn-js-color-picker` ([#221](https://github.com/camunda/camunda-bpmn-js/pull/221))
 * `FEAT`: allow to unlink element template in replace menu ([#219](https://github.com/camunda/camunda-bpmn-js/pull/219))
 * `FEAT`: remove feature flag from replace with templates ([#219](https://github.com/camunda/camunda-bpmn-js/pull/219))
-* `FEAT`: add shortcut for opening replace menu ([#1782](https://github.com/bpmn-io/bpmn-js/issues/1782))
+* `FEAT`: add shortcut for opening replace menu ([bpmn-io/bpmn-js#1782](https://github.com/bpmn-io/bpmn-js/issues/1782))
 * `FIX`: template name is used as label for replace menu ([#222](https://github.com/camunda/camunda-bpmn-js/pull/222))
 * `CHORE`: move shared replace feature to dedicated sub-directory ([#219](https://github.com/camunda/camunda-bpmn-js/pull/219))
 
@@ -85,11 +85,11 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Modeling
 
-* `FIX`: correct various space tool related issues ([#1344](https://github.com/bpmn-io/bpmn-js/pull/1344), [#1302](https://github.com/bpmn-io/bpmn-js/issues/1302))
+* `FIX`: correct various space tool related issues ([bpmn-io/bpmn-js#1344](https://github.com/bpmn-io/bpmn-js/pull/1344), [bpmn-io/bpmn-js#1302](https://github.com/bpmn-io/bpmn-js/issues/1302))
 
 ### Key changes in Properties Panel
 
-* `FIX`: ensure `ImplementationProps` does not remove empty properties ([#811](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/811))
+* `FIX`: ensure `ImplementationProps` does not remove empty properties ([bpmn-io/bpmn-js-properties-panel#811](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/811))
 
 ## 0.23.0
 
@@ -99,11 +99,11 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Modeling
 
-* `FEAT`: do not remove assignment if `zeebe:candidateUsers` set ([#20](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/20))
+* `FEAT`: do not remove assignment if `zeebe:candidateUsers` set ([camunda/camunda-bpmn-js-behaviors#20](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/20))
 
 ### Key changes in Properties Panel
 
-* `FEAT`: add candidate users entry to assignment group ([#776](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/776))
+* `FEAT`: add candidate users entry to assignment group ([bpmn-io/bpmn-js-properties-panel#776](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/776))
 
 ## 0.22.0
 
@@ -116,8 +116,8 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.21.1
 
-* `FIX`: remove _Cycle_ option of _Timer_ _Type_ of interrupting timer start event ([#802](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/802))
-* `FIX`: remove timer expression if not allowed after element changed ([#15](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/15))
+* `FIX`: remove _Cycle_ option of _Timer_ _Type_ of interrupting timer start event ([bpmn-io/bpmn-js-properties-panel#802](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/802))
+* `FIX`: remove timer expression if not allowed after element changed ([camunda/camunda-bpmn-js-behaviors#15](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/15))
 * `DEPS`: update to `bpmn-js-properties-panel@1.10.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@0.3.0`
 
@@ -140,7 +140,7 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Properties Panel
 
-* `FIX`: correct replace removing valid dropdown property ([#767](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/767))
+* `FIX`: correct replace removing valid dropdown property ([bpmn-io/bpmn-js-properties-panel#767](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/767))
 
 ### Breaking Changes
 
@@ -153,8 +153,8 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Properties Panel
 
-* `FEAT`: support cron expressions for timer cycle ([#772](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/772))
-* `FIX`: unset timer type correctly ([#775](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/775))
+* `FEAT`: support cron expressions for timer cycle ([bpmn-io/bpmn-js-properties-panel#772](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/772))
+* `FIX`: unset timer type correctly ([bpmn-io/bpmn-js-properties-panel#775](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/775))
 
 ## 0.18.0
 
@@ -163,12 +163,12 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Properties Panel
 
-* `FEAT`: show conditions group if source is inclusive gateway ([#756](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/756))
-* `FEAT`: support element template properties without default value ([#763](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/763))
-* `FEAT`: support deprecated element templates ([#766](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/766))
-* `FIX`: support `zeebe:property` binding for creation of elements from element templates ([#762](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/762))
-* `FIX`: support conditional properties for creation of elements from element templates ([#762](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/762))
-* `CHORE`: remove default values from _Variable assignment value_ of _Input_ and _Output_ ([#757](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/757))
+* `FEAT`: show conditions group if source is inclusive gateway ([bpmn-io/bpmn-js-properties-panel#756](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/756))
+* `FEAT`: support element template properties without default value ([bpmn-io/bpmn-js-properties-panel#763](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/763))
+* `FEAT`: support deprecated element templates ([bpmn-io/bpmn-js-properties-panel#766](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/766))
+* `FIX`: support `zeebe:property` binding for creation of elements from element templates ([bpmn-io/bpmn-js-properties-panel#762](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/762))
+* `FIX`: support conditional properties for creation of elements from element templates ([bpmn-io/bpmn-js-properties-panel#762](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/762))
+* `CHORE`: remove default values from _Variable assignment value_ of _Input_ and _Output_ ([bpmn-io/bpmn-js-properties-panel#757](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/757))
 
 ## 0.17.2
 
@@ -180,8 +180,8 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Properties Panel
 
-* `FIX`: show FEEL syntax errors ([#173](https://github.com/bpmn-io/properties-panel/pull/173))
-* `FIX`: focus FEEL container on click ([#179](https://github.com/bpmn-io/properties-panel/pull/179))
+* `FIX`: show FEEL syntax errors ([bpmn-io/properties-panel#173](https://github.com/bpmn-io/properties-panel/pull/173))
+* `FIX`: focus FEEL container on click ([bpmn-io/properties-panel#179](https://github.com/bpmn-io/properties-panel/pull/179))
 
 ## 0.17.0
 
@@ -197,20 +197,20 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 * `FEAT`: support `zeebe:property`
 * `FEAT`: allow clipboard to be serialized
-* `FIX`: make clipboard contents immutable ([#1707](https://github.com/bpmn-io/bpmn-js/pull/1707))
-* `FIX`: only claim existing IDs ([#1707](https://github.com/bpmn-io/bpmn-js/pull/1707))
-* `FIX`: move labels when collapsing sub-process ([#1695](https://github.com/bpmn-io/bpmn-js/issues/1695))
-* `FIX`: assign default size when expanding element ([#1687](https://github.com/bpmn-io/bpmn-js/issues/1687))
-* `FIX`: render sequence flows always on top ([#1716](https://github.com/bpmn-io/bpmn-js/issues/1716))
+* `FIX`: make clipboard contents immutable ([bpmn-io/bpmn-js#1707](https://github.com/bpmn-io/bpmn-js/pull/1707))
+* `FIX`: only claim existing IDs ([bpmn-io/bpmn-js#1707](https://github.com/bpmn-io/bpmn-js/pull/1707))
+* `FIX`: move labels when collapsing sub-process ([bpmn-io/bpmn-js#1695](https://github.com/bpmn-io/bpmn-js/issues/1695))
+* `FIX`: assign default size when expanding element ([bpmn-io/bpmn-js#1687](https://github.com/bpmn-io/bpmn-js/issues/1687))
+* `FIX`: render sequence flows always on top ([bpmn-io/bpmn-js#1716](https://github.com/bpmn-io/bpmn-js/issues/1716))
 * `FIX`: preserve `isExecutable` flag when deleting pool ([#149](https://github.com/camunda/camunda-bpmn-js/issues/149))
 
 ### Key changes in Properties Panel
 
-* `FEAT`: support `zeebe:property` ([#731](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/731))
-* `FIX`: copy full `FEEL` expression ([#728](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/728))
-* `FIX`: don't serialize `zeebe:taskHeader` template bindings without a value ([#684](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/684))
-* `FIX`: render sticky headers correctly ([#726](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/726))
-* `FIX`: prevent undo events from affecting the wrong element ([#712](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/712))
+* `FEAT`: support `zeebe:property` ([bpmn-io/bpmn-js-properties-panel#731](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/731))
+* `FIX`: copy full `FEEL` expression ([bpmn-io/bpmn-js-properties-panel#728](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/728))
+* `FIX`: don't serialize `zeebe:taskHeader` template bindings without a value ([bpmn-io/bpmn-js-properties-panel#684](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/684))
+* `FIX`: render sticky headers correctly ([bpmn-io/bpmn-js-properties-panel#726](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/726))
+* `FIX`: prevent undo events from affecting the wrong element ([bpmn-io/bpmn-js-properties-panel#712](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/712))
 
 ## 0.16.1
 
@@ -218,7 +218,7 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Modeling
 
-* `FIX`: check for replacement using actual target ([#1699](https://github.com/bpmn-io/bpmn-js/pull/1699))
+* `FIX`: check for replacement using actual target ([bpmn-io/bpmn-js#1699](https://github.com/bpmn-io/bpmn-js/pull/1699))
 
 ## 0.16.0
 
@@ -228,8 +228,8 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Properties Panel
 
-* `FEAT`: add FEEL editor for FEEL properties ([#158](https://github.com/bpmn-io/properties-panel/pull/158))
-* `FIX`: do not update empty business key ([#2](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/2))
+* `FEAT`: add FEEL editor for FEEL properties ([bpmn-io/properties-panel#158](https://github.com/bpmn-io/properties-panel/pull/158))
+* `FIX`: do not update empty business key ([camunda/camunda-bpmn-js-behaviors#2](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/2))
 
 ## 0.15.3
 
@@ -259,7 +259,7 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 * `FEAT`: clearly distinguish select and hover states ([bpmn-js#1616](https://github.com/bpmn-io/bpmn-js/issues/1616))
 * `FEAT`: allow text annotation on sequence flows ([bpmn-js#1652](https://github.com/bpmn-io/bpmn-js/pull/1652))
 * `FEAT`: add multi-element context pad ([bpmn-js#1525](https://github.com/bpmn-io/bpmn-js/pull/1525))
-* `FEAT`: add aligment and distribution menu ([bpmn-js#1680](https://github.com/bpmn-io/bpmn-js/issues/1680), [#1691](https://github.com/bpmn-io/bpmn-js/issues/1691))
+* `FEAT`: add aligment and distribution menu ([bpmn-js#1680](https://github.com/bpmn-io/bpmn-js/issues/1680), [bpmn-io/bpmn-js#1691](https://github.com/bpmn-io/bpmn-js/issues/1691))
 * `FEAT`: rework select and hover interaction on the diagram ([bpmn-js#1616](https://github.com/bpmn-io/bpmn-js/issues/1616), [diagram-js#640](https://github.com/bpmn-io/diagram-js/pull/640), [diagram-js#643](https://github.com/bpmn-io/diagram-js/pull/643))
 * `FEAT`: rework diagram interaction handles ([diagram-js#640](https://github.com/bpmn-io/diagram-js/pull/640))
 * `FIX`: complete direct editing when selection changes ([bpmn-js#1648](https://github.com/bpmn-io/bpmn-js/pull/1648))
@@ -279,13 +279,13 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Modeling
 
-* `FEAT`: enforce rectangular element template icon size ([#4](https://github.com/bpmn-io/element-templates-icons-renderer/issues/4))
-* `FIX`: remove `label` property on empty label ([#1637](https://github.com/bpmn-io/bpmn-js/issues/1637))
-* `FIX`: create drilldown overlays on `viewer.open` ([`574a67438`](https://github.com/bpmn-io/bpmn-js/commit/574a674381d6449b509396b6d17c4ca94674ea1c))
-* `FIX`: render data association inside collapsed sub-processes ([#1619](https://github.com/bpmn-io/bpmn-js/issues/1619))
-* `FIX`: preserve multi-instance properties when toggling between parallel and sequential ([#1581](https://github.com/bpmn-io/bpmn-js/issues/1581))
-* `FIX`: correct hanging sequence flow label after collapsing sub-process ([#1617](https://github.com/bpmn-io/bpmn-js/issues/1617))
-* `FIX`: correct start event not added to newly created sub-process ([#1631](https://github.com/bpmn-io/bpmn-js/issues/1631))
+* `FEAT`: enforce rectangular element template icon size ([bpmn-io/element-templates-icons-renderer#4](https://github.com/bpmn-io/element-templates-icons-renderer/issues/4))
+* `FIX`: remove `label` property on empty label ([bpmn-io/bpmn-js#1637](https://github.com/bpmn-io/bpmn-js/issues/1637))
+* `FIX`: create drilldown overlays on `viewer.open` ([bpmn-io/bpmn-js@`574a674`](https://github.com/bpmn-io/bpmn-js/commit/574a674381d6449b509396b6d17c4ca94674ea1c))
+* `FIX`: render data association inside collapsed sub-processes ([bpmn-io/bpmn-js#1619](https://github.com/bpmn-io/bpmn-js/issues/1619))
+* `FIX`: preserve multi-instance properties when toggling between parallel and sequential ([bpmn-io/bpmn-js#1581](https://github.com/bpmn-io/bpmn-js/issues/1581))
+* `FIX`: correct hanging sequence flow label after collapsing sub-process ([bpmn-io/bpmn-js#1617](https://github.com/bpmn-io/bpmn-js/issues/1617))
+* `FIX`: correct start event not added to newly created sub-process ([bpmn-io/bpmn-js#1631](https://github.com/bpmn-io/bpmn-js/issues/1631))
 
 ## 0.13.2
 
@@ -294,11 +294,11 @@ _Upgrade library target to ES2018. Checkout the [migration guide](https://bpmn.i
 
 ### Key changes in Properties Panel
 
-* `FIX`: remove unnecessary scroll padding ([#145](https://github.com/bpmn-io/properties-panel/pull/145))
-* `FIX`: keep existing configuration after template apply ([#661](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/661))
-* `FIX`: always override `hidden` configuration on template apply ([#661](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/661))
-* `FIX`: do not render non-existing values in element template ([#676](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/676))
-* `FIX`: pick-up correct element template icon ([#670](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/670))
+* `FIX`: remove unnecessary scroll padding ([bpmn-io/properties-panel#145](https://github.com/bpmn-io/properties-panel/pull/145))
+* `FIX`: keep existing configuration after template apply ([bpmn-io/bpmn-js-properties-panel#661](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/661))
+* `FIX`: always override `hidden` configuration on template apply ([bpmn-io/bpmn-js-properties-panel#661](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/661))
+* `FIX`: do not render non-existing values in element template ([bpmn-io/bpmn-js-properties-panel#676](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/676))
+* `FIX`: pick-up correct element template icon ([bpmn-io/bpmn-js-properties-panel#670](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/670))
 
 ## 0.13.1
 
@@ -311,7 +311,7 @@ _Re-publish of v0.13.0 with fixed distro._
 * `FEAT`: add viewer distributions ([#115](https://github.com/camunda/camunda-bpmn-js/pull/115))
 * `CHORE`: import behaviors from camunda-bpmn-js-behaviors ([#116](https://github.com/camunda/camunda-bpmn-js/pull/116))
 * `DEPS`: update to `bpmn-js-disable-collapsed-subprocess@0.1.4` ([#112](https://github.com/camunda/camunda-bpmn-js/pull/112))
-* `DEPS`: update to `bpmn-js-properties-panel@1.1.0` ([03b659](https://github.com/camunda/camunda-bpmn-js/pull/123/commits/03b659da729364abf97ccc2dba421d83e9f5c48e))
+* `DEPS`: update to `bpmn-js-properties-panel@1.1.0` ([`03b659d`](https://github.com/camunda/camunda-bpmn-js/pull/123/commits/03b659da729364abf97ccc2dba421d83e9f5c48e))
 
 ## 0.13.0-alpha.8
 
@@ -324,9 +324,9 @@ _Re-publish of v0.13.0 with fixed distro._
 
 ### Key changes in Properties Panel
 
-* `FEAT`: apply element template icons ([#641](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/641))
-* `FEAT`: change task type when element template is applied ([#648](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/648))
-* `FEAT`: display element template icons in header ([#650](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/650))
+* `FEAT`: apply element template icons ([bpmn-io/bpmn-js-properties-panel#641](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/641))
+* `FEAT`: change task type when element template is applied ([bpmn-io/bpmn-js-properties-panel#648](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/648))
+* `FEAT`: display element template icons in header ([bpmn-io/bpmn-js-properties-panel#650](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/650))
 
 ## 0.13.0-alpha.7
 
@@ -342,14 +342,14 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 
 ### Key changes in Properties Panel
 
-* `FEAT`: allow showing entries and errors through events ([#137](https://github.com/bpmn-io/properties-panel/pull/137))
-* `FEAT`: allow opening groups per default ([#139](https://github.com/bpmn-io/properties-panel/pull/139))
-* `FEAT`: add documentation ref ([#141](https://github.com/bpmn-io/properties-panel/pull/141))
-* `FEAT`: add show callbacks to show entries and errors ([#601](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/601))
-* `FEAT`: open element template custom groups ([#621](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/621))
-* `FEAT`: display template name in header ([#627](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/627))
-* `FEAT`: add documentation ref to header ([#629](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/629))
-* `FIX`: copy versioned element template ([#632](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/632))
+* `FEAT`: allow showing entries and errors through events ([bpmn-io/properties-panel#137](https://github.com/bpmn-io/properties-panel/pull/137))
+* `FEAT`: allow opening groups per default ([bpmn-io/properties-panel#139](https://github.com/bpmn-io/properties-panel/pull/139))
+* `FEAT`: add documentation ref ([bpmn-io/properties-panel#141](https://github.com/bpmn-io/properties-panel/pull/141))
+* `FEAT`: add show callbacks to show entries and errors ([bpmn-io/bpmn-js-properties-panel#601](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/601))
+* `FEAT`: open element template custom groups ([bpmn-io/bpmn-js-properties-panel#621](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/621))
+* `FEAT`: display template name in header ([bpmn-io/bpmn-js-properties-panel#627](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/627))
+* `FEAT`: add documentation ref to header ([bpmn-io/bpmn-js-properties-panel#629](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/629))
+* `FIX`: copy versioned element template ([bpmn-io/bpmn-js-properties-panel#632](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/632))
 
 ## 0.13.0-alpha.5
 
@@ -374,17 +374,17 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 
 * `FEAT`: add support for drilldown ([#89](https://github.com/camunda/camunda-bpmn-js/pull/89))
 * `CHORE`: refactor behaviors to only use modeling API ([#91](https://github.com/camunda/camunda-bpmn-js/pull/91))
-* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.3` ([68c344](https://github.com/camunda/camunda-bpmn-js/commit/68c344f270405716e514c3947c98dee293877c7f))
-* `DEPS`: update to `bpmn-js@9.0.0-alpha.2` ([68c344](https://github.com/camunda/camunda-bpmn-js/commit/68c344f270405716e514c3947c98dee293877c7f))
-* `DEPS`: update to `diagram-js-minimap@2.1.0` ([68c344](https://github.com/camunda/camunda-bpmn-js/commit/68c344f270405716e514c3947c98dee293877c7f))
-* `DEPS`: update to `diagram-js@8.1.1` ([faf55e](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
+* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.3` ([`68c344f`](https://github.com/camunda/camunda-bpmn-js/commit/68c344f270405716e514c3947c98dee293877c7f))
+* `DEPS`: update to `bpmn-js@9.0.0-alpha.2` ([`68c344f`](https://github.com/camunda/camunda-bpmn-js/commit/68c344f270405716e514c3947c98dee293877c7f))
+* `DEPS`: update to `diagram-js-minimap@2.1.0` ([`68c344f`](https://github.com/camunda/camunda-bpmn-js/commit/68c344f270405716e514c3947c98dee293877c7f))
+* `DEPS`: update to `diagram-js@8.1.1` ([`faf55e9`](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
 
 ## 0.13.0-alpha.1
 
 * `FEAT`: include documentation fields in properties panel for Camunda Cloud ([#83](https://github.com/camunda/camunda-bpmn-js/issues/83))
-* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.1` ([faf55e](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
-* `DEPS`: update to `bpmn-js@8.9.1` ([faf55e](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
-* `DEPS`: update to `diagram-js@7.8.2` ([faf55e](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
+* `DEPS`: update to `bpmn-js-properties-panel@1.0.0-alpha.1` ([`faf55e9`](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
+* `DEPS`: update to `bpmn-js@8.9.1` ([`faf55e9`](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
+* `DEPS`: update to `diagram-js@7.8.2` ([`faf55e9`](https://github.com/camunda/camunda-bpmn-js/commit/faf55e958e7b8faf57a6b3cf0a8e6b496e59266d))
 
 ## 0.13.0-alpha.0
 
@@ -400,7 +400,7 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 ## 0.12.2
 
 * `FEAT`: behavior for Cloud to ensure that no empty `zeebe:AssignmentDefinitions`
-  remain in the model after modeling or propertyPanel operations ([e26c486](https://github.com/camunda/camunda-bpmn-js/commit/e26c486bac3b54202fdf6c2b09d64483b52a2298))
+  remain in the model after modeling or propertyPanel operations ([`e26c486`](https://github.com/camunda/camunda-bpmn-js/commit/e26c486bac3b54202fdf6c2b09d64483b52a2298))
 
 ## 0.12.1
 
@@ -410,8 +410,8 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 
 * `FEAT`: behavior for Cloud to ensure that `bpmn:BusinessRuleTask`s only have a `zeebe:CalledDecision` or
   `zeebe:TaskDefinition`/`zeebe:TaskHeaders` respectively. This supports the Zeebe 1.3 release ([#65](https://github.com/camunda/camunda-bpmn-js/issues/65))
-* `FIX`: use relative import path in library code ([b5a696](https://github.com/camunda/camunda-bpmn-js/commit/b5a696bf36f8b6592d6bf3d92ed33c26c63d68f7))
-* `CHORE`: refactor behaviors and helpers ([85573a](https://github.com/camunda/camunda-bpmn-js/commit/85573afe1653bffc2e1387da91076fb0cbe79345))
+* `FIX`: use relative import path in library code ([`b5a696b`](https://github.com/camunda/camunda-bpmn-js/commit/b5a696bf36f8b6592d6bf3d92ed33c26c63d68f7))
+* `CHORE`: refactor behaviors and helpers ([`85573af`](https://github.com/camunda/camunda-bpmn-js/commit/85573afe1653bffc2e1387da91076fb0cbe79345))
 
 ## 0.11.5
 
@@ -438,7 +438,7 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 
 ## 0.11.1
 
-* `CHORE`: ensure `dist` is built and tested before publish ([331584b4](https://github.com/camunda/camunda-bpmn-js/commit/331584b49c56841943a328761ebc7c89632f11fe))
+* `CHORE`: ensure `dist` is built and tested before publish ([`331584b`](https://github.com/camunda/camunda-bpmn-js/commit/331584b49c56841943a328761ebc7c89632f11fe))
 
 ## 0.11.0
 
@@ -512,7 +512,7 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 
 ## 0.4.0
 
-* `FEAT`: disable user task support for Cloud Modeler, can be enabled via `enableZeebeUserTasks` ([`9f782028`](https://github.com/camunda/camunda-bpmn-js/commit/9f7820284154b4ab0174f8c5eb745a3060f5c1ff))
+* `FEAT`: disable user task support for Cloud Modeler, can be enabled via `enableZeebeUserTasks` ([`9f78202`](https://github.com/camunda/camunda-bpmn-js/commit/9f7820284154b4ab0174f8c5eb745a3060f5c1ff))
 
 ## 0.3.0
 
@@ -526,7 +526,7 @@ _Re-publish of v0.13.0-alpha.6 with fixed distro._
 
 ## 0.1.0
 
-*Republish of `v0.1.0-alpha.1`*.
+_Republish of `v0.1.0-alpha.1`_.
 
 ## 0.1.0-alpha.1
 
