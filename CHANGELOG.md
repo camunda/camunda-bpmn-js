@@ -13,11 +13,12 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Properties Panel
 
-* `FEAT`: support FEEL expression editing on `bpmn:Script` task ([bpmn-js-properties-panel#825](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/825))
+* `FEAT`: add FEEL expression implementation for Script Task ([bpmn-js-properties-panel#825](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/825))
+* `FEAT`: allow to set error code as FEEL expression ([bpmn-js-properties-panel#836](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/836))
 * `FIX`: workaround Grammarly breaking textarea components ([bpmn-js-properties-panel#810](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/810))
 * `FIX`: serialize templated properties in stable order ([bpmn-js-properties-panel#838](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/838))
 * `FIX`: do not sort IO mappings alphabetically ([bpmn-js-properties-panel#845](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/845), [bpmn-js-properties-panel#843](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/843))
-* 
+* `FIX`: correct element template defined `Dropdown` showing incorrect value ([bpmn-js-properties-panel@`b3248fea`](https://github.com/bpmn-io/bpmn-js-properties-panel/commit/b3248fea0a19dabca7a9b969121cf07fba7a8f0a))
 
 ## 1.0.0
 
