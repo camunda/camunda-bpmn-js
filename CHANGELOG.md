@@ -17,6 +17,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FIX`: workaround Grammarly breaking textarea components ([bpmn-js-properties-panel#810](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/810))
 * `FIX`: serialize templated properties in stable order ([bpmn-js-properties-panel#838](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/838))
 * `FIX`: do not sort IO mappings alphabetically ([bpmn-js-properties-panel#845](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/845), [bpmn-js-properties-panel#843](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/843))
+* 
 
 ## 1.0.0
 
@@ -41,6 +42,7 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js@11.0.1`
 * `DEPS`: update to `diagram-js@11.1.1`
+* `DEPS`: update to `bpmn-js-properties-panel@1.12.0`
 * `DEPS`: update modeling dependencies
 
 ### Key changes in Modeling
