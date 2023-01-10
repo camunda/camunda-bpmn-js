@@ -76,7 +76,7 @@
     "del-cli": "^5.0.0",
     "downloadjs": "^1.4.7",
     "eslint": "^8.24.0",
-    "eslint-plugin-bpmn-io": "^0.16.0",
+    "eslint-plugin-bpmn-io": "^1.0.0",
     "execa": "^5.0.0",
     "file-drops": "^0.5.0",
     "karma": "^6.4.1",
