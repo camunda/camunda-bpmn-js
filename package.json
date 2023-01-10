@@ -70,7 +70,7 @@
     "babel-loader": "^9.0.0",
     "babel-plugin-istanbul": "^6.1.1",
     "bpmn-js-connectors-extension": "^0.4.5",
-    "bpmn-js-properties-panel": "^1.15.0",
+    "bpmn-js-properties-panel": "^1.15.1",
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",
     "del-cli": "^5.0.0",
