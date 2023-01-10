@@ -9,7 +9,7 @@
     "dev": "npm test -- --auto-watch --no-single-run",
     "test": "karma start karma.config.js",
     "clean": "del-cli dist",
-    "distro": "rollup -c",
+    "distro": "rollup -c --failAfterWarnings",
     "test:distro": "node tasks/test-distro.js",
     "start:base": "cross-env SINGLE_START=base-modeler npm run dev",
     "start:platform": "cross-env SINGLE_START=camunda-platform-modeler npm run dev",
