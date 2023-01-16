@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: minimap works with touch ([#54](https://github.com/bpmn-io/diagram-js-minimap/pull/54))
+* `DEPS`: update to `diagram-js-minimap@4.0.1`
+
 ## 1.1.2
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.15.1`
