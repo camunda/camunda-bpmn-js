@@ -1,0 +1,64 @@
+[
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Task Template",
+    "id": "example.TaskTemplate",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "properties": [
+      {
+        "type": "Boolean",
+        "binding": {
+          "type": "property",
+          "name": "customProperty"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Participant Template",
+    "id": "example.ParticipantTemplate",
+    "appliesTo": ["bpmn:Participant"],
+    "properties": [
+      {
+        "binding": {
+          "type": "property",
+          "name": "someProp"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Start Event Template",
+    "id": "example.StartEventTemplate",
+    "appliesTo": ["bpmn:StartEvent"],
+    "properties": [
+      {
+        "binding": {
+          "type": "property",
+          "name": "someProp"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Sequence Flow Template",
+    "id": "example.SequenceFlowTemplate",
+    "appliesTo": [
+      "bpmn:SequenceFlow"
+    ],
+    "properties": [
+      {
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "conditionExpression"
+        }
+      }
+    ]
+  }
+]
