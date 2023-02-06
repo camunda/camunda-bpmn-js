@@ -1,6 +1,7 @@
 export * from 'bpmn-js/test/helper';
 
 export {
+  createCanvasEvent,
   createEvent
 } from 'bpmn-js/test/util/MockEvents';
 
