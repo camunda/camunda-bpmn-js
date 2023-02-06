@@ -113,7 +113,7 @@ describe('<CamundaCloudModeler>', function() {
     container.appendChild(propertiesContainer);
   });
 
-  function createModeler(xml, additionalModules = []) {
+  function createModeler(xml, additionalModules = [], options = {}) {
 
     clearBpmnJS();
 
@@ -128,7 +128,8 @@ describe('<CamundaCloudModeler>', function() {
       ],
       propertiesPanel: {
         parent: propertiesContainer
-      }
+      },
+      ...options
     });
 
     singleStart && modeler.on('commandStack.changed', debounce(function() {
@@ -312,6 +313,43 @@ describe('<CamundaCloudModeler>', function() {
 
       expect(unlinkEntries).to.have.lengthOf(1);
     }));
+
+
+    describe('create-append-anything', function() {
+
+      const options = {
+        connectorsExtension: {
+          appendAnything: false
+        }
+      };
+
+      it('should inject create-append-anything', function() {
+
+        createModeler(diagramXml).then(
+          function(result) {
+            let modeler = result.modeler;
+
+            expect(modeler.get.bind(this, 'createMenuProvider')).to.exist;
+            expect(modeler.get.bind(this, 'appendMenuProvider')).to.exist;
+          });
+
+      });
+
+
+      it('should not inject create-append-anything', function() {
+
+        createModeler(diagramXml, [], options).then(
+          function(result) {
+            let modeler = result.modeler;
+
+            expect(modeler.get.bind(this, 'createMenuProvider')).to.throw();
+            expect(modeler.get.bind(this, 'appendMenuProvider')).to.throw();
+          });
+
+
+      });
+
+    });
 
   });
 
