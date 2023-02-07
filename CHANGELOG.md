@@ -6,6 +6,27 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.3.0
+
+* `FEAT`: add create-append-anything with feature toggle ([#236](https://github.com/camunda/camunda-bpmn-js/issues/236))
+* `DEPS`: update to `bpmn-js@11.2.0`
+* `DEPS`: update to `diagram-js@11.9.0`
+* `DEPS`: update to `bpmn-js-properties-panel@1.17.0`
+
+### Key changes in Modeling
+
+* `FEAT`: append menu available via context pad ([#1802](https://github.com/bpmn-io/bpmn-js/pull/1802), [#1809](https://github.com/bpmn-io/bpmn-js/pull/1809), [#1815](https://github.com/bpmn-io/bpmn-js/pull/1815), [#1818](https://github.com/bpmn-io/bpmn-js/pull/1818), [#1831](https://github.com/bpmn-io/bpmn-js/pull/1831))
+* `FEAT`: create menu available via palette ([#1811](https://github.com/bpmn-io/bpmn-js/pull/1811), [#1809](https://github.com/bpmn-io/bpmn-js/pull/1809), [#1817](https://github.com/bpmn-io/bpmn-js/pull/1817))
+* `FEAT`: simplify connection-multi icon ([#1822](https://github.com/bpmn-io/bpmn-js/pull/1822))
+* `FEAT`: join paths `round` by default ([1827](https://github.com/bpmn-io/bpmn-js/pull/1827))
+* `FEAT`: improved BPMN symbol rendering ([#1830](https://github.com/bpmn-io/bpmn-js/pull/1830))
+* `FEAT`: round connection corners ([#1828](https://github.com/bpmn-io/bpmn-js/pull/1828))
+
+### Key changes in Properties panel
+
+* `FEAT`: Camunda 8 template properties can have `language` property ([bpmn-js-properties-panel#869](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/869))
+* `FEAT`: Camunda 8 template properties of type `Text` are resizable text areas ([bpmn-js-properties-panel#870](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/870))
+
 ## 1.2.0
 
 * `FEAT`: minimap works with touch ([#54](https://github.com/bpmn-io/diagram-js-minimap/pull/54))
