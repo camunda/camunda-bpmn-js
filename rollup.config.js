@@ -40,7 +40,7 @@ const styles = [
     dest: 'dist/assets'
   },
   {
-    src: resolve('bpmn-js', '/dist/assets/bpmn-font/{font,css}/**'),
+    src: resolve('bpmn-js', '/dist/assets/bpmn-font/{font,css}'),
     dest: 'dist/assets/bpmn-font'
   },
   {
