@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.3.1
+
+* `FIX`: correct create menu position in palette
+* `DEPS`: update to `bpmn-js@11.3.1`
+
 ## 1.3.0
 
 * `FEAT`: add create-append-anything with feature toggle ([#236](https://github.com/camunda/camunda-bpmn-js/issues/236))
