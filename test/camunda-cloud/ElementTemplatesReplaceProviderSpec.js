@@ -105,7 +105,8 @@ describe('<ElementTemplatesReplaceProvider>', function() {
         const entries = Object.keys(getEntries());
         const entryIndex = entries.indexOf('replace-unlink-element-template');
 
-        expect(entryIndex).to.eql(6);
+        // should be displayed on top
+        expect(entryIndex).to.be.lessThanOrEqual(2);
       }));
 
 

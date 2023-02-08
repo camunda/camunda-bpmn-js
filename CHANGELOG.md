@@ -9,12 +9,15 @@ ___Note:__ Yet to be released changes appear here._
 ## 1.3.0
 
 * `FEAT`: add create-append-anything with feature toggle ([#236](https://github.com/camunda/camunda-bpmn-js/issues/236))
-* `DEPS`: update to `bpmn-js@11.2.0`
+* `DEPS`: update to `bpmn-js@11.3.0`
 * `DEPS`: update to `diagram-js@11.9.0`
-* `DEPS`: update to `bpmn-js-properties-panel@1.17.0`
+* `DEPS`: update to `bpmn-js-properties-panel@1.17.1`
 
 ### Key changes in Modeling
 
+* `FEAT`: feature `service` and `user` tasks more prominently in replace menu ([#1836](https://github.com/bpmn-io/bpmn-js/pull/1836))
+* `FEAT`: hide rare items initially from create/append menus ([#1836](https://github.com/bpmn-io/bpmn-js/pull/1836))
+* `FEAT`: retrieve instantiation modules with context ([#1835](https://github.com/bpmn-io/bpmn-js/pull/1835))
 * `FEAT`: append menu available via context pad ([#1802](https://github.com/bpmn-io/bpmn-js/pull/1802), [#1809](https://github.com/bpmn-io/bpmn-js/pull/1809), [#1815](https://github.com/bpmn-io/bpmn-js/pull/1815), [#1818](https://github.com/bpmn-io/bpmn-js/pull/1818), [#1831](https://github.com/bpmn-io/bpmn-js/pull/1831))
 * `FEAT`: create menu available via palette ([#1811](https://github.com/bpmn-io/bpmn-js/pull/1811), [#1809](https://github.com/bpmn-io/bpmn-js/pull/1809), [#1817](https://github.com/bpmn-io/bpmn-js/pull/1817))
 * `FEAT`: simplify connection-multi icon ([#1822](https://github.com/bpmn-io/bpmn-js/pull/1822))
