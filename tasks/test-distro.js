@@ -25,7 +25,9 @@ const environments = [
 ];
 
 const assets = [
-  'bpmn-font/bpmn.css',
+  'bpmn-font/css/bpmn.css',
+  'bpmn-font/css/bpmn-embedded.css',
+  'bpmn-font/css/bpmn-codes.css',
   'base-modeler.css',
   'base-navigated-viewer.css',
   'base-viewer.css',
