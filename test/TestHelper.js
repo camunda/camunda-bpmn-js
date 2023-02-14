@@ -1,5 +1,9 @@
 export * from 'bpmn-js/test/helper';
 
+export {
+  createEvent
+} from 'bpmn-js/test/util/MockEvents';
+
 import {
   attr as domAttr,
   query as domQuery,

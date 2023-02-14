@@ -2,6 +2,7 @@ import {
   inject,
   getBpmnJS,
   bootstrapCamundaCloudModeler,
+  createEvent
 } from 'test/TestHelper';
 
 import {
@@ -113,6 +114,26 @@ describe('<ElementTemplatesAppendProvider>', function() {
     }));
 
 
+    it('should append template via dragstart', inject(function(elementRegistry, selection) {
+
+      // given
+      const task = elementRegistry.get('Task_1');
+      const template = templates[0];
+
+      openPopup(task);
+
+      // when
+      placeDragElement(task, `append.template-${template.id}`);
+
+      // then
+      const outgoingFlows = getBusinessObject(task).outgoing;
+      const newElement = outgoingFlows[0].targetRef;
+
+      expect(outgoingFlows).to.have.length(1);
+      expect(isTemplateApplied(newElement, template)).to.be.true;
+    }));
+
+
     it('should undo', inject(function(elementRegistry, commandStack, elementTemplates) {
 
       // given
@@ -186,7 +207,7 @@ function getMenuContainer() {
   return popup._current.container;
 }
 
-function triggerAction(id) {
+function triggerAction(id, action = 'click') {
   const entry = queryEntry(id);
 
   if (!entry) {
@@ -194,15 +215,7 @@ function triggerAction(id) {
   }
 
   const popupMenu = getBpmnJS().get('popupMenu');
-  const eventBus = getBpmnJS().get('eventBus');
-
-  return popupMenu.trigger(
-    eventBus.createEvent({
-      target: entry,
-      x: 0,
-      y: 0,
-    })
-  );
+  return popupMenu.trigger(createEvent(entry, { x: 400, y: 400 }), null, action);
 }
 
 function getEntries() {
@@ -218,4 +231,16 @@ function isTemplateApplied(element, template) {
   }
 
   return false;
+}
+
+function placeDragElement(element, action) {
+  var dragging = getBpmnJS().get('dragging');
+  var elementRegistry = getBpmnJS().get('elementRegistry');
+
+  let processElement = elementRegistry.get('Process_1uc9zgy');
+
+  triggerAction(action, 'dragstart');
+
+  dragging.hover({ element: processElement });
+  dragging.end();
 }
