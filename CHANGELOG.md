@@ -6,6 +6,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.4.0
+
+* `DEPS`: update to bpmn-js@11.4.0
+
+### Key changes in Modeling
+
+* `FEAT`: provide templates as append menu entries ([#242](https://github.com/camunda/camunda-bpmn-js/pull/242))
+* `FEAT`: provide templates as create menu entries ([#246](https://github.com/camunda/camunda-bpmn-js/pull/246))
+* `FEAT`: activate direct editing on participant creation ([bpmn-js#1845](https://github.com/bpmn-io/bpmn-js/pull/1845))
+* `FIX`: dragging append menu entries creates element connection ([bpmn-js#1843](https://github.com/bpmn-io/bpmn-js/pull/1843), [#247](https://github.com/camunda/camunda-bpmn-js/pull/247))
+* `FIX`: append shortcut triggers create menu if append not allowed ([bpmn-js#1840](https://github.com/bpmn-io/bpmn-js/pull/1840))
+
 ## 1.3.1
 
 * `FIX`: correct create menu position in palette
