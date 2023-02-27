@@ -39,7 +39,7 @@ try {
   await bpmnModeler.importXML(someDiagram);
 
   console.log('success!');
-  viewer.get('canvas').zoom('fit-viewport');
+  bpmnModeler.get('canvas').zoom('fit-viewport');
 } catch (err) {
 
   console.error('something went wrong:', err);
