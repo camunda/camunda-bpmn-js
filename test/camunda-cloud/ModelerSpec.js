@@ -3,13 +3,8 @@ import TestContainer from 'mocha-test-container-support';
 import {
   clearBpmnJS,
   setBpmnJS,
-  insertCSS,
-  inject
+  insertCSS
 } from 'test/TestHelper';
-
-import {
-  queryAll as domQueryAll
-} from 'min-dom';
 
 import {
   debounce
@@ -29,12 +24,10 @@ import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/e
 import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
 
 import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
-import ConnectorsExtensionModule from 'bpmn-js-connectors-extension';
 
 import templates from './element-templates.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
-var connectorsExtension = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-connectors-extension';
 
 insertCSS(
   'properties-panel.css',
@@ -233,122 +226,6 @@ describe('<CamundaCloudModeler>', function() {
 
       // then
       expect(propertiesPanel._descriptionConfig).to.exist;
-    });
-
-  });
-
-
-  describe('integration with connectors extension', function() {
-
-    let modeler;
-
-    const additionalModules = [
-      ConnectorsExtensionModule
-    ];
-
-    beforeEach(function() {
-      return createModeler(diagramXml, additionalModules).then(
-        function(result) {
-          modeler = result.modeler;
-          modeler.get('elementTemplatesLoader').setTemplates(templates);
-        });
-    });
-
-
-    (connectorsExtension ? it.only : it)('should import simple process', function() {
-
-      // then
-      expect(modeler.get('connectorsExtension')).to.exist;
-    });
-
-
-    it('templates are not duplicated', inject(function(elementRegistry, replaceMenu) {
-
-      // given
-      const task = elementRegistry.get('Activity_08bosyf');
-
-      // when
-      replaceMenu.open(task, {
-        x: task.x, y: task.y
-      });
-
-      // then
-      const entries = domQueryAll('[data-entry-id^="replace.template-"]');
-      expect(entries).to.have.length(5);
-
-    }));
-
-
-    it('templates are not duplicated', inject(function(elementRegistry, replaceMenu) {
-
-      // given
-      const task = elementRegistry.get('Activity_08bosyf');
-
-      // when
-      replaceMenu.open(task, {
-        x: task.x, y: task.y
-      });
-
-      // then
-      const entries = domQueryAll('[data-entry-id^="replace.template-"]');
-      expect(entries).to.have.length(5);
-
-    }));
-
-
-    it('unlink template option is not duplicated', inject(function(elementRegistry, replaceMenu, elementTemplates) {
-
-      // given
-
-      const task = elementRegistry.get('Activity_08bosyf');
-      elementTemplates.applyTemplate(task, templates[0]);
-
-      // when
-      replaceMenu.open(task, {
-        x: task.x, y: task.y
-      });
-
-      // then
-      const unlinkEntries = domQueryAll('[data-entry-id="replace-unlink-element-template"]');
-
-      expect(unlinkEntries).to.have.lengthOf(1);
-    }));
-
-
-    describe('create-append-anything', function() {
-
-      const options = {
-        connectorsExtension: {
-          appendAnything: false
-        }
-      };
-
-      it('should inject create-append-anything', function() {
-
-        createModeler(diagramXml).then(
-          function(result) {
-            let modeler = result.modeler;
-
-            expect(modeler.get.bind(this, 'createMenuProvider')).to.exist;
-            expect(modeler.get.bind(this, 'appendMenuProvider')).to.exist;
-          });
-
-      });
-
-
-      it('should not inject create-append-anything', function() {
-
-        createModeler(diagramXml, [], options).then(
-          function(result) {
-            let modeler = result.modeler;
-
-            expect(modeler.get.bind(this, 'createMenuProvider')).to.throw();
-            expect(modeler.get.bind(this, 'appendMenuProvider')).to.throw();
-          });
-
-
-      });
-
     });
 
   });

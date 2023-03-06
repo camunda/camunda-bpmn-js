@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: remove integration support for connectors extension
+
 ## 1.5.0
 
 * `FEAT`: allow external variable providers to be added ([variable-resolver#1](https://github.com/bpmn-io/variable-resolver/pull/1))
