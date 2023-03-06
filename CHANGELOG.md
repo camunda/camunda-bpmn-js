@@ -6,9 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: update to `bpmn-js-properties-panel@1.19.0`
+
 ### Key changes in Modeling
 
 * `FEAT`: allow external variable providers to be added ([variable-resolver#1](https://github.com/bpmn-io/variable-resolver/pull/1))
+* `FEAT`: element templates support properties with multiple conditions ([bpmn-js-properties-panel#884](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/884))
 
 ## 1.4.0
 
