@@ -6,6 +6,7 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: update to `@camunda/linting@0.16.0`
 * `FEAT`: update to `bpmn-js-properties-panel@1.19.0`
 
 ### Key changes in Modeling
