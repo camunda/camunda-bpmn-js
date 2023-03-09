@@ -6,13 +6,23 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 1.5.0
+
+* `FEAT`: allow external variable providers to be added ([variable-resolver#1](https://github.com/bpmn-io/variable-resolver/pull/1))
+* `DEPS`: update to `bpmn-js@1.19.1`
+* `DEPS`: update to `bpmn-js-properties-panel@1.19.1`
 * `FEAT`: update to `@camunda/linting@0.16.0`
-* `FEAT`: update to `bpmn-js-properties-panel@1.19.0`
 
 ### Key changes in Modeling
 
-* `FEAT`: allow external variable providers to be added ([variable-resolver#1](https://github.com/bpmn-io/variable-resolver/pull/1))
+* `FIX`: restore undo/redo behavior for german keyboard layout ([diagram-js#749](https://github.com/bpmn-io/diagram-js/pull/749))
+
+### Key changes in Properties panel
 * `FEAT`: element templates support properties with multiple conditions ([bpmn-js-properties-panel#884](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/884))
+* `FIX`: conditional props are applied when creating elements from element templates ([bpmn-js-properties-panel#878](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/878))
+* `FIX`: correct order of variable name and FEEL expression in Script Tasks ([bpmn-js-properties-panel#886](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/886))
+* `FIX`: enforce minimum Textarea height ([properties-panel#220](https://github.com/bpmn-io/properties-panel/pull/220))
+
 
 ## 1.4.0
 
