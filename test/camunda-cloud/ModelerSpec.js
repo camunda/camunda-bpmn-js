@@ -23,8 +23,6 @@ import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
 import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
 
-import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
-
 import templates from './element-templates.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
@@ -116,7 +114,6 @@ describe('<CamundaCloudModeler>', function() {
         bindTo: document
       },
       additionalModules: [
-        ElementTemplateChooserModule,
         ...additionalModules
       ],
       propertiesPanel: {
@@ -226,6 +223,40 @@ describe('<CamundaCloudModeler>', function() {
 
       // then
       expect(propertiesPanel._descriptionConfig).to.exist;
+    });
+
+  });
+
+
+  describe('element template chooser', function() {
+
+    const options = {
+      elementTemplatesChooser: {
+        enabled: false
+      }
+    };
+
+    it('should inject element-template-chooser', function() {
+
+      return createModeler(simpleXml).then(function(result) {
+        let modeler = result.modeler;
+
+
+        expect(modeler.get('elementTemplateChooser')).to.exist;
+      });
+
+    });
+
+
+    it('should not inject element-template-chooser', function() {
+
+      createModeler(simpleXml, [], options).then(function(result) {
+        let modeler = result.modeler;
+
+        expect(modeler.get.bind(this, 'elementTemplateChooser')).to.throw();
+      });
+
+
     });
 
   });
