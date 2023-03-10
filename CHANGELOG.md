@@ -7,6 +7,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 * `FEAT`: remove integration support for connectors extension
+* `FEAT`: provide [element template chooser](https://github.com/bpmn-io/element-template-chooser)
+
+### Breaking Changes
+
+* `element-template-chooser` is now provided as default. To disable this, please use the `elementTemplatesChooser` option and set it to `false`.
 
 ## 1.5.0
 
