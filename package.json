@@ -62,7 +62,7 @@
     "diagram-js-origin": "^1.4.0",
     "inherits-browser": "^0.1.0",
     "min-dash": "^4.0.0",
-    "zeebe-bpmn-moddle": "^0.17.0"
+    "zeebe-bpmn-moddle": "^0.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
