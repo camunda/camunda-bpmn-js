@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 2.0.2
+
+* `FIX`: integrate `@bpmn-io/element-template-chooser` styles ([#258](https://github.com/camunda/camunda-bpmn-js/pull/258))
+
 ## 2.0.1
 
 * `FIX`: make `@bpmn-io/element-template-chooser` a production dependency
