@@ -58,7 +58,11 @@ const styles = [
   {
     src: resolve('bpmn-js-properties-panel', '/dist/assets/element-templates.css'),
     dest: 'dist/assets'
-  }
+  },
+  {
+    src: resolve('@bpmn-io/element-template-chooser', '/dist/element-template-chooser.css'),
+    dest: 'dist/assets'
+  },
 ].concat(buildMatrix.map(function([ domain, dist ]) {
   return {
     src: `styles/${domain}-${toKebabCase(dist)}.css`,

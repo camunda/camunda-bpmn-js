@@ -42,7 +42,8 @@ const assets = [
   'diagram-js.css',
   'element-templates.css',
   'properties-panel.css',
-  'color-picker.css'
+  'color-picker.css',
+  'element-template-chooser.css'
 ];
 
 const testMatrix = getAllCombinations(domains, distributions, environments);
