@@ -228,6 +228,21 @@ describe('<CamundaCloudModeler>', function() {
   });
 
 
+  it('should inject variable resolver', function() {
+
+    // when
+    return createModeler(simpleXml).then(function(result) {
+
+      var modeler = result.modeler;
+
+      // then
+      expect(modeler.get('variableResolver')).to.exist;
+      expect(modeler.get('dataPropertiesProvider')).to.exist;
+    });
+
+  });
+
+
   describe('element template chooser', function() {
 
     const options = {
