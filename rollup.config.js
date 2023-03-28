@@ -96,7 +96,8 @@ const configs = distros.reduce(function(configs, distro) {
       },
       plugins: pgl([
         copyStyles(styles)
-      ])
+      ]),
+      onwarn
     },
     {
       input: `./lib/${input}.js`,
@@ -107,7 +108,8 @@ const configs = distros.reduce(function(configs, distro) {
       },
       plugins: pgl([
         terser()
-      ])
+      ]),
+      onwarn
     }
   ];
 }, []);
@@ -151,4 +153,13 @@ function resolve(module, sub) {
 
 function pathNormalize(string) {
   return path.normalize(string).split('\\').join('/');
+}
+
+function onwarn(warning, warn) {
+  if (warning.code === 'CIRCULAR_DEPENDENCY') {
+    return;
+  }
+
+  warn(warning);
+
 }
