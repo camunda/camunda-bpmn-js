@@ -129,6 +129,7 @@ describe('<BaseModeler>', function() {
       expect(modeler.get('alignToOrigin')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('bpmnPropertiesProvider')).to.exist;
+      expect(modeler.get('grid')).to.exist;
     });
 
   });
@@ -148,6 +149,27 @@ describe('<BaseModeler>', function() {
 
       // then
       expect(modeler.get.bind(this, 'alignToOrigin')).to.throw();
+    });
+
+  });
+
+
+  it('should disable grid', function() {
+
+    // given
+    var options = {
+      disableGrid: true
+    };
+
+    // when
+    return createModeler(simpleXml, options).then(function(result) {
+
+      var modeler = result.modeler;
+
+      // then
+      expect(() => {
+        modeler.get('grid');
+      }).to.throw();
     });
 
   });
