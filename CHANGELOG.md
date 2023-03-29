@@ -12,6 +12,7 @@ ___Note:__ Yet to be released changes appear here._
 ### Key changes in Modeling
 
 * `FEAT`: allow adding example data to elements in cloud modeler ([#264](https://github.com/camunda/camunda-bpmn-js/pull/264))
+* `FEAT`: add visual grid to editors ([#266](https://github.com/camunda/camunda-bpmn-js/pull/266))
 
 ## 2.0.2
 
