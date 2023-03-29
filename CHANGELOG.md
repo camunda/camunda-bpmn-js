@@ -8,11 +8,18 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: add `@camunda/example-data-properties-provider@1.0.1`
 * `DEPS`: update to `@bpmn-io/properties-panel@1.6.2`
+* `DEPS`: update to `bpmn-js@12.0.0`
+* `DEPS`: update to `diagram-js@11.12.0`
+* `DEPS`: update to `bpmn-js-properties-panel@1.20.1`
 
 ### Key changes in Modeling
 
 * `FEAT`: allow adding example data to elements in cloud modeler ([#264](https://github.com/camunda/camunda-bpmn-js/pull/264))
 * `FEAT`: add visual grid to editors ([#266](https://github.com/camunda/camunda-bpmn-js/pull/266))
+
+### Key changes in Properties panel
+
+* `FIX`: esure element template properties order is maintained ([bpmn-js-properties-panel##898](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/898))
 
 ## 2.0.2
 
@@ -35,7 +42,7 @@ ___Note:__ Yet to be released changes appear here._
 ## 1.5.0
 
 * `FEAT`: allow external variable providers to be added ([variable-resolver#1](https://github.com/bpmn-io/variable-resolver/pull/1))
-* `DEPS`: update to `bpmn-js@1.19.1`
+* `DEPS`: update to `bpmn-js@11.5.1`
 * `DEPS`: update to `bpmn-js-properties-panel@1.19.1`
 * `FEAT`: update to `@camunda/linting@0.16.0`
 
