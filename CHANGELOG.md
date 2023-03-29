@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: add `@camunda/example-data-properties-provider@1.0.1`
+* `DEPS`: update to `@bpmn-io/properties-panel@1.6.2`
+
+### Key changes in Modeling
+
+* `FEAT`: allow adding example data to elements in cloud modeler ([#264](https://github.com/camunda/camunda-bpmn-js/pull/264))
+
 ## 2.0.2
 
 * `FIX`: integrate `@bpmn-io/element-template-chooser` styles ([#258](https://github.com/camunda/camunda-bpmn-js/pull/258))
