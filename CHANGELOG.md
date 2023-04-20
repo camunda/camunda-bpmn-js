@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+# 2.2.0
+
+* `FEAT`: integrate `bpmn-js@13.0.0` including type declarations (https://github.com/camunda/camunda-bpmn-js/commit/cae78d247f8f13ab1ee941d7a7a5be4893a1837f)
+* `DEPS`: update to `bpmn-js@13.0.0`
+* `DEPS`: update to `diagram-js@12.0.0`
+
 ## 2.1.1
 
 * `FIX`: add create and append menus to platform modeler ([#268](https://github.com/camunda/camunda-bpmn-js/pull/268))
