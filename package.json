@@ -24,7 +24,7 @@
     "prepublishOnly": "run-s generate-types test:distro",
     "prepare": "run-s clean distro",
     "generate-types": "run-s generate-types:*",
-    "generate-types:generate": "del-cli \"lib/**/*.d.ts\" && npx bio-dts -r lib",
+    "generate-types:generate": "del-cli \"lib/**/*.d.ts\" && npx bio-dts -r --resolveJsonModule --esModuleInterop lib",
     "generate-types:test": "tsc --noEmit"
   },
   "repository": {
