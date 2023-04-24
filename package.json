@@ -3,8 +3,9 @@
   "version": "2.1.1",
   "description": "Embeddable Camunda modeling distributions based on bpmn-js",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "all": "run-s clean lint test distro test:distro",
+    "all": "run-s clean lint test generate-types distro test:distro",
     "lint": "eslint .",
     "dev": "npm test -- --auto-watch --no-single-run",
     "test": "karma start karma.config.js",
@@ -20,8 +21,11 @@
     "start:cloud-viewer": "cross-env SINGLE_START=camunda-cloud-viewer npm run dev",
     "start:platform-navigated-viewer": "cross-env SINGLE_START=camunda-platform-navigated-viewer npm run dev",
     "start:cloud-navigated-viewer": "cross-env SINGLE_START=camunda-cloud-navigated-viewer npm run dev",
-    "prepublishOnly": "run-s test:distro",
-    "prepare": "run-s clean distro"
+    "prepublishOnly": "run-s generate-types test:distro",
+    "prepare": "run-s clean distro",
+    "generate-types": "run-s generate-types:*",
+    "generate-types:generate": "del-cli \"lib/**/*.d.ts\" && npx bio-dts -r lib",
+    "generate-types:test": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -64,6 +68,7 @@
     "diagram-js-origin": "^1.4.0",
     "inherits-browser": "^0.1.0",
     "min-dash": "^4.0.0",
+    "typescript": "^5.0.4",
     "zeebe-bpmn-moddle": "^0.18.0"
   },
   "devDependencies": {
@@ -117,7 +122,8 @@
     "dist",
     "lib",
     "styles",
-    "util"
+    "util",
+    "!lib/**/*.spec.ts"
   ],
   "remarkConfig": {
     "plugins": [

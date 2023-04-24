@@ -1,0 +1,6 @@
+{
+  "include": [
+    "./lib/**/*.d.ts",
+    "./lib/**/*.spec.ts"
+  ]
+}
