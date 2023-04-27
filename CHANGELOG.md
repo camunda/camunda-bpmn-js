@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+### Key changes in Properties panel
+
+* `FEAT`: support multiple output mappings for the same variable ([variable-resolver#15](https://github.com/bpmn-io/variable-resolver/pull/15))
+* `FEAT`: suggest variables from connector mappings ([#265](https://github.com/camunda/camunda-bpmn-js/issues/265))
+* `FEAT`: format example data preview ([example-data-properties-provider#10](https://github.com/camunda/example-data-properties-provider/pull/10))
+* `CHORE`: rename `Data` Group to `Example Data` ([example-data-properties-provider#11](https://github.com/camunda/example-data-properties-provider/pull/11))
+* `CHORE`: example data is scoped to the element that defines it ([example-data-properties-provider#8](https://github.com/camunda/example-data-properties-provider/pull/8))
+
 # 2.2.0
 
 * `FEAT`: add type declarations for all viewers and modelers ([#271](https://github.com/camunda/camunda-bpmn-js/pull/271))
@@ -32,7 +40,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Properties panel
 
-* `FIX`: esure element template properties order is maintained ([bpmn-js-properties-panel##898](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/898))
+* `FIX`: ensure element template properties order is maintained ([bpmn-js-properties-panel##898](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/898))
 * `FIX`: only provide external variable suggestions in fields backed by IO mappings ([bpmn-io/bpmn-js-properties-panel#902](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/902))
 
 ## 2.0.2
