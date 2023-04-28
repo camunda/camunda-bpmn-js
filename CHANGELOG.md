@@ -8,13 +8,13 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Properties panel
 
-* `FEAT`: support `bpmn:Message` templating in events ([#890](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/890))
-* `FEAT`: support `generatedValue` in templates ([#890](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/890))
-* `FEAT`: suggest variables for templates properties ([#904](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/904))
+* `FEAT`: support `bpmn:Message` templating in events ([bpmn-js-properties-panel#890](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/890))
+* `FEAT`: support `generatedValue` in templates ([bpmn-js-properties-panel#890](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/890))
+* `FEAT`: suggest variables for templates properties ([bpmn-js-properties-panel#904](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/904))
 * `FEAT`: support multiple output mappings for the same variable ([variable-resolver#15](https://github.com/bpmn-io/variable-resolver/pull/15))
 * `FEAT`: suggest variables from connector mappings ([#265](https://github.com/camunda/camunda-bpmn-js/issues/265))
 * `FEAT`: format example data preview ([example-data-properties-provider#10](https://github.com/camunda/example-data-properties-provider/pull/10))
-* `FIX`: separate Camunda 7 and BPMN concerns in Timer Props ([#910](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/910))
+* `FIX`: separate Camunda 7 and BPMN concerns in Timer Props ([bpmn-js-properties-panel#910](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/910))
 * `CHORE`: rename `Data` Group to `Example Data` ([example-data-properties-provider#11](https://github.com/camunda/example-data-properties-provider/pull/11))
 * `CHORE`: example data is scoped to the element that defines it ([example-data-properties-provider#8](https://github.com/camunda/example-data-properties-provider/pull/8))
 
