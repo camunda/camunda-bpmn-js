@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 2.3.0
+
+* `FIX`: resolve connector variable mappings ([#265](https://github.com/camunda/camunda-bpmn-js/issues/265))
+* `DEPS`: update to `bpmn-js-properties-panel@1.22.0`
+* `DEPS`: update dependency zeebe-bpmn-moddle to ^0.19.0
+
 ### Key changes in Properties panel
 
 * `FEAT`: support `bpmn:Message` templating in events ([bpmn-js-properties-panel#890](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/890))
@@ -18,7 +24,7 @@ ___Note:__ Yet to be released changes appear here._
 * `CHORE`: rename `Data` Group to `Example Data` ([example-data-properties-provider#11](https://github.com/camunda/example-data-properties-provider/pull/11))
 * `CHORE`: example data is scoped to the element that defines it ([example-data-properties-provider#8](https://github.com/camunda/example-data-properties-provider/pull/8))
 
-# 2.2.0
+## 2.2.0
 
 * `FEAT`: add type declarations for all viewers and modelers ([#271](https://github.com/camunda/camunda-bpmn-js/pull/271))
 * `FEAT`: integrate `bpmn-js@13` including type declarations (https://github.com/camunda/camunda-bpmn-js/commit/cae78d247f8f13ab1ee941d7a7a5be4893a1837f)
