@@ -772,5 +772,42 @@
         }
       }
     ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Message Event",
+    "id": "io.camunda.example.connectors.MessageEvent",
+    "description": "Tests Message Event templating",
+    "appliesTo": [
+      "bpmn:IntermediateCatchEvent",
+      "bpmn:IntermediateThrowEvent"
+    ],
+    "elementType": {
+      "value": "bpmn:IntermediateCatchEvent",
+      "eventDefinition": "bpmn:MessageEventDefinition"
+    },
+    "properties": [
+      {
+        "label": "Message name",
+        "type": "String",
+        "generatedValue": {
+          "type": "uuid"
+        },
+        "binding": {
+          "type": "bpmn:Message#property",
+          "name": "name"
+        }
+      },
+      {
+        "label": "Correlation key",
+        "type": "String",
+        "feel": "required",
+        "value": "=correlationKey",
+        "binding": {
+          "type": "bpmn:Message#zeebe:subscription#property",
+          "name": "correlationKey"
+        }
+      }
+    ]
   }
 ]
