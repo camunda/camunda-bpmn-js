@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.0.1`
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.1.1`
+
+### Key changes in Properties panel
+
+* `FIX`: link to latest doc page ([example-data-properties-provider#12](https://github.com/camunda/example-data-properties-provider/pull/12))
+* `FIX`: support empty variable mappings in connectors ([variable-resolver#18](https://github.com/bpmn-io/variable-resolver/pull/18))
+
 ## 2.3.0
 
 * `FIX`: resolve connector variable mappings ([#265](https://github.com/camunda/camunda-bpmn-js/issues/265))
