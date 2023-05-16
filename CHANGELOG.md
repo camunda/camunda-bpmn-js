@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.1.0`
+
+### Key changes in Properties panel
+
+* `FEAT`: Variable suggestions take the expression position into account ([`@bpmn-io/variable-resolver#19](https://github.com/bpmn-io/variable-resolver/pull/19))
+* `FIX`: handle missing `resultExpression` value ([`@bpmn-io/variable-resolver#20](https://github.com/bpmn-io/variable-resolver/pull/20))
+
 ## 2.3.1
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.22.1`
