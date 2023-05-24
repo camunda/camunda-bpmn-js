@@ -168,7 +168,7 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('bpmnRules')).to.exist;
       expect(modeler.get('propertiesPanel')).to.exist;
       expect(modeler.get('zeebePropertiesProvider')).to.exist;
-      expect(modeler.get('elementTemplatesIconsRenderer')).to.exist;
+      expect(modeler.get('elementTemplateIconRenderer')).to.exist;
 
       // behaviors
       expect(modeler.get('copyPasteBehavior')).to.exist;
