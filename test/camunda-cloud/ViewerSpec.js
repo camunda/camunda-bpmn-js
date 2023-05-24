@@ -101,7 +101,7 @@ describe('<CamundaCloudViewer>', function() {
       var modeler = result.modeler;
 
       // then
-      expect(modeler.get('elementTemplatesIconsRenderer')).to.exist;
+      expect(modeler.get('elementTemplateIconRenderer')).to.exist;
     });
 
   });
