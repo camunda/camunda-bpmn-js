@@ -116,7 +116,7 @@
     "webpack": "^5.74.0"
   },
   "peerDependencies": {
-    "bpmn-js-properties-panel": ">= 1.11.3"
+    "bpmn-js-properties-panel": ">= 1.24.0"
   },
   "files": [
     "dist",
