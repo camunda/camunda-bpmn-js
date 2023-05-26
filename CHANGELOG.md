@@ -34,7 +34,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Properties panel
 
-* `FEAT`: Variable suggestions take the expression position into account ([`@bpmn-io/variable-resolver#19](https://github.com/bpmn-io/variable-resolver/pull/19))
+* `FEAT`: variable suggestions take the expression position into account ([`@bpmn-io/variable-resolver#19](https://github.com/bpmn-io/variable-resolver/pull/19))
 * `FIX`: handle missing `resultExpression` value ([`@bpmn-io/variable-resolver#20](https://github.com/bpmn-io/variable-resolver/pull/20))
 
 ## 2.3.1
