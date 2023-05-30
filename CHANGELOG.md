@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 2.6.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@1.26.0`
+
+### Key changes in Properties panel
+
+* `FEAT`: change FEEL entry toggle
+
 ## 2.5.0
 
 * `DEPS`: update to `@bpmn-io/element-template-icon-renderer@0.5.0`
