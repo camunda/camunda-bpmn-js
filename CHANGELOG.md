@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 2.6.1
+
+* `DEPS`: update to `@bpmn-io/element-template-icon-renderer@0.5.1`
+
+### Key changes in Modeling
+
+* `FIX`: intermediate catch and throw events with icons render successfully ([bpmn-io/element-template-icon-renderer#16](https://github.com/bpmn-io/element-template-icon-renderer/pull/16))
+
 ## 2.6.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@1.26.0`
