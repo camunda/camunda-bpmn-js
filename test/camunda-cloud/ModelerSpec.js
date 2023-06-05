@@ -21,7 +21,6 @@ import elementTemplatesCSS from 'bpmn-js-properties-panel/dist/assets/element-te
 import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
 import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
-import connectorsExtensionCSS from 'bpmn-js-connectors-extension/dist/connectors-extension.css';
 
 import templates from './element-templates.json';
 
@@ -45,11 +44,6 @@ insertCSS(
 insertCSS(
   'element-templates-chooser.css',
   elementTemplatesChooserCSS
-);
-
-insertCSS(
-  'connectors-extension.css',
-  connectorsExtensionCSS
 );
 
 insertCSS('test-panel.css', `
