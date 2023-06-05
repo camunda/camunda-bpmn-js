@@ -6,6 +6,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+# 2.7.0
+
+* `DEPS`: update to `bpmn-js-color-picker@0.6.0`
+* `DEPS`: update to `diagram-js@12.2.0`
+* `DEPS`: update to `bpmn-js-create-append-anything@0.2.1`
+* `DEPS`: update to `bpmn-js-properties-panel@2.0.0`
+
+## Key Changes in Properties Panel
+
+* `FEAT`: remove templated `bpmn:Message` if no message bindings are active ([bpmn-js-properties-panel#915](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/915))
+* `FEAT`: allow time date in boundary and intermediate catch events ([bpmn-js-properties-panel#931](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/931))
+
 ## 2.6.1
 
 * `DEPS`: update to `@bpmn-io/element-template-icon-renderer@0.5.1`
