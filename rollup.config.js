@@ -56,7 +56,7 @@ const styles = [
     dest: 'dist/assets'
   },
   {
-    src: resolve('bpmn-js-properties-panel', '/dist/assets/element-templates.css'),
+    src: resolve('bpmn-js-element-templates', '/dist/assets/element-templates.css'),
     dest: 'dist/assets'
   },
   {
