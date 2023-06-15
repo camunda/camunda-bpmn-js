@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+### Key changes in Modeling
+
+* `FEAT`: base BPMN element entry in replace menu removes element template instead of unlinking it ([bpmn-js-create-append-anything#11](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/11))
+* `DEPS`: update to `bpmn-js-create-append-anything@0.3.0`
+
 # 2.7.0
 
 * `DEPS`: update to `bpmn-js-color-picker@0.6.0`
