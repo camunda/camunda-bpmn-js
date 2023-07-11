@@ -6,13 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.0.0
+
+* `DEPS`: update to `bpmn-js-create-append-anything@0.3.0`
+* `DEPS`: update to `bpmn-js-element-templates@1.2.0`
+* `DEPS`: update to `bpmn-js-properties-panel@3.0.0`
+* `DEPS`: update to `bpmn-js@13.2.2`
+
 ### Key changes in Modeling
 
 * `FEAT`: base BPMN element entry in replace menu removes element template instead of unlinking it ([bpmn-js-create-append-anything#11](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/11))
 * `FEAT`: add `ElementTemplates#unlinkTemplate` and `ElementTemplates#removeTemplate` API ([bpmn-js-properties-panel#935](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/935))
-* `DEPS`: update to `bpmn-js-create-append-anything@0.3.0`
-* `DEPS`: update to `bpmn-js-properties-panel@2.0.0`
-* `DEPS`: update to `bpmn-js@13.2.1`
+* `FIX`: remove old element template properties ([bpmn-io/bpmn-js-element-templates#4](https://github.com/bpmn-io/bpmn-js-element-templates/pull/4))
+* `FIX`: do not vertically resize empty pools using the space tool ([bpmn-io/bpmn-js#1769](https://github.com/bpmn-io/bpmn-js/issues/1769))
 
 ## 2.7.0
 
