@@ -17,8 +17,14 @@ ___Note:__ Yet to be released changes appear here._
 
 * `FEAT`: base BPMN element entry in replace menu removes element template instead of unlinking it ([bpmn-js-create-append-anything#11](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/11))
 * `FEAT`: add `ElementTemplates#unlinkTemplate` and `ElementTemplates#removeTemplate` API ([bpmn-js-properties-panel#935](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/935))
+* `FEAT`: invalid element template values are now persisted
 * `FIX`: remove old element template properties ([bpmn-io/bpmn-js-element-templates#4](https://github.com/bpmn-io/bpmn-js-element-templates/pull/4))
 * `FIX`: do not vertically resize empty pools using the space tool ([bpmn-io/bpmn-js#1769](https://github.com/bpmn-io/bpmn-js/issues/1769))
+
+### Breaking Changes
+
+* Invalid element template values are now persisted.
+* Replacing a custom element with a stock BPMN element now removes the template, rather than unlinking it.
 
 ## 2.7.0
 
