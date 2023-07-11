@@ -70,8 +70,8 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key changes in Properties panel
 
-* `FEAT`: variable suggestions take the expression position into account ([`@bpmn-io/variable-resolver#19](https://github.com/bpmn-io/variable-resolver/pull/19))
-* `FIX`: handle missing `resultExpression` value ([`@bpmn-io/variable-resolver#20](https://github.com/bpmn-io/variable-resolver/pull/20))
+* `FEAT`: variable suggestions take the expression position into account ([@bpmn-io/variable-resolver#19](https://github.com/bpmn-io/variable-resolver/pull/19))
+* `FIX`: handle missing `resultExpression` value ([@bpmn-io/variable-resolver#20](https://github.com/bpmn-io/variable-resolver/pull/20))
 
 ## 2.3.1
 
@@ -105,7 +105,7 @@ ___Note:__ Yet to be released changes appear here._
 ## 2.2.0
 
 * `FEAT`: add type declarations for all viewers and modelers ([#271](https://github.com/camunda/camunda-bpmn-js/pull/271))
-* `FEAT`: integrate `bpmn-js@13` including type declarations (https://github.com/camunda/camunda-bpmn-js/commit/cae78d247f8f13ab1ee941d7a7a5be4893a1837f)
+* `FEAT`: integrate `bpmn-js@13` including type declarations ([`cae78d2`](https://github.com/camunda/camunda-bpmn-js/commit/cae78d247f8f13ab1ee941d7a7a5be4893a1837f))
 * `DEPS`: update to `bpmn-js@13.0.4`
 * `DEPS`: update to `diagram-js@12.0.2`
 
