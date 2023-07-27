@@ -207,7 +207,7 @@ describe('<CamundaCloudModeler>', function() {
   });
 
 
-  it('should inject descriptionContextProvider', function() {
+  it('should inject tooltipContextProvider', function() {
 
     // when
     return createModeler(simpleXml).then(function(result) {
@@ -216,7 +216,7 @@ describe('<CamundaCloudModeler>', function() {
           propertiesPanel = modeler.get('propertiesPanel');
 
       // then
-      expect(propertiesPanel._descriptionConfig).to.exist;
+      expect(propertiesPanel._tooltipConfig).to.exist;
     });
 
   });
