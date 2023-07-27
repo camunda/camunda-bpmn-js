@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js-properties-panel@4.0.1`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: migrate long descriptions and descriptions with documentation links to tooltips ([bpmn-js-properties-panel#946](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/946), [#293](https://github.com/camunda/camunda-bpmn-js/pull/293))
+* `FEAT`: allow to set tooltips via context ([bpmn-js-properties-panel#946](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/946))
+
 ## 3.0.0
 
 * `DEPS`: update to `bpmn-js-create-append-anything@0.3.0`
