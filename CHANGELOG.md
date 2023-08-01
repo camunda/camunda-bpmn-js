@@ -6,12 +6,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.1.0
+
 * `DEPS`: update to `bpmn-js-properties-panel@4.0.2`
+* `DEPS`: update to `bpmn-js-color-picker@0.6.1`
+* `DEPS`: update to `bpmn-js-element-templates@1.2.2`
+* `DEPS`: update to `bpmn-js-executable-fix@0.2.1`
 
 ### Key Changes in Properties Panel
 
 * `FEAT`: migrate long descriptions and descriptions with documentation links to tooltips ([bpmn-js-properties-panel#946](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/946), [#293](https://github.com/camunda/camunda-bpmn-js/pull/293))
 * `FEAT`: allow to set tooltips via context ([bpmn-js-properties-panel#946](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/946))
+* `FIX`: allow removing templates from root elements ([bpmn-js-element-templates#7](https://github.com/bpmn-io/bpmn-js-element-templates/pull/7))
 
 ## 3.0.0
 
