@@ -1,11 +1,12 @@
 /* eslint-env node */
 
-const fs = require('fs'),
-      path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
 
-const { getAllCombinations, toKebabCase } = require('../util');
+import { getAllCombinations, toKebabCase } from './util.mjs';
 
-var execSync = require('execa').sync;
+import { execaSync as execSync } from 'execa';
+
 
 const domains = [
   'base',

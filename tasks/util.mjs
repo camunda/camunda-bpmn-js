@@ -6,7 +6,7 @@
  * @param {...Array} - arrays with options to combine
  * @returns {Array<Array>} array with all posible combinations of items
  */
-function getAllCombinations() {
+export function getAllCombinations() {
   const [ first, ...rest ] = arguments;
 
   if (!first) {
@@ -25,17 +25,10 @@ function getAllCombinations() {
   }, []);
 }
 
-function capitalize(string) {
+export function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function toKebabCase(string) {
+export function toKebabCase(string) {
   return string.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
-
-
-module.exports = {
-  getAllCombinations,
-  capitalize,
-  toKebabCase
-};
