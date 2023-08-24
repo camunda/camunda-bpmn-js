@@ -55,7 +55,7 @@
     "@bpmn-io/element-template-chooser": "^1.0.0",
     "@bpmn-io/element-template-icon-renderer": "^0.5.1",
     "@bpmn-io/variable-resolver": "^1.1.0",
-    "@camunda/example-data-properties-provider": "^1.1.1",
+    "@camunda/example-data-properties-provider": "^1.2.0",
     "bpmn-js": "^13.2.2",
     "bpmn-js-color-picker": "^0.6.1",
     "bpmn-js-create-append-anything": "^0.3.0",
