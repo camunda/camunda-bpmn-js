@@ -20,6 +20,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
+* `FEAT`: suggest variables from form schema ([form-variable-provider#1](https://github.com/bpmn-io/form-variable-provider/pull/1))
 * `CHORE`: example data is no longer scoped to the element that defines it ([example-data-properties-provider#13](https://github.com/camunda/example-data-properties-provider/pull/13))
 * `FIX`: remove output group from error end events ([bpmn-js-properties-panel#952](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/952), [camunda-bpmn-js-behaviors#42](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/42))
 * `FIX`: correct properties-panel.css ([#298](https://github.com/camunda/camunda-bpmn-js/pull/298))
