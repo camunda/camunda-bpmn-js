@@ -160,10 +160,14 @@ function pathNormalize(string) {
 }
 
 function onwarn(warning, warn) {
-  if (warning.code === 'CIRCULAR_DEPENDENCY') {
+  const ERRORS_TO_IGNORE = [
+    'CIRCULAR_DEPENDENCY',
+    'THIS_IS_UNDEFINED'
+  ];
+
+  if (ERRORS_TO_IGNORE.includes(warning.code)) {
     return;
   }
 
   warn(warning);
-
 }
