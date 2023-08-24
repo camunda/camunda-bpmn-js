@@ -52,7 +52,7 @@ const styles = [
     dest: 'dist/assets'
   },
   {
-    src: resolve('bpmn-js-properties-panel', '/dist/assets/properties-panel.css'),
+    src: resolve('@bpmn-io/properties-panel', '/assets/properties-panel.css'),
     dest: 'dist/assets'
   },
   {

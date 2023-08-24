@@ -16,7 +16,7 @@ import diagramXml from './ModelerSpec.simple.bpmn';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
-import propertiesPanelCSS from 'bpmn-js-properties-panel/dist/assets/properties-panel.css';
+import propertiesPanelCSS from '@bpmn-io/properties-panel/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-element-templates/dist/assets/element-templates.css';
 import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
