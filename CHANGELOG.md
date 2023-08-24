@@ -6,9 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.1.1
+
 ### Key Changes in Properties Panel
 
 * `FIX`: remove output group from error end events ([bpmn-js-properties-panel#952](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/952), [camunda-bpmn-js-behaviors#42](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/42))
+* `FIX`: correct properties-panel.css ([#298](https://github.com/camunda/camunda-bpmn-js/pull/298))
 
 ## 3.1.0
 
