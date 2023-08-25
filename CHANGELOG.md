@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js-element-templates@1.4.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: visually show deprecated templates in properties panel ([#11](https://github.com/bpmn-io/bpmn-js-element-templates/issues/11))
+
 ## 3.1.2
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.3.2`
