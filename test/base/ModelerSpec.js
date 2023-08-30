@@ -14,7 +14,7 @@ import Modeler from 'lib/base/Modeler';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
-import propertiesPanelCSS from '@bpmn-io/properties-panel/assets/properties-panel.css';
+import propertiesPanelCSS from '@bpmn-io/properties-panel/dist/assets/properties-panel.css';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'base-modeler';
 
