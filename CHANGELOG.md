@@ -8,9 +8,14 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 3.2.0
 
+* `DEPS`: update to `bpmn-js-create-append-anything@0.4.0`
 * `DEPS`: update to `bpmn-js-element-templates@1.4.0`
 * `DEPS`: update to `bpmn-js-properties-panel@5.1.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.4.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: move "Call Activity" to "Sub Processes" group in options menu ([bpmn-js-create-append-anything#14](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/14))
 
 ### Key Changes in Properties Panel
 
