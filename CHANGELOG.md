@@ -6,11 +6,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.2.0
+
 * `DEPS`: update to `bpmn-js-element-templates@1.4.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.1.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.4.0`
 
 ### Key Changes in Properties Panel
 
-* `FEAT`: visually show deprecated templates in properties panel ([#11](https://github.com/bpmn-io/bpmn-js-element-templates/issues/11))
+* `FEAT`: add _Input propagation_ group ([bpmn-js-properties-panel#954](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/954))
+* `FEAT`: visually show deprecated templates in properties panel ([bpmn-js-element-templates#11](https://github.com/bpmn-io/bpmn-js-element-templates/issues/11))
+* `FEAT`: suggest variables from form schema ([form-variable-provider#1](https://github.com/bpmn-io/form-variable-provider/pull/1))
+* `CHORE`: example data is no longer scoped to the element that defines it ([example-data-properties-provider#13](https://github.com/camunda/example-data-properties-provider/pull/13))
 
 ## 3.1.2
 
@@ -20,8 +27,6 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
-* `FEAT`: suggest variables from form schema ([form-variable-provider#1](https://github.com/bpmn-io/form-variable-provider/pull/1))
-* `CHORE`: example data is no longer scoped to the element that defines it ([example-data-properties-provider#13](https://github.com/camunda/example-data-properties-provider/pull/13))
 * `FIX`: remove output group from error end events ([bpmn-js-properties-panel#952](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/952), [camunda-bpmn-js-behaviors#42](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/42))
 * `FIX`: correct properties-panel.css ([#298](https://github.com/camunda/camunda-bpmn-js/pull/298))
 
