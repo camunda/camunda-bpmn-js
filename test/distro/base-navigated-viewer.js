@@ -10,13 +10,13 @@ describe('base-navigated-viewer', function() {
   });
 
 
-  it('should import initial diagram', function(done) {
+  it('should import initial diagram', function() {
 
     var BpmnNavigatedViewer = window.BpmnNavigatedViewer;
 
     // then
     /* global testImport */
-    testImport(BpmnNavigatedViewer, done);
+    return testImport(BpmnNavigatedViewer);
   });
 
 });

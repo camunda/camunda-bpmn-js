@@ -1,5 +1,5 @@
 
-function testImport(BpmnModeler, done) {
+async function testImport(BpmnModeler, done) {
 
   var container = document.createElement('div');
   container.style.height = '500px';
@@ -7,41 +7,17 @@ function testImport(BpmnModeler, done) {
 
   document.body.appendChild(container);
 
-  get('/base/test/fixtures/diagram.bpmn', function(err, text) {
+  const response = await fetch('/base/test/fixtures/diagram.bpmn');
 
-    if (err) {
-      return done(err);
-    }
-
-    var modeler = new BpmnModeler({ container: container });
-
-    modeler.importXML(text, function(err, warnings) {
-      return done(err, warnings, modeler);
-    });
-  });
-
-}
-
-function get(url, done) {
-  var httpRequest = new XMLHttpRequest();
-
-  if (!httpRequest) {
-    return done(new Error('cannot create XMLHttpRequest'));
+  if (!response.ok) {
+    throw new Error('failed to fetch diagram');
   }
 
-  httpRequest.onreadystatechange = checkDone;
-  httpRequest.open('GET', url);
-  httpRequest.send();
+  const text = await response.text();
 
-  function checkDone() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-      if (httpRequest.status === 200) {
-        return done(null, httpRequest.responseText);
-      } else {
-        return done(new Error('status = ' + httpRequest.status), null, httpRequest);
-      }
-    }
-  }
+  var modeler = new BpmnModeler({ container: container });
+
+  return modeler.importXML(text);
 }
 
 window.testImport = testImport;
