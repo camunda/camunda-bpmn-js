@@ -6,6 +6,20 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.3.0
+
+* `DEPS`: update to `bpmn-js@14.0.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: do not hide overlays on canvas move per default ([bpmn-io/diagram-js#798](https://github.com/bpmn-io/diagram-js/issues/798))
+* `FEAT`: translate _Append TextAnnotation_ context pad action ([bpmn-io/bpmn-js#1932](https://github.com/bpmn-io/bpmn-js/pull/1932))
+* `FIX`: allow to create connection + event-based gateway ([bpmn-io/bpmn-js#1490](https://github.com/bpmn-io/bpmn-js/issues/1490))
+* `FIX`: make breadcrumb styling more robust ([bpmn-io/bpmn-js#1945](https://github.com/bpmn-io/bpmn-js/pull/1945))
+* `FIX`: correct copy of default sequence flow elements ([bpmn-io/bpmn-js#1935](https://github.com/bpmn-io/bpmn-js/issues/1935))
+* `CHORE`: drop deprecated callback support from public API
+* `CHORE`: drop deprecated `import.parse.complete` event member `context`
+
 ## 3.2.0
 
 * `DEPS`: update to `bpmn-js-create-append-anything@0.4.0`
