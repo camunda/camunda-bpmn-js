@@ -10,13 +10,13 @@ describe('camunda-platform-modeler', function() {
   });
 
 
-  it('should import initial diagram', function(done) {
+  it('should import initial diagram', function() {
 
     var BpmnModeler = window.BpmnModeler;
 
     // then
     /* global testImport */
-    testImport(BpmnModeler, done);
+    return testImport(BpmnModeler);
   });
 
 });

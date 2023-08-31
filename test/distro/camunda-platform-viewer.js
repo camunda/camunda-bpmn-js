@@ -10,13 +10,13 @@ describe('camunda-platform-viewer', function() {
   });
 
 
-  it('should import initial diagram', function(done) {
+  it('should import initial diagram', function() {
 
     var BpmnViewer = window.BpmnViewer;
 
     // then
     /* global testImport */
-    testImport(BpmnViewer, done);
+    return testImport(BpmnViewer);
   });
 
 });
