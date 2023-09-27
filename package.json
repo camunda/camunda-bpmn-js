@@ -14,6 +14,7 @@
     "format": "run-s format:markdown 'lint -- --fix'",
     "format:markdown": "remark . -qo",
     "test:distro": "node tasks/test-distro.mjs",
+    "start": "npm run start:cloud",
     "start:base": "cross-env SINGLE_START=base-modeler npm run dev",
     "start:platform": "cross-env SINGLE_START=camunda-platform-modeler npm run dev",
     "start:cloud": "cross-env SINGLE_START=camunda-cloud-modeler npm run dev",
