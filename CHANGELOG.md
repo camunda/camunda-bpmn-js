@@ -6,6 +6,22 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.4.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@5.5.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.8.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: improve FEEL popup lifecycle events ([bpmn-io/properties-panel#294](https://github.com/bpmn-io/properties-panel/pull/294))
+* `FEAT`: add drag trap to popup component ([bpmn-io/properties-panel#289](https://github.com/bpmn-io/properties-panel/issues/289))
+* `FEAT`: allow listen to `feelPopup.dragstart`, `feelPopup.dragover` and `feelPopup.dragend` events ([bpmn-io/properties-panel#299](https://github.com/bpmn-io/properties-panel/pull/292))
+* `FEAT`: allow listen to `feelPopup.opened` and `feelPopup.closed` events ([bpmn-io/bpmn-js-properties-panel#974](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/974))
+* `FEAT`: provide `feelPopup` module to interact with FEEL popup ([bpmn-io/bpmn-js-properties-panel#974](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/974))
+* `FEAT`: prioritize externally provided errors ([bpmn-io/properties-panel@`375838b7`](https://github.com/bpmn-io/properties-panel/commit/375838b7c82b559a579792a46479592efcd5f500))
+* `FEAT`: specify FEEL popup container via `propertiesPanel.feelPopupContainer` ([bpmn-io/properties-panel#970](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/970))
+* `FIX`: correct FEEL popup editor closing during auto-suggest ([bpmn-io/properties-panel#279](https://github.com/bpmn-io/properties-panel/issues/279))
+* `FIX`: contain keyboard events within the FEEL popup editor ([bpmn-io/properties-panel@`a8dd384`](https://github.com/bpmn-io/properties-panel/commit/a8dd384ad625adb03272a9bc2e25fc4aab7bb284))
 
 ## 3.3.1
 
