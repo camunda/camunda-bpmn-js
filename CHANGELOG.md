@@ -6,6 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.5.0
+
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.2.1`
+
+### Key Changes in Modeling
+
+* `FEAT`: ensure that only one type of form is set at a time ([bpmn-io/bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/949))
+* `FEAT`: remove `zeebe:subscription` when no properties are left ([bpmn-io/bpmn-js-element-templates](https://github.com/bpmn-io/bpmn-js-element-templates/issues/21))
+
 ## 3.4.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.5.0`

@@ -168,7 +168,7 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('copyPasteBehavior')).to.exist;
       expect(modeler.get('cleanUpBusinessRuleTaskBehavior')).to.exist;
       expect(modeler.get('createZeebeCallActivityBehavior')).to.exist;
-      expect(modeler.get('formDefinitionBehavior')).to.exist;
+      expect(modeler.get('formsBehavior')).to.exist;
       expect(modeler.get('removeAssignmentDefinitionBehavior')).to.exist;
       expect(modeler.get('updatePropagateAllChildVariablesBehavior')).to.exist;
     });
