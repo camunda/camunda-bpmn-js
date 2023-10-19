@@ -6,6 +6,28 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.6.0
+
+* `DEPS`: update to `bpmn-js-element-templates@1.6.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.11.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.6.0`
+
+### Key Changes in Element Templates
+
+* `FEAT`: add `zeebe:subscription` in single command ([bpmn-io/bpmn-js-element-templates#21](https://github.com/bpmn-io/bpmn-js-element-templates/issues/21))
+* `FEAT`: support `camunda:executionListener` with `implementationType` ([bpmn-io/bpmn-js-element-templates#13](https://github.com/bpmn-io/bpmn-js-element-templates/issues/13))
+* `FIX`: clean up empty `zeebe:subscription` ([bpmn-io/bpmn-js-element-templates#21](https://github.com/bpmn-io/bpmn-js-element-templates/issues/21))
+* `FIX`: set `$parent` property when creating non-primitive properties ([bpmn-io/bpmn-js-element-templates#22](https://github.com/bpmn-io/bpmn-js-element-templates/pull/22))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: support Camunda 8 form reference ([bpmn-io/bpmn-js-properties-panel#978](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/978), [bpmn-io/bpmn-js-properties-panel#949](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/949))
+* `FEAT`: allow `PopupContainer` to be a CSS selector ([bpmn-io/properties-panel#291](https://github.com/bpmn-io/properties-panel/issues/291))
+* `FEAT`: improve suggestion of local variables ([bpmn-io/bpmn-js-properties-panel#984](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/984))
+* `FIX`: add error style to popup editor opened fields ([bpmn-io/properties-panel#298](https://github.com/bpmn-io/properties-panel/pull/298))
+* `FIX`: allow value `0` in FEEL number fields ([bpmn-io/properties-panel#297](https://github.com/bpmn-io/properties-panel/pull/297))
+* `FIX`: keep undo/redo stack when editing Camunda input/output properties ([bpmn-io/bpmn-js-properties-panel#983](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/983))
+
 ## 3.5.0
 
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.2.1`
