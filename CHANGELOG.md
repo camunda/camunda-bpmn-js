@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.6.1
+
+* `DEPS`: update to `bpmn-js-element-templates@1.6.1`
+
+### Key Changes in Element Templates
+
+* `FIX`: display multi-instance configuration in properties panel ([bpmn-io/bpmn-js-element-templates#27](https://github.com/bpmn-io/bpmn-js-element-templates/pull/27))
+
 ## 3.6.0
 
 * `DEPS`: update to `bpmn-js-element-templates@1.6.0`
