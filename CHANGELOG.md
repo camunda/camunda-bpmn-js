@@ -6,6 +6,24 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.7.0
+
+* `DEPS`: update to `bpmn-js@15.0.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.2.2`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.13.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: preview append on hover ([bpmn-io/bpmn-js#1985](https://github.com/bpmn-io/bpmn-js/pull/1985))
+* `FEAT`: align selection outline with element's shape ([bpmn-io/bpmn-io/bpmn-js#1996]((https://github.com/bpmn-io/bpmn-js/pull/1985)))
+* `FEAT`: make spacetool local per default ([bpmn-io/diagram-js#811](https://github.com/bpmn-io/diagram-js/pull/811), [bpmn-io/bpmn-js#1975](https://github.com/bpmn-io/bpmn-js/issues/1975))
+
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add link to learning resources from the FEEL popup editor ([@bpmn-io/properties-panel#308](https://github.com/bpmn-io/properties-panel/pull/308))
+* `CHORE`: update FEEL snippets ([bpmn-io/feel-editor@45](https://github.com/bpmn-io/feel-editor/pull/45))
+
 ## 3.6.1
 
 * `DEPS`: update to `bpmn-js-element-templates@1.6.1`
