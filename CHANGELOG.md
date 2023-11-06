@@ -6,6 +6,21 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.8.0
+
+* `DEPS`: update to `bpmn-js@15.1.3`
+* `DEPS`: update to `diagram-js@12.7.2`
+* `DEPS`: update to `bpmn-js-element-templates@1.6.1`
+
+### Key Changes in Modeling
+
+* `FEAT`: add toggle for non-interrupting events ([bpmn-io/bpmn-js#2000](https://github.com/bpmn-io/bpmn-js/pull/2000))
+* `FEAT`: keep events non-interrupting when using `bpmnReplace` by default ([bpmn-io/bpmn-js#2000](https://github.com/bpmn-io/bpmn-js/pull/2000))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `zeebe:taskDefinition` binding ([bpmn-io/bpmn-js-element-templates#29](https://github.com/bpmn-io/bpmn-js-element-templates/pull/29))
+
 ## 3.7.0
 
 * `DEPS`: update to `bpmn-js@15.0.0`
