@@ -10,7 +10,7 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js@15.1.3`
 * `DEPS`: update to `diagram-js@12.7.2`
-* `DEPS`: update to `bpmn-js-element-templates@1.6.1`
+* `DEPS`: update to `bpmn-js-element-templates@1.7.0`
 
 ### Key Changes in Modeling
 
