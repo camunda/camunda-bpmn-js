@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.9.0
+
+* `DEPS`: update to `bpmn-js-element-templates@1.8.0`
+
+### Key Changes in Element Templates
+
+* `FEAT`: support receive and send task message templating ([bpmn-io/bpmn-js-element-templates#30](https://github.com/bpmn-io/bpmn-js-element-templates/pull/30))
+
 ## 3.8.0
 
 * `DEPS`: update to `bpmn-js@15.1.3`
