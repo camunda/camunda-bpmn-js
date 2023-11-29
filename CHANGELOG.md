@@ -6,6 +6,27 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.10.0
+
+* `DEPS`: update to `@bpmn-io/form-variable-provider@1.2.0`
+* `DEPS`: update to `bpmn-js@15.2.2`
+* `DEPS`: update to `bpmn-js-element-templates@1.9.1`
+* `DEPS`: update to `diagram-js@12.8.1`
+
+### Key Changes in Modeling
+
+* `FEAT`: remove selection outline from connections ([diagram-js#826](https://github.com/bpmn-io/diagram-js/pull/826))
+* `FEAT`: position context pad according to last waypoint for connections ([diagram-js#826](https://github.com/bpmn-io/diagram-js/pull/826))
+* `FIX`: prevent access of non-existing connection bounds ([diagram-js#824](https://github.com/bpmn-io/diagram-js/pull/824))
+* `FIX`: correct selection outline size for end event ([#2026](https://github.com/bpmn-io/bpmn-js/pull/2026))
+
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `isActive` condition ([bpmn-js-element-templates#19](https://github.com/bpmn-io/bpmn-js-element-templates/issues/19))
+* `FEAT`: add conditional `correlationKey` rendering ([bpmn-js-element-templates#19](https://github.com/bpmn-io/bpmn-js-element-templates/issues/19))
+* `FIX`: disallow subscription binding for `bpmn:SendTask`
+
 ## 3.9.0
 
 * `DEPS`: update to `bpmn-js-element-templates@1.8.0`
