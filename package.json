@@ -72,7 +72,6 @@
     "diagram-js-origin": "^1.4.0",
     "inherits-browser": "^0.1.0",
     "min-dash": "^4.1.1",
-    "typescript": "^5.0.4",
     "zeebe-bpmn-moddle": "^1.0.0"
   },
   "devDependencies": {
@@ -116,6 +115,7 @@
     "rollup-plugin-copy": "^3.5.0",
     "sinon": "^17.0.0",
     "sinon-chai": "^3.7.0",
+    "typescript": "^5.0.4",
     "webpack": "^5.88.2"
   },
   "peerDependencies": {
