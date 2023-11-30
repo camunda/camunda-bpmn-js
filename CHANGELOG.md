@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.10.1
+
+* `FIX`: remove unneeded `camunda-cloud` rules ([#325](https://github.com/camunda/camunda-bpmn-js/pull/325))
+* `FIX`: remove unused `typescript` prod dependency ([#326](https://github.com/camunda/camunda-bpmn-js/pull/326))
+
 ## 3.10.0
 
 * `DEPS`: update to `@bpmn-io/form-variable-provider@1.2.0`
