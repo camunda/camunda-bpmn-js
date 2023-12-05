@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.10.2
+
+### Key Changes in Element Templates
+
+* `FIX`: keep custom value on update when the condition was changed ([bpmn-js-element-templates#32](https://github.com/bpmn-io/bpmn-js-element-templates/issues/32))
+* `DEPS`: update to `bpmn-js-element-templates@1.9.2`
+
 ## 3.10.1
 
 * `FIX`: remove unneeded `camunda-cloud` rules ([#325](https://github.com/camunda/camunda-bpmn-js/pull/325))
