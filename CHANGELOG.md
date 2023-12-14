@@ -6,6 +6,23 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.11.0
+
+* `DEPS`: update to `bpmn-js@16.0.0`
+* `DEPS`: update to `diagram-js@13.3.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: render vertical pools and lanes ([#2024](https://github.com/bpmn-io/bpmn-js/pull/2024))
+* `FEAT`: sentence case titles and labels ([#2023](https://github.com/bpmn-io/bpmn-js/issues/2023))
+* `FEAT`: allow non-searchable entries in popup menu ([#835](https://github.com/bpmn-io/diagram-js/pull/835))
+* `FIX`: ensure all error translations are collected ([#2040](https://github.com/bpmn-io/bpmn-js/pull/2040))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `zeebe:calledElement` binding ([bpmn-io/bpmn-js-element-templates#37](https://github.com/bpmn-io/bpmn-js-element-templates/pull/37))
+* `DEPS`: update to `bpmn-js-element-templates@1.10.0`
+
 ## 3.10.2
 
 ### Key Changes in Element Templates
