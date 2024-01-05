@@ -6,11 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-## 3.11.0
+## 3.12.0
 
 * `DEPS`: update to `bpmn-js@16.3.0`
-* `DEPS`: update to `diagram-js@13.3.0`
-* `DEPS`: update to `bpmn-js-element-templates@1.10.0`
 * `DEPS`: update to `bpmn-js-properties-panel@5.7.0`
 * `DEPS`: update to `bpmn-js-color-picker@0.7.0`
 * `DEPS`: update to `@bpmn-io/form-variable-provider@1.3.0`
@@ -19,14 +17,6 @@ ___Note:__ Yet to be released changes appear here._
 ### Key Changes in Modeling
 
 * `FEAT`: simplify compensation modeling ([bpmn-io/bpmn-js#2038](https://github.com/bpmn-io/bpmn-js/issues/2038))
-* `FEAT`: render vertical pools and lanes ([bpmn-io/bpmn-js#2024](https://github.com/bpmn-io/bpmn-js/pull/2024))
-* `FEAT`: sentence case titles and labels ([bpmn-io/bpmn-js#2023](https://github.com/bpmn-io/bpmn-js/issues/2023))
-* `FEAT`: allow non-searchable entries in popup menu ([bpmn-io/diagram-js#835](https://github.com/bpmn-io/diagram-js/pull/835))
-* `FIX`: ensure all error translations are collected ([bpmn-io/bpmn-js#2040](https://github.com/bpmn-io/bpmn-js/pull/2040))
-
-### Key Changes in Element Templates
-
-* `FEAT`: support `zeebe:calledElement` binding ([bpmn-io/bpmn-js-element-templates#37](https://github.com/bpmn-io/bpmn-js-element-templates/pull/37))
 
 ### Key Changes in Properties Panel
 
@@ -36,6 +26,23 @@ ___Note:__ Yet to be released changes appear here._
 * `FIX`: correct parsing of nested lists in FEEL editor
 * `FIX`: correct parsing of incomplete `QuantifiedExpression` in FEEL editor
 * `FIX`: only allow legal `Name` start characters in FEEL editor
+
+## 3.11.0
+
+* `DEPS`: update to `bpmn-js@16.0.0`
+* `DEPS`: update to `bpmn-js-element-templates@1.10.0`
+* `DEPS`: update to `diagram-js@13.3.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: render vertical pools and lanes ([bpmn-io/bpmn-js#2024](https://github.com/bpmn-io/bpmn-js/pull/2024))
+* `FEAT`: sentence case titles and labels ([bpmn-io/bpmn-js#2023](https://github.com/bpmn-io/bpmn-js/issues/2023))
+* `FEAT`: allow non-searchable entries in popup menu ([bpmn-io/diagram-js#835](https://github.com/bpmn-io/diagram-js/pull/835))
+* `FIX`: ensure all error translations are collected ([bpmn-io/bpmn-js#2040](https://github.com/bpmn-io/bpmn-js/pull/2040))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `zeebe:calledElement` binding ([bpmn-io/bpmn-js-element-templates#37](https://github.com/bpmn-io/bpmn-js-element-templates/pull/37))
 
 ## 3.10.2
 
