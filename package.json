@@ -59,7 +59,7 @@
     "@bpmn-io/properties-panel": "^3.15.0",
     "@bpmn-io/variable-resolver": "^1.2.0",
     "@camunda/example-data-properties-provider": "^1.2.0",
-    "bpmn-js": "^16.3.0",
+    "bpmn-js": "^16.3.1",
     "bpmn-js-color-picker": "^0.7.0",
     "bpmn-js-create-append-anything": "^0.5.0",
     "bpmn-js-element-templates": "^1.10.0",
