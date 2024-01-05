@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.12.1
+
+* `DEPS`: update to `bpmn-js@16.3.1`
+
+### Key Changes in Modeling
+
+* `FIX`: do not remove connection that is being created when pasting compensation boundary event and handler ([bpmn-io/bpmn-js#2069](https://github.com/bpmn-io/bpmn-js/pull/2069))
+
 ## 3.12.0
 
 * `DEPS`: update to `bpmn-js@16.3.0`
