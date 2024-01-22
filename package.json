@@ -71,7 +71,7 @@
     "diagram-js-minimap": "^4.1.0",
     "diagram-js-origin": "^1.4.0",
     "inherits-browser": "^0.1.0",
-    "min-dash": "^4.1.1",
+    "min-dash": "^4.2.1",
     "zeebe-bpmn-moddle": "^1.0.0"
   },
   "devDependencies": {
