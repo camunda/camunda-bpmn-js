@@ -6,6 +6,26 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.13.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@5.8.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.16.0`
+* `DEPS`: update to `bpmn-js-element-templates@1.11.0`
+* `DEPS`: update to `bpmn-js@16.3.2`
+
+### Key Changes in Modeling
+
+* `FIX`: support core replace in compensation behavior (https://github.com/bpmn-io/bpmn-js/issues/2073)
+
+### Key Changes in Properties Panel
+
+* `FEAT`: display element template icon found in XML (https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1011)
+chore: align zeebe input propagation label and tooltip (https://github.com/bpmn-io/bpmn-js-properties-panel/commit/5d8bd6846efcbbc7c67322df5a6c6fe28d63fb9b)
+* `FEAT`: allow tooltip re-usability (https://github.com/bpmn-io/properties-panel/pull/321)
+* `FEAT`: word wrap FEEL expressions, textarea style (https://github.com/bpmn-io/properties-panel/pull/319)
+* `FEAT`: always show documentation field (https://github.com/bpmn-io/bpmn-js-element-templates/pull/50)
+* `FIX`: show scrollbars in popup editor (https://github.com/bpmn-io/properties-panel/pull/319)
+
 ## 3.12.1
 
 * `DEPS`: update to `bpmn-js@16.3.1`
