@@ -64,7 +64,7 @@
     "bpmn-js-create-append-anything": "^0.5.0",
     "bpmn-js-element-templates": "^1.11.0",
     "bpmn-js-executable-fix": "^0.2.1",
-    "camunda-bpmn-js-behaviors": "^1.2.2",
+    "camunda-bpmn-js-behaviors": "^1.2.3",
     "camunda-bpmn-moddle": "^7.0.1",
     "diagram-js": "^13.4.0",
     "diagram-js-grid": "^1.0.0",

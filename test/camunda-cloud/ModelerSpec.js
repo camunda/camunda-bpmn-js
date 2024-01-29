@@ -170,7 +170,6 @@ describe('<CamundaCloudModeler>', function() {
       expect(modeler.get('createZeebeCallActivityBehavior')).to.exist;
       expect(modeler.get('formsBehavior')).to.exist;
       expect(modeler.get('removeAssignmentDefinitionBehavior')).to.exist;
-      expect(modeler.get('updatePropagateAllChildVariablesBehavior')).to.exist;
     });
 
   });
