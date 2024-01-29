@@ -6,6 +6,7 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 3.13.0
 
 * `DEPS`: update to `bpmn-js@16.4.0`
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.2.1`
@@ -17,6 +18,7 @@ ___Note:__ Yet to be released changes appear here._
 ### Key Changes in Modeling
 
 * `FEAT`: allow text annotations to overlap with the borders of subprocesses and pools ([bpmn-io/bpmn-js#2049](https://github.com/bpmn-io/bpmn-js/issues/2049))
+* `FIX`: support core replace in compensation behavior ([bpmn-io/bpmn-js#2073](https://github.com/bpmn-io/bpmn-js/issues/2073))
 * `FIX`: do not set label on planes ([bpmn-io/bpmn-js#2033](https://github.com/bpmn-io/bpmn-js/issues/2033))
 
 ### Key Changes in Properties Panel
@@ -24,35 +26,25 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: improve Camunda 7 variable events tooltip ([#1016](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1016))
 * `FEAT`: simplify FEEL editor external error ([bpmn-io/properties-panel#97](https://github.com/camunda/linting/pull/97))
 * `FEAT`: remove unnecessary resizer ([bpmn-io/bpmn-js-properties-panel@`b2f6752`](https://github.com/bpmn-io/properties-panel/commit/b2f6752de3827384452d4b4c0b27bd269b7b5ad4))
+* `FEAT`: display element template icon found in XML ([bpmn-io/bpmn-js-properties-panel#1011](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1011))
+* `FEAT`: align zeebe input propagation label and tooltip ([bpmn-io/bpmn-js-properties-panel@`5d8bd68`](https://github.com/bpmn-io/bpmn-js-properties-panel/commit/5d8bd6846efcbbc7c67322df5a6c6fe28d63fb9b))
+* `FEAT`: allow tooltip re-usability ([bpmn-io/properties-panel#321](https://github.com/bpmn-io/properties-panel/pull/321))
+* `FEAT`: word wrap FEEL expressions, textarea style ([bpmn-io/properties-panel#319](https://github.com/bpmn-io/properties-panel/pull/319))
+* `FEAT`: always show documentation field ([bpmn-io/bpmn-js-element-templates#50](https://github.com/bpmn-io/bpmn-js-element-templates/pull/50))
 * `FIX`: attach popup editor toggle to the top ([bpmn-io/bpmn-js-properties-panel@`e6681f7`](https://github.com/bpmn-io/properties-panel/commit/e6681f74ad6268c8f533a721351bdeea376dac26))
 * `FIX`: close popup editor when properties panel gets detached ([bpmn-io/bpmn-js-properties-panel@`7defc52`](https://github.com/bpmn-io/properties-panel/commit/7defc525400c62f253651cda589fe2f5058518a6))
 * `FIX`: close popup editor when source component gets unmounted ([bpmn-io/bpmn-js-properties-panel@`1fa3330`](https://github.com/bpmn-io/properties-panel/commit/1fa3330ebdcbc7c0ac405a49eb510817fc3aa71c))
 * `FIX`: correct re-validation of entries when validator changes ([bpmn-io/bpmn-js-properties-panel@`e93e986`](https://github.com/bpmn-io/properties-panel/commit/e93e986573d32adc361c64a1bc53cf1e38454715))
+* `FIX`: show scrollbars in popup editor ([bpmn-io/properties-panel#319](https://github.com/bpmn-io/properties-panel/pull/319))
+
+### Key Changes in Element Templates
+
+* `FEAT`: validate text area and select ([bpmn-io/bpmn-js-element-templates#55](https://github.com/bpmn-io/bpmn-js-element-templates/issues/55))
 
 ### Misc Changes
 
 * `FIX`: drop unnecessary variable propagation behavior ([camunda/camunda-bpmn-js-behaviors#57](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/57))
-* `FIX`: prevent infinite loop when suggesting variables
-
-## 3.13.0
-
-* `DEPS`: update to `bpmn-js-properties-panel@5.8.0`
-* `DEPS`: update to `@bpmn-io/properties-panel@3.16.0`
-* `DEPS`: update to `bpmn-js-element-templates@1.11.0`
-* `DEPS`: update to `bpmn-js@16.3.2`
-
-### Key Changes in Modeling
-
-* `FIX`: support core replace in compensation behavior (https://github.com/bpmn-io/bpmn-js/issues/2073)
-
-### Key Changes in Properties Panel
-
-* `FEAT`: display element template icon found in XML (https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1011)
-chore: align zeebe input propagation label and tooltip (https://github.com/bpmn-io/bpmn-js-properties-panel/commit/5d8bd6846efcbbc7c67322df5a6c6fe28d63fb9b)
-* `FEAT`: allow tooltip re-usability (https://github.com/bpmn-io/properties-panel/pull/321)
-* `FEAT`: word wrap FEEL expressions, textarea style (https://github.com/bpmn-io/properties-panel/pull/319)
-* `FEAT`: always show documentation field (https://github.com/bpmn-io/bpmn-js-element-templates/pull/50)
-* `FIX`: show scrollbars in popup editor (https://github.com/bpmn-io/properties-panel/pull/319)
+* `FIX`: prevent infinite loop when suggesting variables ([bpmn-io/variable-resolver#23](https://github.com/bpmn-io/variable-resolver/pull/23))
 
 ## 3.12.1
 
