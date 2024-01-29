@@ -8,11 +8,16 @@ ___Note:__ Yet to be released changes appear here._
 
 
 * `DEPS`: update to `bpmn-js@16.4.0`
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.2.1`
 
 ### Key Changes in Modeling
 
 * `FEAT`: allow text annotations to overlap with the borders of subprocesses and pools ([bpmn-io/bpmn-js#2049](https://github.com/bpmn-io/bpmn-js/issues/2049))
 * `FIX`: do not set label on planes ([bpmn-io/bpmn-js#2033](https://github.com/bpmn-io/bpmn-js/issues/2033))
+
+### Misc Changes
+
+* `FIX`: prevent infinite loop when suggesting variables
 
 ## 3.13.0
 
