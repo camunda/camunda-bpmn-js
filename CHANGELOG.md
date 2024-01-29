@@ -9,11 +9,21 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js@16.4.0`
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.2.1`
+* `DEPS`: update to `bpmn-js-properties-panel@5.9.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.17.0`
 
 ### Key Changes in Modeling
 
 * `FEAT`: allow text annotations to overlap with the borders of subprocesses and pools ([bpmn-io/bpmn-js#2049](https://github.com/bpmn-io/bpmn-js/issues/2049))
 * `FIX`: do not set label on planes ([bpmn-io/bpmn-js#2033](https://github.com/bpmn-io/bpmn-js/issues/2033))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: remove unnecessary resizer ([bpmn-io/bpmn-js-properties-panel@`b2f6752`](https://github.com/bpmn-io/properties-panel/commit/b2f6752de3827384452d4b4c0b27bd269b7b5ad4))
+* `FIX`: attach popup editor toggle to the top ([bpmn-io/bpmn-js-properties-panel@`e6681f7`](https://github.com/bpmn-io/properties-panel/commit/e6681f74ad6268c8f533a721351bdeea376dac26))
+* `FIX`: close popup editor when properties panel gets detached ([bpmn-io/bpmn-js-properties-panel@`7defc52`](https://github.com/bpmn-io/properties-panel/commit/7defc525400c62f253651cda589fe2f5058518a6))
+* `FIX`: close popup editor when source component gets unmounted ([bpmn-io/bpmn-js-properties-panel@`1fa3330`](https://github.com/bpmn-io/properties-panel/commit/1fa3330ebdcbc7c0ac405a49eb510817fc3aa71c))
+* `FIX`: correct re-validation of entries when validator changes ([bpmn-io/bpmn-js-properties-panel@`e93e986`](https://github.com/bpmn-io/properties-panel/commit/e93e986573d32adc361c64a1bc53cf1e38454715))
 
 ### Misc Changes
 
