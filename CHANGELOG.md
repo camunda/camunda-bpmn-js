@@ -12,6 +12,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `bpmn-js-properties-panel@5.9.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.17.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.2.3`
+* `DEPS`: update to `bpmn-js-element-templates@1.13.1`
 
 ### Key Changes in Modeling
 
