@@ -11,6 +11,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.2.1`
 * `DEPS`: update to `bpmn-js-properties-panel@5.9.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.17.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.2.3`
 
 ### Key Changes in Modeling
 
@@ -27,6 +28,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Misc Changes
 
+* `FIX`: drop unnecessary variable propagation behavior ([camunda/camunda-bpmn-js-behaviors#57](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/57))
 * `FIX`: prevent infinite loop when suggesting variables
 
 ## 3.13.0
