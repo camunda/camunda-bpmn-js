@@ -42,7 +42,7 @@ jobs:
         secretId: ${{ secrets.VAULT_SECRET_ID }}
         exportEnv: false
         secrets: |
-          secret/data/products/desktop-modeler/camunda/camunda-bpmn-js-behaviors CODECOV_TOKEN;
+          secret/data/products/desktop-modeler/camunda/camunda-bpmn-js CODECOV_TOKEN;
     - name: Upload coverage
       if: runner.os == 'Linux'
       uses: codecov/codecov-action@v4
