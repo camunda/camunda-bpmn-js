@@ -6,6 +6,17 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.0.1
+
+* `DEPS`: update to `lezer-feel@1.2.6`
+* `DEPS`: update to `bpmn-js-element-templates@1.13.2`
+
+### Key Changes in Element Templates
+* `FIX`: apply all chained conditional properties ([bpmn-js-element-templates#49](https://github.com/bpmn-io/bpmn-js-element-templates/issues/49))
+
+### Key Changes in Properties Panel
+* `FIX`: adjust FEEL parsing to accept certain broken expressions ([camunda-modeler#4073](https://github.com/camunda/camunda-modeler/issues/4073))
+
 ## 4.0.0
 
 * `FEAT`: add to selection through SHIFT ([bpmn-io/diagram-js#796](https://github.com/bpmn-io/diagram-js/pull/851), [#2053](https://github.com/bpmn-io/bpmn-js/issues/2053))
