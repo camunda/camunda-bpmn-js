@@ -6,28 +6,30 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-## 4.0.1
+## 4.0.0
 
 * `DEPS`: update to `lezer-feel@1.2.6`
 * `DEPS`: update to `bpmn-js-element-templates@1.13.2`
-
-### Key Changes in Element Templates
-* `FIX`: apply all chained conditional properties ([bpmn-js-element-templates#49](https://github.com/bpmn-io/bpmn-js-element-templates/issues/49))
-
-### Key Changes in Properties Panel
-* `FIX`: adjust FEEL parsing to accept certain broken expressions ([camunda-modeler#4073](https://github.com/camunda/camunda-modeler/issues/4073))
-
-## 4.0.0
-
-* `FEAT`: add to selection through SHIFT ([bpmn-io/diagram-js#796](https://github.com/bpmn-io/diagram-js/pull/851), [#2053](https://github.com/bpmn-io/bpmn-js/issues/2053))
-* `FEAT`: allow to provide custom popup menu empty state ([bpmn-io/diagram-js#847](https://github.com/bpmn-io/diagram-js/pull/847), [#322](https://github.com/camunda/camunda-bpmn-js/issues/322))
-* `CHORE`: remove broken touch interaction ([bpmn-io/diagram-js#796](https://github.com/bpmn-io/diagram-js/issues/796))
 * `DEPS`: update to `bpmn-js@17.0.0`
 * `DEPS`: update to `diagram-js@14.0.0`
 
 ### Breaking Changes
 
 * Migrated to `diagram-js@14` / `bpmn-js@17` which removes touch interaction module, and dependency on unsupported `hammerjs` package. If you rely on touch interaction, you need to support touch interaction on your own.
+
+### Key Changes in Modeling
+
+* `FEAT`: add to selection through SHIFT ([bpmn-io/diagram-js#796](https://github.com/bpmn-io/diagram-js/pull/851), [#2053](https://github.com/bpmn-io/bpmn-js/issues/2053))
+* `FEAT`: allow to provide custom popup menu empty state ([bpmn-io/diagram-js#847](https://github.com/bpmn-io/diagram-js/pull/847), [#322](https://github.com/camunda/camunda-bpmn-js/issues/322))
+* `CHORE`: remove broken touch interaction ([bpmn-io/diagram-js#796](https://github.com/bpmn-io/diagram-js/issues/796))
+
+### Key Changes in Element Templates
+
+* `FIX`: apply all chained conditional properties ([bpmn-js-element-templates#49](https://github.com/bpmn-io/bpmn-js-element-templates/issues/49))
+
+### Key Changes in Properties Panel
+
+* `FIX`: adjust FEEL parsing to accept certain broken expressions ([camunda-modeler#4073](https://github.com/camunda/camunda-modeler/issues/4073))
 
 ## 3.13.0
 
