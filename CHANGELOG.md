@@ -7,12 +7,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js-element-templates@1.14.0`
+* `DEPS`: update to `bpmn-js@17.0.2`
+* `DEPS`: update to `diagram-js@14.1.0`
 
 ### Key Changes in Element Templates
 
 * `FEAT`: always display `documentation` field in Camunda 7 diagrams ([bpmn-io/bpmn-js-element-templates#67](https://github.com/bpmn-io/bpmn-js-element-templates/pull/67))
 * `FEAT`: always display `multi-instance` group in Camunda 7 diagrams ([bpmn-io/bpmn-js-element-templates#68](https://github.com/bpmn-io/bpmn-js-element-templates/pull/68))
 * `FEAT`: allow `Boolean` and `Number` types in Camunda 8 diagrams ([bpmn-io/bpmn-js-element-templates#64](https://github.com/bpmn-io/bpmn-js-element-templates/pull/64))
+
+### Key Changes in Modeling
+
+* `FEAT`: add `PopupMenu#refresh` method ([bpmn-io/diagram-js#804](https://github.com/bpmn-io/diagram-js/issues/804))
 
 ## 4.0.0
 
