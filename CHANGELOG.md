@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js-properties-panel@5.11.2`
+
+### Key Changes in Properties Panel
+
+* `FIX`: correct retires tooltip ([bpmn-io/bpmn-js-properties-panel#1029](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1029))
+* `FIX`: do not offer output mapping for terminate end event ([bpmn-io/bpmn-js-properties-panel#1027](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1027))
+
 ## 4.1.0
 
 * `DEPS`: update to `bpmn-js-element-templates@1.14.0`
