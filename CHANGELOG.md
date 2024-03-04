@@ -6,9 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.3.0
+
+* `DEPS`: update to `zeebe-bpmn-moddle@1.1.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.3.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.13.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: support zeebe:userTask ([bpmn-io/bpmn-js-properties-panel#1026](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1026))
+
 ## 4.2.0
 
-* `DEPS`: update to `bpmn-js-properties-panel@5.11.2`
+* `DEPS`: update to `bpmn-js-properties-panel@5.12.0`
 
 ### Key Changes in Properties Panel
 
