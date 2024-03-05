@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.3.1
+
+* `DEPS`: update to `bpmn-js-element-templates@1.14.1`
+
+### Key Changes in Element Templates
+
+* `FIX`: disallow non-string values for `feel: required` properties ([bpmn-js-element-templates#70](https://github.com/bpmn-io/bpmn-js-element-templates/issues/70))
+
 ## 4.3.0
 
 * `DEPS`: update to `zeebe-bpmn-moddle@1.1.0`
