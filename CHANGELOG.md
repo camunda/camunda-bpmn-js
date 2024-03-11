@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.3.2
+
+* `DEPS`: update to `bpmn-js-create-append-anything@0.5.1`
+
+### Key Changes in Modeling
+
+* `FIX`: use rule to decide whether to show context pad entry for appending ([bpmn-js-create-append-anything#27](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/27))
+
 ## 4.3.1
 
 * `DEPS`: update to `bpmn-js-element-templates@1.14.1`
