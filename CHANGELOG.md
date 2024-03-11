@@ -9,10 +9,12 @@ ___Note:__ Yet to be released changes appear here._
 ## 4.3.2
 
 * `DEPS`: update to `bpmn-js-create-append-anything@0.5.1`
+* `DEPS` update to `@bpmn-io/variable-resolver@1.2.2`
 
 ### Key Changes in Modeling
 
 * `FIX`: use rule to decide whether to show context pad entry for appending ([bpmn-js-create-append-anything#27](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/27))
+* `FIX`: prevent `Maximum call stack size exceeded` in variable resolver ([@bpmn-io/variable-resolver#30](https://github.com/bpmn-io/variable-resolver/pull/30))
 
 ## 4.3.1
 
