@@ -75,7 +75,10 @@ camunda-bpmn-js builds on top of a few powerful tools:
 
 * [bpmn-js](https://github.com/bpmn-io/bpmn-js): View and edit BPMN 2.0 diagrams in the browser
 * [diagram-js](https://github.com/bpmn-io/diagram-js): Diagram rendering and editing toolkit
-* [camunda-bpmn-moddle](https://github.com/camunda/camunda-bpmn-moddle): BPMN Model extensions for Camunda
+* [bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel): A panel for (technical) properties editing
+* [bpmn-js-element-templates](https://github.com/bpmn-io/bpmn-js-element-templates): Domain specific editing for bpmn-js
+* [bpmn-js-create-append-anything](bpmn-js-create-append-anything): A create/append anything extension for bpmn-js
+* [bpmn-moddle](https://github.com/bpmn-io/bpmn-moddle): A BPMN 2.0 diagram reader/writer with extensions for [Camunda 7](https://github.com/camunda/camunda-bpmn-moddle) and [Camunda 8](https://github.com/camunda/zeebe-bpmn-moddle)
 * [camunda-bpmn-js-behaviors](https://github.com/camunda/camunda-bpmn-js-behaviors): Camunda specific behaviors for bpmn-js
 
 ## License
