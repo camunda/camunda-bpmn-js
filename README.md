@@ -75,6 +75,8 @@ camunda-bpmn-js builds on top of a few powerful tools:
 
 * [bpmn-js](https://github.com/bpmn-io/bpmn-js): View and edit BPMN 2.0 diagrams in the browser
 * [diagram-js](https://github.com/bpmn-io/diagram-js): Diagram rendering and editing toolkit
+* [camunda-bpmn-moddle](https://github.com/camunda/camunda-bpmn-moddle): BPMN Model extensions for Camunda
+* [camunda-bpmn-js-behaviors](https://github.com/camunda/camunda-bpmn-js-behaviors): Camunda specific behaviors for bpmn-js
 
 ## License
 
