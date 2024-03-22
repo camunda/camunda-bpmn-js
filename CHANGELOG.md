@@ -6,6 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.4.0
+
+* `DEPS`: update to `diagram-js@14.3.0`
+* `DEPS`: update to `bpmn-js@17.2.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: make popup menu fully keyboard navigatable ([bpmn-io/diagram-js#871](https://github.com/bpmn-io/diagram-js/issues/871))
+* `FIX`: do not trap `TAB` in popup menu ([bpmn-io/diagram-js#874](https://github.com/bpmn-io/diagram-js/pull/874))
+* `FIX`: do not trap `Space` and `Enter` on button elements ([bpmn-io/diagram-js#874](https://github.com/bpmn-io/diagram-js/pull/874))
+* `FIX`: do not trap click outside of popup menu ([bpmn-io/diagram-js#874](https://github.com/bpmn-io/diagram-js/pull/874))
+* `FIX`: show empty placeholder in popup menu when no entries were returned ([bpmn-io/diagram-js#876](https://github.com/bpmn-io/diagram-js/pull/876))
+
 ## 4.3.3
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.18.2`
