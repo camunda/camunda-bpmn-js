@@ -12,8 +12,8 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
-* `FEAT`: add user task implementation tooltip ([#1033](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1033), [#1032](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1032))
-* `FEAT`: update form selection tooltip ([#1035](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1035))
+* `FEAT`: add user task implementation tooltip ([bpmn-io/bpmn-js-properties-panel#1032](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1032))
+* `FEAT`: update form selection tooltip ([bpmn-io/bpmn-js-properties-panel#1035](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1035))
 
 ## 4.4.1
 
