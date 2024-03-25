@@ -6,6 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.5.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@5.14.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add user task implementation tooltip ([#1033](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1033), [#1032](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1032))
+* `FEAT`: update form selection tooltip ([#1035](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1035))
+
 ## 4.4.1
 
 * `DEPS`: update to `diagram-js@14.3.1`
