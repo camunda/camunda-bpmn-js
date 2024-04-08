@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.2.1`
+
+### Key Changes in Properties Panel
+
+* `FIX`: mark non-object JSON as invalid example data ([example-data-properties-provider#17](https://github.com/camunda/example-data-properties-provider/pull/17))
+
 ## 4.5.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.14.0`
