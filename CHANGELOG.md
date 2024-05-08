@@ -6,6 +6,23 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.6.0
+
+* `DEPS`: update to `@bpmn-io/element-template-icon-renderer@0.5.2`
+* `DEPS`: update to `bpmn-js@17.6.2`
+* `DEPS`: update to `bpmn-js-color-picker@0.7.1`
+* `DEPS`: update to `bpmn-js-element-templates@1.15.2`
+* `DEPS`: update to `diagram-js@14.5.2`
+
+### Key Changes in Modeling
+
+* `FEAT`: context pad position absolute instead of relative to element ([bpmn-io/diagram-js#888](https://github.com/bpmn-io/diagram-js/pull/888))
+* `FEAT`: add ability to type services and events ([bpmn-io/bpmn-js#2121](https://github.com/bpmn-io/bpmn-js/issues/2121), [#2153](https://github.com/bpmn-io/bpmn-js/pull/2153))
+* `FEAT`: remove direct editing outline for embedded labels ([bpmn-io/bpmn-js#2147](https://github.com/bpmn-io/bpmn-js/pull/2147))
+* `FEAT`: do not translate technical errors ([bpmn-io/bpmn-js#2145](https://github.com/bpmn-io/bpmn-js/pull/2145))
+* `FEAT`: do not scale popup menu and context pad ([bpmn-io/diagram-js#883](https://github.com/bpmn-io/diagram-js/pull/883))
+* `FEAT`: auto-place elements vertically ([bpmn-io/bpmn-js#2110](https://github.com/bpmn-io/bpmn-js/issues/2110))
+
 ## 4.5.1
 
 * `DEPS`: update to `@camunda/example-data-properties-provider@1.2.1`
