@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.6.3
+
+* `DEPS`: update to `bpmn-js-element-templates@1.15.3`
+
+### Key Changes in Modeling
+
+* `FIX`: correctly apply condition depending on boolean on initial load ([bpmn-io/bpmn-js-element-templates#74](https://github.com/bpmn-io/bpmn-js-element-templates/issues/94))
+
 ## 4.6.2
 
 * `DEPS`: update to `bpmn-js@17.6.4`
