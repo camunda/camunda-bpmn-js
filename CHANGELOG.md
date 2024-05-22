@@ -6,6 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.7.0
+
+* `DEPS`: update to `bpmn-js@17.7.0`
+* `DEPS`: update to `diagram-js@14.6.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: popup menu header entries can be grouped ([bpmn-io/diagram-js#900](https://github.com/bpmn-io/diagram-js/pull/900))
+
 ## 4.6.3
 
 * `DEPS`: update to `bpmn-js-element-templates@1.15.3`
