@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js@17.7.1`
+
+### Key Changes in Modeling
+
+* `FIX`: correct call activity outline ([bpmn-io/bpmn-js#2167](https://github.com/bpmn-io/bpmn-js/issues/2167))
+* `FIX`: gracefully handle missing `BPMNDiagram#plane` ([bpmn-io/bpmn-js#2172](https://github.com/bpmn-io/bpmn-js/pull/2172), [bpmn-io/bpmn-js#2171](https://github.com/bpmn-io/bpmn-js/pull/2171))
+
 ## 4.7.0
 
 * `DEPS`: update to `bpmn-js@17.7.0`
