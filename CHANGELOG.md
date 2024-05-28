@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.8.0
+
 * `DEPS`: update to `bpmn-js@17.7.1`
 * `DEPS`: update to `bpmn-js-properties-panel@5.17.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.19.0`
