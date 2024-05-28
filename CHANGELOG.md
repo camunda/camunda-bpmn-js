@@ -7,11 +7,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js@17.7.1`
+* `DEPS`: update to `bpmn-js-properties-panel@5.17.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.19.0`
 
 ### Key Changes in Modeling
 
 * `FIX`: correct call activity outline ([bpmn-io/bpmn-js#2167](https://github.com/bpmn-io/bpmn-js/issues/2167))
 * `FIX`: gracefully handle missing `BPMNDiagram#plane` ([bpmn-io/bpmn-js#2172](https://github.com/bpmn-io/bpmn-js/pull/2172), [bpmn-io/bpmn-js#2171](https://github.com/bpmn-io/bpmn-js/pull/2171))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add hint for the process ID field in the Camunda 7 ([bpmn-io/bpmn-js-properties-panel#1038](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1038))
+* `FEAT`: drop alphabetic sorting of list entries ([bpmn-io/bpmn-js-properties-panel##1047](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1047))
 
 ## 4.7.0
 
