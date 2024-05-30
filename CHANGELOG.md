@@ -6,6 +6,16 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js@17.8.1`
+* `DEPS`: update to `diagram-js@14.7.1`
+
+### Key Changes in Modeling
+
+* `FEAT`: keep global elements when deleting last participant ([bpmn-io/bpmn-js#2175](https://github.com/bpmn-io/bpmn-js/pull/2175))
+* `FIX`: allow undo after deleting last participants and data store ([bpmn-io/bpmn-js#1676](https://github.com/bpmn-io/bpmn-js/issues/1676))
+* `FIX`: allow styling markers with `canvas.addMarker` and css ([bpmn-io/bpmn-js#2173](https://github.com/bpmn-io/bpmn-js/pull/2173))
+* `FIX`: gracefully handle missing process DI in drilldown ([bpmn-io/bpmn-js#2180](https://github.com/bpmn-io/bpmn-js/pull/2180))
+
 ## 4.8.0
 
 * `DEPS`: update to `bpmn-js@17.7.1`
