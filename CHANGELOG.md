@@ -16,6 +16,10 @@ ___Note:__ Yet to be released changes appear here._
 * `FIX`: allow styling markers with `canvas.addMarker` and css ([bpmn-io/bpmn-js#2173](https://github.com/bpmn-io/bpmn-js/pull/2173))
 * `FIX`: gracefully handle missing process DI in drilldown ([bpmn-io/bpmn-js#2180](https://github.com/bpmn-io/bpmn-js/pull/2180))
 
+### Key Changes in Properties Panel
+
+* `FIX`: correct duplicate `Process Name` ([bpmn-io/bpmn-js-properties-panel#1055](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1055))
+
 ## 4.8.0
 
 * `DEPS`: update to `bpmn-js@17.7.1`
