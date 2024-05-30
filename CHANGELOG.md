@@ -6,8 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.9.0
+
 * `DEPS`: update to `bpmn-js@17.8.1`
 * `DEPS`: update to `diagram-js@14.7.1`
+* `DEPS`: update to `diagram-js-minimap@5.1.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.17.1`
 
 ### Key Changes in Modeling
 
