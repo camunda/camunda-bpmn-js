@@ -290,7 +290,8 @@
         "binding": {
           "type": "zeebe:taskHeader",
           "key": "resultVariable"
-        }
+        },
+        "placeholder": "response"
       },
       {
         "label": "Result Expression",
