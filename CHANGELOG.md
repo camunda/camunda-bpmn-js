@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/properties-panel@3.21.0`
+* `DEPS`: update to `bpmn-js@17.8.2`
+
+### Key Changes in Modeling
+
+* `FIX`: do not suggest root elements in search ([bpmn-js#2143](https://github.com/bpmn-io/bpmn-js/issues/2143)) 
+
 ## 4.10.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.20.0`
