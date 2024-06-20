@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js-properties-panel@5.18.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.22.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: move popup editor close button ([bpmn-io/properties-panel#368](https://github.com/bpmn-io/properties-panel/pull/368))
+* `FIX`: prevent list group rendering with outdated components ([bpmn-io/properties-panel#369](https://github.com/bpmn-io/properties-panel/pull/369))
+
 ## 4.11.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.21.0`
