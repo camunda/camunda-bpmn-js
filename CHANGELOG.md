@@ -6,6 +6,17 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.12.1
+
+* `DEPS`: update to `bpmn-js@17.9.1`
+* `DEPS`: update to `diagram-js@14.8.0`
+
+### Key Changes in Modeling
+
+* `FIX`: show delete action for labels ([bpmn-io/bpmn-js#2163](https://github.com/bpmn-io/bpmn-js/issues/2163))
+* `FIX`: remove incorrect attribute in replace menu ([bpmn-io/bpmn-js#2196](https://github.com/bpmn-io/bpmn-js/pull/2196))
+* `FIX`: add accessible label to drill down button ([bpmn-io/bpmn-js#2194](https://github.com/bpmn-io/bpmn-js/pull/2194))
+
 ## 4.12.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.18.0`
@@ -23,7 +34,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Modeling
 
-* `FIX`: do not suggest root elements in search ([bpmn-js#2143](https://github.com/bpmn-io/bpmn-js/issues/2143)) 
+* `FIX`: do not suggest root elements in search ([bpmn-io/bpmn-js#2143](https://github.com/bpmn-io/bpmn-js/issues/2143))
 
 ## 4.10.0
 
