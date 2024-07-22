@@ -6,6 +6,16 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.12.2
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.22.3`
+* `DEPS`: update to `bpmn-js-properties-panel@5.18.1`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: change Header value and Field Injection value fields to text areas ([bpmn-io/bpmn-js-properties-panel#1065](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1065))
+* `FIX`: correctly resize text areas ([bpmn-io/properties-panel#374](https://github.com/bpmn-io/properties-panel/pull/374))
+
 ## 4.12.1
 
 * `DEPS`: update to `bpmn-js@17.9.1`
