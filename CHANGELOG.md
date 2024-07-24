@@ -6,7 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FIX`: safely remove message when changing template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
+* `FIX`: remove existing event definition when applying template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
 * `DEPS`: update to `bpmn-js-properties-panel@5.19.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.0.0`
+* `DEPS`: update to `bpmn-js-create-append-anything@0.5.2`
 
 ## 4.14.0
 
