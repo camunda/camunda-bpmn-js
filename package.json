@@ -75,7 +75,7 @@
     "zeebe-bpmn-moddle": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
+    "@babel/core": "^7.24.9",
     "@rollup/plugin-commonjs": "^26.0.0",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -104,10 +104,10 @@
     "karma-sinon-chai": "^2.0.2",
     "karma-webpack": "^5.0.1",
     "min-dom": "^4.2.1",
-    "mocha": "^10.4.0",
+    "mocha": "^10.7.0",
     "mocha-test-container-support": "^0.2.0",
     "npm-run-all2": "^6.2.0",
-    "puppeteer": "^22.11.2",
+    "puppeteer": "^22.13.1",
     "raw-loader": "^4.0.2",
     "remark-cli": "^12.0.1",
     "remark-preset-bpmn-io": "^0.3.1",
@@ -116,7 +116,7 @@
     "sinon": "^17.0.1",
     "sinon-chai": "^3.7.0",
     "typescript": "^5.4.5",
-    "webpack": "^5.92.1"
+    "webpack": "^5.93.0"
   },
   "peerDependencies": {
     "bpmn-js-properties-panel": ">= 3.0.0"
