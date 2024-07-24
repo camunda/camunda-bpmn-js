@@ -381,7 +381,6 @@ ___Note:__ Yet to be released changes appear here._
 * `FIX`: prevent access of non-existing connection bounds ([diagram-js#824](https://github.com/bpmn-io/diagram-js/pull/824))
 * `FIX`: correct selection outline size for end event ([#2026](https://github.com/bpmn-io/bpmn-js/pull/2026))
 
-
 ### Key Changes in Element Templates
 
 * `FEAT`: support `isActive` condition ([bpmn-js-element-templates#19](https://github.com/bpmn-io/bpmn-js-element-templates/issues/19))
@@ -420,9 +419,8 @@ ___Note:__ Yet to be released changes appear here._
 ### Key Changes in Modeling
 
 * `FEAT`: preview append on hover ([bpmn-io/bpmn-js#1985](https://github.com/bpmn-io/bpmn-js/pull/1985))
-* `FEAT`: align selection outline with element's shape ([bpmn-io/bpmn-io/bpmn-js#1996]((https://github.com/bpmn-io/bpmn-js/pull/1985)))
+* `FEAT`: align selection outline with element's shape ([bpmn-io/bpmn-io/bpmn-js#1996](https://github.com/bpmn-io/bpmn-js/pull/1985))
 * `FEAT`: make space tool local per default ([bpmn-io/diagram-js#811](https://github.com/bpmn-io/diagram-js/pull/811), [bpmn-io/bpmn-js#1975](https://github.com/bpmn-io/bpmn-js/issues/1975))
-
 
 ### Key Changes in Properties Panel
 
@@ -534,7 +532,6 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: add FEEL popup editor ([bpmn-io/properties-panel#265](https://github.com/bpmn-io/properties-panel/pull/265))
 * `FIX`: remove output group from error end events ([bpmn-js-properties-panel#952](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/952), [camunda-bpmn-js-behaviors#42](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/42))
 * `FIX`: correct `properties-panel.css` ([#298](https://github.com/camunda/camunda-bpmn-js/pull/298))
-
 
 ## 3.1.0
 
