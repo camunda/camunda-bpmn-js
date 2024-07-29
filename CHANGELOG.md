@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.16.0
+
+* `FEAT`: add `Binding` entry to busines rule task, call activity and user task ([bpmn-io/bpmn-js-properties-panel#1067](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1067))
+* `DEPS`: update to `@bpmn-io/properties-panel@3.22.4`
+* `DEPS`: update to `bpmn-js-properties-panel@5.20.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.5.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.4.0`
+
 ## 4.15.0
 
 * `FIX`: safely remove message when changing template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
