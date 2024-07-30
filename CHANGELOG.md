@@ -8,19 +8,25 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 4.16.0
 
-* `FEAT`: add `Binding` entry to busines rule task, call activity and user task ([bpmn-io/bpmn-js-properties-panel#1067](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1067))
 * `DEPS`: update to `@bpmn-io/properties-panel@3.22.4`
 * `DEPS`: update to `bpmn-js-properties-panel@5.20.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.5.0`
 * `DEPS`: update to `zeebe-bpmn-moddle@1.4.0`
 
+### Key Changes in Properties Panel
+
+* `FEAT`: add `Binding` entry to busines rule task, call activity and user task ([bpmn-io/bpmn-js-properties-panel#1067](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1067))
+
 ## 4.15.0
 
-* `FIX`: safely remove message when changing template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
-* `FIX`: remove existing event definition when applying template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
 * `DEPS`: update to `bpmn-js-properties-panel@5.19.0`
 * `DEPS`: update to `bpmn-js-element-templates@2.0.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@0.5.2`
+
+### Key Changes in Element Templates
+
+* `FIX`: safely remove message when changing template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
+* `FIX`: remove existing event definition when applying template ([bpmn-io/bpmn-js-element-templates#111](https://github.com/bpmn-io/bpmn-js-element-templates/pull/111))
 
 ## 4.14.0
 
