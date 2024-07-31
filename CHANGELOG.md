@@ -6,6 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.17.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.23.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.1.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: make text area auto resize by default ([bpmn-io/properties-panel#377](https://github.com/bpmn-io/properties-panel/pull/377))
+
+### Key Changes in Element Templates
+
+* `FEAT`: always display execution listeners group for Zeebe ([bpmn-io/bpmn-js-element-templates#96](https://github.com/bpmn-io/bpmn-js-element-templates/pull/96))
+
 ## 4.16.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.22.4`
