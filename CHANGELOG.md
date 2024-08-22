@@ -10,6 +10,13 @@ ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `bpmn-js@17.9.2`
 * `DEPS`: update to `diagram-js@14.9.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.22.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.5.1`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: support maintaining `zeebe:priorityDefinition:priority` for user task ([bpmn-io/bpmn-js-properties-panel#1072](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1072))
+* `FIX`: rename task definition type label ([bpmn-io/bpmn-js-properties-panel#1070](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1070))
 
 ## 4.17.0
 
@@ -18,7 +25,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
-* `FEAT`: make text area auto resize by default ([bpmn-io/properties-panel#377](https://github.com/bpmn-io/properties-panel/pull/377))
+* `FEAT`: make text area auto resize by default ([bpmn-io/properties-panel#377](https://github.com/bpmn-io/properties-panel/pull/377), [bpmn-io/bpmn-js-properties-panel#713](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/713))
 
 ### Key Changes in Element Templates
 
