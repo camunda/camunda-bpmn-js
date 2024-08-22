@@ -9,12 +9,14 @@ ___Note:__ Yet to be released changes appear here._
 ## 4.18.0
 
 * `DEPS`: update to `bpmn-js@17.9.2`
-* `DEPS`: update to `diagram-js@14.9.0`
 * `DEPS`: update to `bpmn-js-properties-panel@5.22.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.2.0`
+* `DEPS`: update to `diagram-js@14.9.0`
 * `DEPS`: update to `zeebe-bpmn-moddle@1.5.1`
 
 ### Key Changes in Properties Panel
 
+* `FEAT`: do not apply `*length` and `pattern` validation to FEEL expressions ([bpmn-io/bpmn-js-element-templates#115](https://github.com/bpmn-io/bpmn-js-element-templates/pull/115))
 * `FEAT`: support maintaining `zeebe:priorityDefinition:priority` for user task ([bpmn-io/bpmn-js-properties-panel#1072](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1072))
 * `FIX`: rename task definition type label ([bpmn-io/bpmn-js-properties-panel#1070](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1070))
 
