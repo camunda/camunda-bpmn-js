@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.18.1
+
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.6.1`
+
+### Key Changes in Modeling
+
+* `FIX`: remove empty `zeebe:VersionTag` ([camunda/camunda-bpmn-js-behaviors#81](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/81))
+
 ## 4.18.0
 
 * `DEPS`: update to `bpmn-js@17.9.2`
