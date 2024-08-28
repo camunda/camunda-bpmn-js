@@ -6,13 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-## 4.18.1
+## 4.19.0
 
+* `DEPS`: update to `bpmn-js-properties-panel@5.23.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.6.1`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.6.0`
 
-### Key Changes in Modeling
+### Key Changes in Properties Panel
 
-* `FIX`: remove empty `zeebe:VersionTag` ([camunda/camunda-bpmn-js-behaviors#81](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/81))
+* `FEAT`: support maintaning `Version Tag` for Camunda 8 diagrams ([bpmn-io/bpmn-js-properties-panel#1062](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1062))
 
 ## 4.18.0
 
