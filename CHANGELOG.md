@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.19.1
+
+* `DEPS`: update to `bpmn-js-properties-panel@5.23.1`
+
+### Key Changes in Properties Panel
+
+* `FIX`: prevent focus loss of _Binding_ and _Version tag_ entries ([bpmn-io/bpmn-js-properties-panel#1076](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1076))
+
 ## 4.19.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.23.0`
