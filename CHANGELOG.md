@@ -25,6 +25,10 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to @bpmn-io/properties-panel@3.24.1
 * `DEPS`: update to bpmn-jsproperties-panel@5.24.0
 
+### Key Changes in Element Templates
+
+* `FIX`: cast default `number` and `boolean` properties to FEEL ([bpmn-io/bpmn-js-element-templates#121](https://github.com/bpmn-io/bpmn-js-element-templates/pull/121))
+
 ## 4.19.1
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.23.1`
