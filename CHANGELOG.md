@@ -7,6 +7,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 * `FEAT`: support Camunda 8.6 built-ins ([bpmn-io/feel-editor#62](https://github.com/bpmn-io/feel-editor/pull/62))
+* `FEAT`: lint first item access ([bpmn-io/feel-lint#25](https://github.com/bpmn-io/feel-lint/issues/25))
+* `FEAT`: suggest Camunda 8.6 FEEL built-ins
+* `DEPS`: update to @bpmn-io/properties-panel@3.24.1
+* `DEPS`: update to bpmn-jsproperties-panel@5.24.0
 
 ## 4.19.1
 
