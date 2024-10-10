@@ -1,3 +1,5 @@
+/* global require */
+
 export * from 'bpmn-js/test/helper';
 
 export {
