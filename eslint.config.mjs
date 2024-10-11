@@ -1,37 +1,42 @@
 import bpmnIoPlugin from 'eslint-plugin-bpmn-io';
 
-const buildScripts = [
-  'tasks/**/*.mjs',
-  '*.js',
-  '*.mjs'
-];
+const files = {
+  build: [
+    'tasks/**/*.mjs',
+    '*.js',
+    '*.mjs'
+  ],
+  dist: [ 'dist' ],
+  test: [
+    'test/**/*.js',
+    'test/**/*.cjs'
+  ]
+};
+
 
 export default [
   {
-    'ignores': [ 'dist' ]
+    'ignores': files.dist
   },
   ...bpmnIoPlugin.configs.browser.map(config => {
 
     return {
       ...config,
-      ignores: buildScripts
+      ignores: files.build
     };
   }),
   ...bpmnIoPlugin.configs.node.map(config => {
 
     return {
       ...config,
-      files: buildScripts
+      files: files.build
     };
   }),
   ...bpmnIoPlugin.configs.mocha.map(config => {
 
     return {
       ...config,
-      files: [
-        'test/**/*.js',
-        'test/**/*.cjs'
-      ]
+      files: files.test
     };
   })
 ];
