@@ -6,17 +6,19 @@ const files = {
     '*.js',
     '*.mjs'
   ],
-  dist: [ 'dist' ],
   test: [
     'test/**/*.js',
     'test/**/*.cjs'
+  ],
+  ignored: [
+    'dist'
   ]
 };
 
 
 export default [
   {
-    'ignores': files.dist
+    'ignores': files.ignored
   },
   ...bpmnIoPlugin.configs.browser.map(config => {
 
