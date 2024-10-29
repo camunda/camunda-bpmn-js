@@ -6,6 +6,16 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.20.2
+
+* `DEPS`: update to `diagram-js@14.11.3`
+
+### Key Changes in Modeling
+
+* `FIX`: restore search result highlight ([bpmn-io/diagram-js#931](https://github.com/bpmn-io/diagram-js/pull/931))
+* `FIX`: correct search result highlight not being removed ([bpmn-io/diagram-js#931](https://github.com/bpmn-io/diagram-js/pull/931))
+* `FIX`: do not change zoom when search openes ([bpmn-io/diagram-js#931](https://github.com/bpmn-io/diagram-js/pull/931))
+
 ## 4.20.1
 
 * `DEPS`: update to `diagram-js@14.11.1`
