@@ -66,7 +66,7 @@
     "bpmn-js-executable-fix": "^0.2.1",
     "camunda-bpmn-js-behaviors": "^1.6.1",
     "camunda-bpmn-moddle": "^7.0.1",
-    "diagram-js": "^14.11.1",
+    "diagram-js": "^14.11.3",
     "diagram-js-grid": "^1.0.0",
     "diagram-js-minimap": "^5.1.0",
     "diagram-js-origin": "^1.4.0",
