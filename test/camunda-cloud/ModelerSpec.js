@@ -269,4 +269,19 @@ describe('<CamundaCloudModeler>', function() {
 
   });
 
+
+  it('should configure FEEL popup links', function() {
+
+    // when
+    return createModeler(simpleXml).then(function(result) {
+
+      var modeler = result.modeler,
+          config = modeler.get('config.propertiesPanel');
+
+      // then
+      expect(config.getFeelPopupLinks).to.exist;
+    });
+
+  });
+
 });
