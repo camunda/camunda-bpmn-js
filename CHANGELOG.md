@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: add FEEL Copilot link to FEEL popup ([#385](https://github.com/camunda/camunda-bpmn-js/pull/385))
+* `DEPS`: update to `@bpmn-io/properties-panel@3.25.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.26.0`
+
 ## 4.20.2
 
 * `DEPS`: update to `diagram-js@14.11.3`
