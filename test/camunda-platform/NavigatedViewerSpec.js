@@ -67,10 +67,7 @@ describe('<CamundaPlatformNavigatedViewer>', function() {
     clearBpmnJS();
 
     viewer = new Viewer({
-      container: modelerContainer,
-      keyboard: {
-        bindTo: document
-      }
+      container: modelerContainer
     });
 
     setBpmnJS(viewer);

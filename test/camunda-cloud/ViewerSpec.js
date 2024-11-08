@@ -64,10 +64,7 @@ describe('<CamundaCloudViewer>', function() {
     clearBpmnJS();
 
     modeler = new Viewer({
-      container: modelerContainer,
-      keyboard: {
-        bindTo: document
-      }
+      container: modelerContainer
     });
 
     singleStart && modeler.on('commandStack.changed', debounce(function() {
