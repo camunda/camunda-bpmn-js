@@ -84,9 +84,6 @@ describe('<BaseModeler>', function() {
 
     modeler = new Modeler({
       container: modelerContainer,
-      keyboard: {
-        bindTo: document
-      },
       propertiesPanel: {
         parent: propertiesContainer
       },

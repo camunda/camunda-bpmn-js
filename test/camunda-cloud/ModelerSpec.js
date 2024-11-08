@@ -104,9 +104,6 @@ describe('<CamundaCloudModeler>', function() {
 
     modeler = new Modeler({
       container: modelerContainer,
-      keyboard: {
-        bindTo: document
-      },
       additionalModules: [
         ...additionalModules
       ],
