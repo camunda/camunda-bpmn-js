@@ -6,9 +6,34 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-* `FEAT`: add FEEL Copilot link to FEEL popup ([#385](https://github.com/camunda/camunda-bpmn-js/pull/385))
+* `DEPS`: update to `bpmn-js@18.0.0`
+* `DEPS`: update to `diagram-js@15.2.0`
+* `DEPS`: update to `diagram-js-grid@1.1.0`
+* `DEPS`: update to `diagram-js-minimap@5.2.0`
+* `DEPS`: update to `min-dash@4.2.2`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.6.1`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.25.0`
 * `DEPS`: update to `bpmn-js-properties-panel@5.26.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: remove `outline` from `Viewer` modules ([bpmn-io/bpmn-js#2135](https://github.com/bpmn-io/bpmn-js/issues/2135))
+* `FEAT`: make `Canvas` a focusable element ([bpmn-io/diagram-js#662](https://github.com/bpmn-io/diagram-js/pull/662))
+* `FEAT`: implicit keyboard binding ([bpmn-io/diagram-js#662](https://github.com/bpmn-io/diagram-js/pull/662))
+* `FIX`: prevent crash during label adjustment ([bpmn-io/bpmn-js#2239](https://github.com/bpmn-io/bpmn-js/issues/2239))
+* `FIX`: keep existing loop characteristics when toggling through the replace menu ([bpmn-io/bpmn-js#2251](https://github.com/bpmn-io/bpmn-js/pull/2251))
+* `FIX`: prevent covering multi selection with black box in `Viewer` ([bpmn-io/bpmn-js#2135](https://github.com/bpmn-io/bpmn-js/issues/2135))
+* `FIX`: correct handling of group name with whitespace only ([bpmn-io/bpmn-js#2231](https://github.com/bpmn-io/bpmn-js/issues/2231))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add FEEL Copilot link to FEEL popup ([#385](https://github.com/camunda/camunda-bpmn-js/pull/385))
+
+### Breaking Changes
+
+* Require `Node >= 20`
+* `Canvas` is now a focusable element and provides better support for native browser behaviors. Focus can be controlled with new `focus` and `restoreFocus` APIs.
+* Keyboard is now implicitly bound to canvas SVG element. Calls to `keyboard.bind` and `keyboard.bindTo` now result with a descriptive console error and have no effect.
 
 ## 4.20.2
 
