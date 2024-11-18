@@ -64,7 +64,7 @@
     "bpmn-js-create-append-anything": "^0.5.2",
     "bpmn-js-element-templates": "^2.3.0",
     "bpmn-js-executable-fix": "^0.2.1",
-    "camunda-bpmn-js-behaviors": "^1.6.1",
+    "camunda-bpmn-js-behaviors": "^1.7.1",
     "camunda-bpmn-moddle": "^7.0.1",
     "diagram-js": "^15.2.0",
     "diagram-js-grid": "^1.1.0",
@@ -72,7 +72,7 @@
     "diagram-js-origin": "^1.4.0",
     "inherits-browser": "^0.1.0",
     "min-dash": "^4.2.2",
-    "zeebe-bpmn-moddle": "^1.6.1"
+    "zeebe-bpmn-moddle": "^1.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -83,7 +83,7 @@
     "babel-loader": "^9.2.1",
     "babel-plugin-istanbul": "^7.0.0",
     "bio-dts": "^0.11.0",
-    "bpmn-js-properties-panel": "^5.26.0",
+    "bpmn-js-properties-panel": "^5.27.0",
     "chai": "^4.5.0",
     "cross-env": "^7.0.3",
     "del-cli": "^6.0.0",
