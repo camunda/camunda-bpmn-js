@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.7.2`
+
+### Key Changes in Modeling
+
+* `FIX`: create new user task form only if user task form referenced ([camunda/camunda-bpmn-js-behaviors#85](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/85))
+
 ## 5.1.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.29.0`
