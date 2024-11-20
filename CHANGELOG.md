@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.2.0
+
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.7.2`
 * `DEPS`: update to `bpmn-js@18.1.0`
 * `DEPS`: update to `diagram-js@15.2.2`
