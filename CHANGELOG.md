@@ -9,6 +9,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.7.2`
 * `DEPS`: update to `bpmn-js@18.1.0`
 * `DEPS`: update to `diagram-js@15.2.2`
+* `DEPS`: update to `bpmn-js-properties-panel@5.28.0`
 
 ### Key Changes in Modeling
 
@@ -19,6 +20,10 @@ ___Note:__ Yet to be released changes appear here._
 * `FIX`: clear selection when opening search pad ([bpmn-io/diagram-js#947](https://github.com/bpmn-io/diagram-js/pull/947))
 * `FIX`: correct dangling selection after search pad interaction ([bpmn-io/diagram-js#947](https://github.com/bpmn-io/diagram-js/pull/947))
 * `FIX`: create new user task form only if user task form referenced ([camunda/camunda-bpmn-js-behaviors#85](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/85))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: make properties panel container focusable ([bpmn-io/bpmn-js-properties-panel#1095](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1095))
 
 ## 5.1.0
 
