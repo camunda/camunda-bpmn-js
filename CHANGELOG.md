@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FIX`: adjust search to prioritize start of word and exact matches ([bpmn-io/diagram-js#953](https://github.com/bpmn-io/diagram-js/pull/953))
+* `FIX`: ignore whitespace when searching ([bpmn-io/diagram-js#954](https://github.com/bpmn-io/diagram-js/pull/954))
+* `DEPS`: update to `bpmn-js@18.1.1`
+* `DEPS`: update to `diagram-js@15.2.3`
+
 ## 5.2.0
 
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.7.2`
