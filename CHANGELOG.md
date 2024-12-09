@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.2.2
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.25.1`
+
+### Key Changes in Properties Panel
+
+* `FIX`: add focus outline to checkboxes and buttons ([bpmn-io/properties-panel#390](https://github.com/bpmn-io/properties-panel/pull/390))
+
 ## 5.2.1
 
 * `FIX`: adjust search to prioritize start of word and exact matches ([bpmn-io/diagram-js#953](https://github.com/bpmn-io/diagram-js/pull/953))
