@@ -70,6 +70,7 @@
     "diagram-js-grid": "^1.1.0",
     "diagram-js-minimap": "^5.2.0",
     "diagram-js-origin": "^1.4.0",
+    "fuse.js": "^7.0.0",
     "inherits-browser": "^0.1.0",
     "min-dash": "^4.2.2",
     "zeebe-bpmn-moddle": "^1.7.0"
