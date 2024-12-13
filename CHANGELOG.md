@@ -6,6 +6,22 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.3.0
+
+* `DEPS`: update to `bpmn-js-element-templates@2.4.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.29.0`x
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.8.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: support element templates runtime compatibility ([bpmn-io/bpmn-js-element-templates#132](https://github.com/bpmn-io/bpmn-js-element-templates/pull/132))
+* `FEAT`: make "Zeebe user task" the default implementation of user task ([camunda/camunda-bpmn-js-behaviors#86](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/86))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: rename "Zeebe user task" to "Camunda user task" ([bpmn-io/bpmn-js-properties-panel#1097](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1097))
+* `FIX`: move template selector right below documentation group ([bpmn-io/bpmn-js-element-templates#130](https://github.com/bpmn-io/bpmn-js-element-templates/pull/130))
+
 ## 5.2.2
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.25.1`
