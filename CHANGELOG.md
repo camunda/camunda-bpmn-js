@@ -6,6 +6,17 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.4.2
+
+* `DEPS`: update to `bpmn-js@18.1.2`
+* `DEPS`: update to `diagram-js@15.2.4`
+
+### Key Changes in Modeling
+
+* `FIX`: canvas `autoFocus` must explicitly be enabled ([bpmn-io/diagram-js#956](https://github.com/bpmn-io/diagram-js/pull/956))
+* `FIX`: properly integrate `zoomscroll` with canvas focus ([bpmn-io/diagram-js#956](https://github.com/bpmn-io/diagram-js/pull/956))
+* `FIX`: properly integrate `movecanvas` with canvas focus ([bpmn-io/diagram-js#956](https://github.com/bpmn-io/diagram-js/pull/956))
+
 ## 5.4.1
 
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.3.2`
