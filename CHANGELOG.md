@@ -8,6 +8,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 5.5.0
 
+* `DEPS`: update to `@bpmn-io/properties-panel@3.26.0`
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.3.3`
 * `DEPS`: update to `bpmn-js@18.2.0`
 * `DEPS`: update to `bpmn-js-element-templates@2.5.1`
@@ -19,6 +20,7 @@ ___Note:__ Yet to be released changes appear here._
 
 * `FEAT`: support ad-hoc subprocesses in replace menu ([bpmn-js#2276](https://github.com/bpmn-io/bpmn-js/pull/2276))
 * `FEAT`: support _Active elements_ properties for ad-hoc subprocesses ([bpmn-js-properties-panel#1105](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1105))
+* `FEAT`: suggest latest Camunda FEEL built-ins ([bpmn-io/feel-editor#65](https://github.com/bpmn-io/feel-editor/pull/65))
 * `FIX`: take scope into account when resolving variables ([bpmn-io/variable-resolver#43](https://github.com/bpmn-io/variable-resolver/pull/43))
 
 ### Key Changes in Element Templates
