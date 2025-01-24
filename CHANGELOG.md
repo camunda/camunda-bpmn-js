@@ -6,6 +6,26 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.5.0
+
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.3.3`
+* `DEPS`: update to `bpmn-js@18.2.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.5.1`
+* `DEPS`: update to `bpmn-js-properties-panel@5.31.1`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.9.1`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.9.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: support ad-hoc subprocesses in replace menu ([bpmn-js#2276](https://github.com/bpmn-io/bpmn-js/pull/2276))
+* `FEAT`: support _Active elements_ properties for ad-hoc subprocesses ([bpmn-js-properties-panel#1105](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1105))
+* `FIX`: take scope into account when resolving variables ([bpmn-io/variable-resolver#43](https://github.com/bpmn-io/variable-resolver/pull/43))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support binding type `zeebe:linkedResource` ([bpmn-js-element-templates#137](https://github.com/bpmn-io/bpmn-js-element-templates/issues/137))
+* `FIX`: require `feel` to be `optional` or `static` for `Boolean` and `Number` inputs and outputs ([camunda/element-templates-json-schema#156](https://github.com/camunda/element-templates-json-schema/pull/156))
+
 ## 5.4.2
 
 * `DEPS`: update to `bpmn-js@18.1.2`
