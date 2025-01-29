@@ -6,6 +6,18 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.5.1
+
+* `DEPS`: update to `bpmn-js-element-templates@2.5.2`
+
+### Key Changes in Element Templates
+
+* `FIX`: make `feel` default value `static` for inputs and outputs ([#142](https://github.com/bpmn-io/bpmn-js-element-templates/pull/142))
+
+#### Note
+
+This release reverts the breaking changes introduced via [`bpmn-js-element-templates@2.5.1`](https://github.com/bpmn-io/bpmn-js-element-templates/blob/main/CHANGELOG.md#251). Any `feel` value out of the supported enum is allowed, but `static` is used if the property is missing.
+
 ## 5.5.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.26.0`
