@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: allow to replace between variants of typed events ([bpmn-io/bpmn-js#2282](https://github.com/bpmn-io/bpmn-js/pull/2282))
+* `DEPS`: update to `bpmn-js@18.3.0`
+
 ## 5.5.1
 
 * `DEPS`: update to `bpmn-js-element-templates@2.5.2`
