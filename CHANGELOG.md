@@ -6,6 +6,23 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.6.1
+
+* `DEPS`: update to `bpmn-js@18.3.1`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.26.2`
+* `DEPS`: update to `bpmn-js-properties-panel@5.31.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.5.3`
+
+### Key Changes in Modeling
+
+* `FIX`: move artifacts with local space tool ([bpmn-io/bpmn-js#2285](https://github.com/bpmn-io/bpmn-js/pull/2285))
+* `FIX`: make tooltip persist when trying to copy from it ([bpmn-io/properties-panel#399](https://github.com/bpmn-io/properties-panel/pull/399))
+
+### Key Changes in Element Templates
+
+* `FIX`: keep documentation and execution listeners when template is removed ([bpmn-io/bpmn-js-element-templates#120](https://github.com/bpmn-io/bpmn-js-element-templates/pull/120))
+* `FIX`: do not remove unrelated properties on linkedResource update ([bpmn-io/bpmn-js-element-templates#143](https://github.com/bpmn-io/bpmn-js-element-templates/pull/143))
+
 ## 5.6.0
 
 * `DEPS`: update to `bpmn-js@18.3.0`
