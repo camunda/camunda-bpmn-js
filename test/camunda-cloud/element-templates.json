@@ -845,5 +845,75 @@
         }
       }
     ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "linkedResource",
+    "id": "linkedResource",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "elementType": {
+      "value": "bpmn:ServiceTask"
+    },
+    "properties": [
+      {
+        "type": "Hidden",
+        "value": "RPA",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "entryPoint",
+          "property": "resourceType"
+        }
+      },
+      {
+        "type": "Hidden",
+        "value": "camunda:RPA",
+        "binding": {
+          "type": "zeebe:taskDefinition:type"
+        }
+      },
+      {
+        "label": "Script ID",
+        "type": "String",
+        "feel": "optional",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "entryPoint",
+          "property": "resourceId"
+        }
+      },
+      {
+        "label": "Binding",
+        "id": "binding",
+        "type": "Dropdown",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "entryPoint",
+          "property": "bindingType"
+        },
+        "choices": [
+          { "name": "latest", "value": "latest" },
+          { "name": "deployment", "value": "deployment" },
+          { "name": "version tag", "value": "versionTag" }
+        ]
+      },
+      {
+        "label": "Version Tag",
+        "type": "String",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "entryPoint",
+          "property": "versionTag"
+        },
+        "condition": {
+          "property": "binding",
+          "equals": "versionTag"
+        }
+      }
+    ]
   }
 ]
