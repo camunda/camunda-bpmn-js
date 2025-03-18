@@ -6,6 +6,15 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.6.2
+
+* `DEPS`: update to `bpmn-js@18.3.2`
+
+### Key Changes in Modeling
+
+* `FIX`: remove default start event for ad-hoc subprocess ([bpmn-io/bpmn-js#2295](https://github.com/bpmn-io/bpmn-js/pull/2295))
+* `FIX`: show modeling feedback error for data objects ([bpmn-io/bpmn-js#2290](https://github.com/bpmn-io/bpmn-js/pull/2290))
+
 ## 5.6.1
 
 * `DEPS`: update to `bpmn-js@18.3.1`
