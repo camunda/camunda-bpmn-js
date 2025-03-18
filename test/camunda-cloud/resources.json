@@ -1,0 +1,17 @@
+[
+  {
+    "type": "dmnDecision",
+    "name": "Credit Score",
+    "decisionId": "creditScore"
+  },
+  {
+    "type": "bpmnProcess",
+    "name": "Payment Process",
+    "processId": "paymentProcess"
+  },
+  {
+    "type": "form",
+    "name": "Invoice Form",
+    "formId": "invoiceForm"
+  }
+]
