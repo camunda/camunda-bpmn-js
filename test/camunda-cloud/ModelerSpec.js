@@ -23,6 +23,7 @@ import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
 
 import templates from './element-templates.json';
+import resources from './resources.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
 
@@ -141,6 +142,7 @@ describe('<CamundaCloudModeler>', function() {
 
       // but when
       modeler.get('elementTemplatesLoader').setTemplates(templates);
+      modeler.get('resources').set(resources);
 
       // then
       // expect happy modeling
