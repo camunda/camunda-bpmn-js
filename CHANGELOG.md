@@ -6,6 +6,22 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.7.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@5.34.2`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.26.4`
+* `DEPS`: update to `bpmn-js@18.4.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: add resources extension ([#405](https://github.com/camunda/camunda-bpmn-js/pull/405))
+* `FEAT`: render collapsed event subprocess icons ([bpmn-io/bpmn-js#50](https://github.com/bpmn-io/bpmn-js/issues/50))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add ad-hoc subprocess completion support ([bpmn-io/bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1114))
+* `FIX`: clarify wording for input/output groups ([bpmn-io/bpmn-js-properties-panel#1115](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1115))
+
 ## 5.6.2
 
 * `DEPS`: update to `bpmn-js@18.3.2`
