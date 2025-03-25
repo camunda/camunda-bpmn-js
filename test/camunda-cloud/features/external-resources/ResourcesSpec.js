@@ -28,6 +28,12 @@ import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/featur
 import diagramXML from './Resources.bpmn';
 import resourcesJSON from '../../resources.json';
 
+const TYPE_TO_GROUP_ID = {
+  bpmnProcess: 'processes',
+  dmnDecision: 'decisions',
+  form: 'forms'
+};
+
 
 describe('camunda-cloud/features/external-resources - Resources', function() {
 
@@ -64,6 +70,26 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       // then
       for (const resource of resourcesJSON) {
         expect(entries[`resources-create-${resource.type}-0`], `<create-${resource.type}> to exist`).to.exist;
+      }
+    }));
+
+
+    it('should group entries according to resource type', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-create');
+
+      // then
+      for (const resource of resourcesJSON) {
+        const entry = entries[`resources-create-${resource.type}-0`];
+
+        expect(entry.group.id).to.eql(TYPE_TO_GROUP_ID[resource.type]);
       }
     }));
 
@@ -152,6 +178,26 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
     }));
 
 
+    it('should group entries according to resource type', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-append');
+
+      // then
+      for (const resource of resourcesJSON) {
+        const entry = entries[`resources-append-${resource.type}-0`];
+
+        expect(entry.group.id).to.eql(TYPE_TO_GROUP_ID[resource.type]);
+      }
+    }));
+
+
     it('should append call activity', inject(function(elementRegistry, resources) {
 
       // given
@@ -234,7 +280,27 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       // then
       for (const resource of resourcesJSON) {
-        expect(entries[`resources-replace-${resource.type}-0`], `<append-${resource.type}> to exist`).to.exist;
+        expect(entries[`resources-replace-${resource.type}-0`], `<replace-${resource.type}> to exist`).to.exist;
+      }
+    }));
+
+
+    it('should group entries according to resource type', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-replace');
+
+      // then
+      for (const resource of resourcesJSON) {
+        const entry = entries[`resources-replace-${resource.type}-0`];
+
+        expect(entry.group.id).to.eql(TYPE_TO_GROUP_ID[resource.type]);
       }
     }));
 
