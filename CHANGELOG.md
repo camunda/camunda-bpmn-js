@@ -6,8 +6,24 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `bpmn-js@18.6.0`
+* `DEPS`: update to `bpmn-js-create-append-anything@1.0.0`
+* `DEPS`: update to `diagram-js@15.3.0`
+* `DEPS`: update to `min-dash@4.2.3`
+* `DEPS`: update to `@bpmn-io/element-template-chooser@2.0.0`
+* `DEPS`: update to `@bpmn-io/element-template-icon-renderer@1.0.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: support searching through arrays in popup menu ([bpmn-io/diagram-js#970](https://github.com/bpmn-io/diagram-js/pull/970))
+* `FEAT`: prioritize `search` over `description` when matching popup menu entries ([bpmn-io/diagram-js#963](https://github.com/bpmn-io/diagram-js/pull/963))
+* `FEAT`: sort `search` terms across all keys ([bpmn-io/diagram-js#963](https://github.com/bpmn-io/diagram-js/pull/963))
+* `FIX`: always select first search entry ([bpmn-io/diagram-js#967](https://github.com/bpmn-io/diagram-js/pull/967))
+
+### Key Changes in Element Templates
+
+* `FEAT`: provide element template `keywords` to popup menu search ([bpmn-io/bpmn-js-create-append-anything#50](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/50))
 * `FEAT`: render element template icons on sub-processes and call activities ([bpmn-io/element-template-icon-renderer#20](https://github.com/bpmn-io/element-template-icon-renderer/issues/20))
-* `DEPS`: update to `bpmn-io/element-template-icon-renderer@1.0.0`
 
 ## 5.7.1
 
