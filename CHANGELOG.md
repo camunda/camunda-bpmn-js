@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: render element template icons on sub-processes and call activities ([bpmn-io/element-template-icon-renderer#20](https://github.com/bpmn-io/element-template-icon-renderer/issues/20))
+* `DEPS`: update to `bpmn-io/element-template-icon-renderer@1.0.0`
+
 ## 5.7.1
 
 ### Key Changes in Modeling
