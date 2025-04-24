@@ -932,5 +932,18 @@
       "value": "bpmn:SubProcess"
     },
     "properties": [ ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Keywords Template",
+    "id": "example.KeywordsTemplate",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "properties": [],
+    "keywords": [
+      "first keyword",
+      "another keyword"
+    ]
   }
 ]
