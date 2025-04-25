@@ -6,7 +6,7 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-* `DEPS`: update to `bpmn-js@18.6.0`
+* `DEPS`: update to `bpmn-js@18.6.1`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.0.0`
 * `DEPS`: update to `diagram-js@15.3.0`
 * `DEPS`: update to `min-dash@4.2.3`
@@ -19,6 +19,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: prioritize `search` over `description` when matching popup menu entries ([bpmn-io/diagram-js#963](https://github.com/bpmn-io/diagram-js/pull/963))
 * `FEAT`: sort `search` terms across all keys ([bpmn-io/diagram-js#963](https://github.com/bpmn-io/diagram-js/pull/963))
 * `FIX`: always select first search entry ([bpmn-io/diagram-js#967](https://github.com/bpmn-io/diagram-js/pull/967))
+* `FIX`: copy error, escalation, message and signal references when copying elements ([bpmn-io/bpmn-js#2301](https://github.com/bpmn-io/bpmn-js/pull/2301))
 
 ### Key Changes in Element Templates
 
