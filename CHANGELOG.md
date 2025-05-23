@@ -6,6 +6,28 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.10.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.27.2`
+* `DEPS`: update to `bpmn-js@18.6.2`
+* `DEPS`: update to `bpmn-js-element-templates@2.6.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.36.1`
+
+### Key Changes in Modeling
+
+* `FIX`: center task markers ([bpmn-io/bpmn-js#1995](https://github.com/bpmn-io/bpmn-js/issues/1995))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: trim whitespace in text inputs ([bpmn-io/properties-panel#309](https://github.com/bpmn-io/properties-panel/issues/309), [bpmn-io/properties-panel#404](https://github.com/bpmn-io/properties-panel/issues/404))
+* `FIX`: show literal values in FEEL suggestions
+* `FIX`: add empty alt attribute for icons
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `zeebe:userTask` binding property ([bpmn-js-element-templates#147](https://github.com/bpmn-io/bpmn-js-element-templates/pull/147))
+* `FIX`: correctly reuse `bpmn:Message` properties when changing templates ([bpmn-io/bpmn-js-element-templates#154](https://github.com/bpmn-io/bpmn-js-element-templates/pull/154))
+
 ## 5.9.0
 
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.10.0`
