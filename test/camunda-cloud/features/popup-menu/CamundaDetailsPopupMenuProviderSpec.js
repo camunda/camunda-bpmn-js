@@ -44,7 +44,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
     // when
     const {
       entries
-    } = openPopup(rootElement, 'bpmn-create');
+    } = openPopup(rootElement, 'bpmn-create').current;
 
     // then
     expectAnnotated(entries, [
@@ -69,7 +69,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
     // when
     const {
       entries
-    } = openPopup(task, 'bpmn-append');
+    } = openPopup(task, 'bpmn-append').current;
 
     // then
     expectAnnotated(entries, [
@@ -99,7 +99,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
       // when
       const {
         entries
-      } = openPopup(task, 'bpmn-replace');
+      } = openPopup(task, 'bpmn-replace').current;
 
       // then
       expectAnnotated(entries, [
@@ -124,7 +124,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
       // when
       const {
         entries
-      } = openPopup(startEvent, 'bpmn-replace');
+      } = openPopup(startEvent, 'bpmn-replace').current;
 
       // then
       expectAnnotated(entries, [
@@ -137,18 +137,45 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
 
   });
 
+
+  it('should rank create-service-task higher than other job workers', inject(function(canvas) {
+
+    // given
+    const rootElement = canvas.getRootElement();
+
+    // when
+    const {
+      current, search
+    } = openPopup(rootElement, 'bpmn-create', { search: true });
+
+    const { entries } = current;
+
+    const searchedEntries = search(
+      Object.entries(entries).map(([ key, value ]) => ({ id: key, ...value })),
+      'job worker',
+      { keys: [ 'label', 'search', 'description' ] }
+    );
+
+    // then
+    const entryIds = searchedEntries.map(e => e.item.id);
+    expect(entryIds).to.eql([ 'create-service-task', 'create-send-task', 'create-script-task', 'create-message-end', 'create-message-intermediate-throw' ]);
+  }));
+
 });
 
 
 // helpers //////////////
 
-function openPopup(element, providerId) {
+function openPopup(element, providerId, options) {
 
   return getBpmnJS().invoke(function(popupMenu) {
 
-    popupMenu.open(element, providerId, { x: 100, y: 100 });
+    popupMenu.open(element, providerId, { x: 100, y: 100 }, options);
 
-    return popupMenu._current;
+    return {
+      current: popupMenu._current,
+      search: popupMenu._search,
+    };
   });
 }
 
