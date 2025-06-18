@@ -58,7 +58,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
     // when
     const {
       entries
-    } = openPopup(rootElement, 'bpmn-create').current;
+    } = openPopup(rootElement, 'bpmn-create');
 
     // then
     expectAnnotated(entries, [
@@ -83,7 +83,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
     // when
     const {
       entries
-    } = openPopup(task, 'bpmn-append').current;
+    } = openPopup(task, 'bpmn-append');
 
     // then
     expectAnnotated(entries, [
@@ -113,7 +113,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
       // when
       const {
         entries
-      } = openPopup(task, 'bpmn-replace').current;
+      } = openPopup(task, 'bpmn-replace');
 
       // then
       expectAnnotated(entries, [
@@ -138,7 +138,7 @@ describe('camunda-cloud/features/popup-menu - CamundaDetailsPopupMenuProvider', 
       // when
       const {
         entries
-      } = openPopup(startEvent, 'bpmn-replace').current;
+      } = openPopup(startEvent, 'bpmn-replace');
 
       // then
       expectAnnotated(entries, [
@@ -183,10 +183,7 @@ function openPopup(element, providerId, options) {
 
     popupMenu.open(element, providerId, { x: 100, y: 100 }, options);
 
-    return {
-      current: popupMenu._current,
-      search: popupMenu._search,
-    };
+    return popupMenu._current;
   });
 }
 
