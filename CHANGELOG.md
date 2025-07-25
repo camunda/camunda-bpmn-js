@@ -6,6 +6,37 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.11.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.31.0`
+* `DEPS`: update to `bpmn-js-color-picker@0.7.2`
+* `DEPS`: update to `bpmn-js-element-templates@2.8.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.10.2`
+* `DEPS`: update to `bpmn-js-properties-panel@5.39.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: set FEEL parser dialect to Camunda by default ([bpmn-io/bpmn-js-properties-panel#1128](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1128))
+* `FEAT`: allow to provide custom FEEL popup
+* `FEAT`: make list headers sticky ([bpmn-io/properties-panel#397](https://github.com/bpmn-io/properties-panel/pull/397))
+* `FEAT`: support `creating` and `canceling` task listeners
+* `FEAT`: update `camunda` built-ins
+* `FIX`: correctly update condition entry
+* `FIX`: report Camunda user task as default implementation ([bpmn-io/bpmn-js-properties-panel#1135](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1135))
+* `FIX`: show tooltip on number fields
+* `FIX`: remove `zeebe:versionTag` when setting tag to `undefined` ([#101](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/101))
+* `FIX`: handle participants when removing empty `zeebe:versionTag` ([#99](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/99))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `bindingType` property ([bpmn-io/bpmn-js-element-templates#165](https://github.com/bpmn-io/bpmn-js-element-templates/pull/165))
+* `FEAT`: support properties of type `bpmn:Expression` ([bpmn-io/bpmn-js-element-templates#161](https://github.com/bpmn-io/bpmn-js-element-templates/pull/161))
+* `FEAT`: support `zeebe:formDefinition` binding property ([bpmn-io/bpmn-js-element-templates#158](https://github.com/bpmn-io/bpmn-js-element-templates/pull/158))
+* `FEAT`: support `zeebe:calledDecision` binding property ([bpmn-io/bpmn-js-element-templates#155](https://github.com/bpmn-io/bpmn-js-element-templates/pull/155))
+* `FEAT`: support `zeebe:scriptTask` binding property ([bpmn-io/bpmn-js-element-templates#156](https://github.com/bpmn-io/bpmn-js-element-templates/pull/156))
+* `FIX`: correctly handle numeric conditions ([bpmn-io/bpmn-js-element-templates#69](https://github.com/bpmn-io/bpmn-js-element-templates/issues/69))
+* `FIX`: keep groups closed when template is first applied ([bpmn-io/bpmn-js-element-templates#162](https://github.com/bpmn-io/bpmn-js-element-templates/pull/162))
+
 ## 5.10.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.27.2`
