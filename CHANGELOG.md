@@ -6,6 +6,35 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.12.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.32.0`
+* `DEPS`: update to `bpmn-js@18.6.3`
+* `DEPS`: update to `bpmn-js-create-append-anything@1.0.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.11.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.41.3`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.11.1`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.11.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: clean up ad-hoc subprocess when implementation type is changed ([camunda/camunda-bpmn-js-behaviors#104](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/104), [camunda/camunda-bpmn-js-behaviors#106](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/106))
+* `FIX`: `cancelRemainingInstances` of ad-hoc sub-processes is unset by default ([bpmn-io/bpmn-js-properties-panel#1148](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1148), [bpmn-io/bpmn-moddle#131](https://github.com/bpmn-io/bpmn-moddle/issues/131))
+* `FIX`: trigger create mode if auto place of element with template not possible ([bpmn-io/bpmn-js-create-append-anything#56](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/56))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add output collection props for `bpmn:AdHocSubProcess` ([bpmn-io/bpmn-js-properties-panel#1143](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1143))
+* `FEAT`: support job worker implementation of `bpmn:AdHocSubProcess` ([bpmn-io/bpmn-js-properties-panel#1144](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1144))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `zeebe:assignmentDefinition` binding ([bpmn-io/bpmn-js-element-templates#168](https://github.com/bpmn-io/bpmn-js-element-templates/pull/168))
+* `FEAT`: support `zeebe:priorityDefinition` binding ([bpmn-io/bpmn-js-element-templates#171](https://github.com/bpmn-io/bpmn-js-element-templates/pull/171))
+* `FEAT`: support `zeebe:taskSchedule` binding ([bpmn-io/bpmn-js-element-templates#173](https://github.com/bpmn-io/bpmn-js-element-templates/pull/173))
+* `FEAT`: support `zeebe:adHoc` binding ([bpmn-io/bpmn-js-element-templates#175](https://github.com/bpmn-io/bpmn-js-element-templates/pull/175))
+* `FIX`: use default values for displaying edited marker ([bpmn-io/bpmn-js-element-templates#170](https://github.com/bpmn-io/bpmn-js-element-templates/pull/170))
+
 ## 5.11.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.31.0`
