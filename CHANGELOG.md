@@ -6,6 +6,30 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.14.0
+
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.3.4`
+* `DEPS`: update to `bpmn-js@18.7.0`
+* `DEPS`: update to `diagram-js@15.4.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.14.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.11.2`
+
+### Key Changes in Modeling
+
+* `FEAT`: support disabled entries in popup menu ([bpmn-io/diagram-js#987](https://github.com/bpmn-io/diagram-js/pull/987))
+* `FIX`: ensure popup menu keyboard navigation accounts for group order ([bpmn-io/diagram-js#989](https://github.com/bpmn-io/diagram-js/pull/989))
+* `FIX`: revert `AdHocSubProcess#cancelRemainingInstances` default value removal ([bpmn-io/bpmn-moddle#132](https://github.com/bpmn-io/bpmn-moddle/pull/132))
+
+### Key Changes in Properties Panel
+
+* `FIX`: preserve variables with same name but different scopes ([bpmn-io/variable-resolver#56](https://github.com/bpmn-io/variable-resolver/pull/56))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `activeElementsCollection` property on `zeebe:adHoc` ([camunda/element-templates-json-schema#198](https://github.com/camunda/element-templates-json-schema/pull/198), [bpmn-io/bpmn-js-element-templates#186](https://github.com/bpmn-io/bpmn-js-element-templates/pull/186))
+* `FEAT`: create sub-processes as expanded elements ([bpmn-io/bpmn-js-element-templates#185](https://github.com/bpmn-io/bpmn-js-element-templates/pull/185))
+* `FEAT`: cache templates between linter plugin usages ([bpmn-io/bpmn-js-element-templates#179](https://github.com/bpmn-io/bpmn-js-element-templates/pull/179))
+
 ## 5.13.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.33.0`
