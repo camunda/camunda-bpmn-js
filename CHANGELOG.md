@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.14.1
+
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.3.5`
+
+### Key Changes in Properties Panel
+
+* `FIX`: do not try to find unresolved variables of a broken expression ([bpmn-io/variable-resolver#50](https://github.com/bpmn-io/variable-resolver/issues/50))
+
 ## 5.14.0
 
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.3.4`
