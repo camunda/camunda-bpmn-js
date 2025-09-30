@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.14.2
+
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.3.5`
+
+### Key Changes in Properties Panel
+
+* `FIX`: always return an instance of variables context in `getResultContext` ([bpmn-io/variable-resolver#58](https://github.com/bpmn-io/variable-resolver/pull/58))
+
 ## 5.14.1
 
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.3.5`
