@@ -6,6 +6,33 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+
+## 5.15.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.34.0`
+* `DEPS`: update to `bpmn-js@18.9.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.16.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: remove title attribute when unnecessary ([bpmn-io/properties-panel#455](https://github.com/bpmn-io/properties-panel/pull/455))Expand commentComment on line R11Code has comments. Press enter to view.
+* `FIX`: improve tooltip behavior ([bpmn-io/properties-panel#451](https://github.com/bpmn-io/properties-panel/pull/451))
+* `FIX`: correctly handle trimming and debouncing ([bpmn-io/properties-panel#450](https://github.com/bpmn-io/properties-panel/pull/450), [bpmn-io/properties-panel#309](https://github.com/bpmn-io/properties-panel/issues/309))
+
+### Key Changes in Modeling
+
+* `FEAT`: visually link external label with its target ([bpmn-io/bpmn-js#2328](https://github.com/bpmn-io/bpmn-js/pull/2328))
+* `FEAT`: add support for labels to `OutlineProvider#getOutline`
+* `FEAT`: allow copying data object references and `isCollection` property ([bpmn-io/bpmn-js#2348](https://github.com/bpmn-io/bpmn-js/pull/2348))
+* `FIX`: ensure `BpmnRenderer#getShapePath` returns correct path for labels
+* `FIX`: only draw links for currently selected elements ([bpmn-io/bpmn-js#2365](https://github.com/bpmn-io/bpmn-js/pull/2365))
+
+### Key Changes in Element Templates
+
+* `FEAT`: add `elementTemplates#getCompatible` ([bpmn-io/bpmn-js-element-templates#189](https://github.com/bpmn-io/bpmn-js-element-templates/pull/189))
+* `FEAT`: support signal events ([bpmn-io/bpmn-js-element-templates#201](https://github.com/bpmn-io/bpmn-js-element-templates/pull/201))
+* `FIX`: ensure FEEL expression is enforced for `feel: required` properties ([bpmn-io/bpmn-js-element-templates#202](https://github.com/bpmn-io/bpmn-js-element-templates/pull/202))
+
 ## 5.14.2
 
 * `DEPS`: update to `@bpmn-io/variable-resolver@1.3.5`
