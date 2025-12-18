@@ -6,6 +6,31 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.16.0
+
+* `DEPS`: update to `@bpmn-io/element-template-chooser@2.1.0`
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.3.7`
+* `DEPS`: update to `bpmn-js-create-append-anything@1.1.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.18.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.44.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.12.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: make outputs and child variables propagation mutually exclusive ([camunda/camunda-bpmn-js-behaviors#112](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/112))
+* `FEAT`: propagate variables before mapping in Camunda 7 ([camunda/camunda-bpmn-js-behaviors#113](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/113))
+* `FEAT`: remove title attribute when unnecessary ([bpmn-io/properties-panel#455](https://github.com/bpmn-io/properties-panel/pull/455))
+* `FEAT`: hide `<bpmn:CallActivity>` Output group if `zeebe:propagateAllChildVariables` is true ([bpmn-io/bpmn-js-properties-panel#1173](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1173))
+* `FIX`: update on `import.done` instead of `root.added` to prevent stale element ([bpmn-io/bpmn-js-properties-panel#1169](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1169))
+* `FIX`: improve tooltip behavior ([bpmn-io/properties-panel#451](https://github.com/bpmn-io/properties-panel/pull/451))
+* `FIX`: correctly handle trimming and debouncing ([bpmn-io/properties-panel#450](https://github.com/bpmn-io/properties-panel/pull/450), [bpmn-io/properties-panel#309](https://github.com/bpmn-io/properties-panel/issues/309))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support timer event templates ([bpmn-io/bpmn-js-element-templates#208](https://github.com/bpmn-io/bpmn-js-element-templates/pull/208))
+* `FEAT`: display `id` and `version` for unknown element templates ([bpmn-io/bpmn-js-element-templates#203](https://github.com/bpmn-io/bpmn-js-element-templates/pull/203))
+* `FIX`: remove properties instead of replacing element on template removal ([bpmn-io/bpmn-js-element-templates#206](https://github.com/bpmn-io/bpmn-js-element-templates/pull/206))
+
 ## 5.15.0
 
 * `DEPS`: update to `bpmn-js@18.9.1`
