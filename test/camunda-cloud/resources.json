@@ -13,5 +13,10 @@
     "type": "form",
     "name": "Invoice Form",
     "formId": "invoiceForm"
+  },
+  {
+    "type": "rpa",
+    "name": "Data Extraction Script",
+    "rpaResourceId": "rpa-12345"
   }
 ]

@@ -21,17 +21,24 @@ import {
   CreateAppendAnythingModule as createAppendAnythingModule
 } from 'bpmn-js-create-append-anything';
 
+import { CloudElementTemplatesPropertiesProviderModule } from 'bpmn-js-element-templates';
+
+import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
+
+
 import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe';
 
 import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
 
 import diagramXML from './Resources.bpmn';
 import resourcesJSON from '../../resources.json';
+import elementTemplates from '../../element-templates.json';
 
 const TYPE_TO_GROUP_ID = {
   bpmnProcess: 'processes',
   dmnDecision: 'decisions',
-  form: 'forms'
+  form: 'forms',
+  rpa: 'rpa scripts'
 };
 
 
@@ -47,11 +54,17 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       modelingModule,
       createAppendAnythingModule,
       ResourcesModule,
-      DefaultHandlersModule
+      DefaultHandlersModule,
+      BpmnPropertiesPanelModule,
+      CloudElementTemplatesPropertiesProviderModule,
     ],
     moddleExtensions: {
       zeebe: zeebeModdle
     }
+  }));
+
+  beforeEach(inject(function(elementTemplatesLoader, eventBus) {
+    elementTemplatesLoader.setTemplates(elementTemplates);
   }));
 
   describe('create', function() {
@@ -154,6 +167,30 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       const zeebeUserTask = createdElement.businessObject.extensionElements.values.find(
         value => is(value, 'zeebe:UserTask'));
       expect(zeebeUserTask).to.exist;
+    }));
+
+
+    it('should create RPA task', inject(function(elementRegistry, resources, elementTemplatesLoader) {
+
+      // given
+      resources.set(resourcesJSON);
+
+      // when
+      triggerCreateEntry('resources-create-rpa-0');
+
+      // then
+      const createdElement = getLastAcitivity(elementRegistry);
+
+      expect(is(createdElement, 'bpmn:ServiceTask')).to.be.true;
+      expect(createdElement.businessObject.name).to.eql('Data Extraction Script');
+
+      const linkedResources = createdElement.businessObject.extensionElements.values.find(
+        value => is(value, 'zeebe:LinkedResources'));
+
+      expect(linkedResources).to.exist;
+
+      const mainScript = linkedResources.values.find(el => el.linkName === 'RPAScript');
+      expect(mainScript.resourceId).to.eql('rpa-12345');
     }));
   });
 
@@ -262,6 +299,31 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
         value => is(value, 'zeebe:UserTask'));
       expect(zeebeUserTask).to.exist;
     }));
+
+
+    it('should append RPA task', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      triggerEntry('resources-append-rpa-0', 'bpmn-append', task);
+
+      // then
+      const appended = getLastAcitivity(elementRegistry);
+
+      expect(is(appended, 'bpmn:ServiceTask')).to.be.true;
+      expect(appended.businessObject.name).to.eql('Data Extraction Script');
+
+      const linkedResources = appended.businessObject.extensionElements.values.find(
+        value => is(value, 'zeebe:LinkedResources'));
+
+      expect(linkedResources).to.exist;
+
+      const mainScript = linkedResources.values.find(el => el.linkName === 'RPAScript');
+      expect(mainScript.resourceId).to.eql('rpa-12345');
+    }));
   });
 
 
@@ -369,6 +431,31 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       const zeebeUserTask = replacedElement.businessObject.extensionElements.values.find(
         value => is(value, 'zeebe:UserTask'));
       expect(zeebeUserTask).to.exist;
+    }));
+
+
+    it('should replace element with RPA task', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      triggerEntry('resources-replace-rpa-0', 'bpmn-replace', task);
+
+      // then
+      const replacedElement = elementRegistry.get('TASK');
+
+      expect(is(replacedElement, 'bpmn:ServiceTask')).to.be.true;
+      expect(replacedElement.businessObject.name).to.eql('Data Extraction Script');
+
+      const linkedResources = replacedElement.businessObject.extensionElements.values.find(
+        value => is(value, 'zeebe:LinkedResources'));
+
+      expect(linkedResources).to.exist;
+
+      const mainScript = linkedResources.values.find(el => el.linkName === 'RPAScript');
+      expect(mainScript.resourceId).to.eql('rpa-12345');
     }));
   });
 });

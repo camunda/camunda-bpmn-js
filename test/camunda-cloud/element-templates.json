@@ -945,5 +945,333 @@
       "first keyword",
       "another keyword"
     ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "RPA Connector",
+    "description": "Connects with the Camunda RPA Worker",
+    "id": "camunda.connectors.rpa",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "category" : {
+      "id" : "connectors",
+      "name" : "Connectors"
+    },
+    "engines": {
+      "camunda": "^8.7"
+    },
+    "elementType": {
+      "value": "bpmn:ServiceTask"
+    },
+    "entriesVisible": false,
+    "groups": [
+      {
+        "id": "worker",
+        "label": "Worker"
+      },
+      {
+        "id": "script",
+        "label": "Script"
+      },
+      {
+        "id": "prerun",
+        "label": "Pre-run"
+      },
+      {
+        "id": "postrun",
+        "label": "Post-run"
+      },
+      {
+        "id": "input",
+        "label": "Input"
+      }
+    ],
+    "properties": [
+      {
+        "type": "Hidden",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "property": "resourceType",
+          "linkName": "RPAScript"
+        },
+        "value": "RPA"
+      },
+      {
+        "group": "script",
+        "type": "String",
+        "feel": "optional",
+        "label": "Script ID",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "RPAScript",
+          "property": "resourceId"
+        },
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "group": "script",
+        "type": "Dropdown",
+        "label": "Binding",
+        "id": "bindingType",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "RPAScript",
+          "property": "bindingType"
+        },
+        "choices": [
+          {
+            "name": "Latest",
+            "value": "latest"
+          },
+          {
+            "name": "Deployment",
+            "value": "deployment"
+          },
+          {
+            "name": "Version Tag",
+            "value": "versionTag"
+          }
+        ],
+        "value": "latest"
+      },
+      {
+        "group": "script",
+        "type": "String",
+        "label": "Version tag",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "RPAScript",
+          "property": "versionTag"
+        },
+        "condition": {
+          "property": "bindingType",
+          "equals": "versionTag"
+        }
+      },
+      {
+        "group": "worker",
+        "label": "Label",
+        "tooltip": "Define on which worker this task should be executed.",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "camundaRpaWorkerLabel"
+        },
+        "type": "String",
+        "value": "default",
+        "constraints": {
+          "notEmpty": true
+        }
+      },
+      {
+        "group": "worker",
+        "label": "Timeout",
+        "tooltip": "<div><p>A time duration defined as ISO 8601 duration format.</p><ul><li><code>PT15S</code> - 15 seconds</li><li><code>PT1H30M</code> - 1 hour and 30 minutes</li><li><code>P14D</code> - 14 days</li></ul></div>",
+        "binding": {
+          "type": "zeebe:taskHeader",
+          "key": "camunda::timeout"
+        },
+        "type": "String",
+        "optional": true
+      },
+      {
+        "type": "Hidden",
+        "binding": {
+          "type": "zeebe:taskDefinition:type"
+        },
+        "value": "={\n  label: if (camundaRpaWorkerLabel = null or camundaRpaWorkerLabel = \"\") then \"default\" else camundaRpaWorkerLabel,\n  baseName: \"camunda::RPA-Task::\",\n  definitionType: baseName + label\n}.definitionType"
+      },
+      {
+        "group": "prerun",
+        "label": "Enable pre-run script",
+        "tooltip": "Define an additional RPA script that should be executed before the main script is run.",
+        "type": "Boolean",
+        "binding": {
+          "type": "zeebe:property",
+          "name": "camunda::enablePreRun"
+        },
+        "value": false,
+        "id": "enablePreRun"
+      },
+      {
+        "group": "prerun",
+        "type": "Hidden",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "property": "resourceType",
+          "linkName": "Before"
+        },
+        "value": "RPA",
+        "condition": {
+          "property": "enablePreRun",
+          "equals": true
+        }
+      },
+      {
+        "group": "prerun",
+        "type": "String",
+        "feel": "optional",
+        "label": "Pre-run Script ID",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "Before",
+          "property": "resourceId"
+        },
+        "constraints": {
+          "notEmpty": true
+        },
+        "condition": {
+          "property": "enablePreRun",
+          "equals": true
+        }
+      },
+      {
+        "group": "prerun",
+        "type": "Dropdown",
+        "label": "Pre-run Script Binding",
+        "id": "bindingTypePreRun",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "Before",
+          "property": "bindingType"
+        },
+        "condition": {
+          "property": "enablePreRun",
+          "equals": true
+        },
+        "choices": [
+          {
+            "name": "Latest",
+            "value": "latest"
+          },
+          {
+            "name": "Deployment",
+            "value": "deployment"
+          },
+          {
+            "name": "Version Tag",
+            "value": "versionTag"
+          }
+        ],
+        "value": "latest"
+      },
+      {
+        "group": "prerun",
+        "type": "String",
+        "label": "Pre-run Version tag",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "Before",
+          "property": "versionTag"
+        },
+        "condition": {
+          "property": "bindingTypePreRun",
+          "equals": "versionTag"
+        }
+      },
+          {
+        "group": "postrun",
+        "label": "Enable post-run script",
+        "tooltip": "Define an additional RPA script that should be executed after the main script is run.",
+        "type": "Boolean",
+        "binding": {
+          "type": "zeebe:property",
+          "name": "camunda::postRun"
+        },
+        "value": false,
+        "id": "postRun"
+      },
+      {
+        "type": "Hidden",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "property": "resourceType",
+          "linkName": "After"
+        },
+        "value": "RPA",
+        "condition": {
+          "property": "postRun",
+          "equals": true
+        }
+      },
+      {
+        "group": "postrun",
+        "type": "String",
+        "feel": "optional",
+        "label": "Post-run Script ID",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "After",
+          "property": "resourceId"
+        },
+        "constraints": {
+          "notEmpty": true
+        },
+        "condition": {
+          "property": "postRun",
+          "equals": true
+        }
+      },
+      {
+        "group": "postrun",
+        "type": "Dropdown",
+        "label": "Post-run Script Binding",
+        "id": "bindingTypePostRun",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "After",
+          "property": "bindingType"
+        },
+        "condition": {
+          "property": "postRun",
+          "equals": true
+        },
+        "choices": [
+          {
+            "name": "Latest",
+            "value": "latest"
+          },
+          {
+            "name": "Deployment",
+            "value": "deployment"
+          },
+          {
+            "name": "Version Tag",
+            "value": "versionTag"
+          }
+        ],
+        "value": "latest"
+      },
+      {
+        "group": "postrun",
+        "type": "String",
+        "label": "Version tag",
+        "binding": {
+          "type": "zeebe:linkedResource",
+          "linkName": "After",
+          "property": "versionTag"
+        },
+        "condition": {
+          "property": "bindingTypePostRun",
+          "equals": "versionTag"
+        }
+      },
+      {
+        "group": "input",
+        "label": "Input mapping",
+        "type": "String",
+        "feel": "required",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "camundaRpaTaskInput"
+        },
+        "optional": true
+      }
+    ],
+    "icon": {
+      "contents": "data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHRpdGxlPmJvdDwvdGl0bGU+CiAgPHJlY3QgeD0iMTgiIHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+CiAgPHBhdGggZD0iTTI2LDIwSDIxVjE4aDFhMi4wMDIzLDIuMDAyMywwLDAsMCwyLTJWMTJoMlYxMEgyNFY4YTIuMDAyMywyLjAwMjMsMCwwLDAtMi0ySDIwVjJIMThWNkgxNFYySDEyVjZIMTBBMi4wMDIzLDIuMDAyMywwLDAsMCw4LDh2Mkg2djJIOHY0YTIuMDAyMywyLjAwMjMsMCwwLDAsMiwyaDF2Mkg2YTIuMDAyMywyLjAwMjMsMCwwLDAtMiwydjhINlYyMkgyNnY4aDJWMjJBMi4wMDIzLDIuMDAyMywwLDAsMCwyNiwyMFpNMTAsOEgyMnY4SDEwWm0zLDEwaDZ2MkgxM1oiLz4KICA8cmVjdCBpZD0iX1RyYW5zcGFyZW50X1JlY3RhbmdsZV8iIGRhdGEtbmFtZT0iJmx0O1RyYW5zcGFyZW50IFJlY3RhbmdsZSZndDsiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIi8+Cjwvc3ZnPgo="
+    }
   }
 ]
