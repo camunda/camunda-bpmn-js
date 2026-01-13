@@ -1155,7 +1155,7 @@
           "equals": "versionTag"
         }
       },
-          {
+      {
         "group": "postrun",
         "label": "Enable post-run script",
         "tooltip": "Define an additional RPA script that should be executed after the main script is run.",

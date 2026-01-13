@@ -25,7 +25,6 @@ import { CloudElementTemplatesPropertiesProviderModule } from 'bpmn-js-element-t
 
 import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
-
 import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe';
 
 import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
@@ -116,7 +115,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerCreateEntry('resources-create-bpmnProcess-0');
 
       // then
-      const createdElement = getLastAcitivity(elementRegistry);
+      const createdElement = getLastActivity(elementRegistry);
 
       expect(is(createdElement, 'bpmn:CallActivity')).to.be.true;
 
@@ -135,7 +134,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerCreateEntry('resources-create-dmnDecision-0');
 
       // then
-      const createdElement = getLastAcitivity(elementRegistry);
+      const createdElement = getLastActivity(elementRegistry);
 
       expect(is(createdElement, 'bpmn:BusinessRuleTask')).to.be.true;
       expect(createdElement.businessObject.name).to.eql('Credit Score');
@@ -155,7 +154,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerCreateEntry('resources-create-form-0');
 
       // then
-      const createdElement = getLastAcitivity(elementRegistry);
+      const createdElement = getLastActivity(elementRegistry);
 
       expect(is(createdElement, 'bpmn:UserTask')).to.be.true;
       expect(createdElement.businessObject.name).to.eql('Invoice Form');
@@ -170,7 +169,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
     }));
 
 
-    it('should create RPA task', inject(function(elementRegistry, resources, elementTemplatesLoader) {
+    it('should create RPA task', inject(function(elementRegistry, resources) {
 
       // given
       resources.set(resourcesJSON);
@@ -179,7 +178,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerCreateEntry('resources-create-rpa-0');
 
       // then
-      const createdElement = getLastAcitivity(elementRegistry);
+      const createdElement = getLastActivity(elementRegistry);
 
       expect(is(createdElement, 'bpmn:ServiceTask')).to.be.true;
       expect(createdElement.businessObject.name).to.eql('Data Extraction Script');
@@ -245,7 +244,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerEntry('resources-append-bpmnProcess-0', 'bpmn-append', task);
 
       // then
-      const appended = getLastAcitivity(elementRegistry);
+      const appended = getLastActivity(elementRegistry);
 
       expect(is(appended, 'bpmn:CallActivity')).to.be.true;
 
@@ -265,7 +264,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerEntry('resources-append-dmnDecision-0', 'bpmn-append', task);
 
       // then
-      const appended = getLastAcitivity(elementRegistry);
+      const appended = getLastActivity(elementRegistry);
 
       expect(is(appended, 'bpmn:BusinessRuleTask')).to.be.true;
       expect(appended.businessObject.name).to.eql('Credit Score');
@@ -286,7 +285,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerEntry('resources-append-form-0', 'bpmn-append', task);
 
       // then
-      const appended = getLastAcitivity(elementRegistry);
+      const appended = getLastActivity(elementRegistry);
 
       expect(is(appended, 'bpmn:UserTask')).to.be.true;
       expect(appended.businessObject.name).to.eql('Invoice Form');
@@ -311,7 +310,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       triggerEntry('resources-append-rpa-0', 'bpmn-append', task);
 
       // then
-      const appended = getLastAcitivity(elementRegistry);
+      const appended = getLastActivity(elementRegistry);
 
       expect(is(appended, 'bpmn:ServiceTask')).to.be.true;
       expect(appended.businessObject.name).to.eql('Data Extraction Script');
@@ -517,7 +516,7 @@ function triggerEntry(id, providerId, element) {
   triggerAction(id);
 }
 
-function getLastAcitivity(elementRegistry) {
+function getLastActivity(elementRegistry) {
   const elements = elementRegistry.getAll();
 
   return elements.slice().reverse().find(e => is(e, 'bpmn:Activity'));
