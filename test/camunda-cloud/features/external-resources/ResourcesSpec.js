@@ -29,6 +29,8 @@ import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe';
 
 import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
 
+import { RPA_MAIN_SCRIPT_LINK_NAME } from 'lib/camunda-cloud/features/external-resources/handlers/rpa/constants';
+
 import diagramXML from './Resources.bpmn';
 import resourcesJSON from '../../resources.json';
 import elementTemplates from '../../element-templates.json';
@@ -188,9 +190,27 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       expect(linkedResources).to.exist;
 
-      const mainScript = linkedResources.values.find(el => el.linkName === 'RPAScript');
+      const mainScript = linkedResources.values.find(el => el.linkName === RPA_MAIN_SCRIPT_LINK_NAME);
       expect(mainScript.resourceId).to.eql('rpa-12345');
     }));
+
+
+    it('should not show RPA option when Template is not available', inject(function(canvas, resources, elementTemplatesLoader) {
+
+      // given
+      elementTemplatesLoader.setTemplates([]);
+      resources.set(resourcesJSON);
+      const rootElement = canvas.getRootElement();
+
+      // when
+      const {
+        entries
+      } = openPopup(rootElement, 'bpmn-create');
+
+      // then
+      expect(entries['resources-create-rpa-0']).not.to.exist;
+    }));
+
   });
 
 
@@ -320,8 +340,25 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       expect(linkedResources).to.exist;
 
-      const mainScript = linkedResources.values.find(el => el.linkName === 'RPAScript');
+      const mainScript = linkedResources.values.find(el => el.linkName === RPA_MAIN_SCRIPT_LINK_NAME);
       expect(mainScript.resourceId).to.eql('rpa-12345');
+    }));
+
+
+    it('should not show RPA option when templates are not available', inject(function(elementRegistry, resources, elementTemplatesLoader) {
+
+      // given
+      elementTemplatesLoader.setTemplates([]);
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-append');
+
+      // then
+      expect(entries['resources-append-rpa-0']).not.to.exist;
     }));
   });
 
@@ -453,9 +490,28 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       expect(linkedResources).to.exist;
 
-      const mainScript = linkedResources.values.find(el => el.linkName === 'RPAScript');
+      const mainScript = linkedResources.values.find(el => el.linkName === RPA_MAIN_SCRIPT_LINK_NAME);
       expect(mainScript.resourceId).to.eql('rpa-12345');
     }));
+
+
+    it('should not show RPA option when templates are not available', inject(function(elementRegistry, resources, elementTemplatesLoader) {
+
+      // given
+      elementTemplatesLoader.setTemplates([]);
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-replace');
+
+      // then
+      expect(entries['resources-replace-rpa-0']).not.to.exist;
+    }));
+
+
   });
 });
 
