@@ -11,10 +11,6 @@
     "appliesTo": [
       "bpmn:Task"
     ],
-    "category": {
-      "id": "rest",
-      "name": "REST Connector"
-    },
     "elementType": {
       "value": "bpmn:ServiceTask"
     },
@@ -147,10 +143,6 @@
     ],
     "elementType": {
       "value": "bpmn:ServiceTask"
-    },
-    "category": {
-      "id": "rest",
-      "name": "REST Connector"
     },
     "groups": [
       {
@@ -320,10 +312,6 @@
     ],
     "elementType": {
       "value": "bpmn:ServiceTask"
-    },
-    "category": {
-      "id": "rest",
-      "name": "REST Connector"
     },
     "groups": [
       {
@@ -954,10 +942,6 @@
     "appliesTo": [
       "bpmn:Task"
     ],
-    "category" : {
-      "id" : "connectors",
-      "name" : "Connectors"
-    },
     "engines": {
       "camunda": "^8.7"
     },
