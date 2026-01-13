@@ -17,6 +17,6 @@
   {
     "type": "rpa",
     "name": "Data Extraction Script",
-    "rpaResourceId": "rpa-12345"
+    "scriptId": "rpa-12345"
   }
 ]
