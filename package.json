@@ -75,14 +75,14 @@
     "zeebe-bpmn-moddle": "^1.11.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
+    "@babel/core": "^7.28.6",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@testing-library/preact": "^3.2.4",
     "babel-loader": "^10.0.0",
-    "babel-plugin-istanbul": "^7.0.0",
+    "babel-plugin-istanbul": "^7.0.1",
     "bio-dts": "^0.13.0",
     "bpmn-js-properties-panel": "^5.44.0",
     "chai": "^4.5.0",
@@ -117,7 +117,7 @@
     "sinon": "^17.0.1",
     "sinon-chai": "^3.7.0",
     "typescript": "^5.9.3",
-    "webpack": "^5.99.6"
+    "webpack": "^5.104.1"
   },
   "peerDependencies": {
     "bpmn-js-properties-panel": ">= 3.0.0"
