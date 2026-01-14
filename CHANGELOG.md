@@ -106,7 +106,6 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: support multiline feel strings in `camunda` dialect ([@bpmn-io/lezer-feel#2](https://github.com/bpmn-io/lezer-feel/pull/2))
 * `FIX`: recognize unclosed feel string literal as syntax error ([nikku/lezer-feel#52](https://github.com/nikku/lezer-feel/pull/52))
 
-
 ## 5.12.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.32.0`
