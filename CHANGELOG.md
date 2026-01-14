@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: add RPA as resource type ([#432](https://github.com/camunda/camunda-bpmn-js/pull/432))
+
 ## 5.16.0
 
 * `DEPS`: update to `@bpmn-io/element-template-chooser@2.1.0`
