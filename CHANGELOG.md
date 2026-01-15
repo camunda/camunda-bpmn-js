@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.17.0
+
+* `DEPS`: add `bpmn-js-native-copy-paste@0.1.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.35.1`
 * `DEPS`: update to `bpmn-js@18.10.1`
 * `DEPS`: update to `bpmn-js-properties-panel@5.46.0`
@@ -15,6 +18,7 @@ ___Note:__ Yet to be released changes appear here._
 ### Key Changes in Modeling
 
 * `FEAT`: add RPA as resource type ([#432](https://github.com/camunda/camunda-bpmn-js/pull/432))
+* `FEAT`: integrate cross browser/application copy and paste of BPMN elements ([#437](https://github.com/camunda/camunda-bpmn-js/pull/437))
 * `FEAT`: add ability to duplicate elements ([bpmn-io/diagram-js#998](https://github.com/bpmn-io/diagram-js/pull/998))
 
 ### Key Changes in Properties Panel
