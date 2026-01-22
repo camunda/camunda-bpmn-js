@@ -7,8 +7,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
-* `FEAT`: add support of FEEL expressions for 'Form ID' field ([#1183](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1183))
-* `FIX`: change the tooltip content for the message property to be specific depens on event/task type ([#1181](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1181))
+
+* `FEAT`: add support of FEEL expressions for 'Form ID' field ([bpmn-io/bpmn-js-properties-panel#1183](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1183))
+* `FIX`: change the tooltip content for the message property to be specific depending on event/task type ([bpmn-io/bpmn-js-properties-panel#1181](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1181))
 
 ## 5.17.0
 
