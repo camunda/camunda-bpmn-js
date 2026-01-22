@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.18.0
+
+* `DEPS`: update to `bpmn-js-properties-panel@5.48.0`
+
 ### Key Changes in Properties Panel
 
 * `FEAT`: add support of FEEL expressions for 'Form ID' field ([bpmn-io/bpmn-js-properties-panel#1183](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1183))
