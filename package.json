@@ -2,8 +2,7 @@
   "name": "camunda-bpmn-js",
   "version": "5.17.0",
   "description": "Embeddable Camunda modeling distributions based on bpmn-js",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
   "scripts": {
     "all": "run-s clean lint test generate-types distro test:distro",
     "lint": "eslint .",
