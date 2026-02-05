@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 import path from 'node:path';
 import { createRequire } from 'node:module';
 

@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 /**
  * Generates all possible combinations of the items in the given arrays.
  *

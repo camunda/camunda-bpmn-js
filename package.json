@@ -89,7 +89,7 @@
     "cross-env": "^10.0.0",
     "del-cli": "^7.0.0",
     "downloadjs": "^1.4.7",
-    "eslint": "^9.25.1",
+    "eslint": "^9.39.2",
     "eslint-plugin-bpmn-io": "^2.2.0",
     "eslint-plugin-camunda-licensed": "^1.0.0",
     "execa": "^9.6.1",
