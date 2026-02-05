@@ -10,6 +10,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `bpmn-js-properties-panel@5.48.0`
 * `DEPS`: update to `bpmn-js@18.12.0`
 * `DEPS`: update to `diagram-js@15.9.0`
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.4.0`
 
 ### Key Changes in Modeling
 
