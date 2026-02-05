@@ -16,8 +16,7 @@ module.exports = function(karma) {
     basePath: '.',
 
     frameworks: [
-      'mocha',
-      'sinon-chai'
+      'mocha'
     ],
 
     files: [
