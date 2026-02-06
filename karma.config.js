@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 var path = require('path');
 
 var singleStart = process.env.SINGLE_START;
@@ -26,8 +24,7 @@ module.exports = function(karma) {
 
     frameworks: [
       'webpack',
-      'mocha',
-      'sinon-chai'
+      'mocha'
     ],
 
     files: [

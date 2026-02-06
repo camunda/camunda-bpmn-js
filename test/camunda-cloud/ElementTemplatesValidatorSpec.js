@@ -1,3 +1,5 @@
+import { expect } from 'chai';
+
 import { CloudElementTemplatesValidator } from 'lib/camunda-cloud/ElementTemplatesValidator';
 
 

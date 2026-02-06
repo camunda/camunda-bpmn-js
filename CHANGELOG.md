@@ -6,6 +6,28 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: support conditional event modeling for Camunda 8 ([bpmn-io/bpmn-js-properties-panel#1176](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1176))
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.3.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.48.0`
+* `DEPS`: update to `bpmn-js@18.12.0`
+* `DEPS`: update to `diagram-js-minimap@5.3.0`
+* `DEPS`: update to `diagram-js@15.9.0`
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.4.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.19.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: activate wheel zoom/scoll on `mouseover` ([#1008](https://github.com/bpmn-io/diagram-js/pull/1008))
+* `FEAT`: prevent keyboard movement for boundary events without host ([#2386](https://github.com/bpmn-io/bpmn-js/pull/2386))
+* `FIX`: prevent accidental creation of intermediate events during keyboard move ([#1803](https://github.com/bpmn-io/bpmn-js/issues/1803))
+* `FEAT`: add `cut` action and keyboard shortcut ([bpmn-io/diagram-js#1006](https://github.com/bpmn-io/diagram-js/pull/1006))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `boolean` and `number` condition for `feel: static` properties ([bpmn-io/bpmn-js-element-templates#195](https://github.com/bpmn-io/bpmn-js-element-templates/issues/195), [bpmn-io/bpmn-js-element-templates#207](https://github.com/bpmn-io/bpmn-js-element-templates/pull/207))
+* `FIX`: correct `boolean` conditions in templates not working properly ([bpmn-io/bpmn-js-element-templates#192](https://github.com/bpmn-io/bpmn-js-element-templates/issues/192), [bpmn-io/bpmn-js-element-templates#207](https://github.com/bpmn-io/bpmn-js-element-templates/pull/207))
+* `FIX`: handle version 0 correctly during validation ([bpmn-io/bpmn-js-element-templates#216](https://github.com/bpmn-io/bpmn-js-element-templates/pull/216), [bpmn-io/bpmn-js-element-templates#176](https://github.com/bpmn-io/bpmn-js-element-templates/issues/176))
+
 ## 5.18.0
 
 * `DEPS`: update to `bpmn-js-properties-panel@5.48.0`
