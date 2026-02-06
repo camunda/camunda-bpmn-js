@@ -21,6 +21,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: prevent keyboard movement for boundary events without host ([#2386](https://github.com/bpmn-io/bpmn-js/pull/2386))
 * `FIX`: prevent accidental creation of intermediate events during keyboard move ([#1803](https://github.com/bpmn-io/bpmn-js/issues/1803))
 * `FEAT`: add `cut` action and keyboard shortcut ([bpmn-io/diagram-js#1006](https://github.com/bpmn-io/diagram-js/pull/1006))
+* `CHORE`: remove Camunda 8 embedded forms intelligence ([#442](https://github.com/camunda/camunda-bpmn-js/pull/442))
 
 ### Key Changes in Element Templates
 
