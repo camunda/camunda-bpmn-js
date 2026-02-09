@@ -1187,5 +1187,48 @@
     "icon": {
       "contents": "data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHRpdGxlPmJvdDwvdGl0bGU+CiAgPHJlY3QgeD0iMTgiIHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjEwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+CiAgPHBhdGggZD0iTTI2LDIwSDIxVjE4aDFhMi4wMDIzLDIuMDAyMywwLDAsMCwyLTJWMTJoMlYxMEgyNFY4YTIuMDAyMywyLjAwMjMsMCwwLDAtMi0ySDIwVjJIMThWNkgxNFYySDEyVjZIMTBBMi4wMDIzLDIuMDAyMywwLDAsMCw4LDh2Mkg2djJIOHY0YTIuMDAyMywyLjAwMjMsMCwwLDAsMiwyaDF2Mkg2YTIuMDAyMywyLjAwMjMsMCwwLDAtMiwydjhINlYyMkgyNnY4aDJWMjJBMi4wMDIzLDIuMDAyMywwLDAsMCwyNiwyMFpNMTAsOEgyMnY4SDEwWm0zLDEwaDZ2MkgxM1oiLz4KICA8cmVjdCBpZD0iX1RyYW5zcGFyZW50X1JlY3RhbmdsZV8iIGRhdGEtbmFtZT0iJmx0O1RyYW5zcGFyZW50IFJlY3RhbmdsZSZndDsiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIi8+Cjwvc3ZnPgo="
     }
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Conditional Event",
+    "id": "conditional-event",
+    "version": 1,
+    "appliesTo": [
+      "bpmn:Event"
+    ],
+    "elementType": {
+      "value": "bpmn:IntermediateCatchEvent",
+      "eventDefinition": "bpmn:ConditionalEventDefinition"
+    },
+    "properties": [
+      {
+        "label": "Condition Expression",
+        "type": "String",
+        "value": "=foo > bar",
+        "feel": "required",
+        "binding": {
+          "type": "bpmn:ConditionalEventDefinition#property",
+          "name": "condition"
+        }
+      },
+      {
+        "label": "Variable Names",
+        "type": "String",
+        "value": "foo,bar",
+        "binding": {
+          "type": "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property",
+          "name": "variableNames"
+        }
+      },
+      {
+        "label": "Variable Events",
+        "type": "String",
+        "value": "create,update",
+        "binding": {
+          "type": "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property",
+          "name": "variableEvents"
+        }
+      }
+    ]
   }
 ]
