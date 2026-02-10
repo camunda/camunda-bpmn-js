@@ -6,6 +6,12 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.20.0
+
+* `FEAT`: support conditional event element templates ([bpmn-io/bpmn-js-element-templates#217](https://github.com/bpmn-io/bpmn-js-element-templates/pull/217))
+* `DEPS`: update to `bpmn-js-element-templates@2.20.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.12.0`
+
 ## 5.19.0
 
 * `FEAT`: support conditional event modeling for Camunda 8 ([bpmn-io/bpmn-js-properties-panel#1176](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1176))
