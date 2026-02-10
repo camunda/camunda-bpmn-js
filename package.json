@@ -59,7 +59,7 @@
     "@camunda/example-data-properties-provider": "^1.3.0",
     "bpmn-js": "^18.12.0",
     "bpmn-js-color-picker": "^0.7.2",
-    "bpmn-js-create-append-anything": "^1.1.0",
+    "bpmn-js-create-append-anything": "^1.2.0",
     "bpmn-js-element-templates": "^2.20.0",
     "bpmn-js-executable-fix": "^0.2.1",
     "bpmn-js-native-copy-paste": "^0.3.0",

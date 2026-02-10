@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: auto-attach boundary events to the active element ([bpmn-io/bpmn-js-create-append-anything#64](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/64))
+* `DEPS`: update to `bpmn-js-create-append-anything@1.2.0`
+
 ## 5.20.0
 
 * `FEAT`: support conditional event element templates ([bpmn-io/bpmn-js-element-templates#217](https://github.com/bpmn-io/bpmn-js-element-templates/pull/217))
