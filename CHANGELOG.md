@@ -9,8 +9,10 @@ ___Note:__ Yet to be released changes appear here._
 ## 5.21.0
 
 * `FEAT`: auto-attach boundary events to the active element ([bpmn-io/bpmn-js-create-append-anything#64](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/64))
+* `FIX`: ensure outline always shows on canvas ([bpmn-io/diagram-js#1011](https://github.com/bpmn-io/diagram-js/pull/1011))
 * `DEPS`: update to `@bpmn-io/properties-panel@3.39.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.2.0`
+* `DEPS`: update to `diagram-js@15.9.1`
 
 ## 5.20.0
 
