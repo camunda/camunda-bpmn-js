@@ -9,6 +9,7 @@ ___Note:__ Yet to be released changes appear here._
 ## 5.21.0
 
 * `FEAT`: auto-attach boundary events to the active element ([bpmn-io/bpmn-js-create-append-anything#64](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/64))
+* `DEPS`: update to `@bpmn-io/properties-panel@3.39.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.2.0`
 
 ## 5.20.0
