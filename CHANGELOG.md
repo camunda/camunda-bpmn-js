@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.22.0
+
 * `FEAT`: add support of copy selection as image via `Cmd/Ctrl+Shift+C` shortcut ([#446](https://github.com/camunda/camunda-bpmn-js/pull/446))
 * `DEPS`: add `bpmn-js-copy-as-image@0.2.0`
 
