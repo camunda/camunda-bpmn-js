@@ -63,7 +63,7 @@
     "bpmn-js-element-templates": "^2.20.0",
     "bpmn-js-executable-fix": "^0.2.1",
     "bpmn-js-native-copy-paste": "^0.3.0",
-    "bpmn-js-copy-as-image": "^0.2.0",
+    "bpmn-js-copy-as-image": "^0.4.0",
     "camunda-bpmn-js-behaviors": "^1.14.0",
     "camunda-bpmn-moddle": "^7.0.1",
     "diagram-js": "^15.9.1",
