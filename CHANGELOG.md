@@ -6,6 +6,17 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.23.0
+
+* `FEAT`: resolve `zeebe:adHoc#outputCollection` ([#69](https://github.com/bpmn-io/variable-resolver/pull/69))
+* `FIX`: do not unlink templates with Variable Events for boundary events ([#222](https://github.com/bpmn-io/bpmn-js-element-templates/pull/222))
+* `FIX`: do not clear Variable Events on boundary events ([#120](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/120))
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.5.0`
+* `DEPS`: update to `bpmn-js-copy-as-image@0.4.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.20.1`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.14.1`
+* `DEPS`: update to `diagram-js-grid@2.0.1`
+
 ## 5.22.1
 
 * `FIX`: improve the quality of the 'Copy as Image' action's output image ([bpmn-io/bpmn-js-copy-as-image#3](https://github.com/bpmn-io/bpmn-js-copy-as-image/pull/3))
