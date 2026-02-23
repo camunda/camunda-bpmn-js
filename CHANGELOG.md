@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.24.0
+
+* `FEAT`: expand + merge hierarchical names (Camunda 8) ([bpmn-io/variable-resolver#70](https://github.com/bpmn-io/variable-resolver/pull/70))
+* `FEAT`: support `optional-default-enabled` FEEL entry config ([bpmn-io/properties-panel#470](https://github.com/bpmn-io/properties-panel/pull/470))
+* `FIX`: filter out variables without name ([bpmn-io/variable-resolver#79](https://github.com/bpmn-io/variable-resolver/pull/79))
+* `DEPS`: update to `@bpmn-io/variable-resolver@1.6.1`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.40.0`
+
 ## 5.23.0
 
 * `FEAT`: resolve `zeebe:adHoc#outputCollection` ([#69](https://github.com/bpmn-io/variable-resolver/pull/69))
