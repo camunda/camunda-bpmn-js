@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.24.1
+
+* `FIX`: remove deprecated FEEL Copilot Playground link from FEEL editor ([#450](https://github.com/camunda/camunda-bpmn-js/pull/450))
+
 ## 5.24.0
 
 * `FEAT`: expand + merge hierarchical names (Camunda 8) ([bpmn-io/variable-resolver#70](https://github.com/bpmn-io/variable-resolver/pull/70))
