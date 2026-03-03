@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.24.2
+
+* `FEAT`: allow to specify visible properties panel groups via template `entriesVisible` object ([bpmn-io/bpmn-js-element-templates#224](https://github.com/bpmn-io/bpmn-js-element-templates/pull/224))
+* `DEPS`: update to `bpmn-js-element-templates@2.21.0`
+
 ## 5.24.1
 
 * `FIX`: remove deprecated FEEL Copilot Playground link from FEEL editor ([#450](https://github.com/camunda/camunda-bpmn-js/pull/450))
