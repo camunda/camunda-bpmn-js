@@ -83,7 +83,7 @@
     "@testing-library/preact": "^3.2.4",
     "babel-loader": "^10.0.0",
     "babel-plugin-istanbul": "^7.0.1",
-    "bio-dts": "^0.13.0",
+    "bio-dts": "^0.14.0",
     "bpmn-js-properties-panel": "^5.52.0",
     "chai": "^6.2.2",
     "cross-env": "^10.0.0",
