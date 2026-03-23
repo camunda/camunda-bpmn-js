@@ -6,6 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.25.0
+
+* `FEAT`: expose both read and written variables ([bpmn-io/variable-resolver#74](https://github.com/bpmn-io/variable-resolver/pull/74))
+* `DEPS`: update to `@bpmn-io/variable-resolver@3.0.0`
+
 ## 5.24.2
 
 * `FEAT`: allow to specify visible properties panel groups via template `entriesVisible` object ([bpmn-io/bpmn-js-element-templates#224](https://github.com/bpmn-io/bpmn-js-element-templates/pull/224))
