@@ -6,6 +6,35 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.26.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.40.5`
+* `DEPS`: update to `bpmn-js@18.13.2`
+* `DEPS`: update to `bpmn-js-element-templates@2.23.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.53.0`
+* `DEPS`: update to `diagram-js@15.10.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: allow to create child elements from the context pad ([bpmn-io/bpmn-js#2391](https://github.com/bpmn-io/bpmn-js/issues/2391))
+* `FIX`: disable grouping in popup menu during search ([bpmn-io/diagram-js#1014](https://github.com/bpmn-io/diagram-js/pull/1014))
+* `FIX`: correct handling of annotations during sub-process collapse/expand, copy/paste, and remove actions ([bpmn-io/bpmn-js#2388](https://github.com/bpmn-io/bpmn-js/pull/2388))
+* `FIX`: allow undo of pasted sub-process ([bpmn-io/bpmn-js#2388](https://github.com/bpmn-io/bpmn-js/pull/2388), [bpmn-io/bpmn-js#2269](https://github.com/bpmn-io/bpmn-js/issues/2269))
+* `FIX`: correct sequence flow layout for corner boundary events whose target is strictly axis-aligned ([bpmn-io/bpmn-js#2270](https://github.com/bpmn-io/bpmn-js/issues/2270))
+* `FIX`: correctly replace non-interrupting event with an interrupting one ([bpmn-io/bpmn-js#2313](https://github.com/bpmn-io/bpmn-js/issues/2313))
+
+### Key Changes in Properties Panel
+
+* `FIX`: prevent cutting the tooltip if it couldn't fit to the bottom of the screen ([bpmn-io/properties-panel#469](https://github.com/bpmn-io/properties-panel/pull/469))
+* `FIX`: ensure Feel/Text editors value is properly committed on blur, paste, and unmount ([bpmn-io/properties-panel#481](https://github.com/bpmn-io/properties-panel/pull/481))
+
+### Key Changes in Element Templates
+
+* `FEAT`: add support of templating execution and task listeners ([bpmn-io/bpmn-js-element-templates#230](https://github.com/bpmn-io/bpmn-js-element-templates/pull/230))
+* `FEAT`: improve min and max length error messages ([bpmn-io/bpmn-js-element-templates#225](https://github.com/bpmn-io/bpmn-js-element-templates/pull/225))
+* `FIX`: preserve user-defined outputs when apply/update template with `entriesVisible.outputs === true` ([bpmn-io/bpmn-js-element-templates#233](https://github.com/bpmn-io/bpmn-js-element-templates/pull/233))
+* `FIX`: restrict usage of template-defined `zeebe:output` bindings with `entriesVisible.outputs === true` ([bpmn-io/bpmn-js-element-templates#233](https://github.com/bpmn-io/bpmn-js-element-templates/pull/233))
+
 ## 5.25.0
 
 * `FEAT`: expose both read and written variables ([bpmn-io/variable-resolver#74](https://github.com/bpmn-io/variable-resolver/pull/74))
