@@ -114,7 +114,7 @@
     "remark-preset-bpmn-io": "^0.4.0",
     "rollup": "^4.57.1",
     "rollup-plugin-copy": "^3.5.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.0",
     "webpack": "^5.105.0"
   },
   "peerDependencies": {
