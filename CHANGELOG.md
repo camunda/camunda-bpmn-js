@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FIX`: correctly handle backslash in string and identifier tokens ([lezer-feel#81](https://github.com/nikku/lezer-feel/pull/81))
+* `DEPS`: update to `@bpmn-io/variable-resolver@3.0.1`
+
 ## 5.26.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.40.5`
