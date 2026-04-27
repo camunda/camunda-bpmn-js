@@ -6,6 +6,43 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.27.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.41.2`
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.4.0`
+* `DEPS`: update to `bpmn-js@18.15.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.24.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.54.0`
+* `DEPS`: update to `diagram-js@15.13.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.13.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: show outline around lasso-selected elements ([bpmn-io/bpmn-js#173](https://github.com/bpmn-io/bpmn-js/issues/173), [bpmn-io/diagram-js#1021](https://github.com/bpmn-io/diagram-js/pull/1021))
+* `FEAT`: improve text rendering performance ([bpmn-io/diagram-js#1026](https://github.com/bpmn-io/diagram-js/issues/1026), [bpmn-io/diagram-js#1027](https://github.com/bpmn-io/diagram-js/pull/1027))
+* `FEAT`: improve diagram import performance ([bpmn-io/diagram-js#1026](https://github.com/bpmn-io/diagram-js/issues/1026), [bpmn-io/diagram-js#1027](https://github.com/bpmn-io/diagram-js/pull/1027))
+* `FEAT`: move enclosed artifacts with participants / sub-processes ([bpmn-io/bpmn-js#1929](https://github.com/bpmn-io/bpmn-js/issues/1929), [bpmn-io/bpmn-js#2419](https://github.com/bpmn-io/bpmn-js/issues/2419))
+* `FEAT`: add to selection if `SHIFT` is pressed at start of lasso ([bpmn-io/diagram-js#1028](https://github.com/bpmn-io/diagram-js/issues/1028), [bpmn-io/diagram-js#1029](https://github.com/bpmn-io/diagram-js/pull/1029))
+* `FEAT`: prioritize full word matches in search ([bpmn-io/diagram-js#1017](https://github.com/bpmn-io/diagram-js/pull/1017))
+* `FEAT`: factor match density into search ([bpmn-io/diagram-js#1017](https://github.com/bpmn-io/diagram-js/pull/1017))
+* `FIX`: ignore broken `BPMNDI` when setting label colors ([bpmn-io/bpmn-js#2418](https://github.com/bpmn-io/bpmn-js/pull/2418))
+
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add `JsonEditor` component ([bpmn-io/properties-panel#485](https://github.com/bpmn-io/properties-panel/pull/485))
+* `FEAT`: add execution listener headers configuration ([bpmn-io/bpmn-js-properties-panel#1211](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1211))
+* `FEAT`: use JSON editor instead of `TextArea` as 'Example data' property input ([camunda/example-data-properties-provider#22](https://github.com/camunda/example-data-properties-provider/pull/22))
+* `FIX`: make FeelEditor read-only based on the `disabled` prop ([bpmn-io/properties-panel#484](https://github.com/bpmn-io/properties-panel/pull/484))
+* `FIX`: re-enable toggling feel optional fields with backspace ([bpmn-io/feel-editor#83](https://github.com/bpmn-io/feel-editor/pull/83))
+* `FIX`: continue suggestions for autocompletion in feel fields even after spaces ([bpmn-io/feel-editor#84](https://github.com/bpmn-io/feel-editor/pull/84))
+* `FIX`: add `type` to feel popup button ([bpmn-io/properties-panel#472](https://github.com/bpmn-io/properties-panel/pull/472))
+
+### Key Changes in Element Templates
+
+* `FEAT`: add support of execution listeners templates with headers ([bpmn-io/bpmn-js-element-templates#238](https://github.com/bpmn-io/bpmn-js-element-templates/pull/238))
+* `FIX`: use a fallback for missing label in validation ([bpmn-io/bpmn-js-element-templates#237](https://github.com/bpmn-io/bpmn-js-element-templates/pull/237))
+
 ## 5.26.1
 
 * `FIX`: correctly handle backslash in string and identifier tokens ([lezer-feel#81](https://github.com/nikku/lezer-feel/pull/81))
