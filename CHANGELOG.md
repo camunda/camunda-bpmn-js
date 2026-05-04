@@ -6,6 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.28.0
+
+* `DEPS`: update to `bpmn-js@18.16.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: make external labels resizable ([bpmn-io/bpmn-js#2414](https://github.com/bpmn-io/bpmn-js/pull/2414))
+
 ## 5.27.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.41.2`
