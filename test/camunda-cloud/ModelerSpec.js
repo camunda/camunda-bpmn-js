@@ -64,16 +64,23 @@ insertCSS('test-panel.css', `
     position: relative;
   }
 
-  .canvas, .properties {
+  .canvas {
     overflow-y: auto;
   }
 
   .properties {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     flex: none;
     height: 100%;
     width: 250px;
     border-left: solid 1px #cccccc;
+    overflow: hidden;
+  }
+
+  .properties > .bio-properties-panel-container {
+    flex: 1;
+    min-height: 0;
   }
 `);
 
@@ -84,7 +91,8 @@ describe('<CamundaCloudModeler>', function() {
 
   var modelerContainer;
 
-  var propertiesContainer;
+  var propertiesHeaderContainer,
+      propertiesContainer;
 
   var modeler;
 
@@ -95,10 +103,13 @@ describe('<CamundaCloudModeler>', function() {
     propertiesContainer = document.createElement('div');
     propertiesContainer.classList.add('properties');
 
+    propertiesHeaderContainer = document.createElement('div');
+
     const container = TestContainer.get(this);
 
     container.appendChild(modelerContainer);
     container.appendChild(propertiesContainer);
+    propertiesContainer.appendChild(propertiesHeaderContainer);
   });
 
   function createModeler(xml, additionalModules = [], options = {}) {
@@ -112,6 +123,9 @@ describe('<CamundaCloudModeler>', function() {
       ],
       propertiesPanel: {
         parent: propertiesContainer
+      },
+      propertiesPanelHeader: {
+        parent: propertiesHeaderContainer
       },
       ...options
     });
