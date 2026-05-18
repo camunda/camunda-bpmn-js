@@ -3,14 +3,13 @@
 var browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
 
 // use puppeteer provided Chrome for testing
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+module.exports = async function(karma) {
+  process.env.CHROME_BIN = await require('puppeteer').executablePath();
 
-var VARIANT = process.env.VARIANT;
+  var VARIANT = process.env.VARIANT;
 
-var NODE_ENV = process.env.NODE_ENV;
+  var NODE_ENV = process.env.NODE_ENV;
 
-
-module.exports = function(karma) {
   karma.set({
 
     basePath: '.',
