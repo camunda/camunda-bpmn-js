@@ -9,10 +9,12 @@ ___Note:__ Yet to be released changes appear here._
 ## 5.28.0
 
 * `DEPS`: update to `bpmn-js@18.16.0`
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.4.0`
 
 ### Key Changes in Modeling
 
 * `FEAT`: make external labels resizable ([bpmn-io/bpmn-js#2414](https://github.com/bpmn-io/bpmn-js/pull/2414))
+* `FEAT`: improve example data description ([camunda/example-data-properties-provider#24](https://github.com/camunda/example-data-properties-provider/pull/24))
 
 ## 5.27.0
 
