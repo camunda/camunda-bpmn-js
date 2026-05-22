@@ -11,10 +11,10 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
-* `FEAT`: add support for start event forms ([#1219](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1219))
-* `FEAT`: display input / output variable names as monospace ([#1222](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1222))
-* `FEAT`: add multi-instance specific event types for execution listeners ([#1215](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1215))
-* `FEAT`: improve Camunda 8 tooltips/guidance ([#1224](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1224))
+* `FEAT`: add support for start event forms ([bpmn-io/bpmn-js-properties-panel#1219](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1219))
+* `FEAT`: display input / output variable names as monospace ([bpmn-io/bpmn-js-properties-panel#1222](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1222))
+* `FEAT`: add multi-instance specific event types for execution listeners ([bpmn-io/bpmn-js-properties-panel#1215](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1215))
+* `FEAT`: improve Camunda 8 tooltips/guidance ([bpmn-io/bpmn-js-properties-panel#1224](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1224))
 * `FEAT`: de-emphasize tooltiped element underlines ([bpmn-io/properties-panel#499](https://github.com/bpmn-io/properties-panel/pull/499))
 * `FIX`: allow to navigate to tooltip contents inside of groups ([bpmn-io/properties-panel#493](https://github.com/bpmn-io/properties-panel/issues/493))
 
