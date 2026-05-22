@@ -9,7 +9,7 @@ ___Note:__ Yet to be released changes appear here._
 ## 5.28.0
 
 * `DEPS`: update to `bpmn-js@18.16.0`
-* `DEPS`: update to `@camunda/example-data-properties-provider@1.4.0`
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.5.0`
 
 ### Key Changes in Modeling
 
