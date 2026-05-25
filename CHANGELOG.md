@@ -6,15 +6,19 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.28.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.44.0`
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.5.0`
 * `DEPS`: update to `bpmn-js@18.16.1`
 * `DEPS`: update to `bpmn-js-properties-panel@5.58.0`
-* `DEPS`: update to `@bpmn-io/properties-panel@3.44.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.16.1`
 * `DEPS`: update to `diagram-js@15.14.0`
 * `DEPS`: update to `zeebe-bpmn-moddle@1.14.0`
 
 ### Key Changes in Modeling
 
+* `FEAT`: make external labels resizable ([bpmn-io/bpmn-js#2414](https://github.com/bpmn-io/bpmn-js/pull/2414))
 * `FEAT`: pass direction to `canResize` when rendering handles ([bpmn-io/diagram-js#1031](https://github.com/bpmn-io/diagram-js/pull/1031))
 * `FEAT`: add start event form cleanup on element delete, replace, copy/paste or move from the root ([camunda/camunda-bpmn-js-behaviors#127](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/127))
 * `FEAT`: add cleanup for `beforeAll` execution listeners when multi-instance is removed ([camunda/camunda-bpmn-js-behaviors#126](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/126))
@@ -23,25 +27,13 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
+* `FEAT`: improve example data description ([camunda/example-data-properties-provider#24](https://github.com/camunda/example-data-properties-provider/pull/24))
 * `FEAT`: add support for start event forms ([bpmn-io/bpmn-js-properties-panel#1219](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1219))
 * `FEAT`: display input / output variable names as monospace ([bpmn-io/bpmn-js-properties-panel#1222](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1222))
 * `FEAT`: add multi-instance specific event types for execution listeners ([bpmn-io/bpmn-js-properties-panel#1215](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1215))
 * `FEAT`: improve Camunda 8 tooltips/guidance ([bpmn-io/bpmn-js-properties-panel#1224](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1224))
 * `FEAT`: de-emphasize tooltiped element underlines ([bpmn-io/properties-panel#499](https://github.com/bpmn-io/properties-panel/pull/499))
 * `FIX`: allow to navigate to tooltip contents inside of groups ([bpmn-io/properties-panel#493](https://github.com/bpmn-io/properties-panel/issues/493))
-
-## 5.28.0
-
-* `DEPS`: update to `bpmn-js@18.16.0`
-* `DEPS`: update to `@camunda/example-data-properties-provider@1.5.0`
-
-### Key Changes in Modeling
-
-* `FEAT`: make external labels resizable ([bpmn-io/bpmn-js#2414](https://github.com/bpmn-io/bpmn-js/pull/2414))
-
-### Key Changes in Properties Panel
-
-* `FEAT`: improve example data description ([camunda/example-data-properties-provider#24](https://github.com/camunda/example-data-properties-provider/pull/24))
 
 ## 5.27.0
 
