@@ -26,7 +26,7 @@ module.exports = async function(karma) {
       'test/distro/' + VARIANT + '.js'
     ],
 
-    reporters: [ 'progress' ],
+    reporters: [ 'tldr' ],
 
     browsers,
 
