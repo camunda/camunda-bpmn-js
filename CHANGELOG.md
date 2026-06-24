@@ -6,6 +6,35 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/element-template-chooser@3.0.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.44.1`
+* `DEPS`: update to `bpmn-js@18.19.0`
+* `DEPS`: update to `bpmn-js-create-append-anything@1.3.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.26.0`
+* `DEPS`: update to `diagram-js@15.18.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: introduce multi-step navigation to popup menu ([bpmn-io/diagram-js#1040](https://github.com/bpmn-io/diagram-js/pull/1040))
+* `FEAT`: show search result number in popup menu ([bpmn-io/diagram-js#1040](https://github.com/bpmn-io/diagram-js/pull/1040))
+* `FEAT`: improve popup menu styling ([bpmn-io/diagram-js#1041](https://github.com/bpmn-io/diagram-js/pull/1041))
+* `FEAT`: use parents' entries keywords for search in popup menu ([bpmn-io/diagram-js#1053](https://github.com/bpmn-io/diagram-js/pull/1053))
+* `FEAT`: support multi-step pop-up for templates ([bpmn-io/bpmn-js-create-append-anything#78](https://github.com/bpmn-io/bpmn-js-create-append-anything/issues/78))
+* `FEAT`: allow blocking canvas interactions ([bpmn-io/diagram-js#1032](https://github.com/bpmn-io/diagram-js/pull/1032))
+* `FIX`: correct popup menu closing on inside clicks ([bpmn-io/diagram-js#1045](https://github.com/bpmn-io/diagram-js/pull/1045))
+
+### Key Changes in Properties Panel
+
+* `FIX`: support translation of list component ([bpmn-io/properties-panel#504](https://github.com/bpmn-io/properties-panel/pull/504))
+* `FIX`: use semantic color name for tooltip underline ([bpmn-io/properties-panel#500](https://github.com/bpmn-io/properties-panel/pull/500))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support applying templates with presets ([bpmn-io/bpmn-js-element-templates#252](https://github.com/bpmn-io/bpmn-js-element-templates/pull/252))
+* `FEAT`: add `update` lint rule to find element templates that need updating ([bpmn-io/bpmn-js-element-templates#250](https://github.com/bpmn-io/bpmn-js-element-templates/pull/250))
+* `FEAT`: use JSON editor for custom template properties with `language=json` ([bpmn-io/bpmn-js-element-templates#244](https://github.com/bpmn-io/bpmn-js-element-templates/pull/244))
+* `FEAT`: support multi-step pop-up menu entries in element template chooser ([bpmn-io/element-template-chooser#31](https://github.com/bpmn-io/element-template-chooser/pull/31))
+
 ## 5.28.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.44.0`
