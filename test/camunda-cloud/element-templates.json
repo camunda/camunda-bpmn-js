@@ -51,7 +51,8 @@
         "binding": {
           "type": "zeebe:input",
           "name": "method"
-        }
+        },
+        "id": "httpMethod"
       },
       {
         "label": "URL",
@@ -125,6 +126,56 @@
         "binding": {
           "type": "zeebe:taskHeader",
           "key": "resultExpression"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "name": "GET request",
+        "description": "Read data from the endpoint",
+        "keywords": [
+          "get",
+          "read",
+          "fetch"
+        ],
+        "presetId": "get"
+      },
+      {
+        "name": "POST request",
+        "description": "Create data at the endpoint",
+        "keywords": [
+          "post",
+          "create"
+        ],
+        "presetId": "post"
+      },
+      {
+        "name": "PUT request",
+        "description": "Update data at the endpoint",
+        "keywords": [
+          "put",
+          "update"
+        ],
+        "presetId": "put"
+      }
+    ],
+    "presets": [
+      {
+        "id": "get",
+        "properties": {
+          "httpMethod": "get"
+        }
+      },
+      {
+        "id": "post",
+        "properties": {
+          "httpMethod": "post"
+        }
+      },
+      {
+        "id": "put",
+        "properties": {
+          "httpMethod": "put"
         }
       }
     ]
@@ -718,7 +769,8 @@
         },
         "constraints": {
           "notEmpty": true
-        }
+        },
+        "id": "contentType"
       },
       {
         "label": "Body",
@@ -731,6 +783,46 @@
         },
         "constraints": {
           "notEmpty": true
+        }
+      }
+    ],
+    "steps": [
+      {
+        "name": "Email format",
+        "description": "Choose the email body format",
+        "steps": [
+          {
+            "name": "Plain text",
+            "description": "Send the email as plain text",
+            "keywords": [
+              "plain",
+              "text"
+            ],
+            "presetId": "plain"
+          },
+          {
+            "name": "HTML",
+            "description": "Send the email as HTML",
+            "keywords": [
+              "html",
+              "rich"
+            ],
+            "presetId": "html"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "id": "plain",
+        "properties": {
+          "contentType": "text/plain"
+        }
+      },
+      {
+        "id": "html",
+        "properties": {
+          "contentType": "text/html"
         }
       }
     ]
