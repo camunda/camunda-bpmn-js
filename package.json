@@ -109,7 +109,6 @@
     "mocha": "^11.7.6",
     "mocha-test-container-support": "^0.2.0",
     "npm-run-all2": "^9.0.2",
-    "puppeteer": "^25.0.0",
     "raw-loader": "^4.0.2",
     "remark-cli": "^12.0.1",
     "remark-preset-bpmn-io": "^0.4.0",
