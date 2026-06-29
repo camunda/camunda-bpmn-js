@@ -7,7 +7,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `@bpmn-io/element-template-chooser@3.0.0`
-* `DEPS`: update to `@bpmn-io/properties-panel@3.44.1`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.46.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.60.0`
 * `DEPS`: update to `bpmn-js@18.19.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.3.0`
 * `DEPS`: update to `bpmn-js-element-templates@2.26.0`
