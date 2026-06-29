@@ -11,7 +11,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `bpmn-js-properties-panel@5.60.0`
 * `DEPS`: update to `bpmn-js@18.19.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.3.0`
-* `DEPS`: update to `bpmn-js-element-templates@2.26.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.27.0`
 * `DEPS`: update to `camunda-bpmn-js-behaviors@1.18.0`
 * `DEPS`: update to `diagram-js@15.18.0`
 * `DEPS`: update to `zeebe-bpmn-moddle@1.15.0`
@@ -40,6 +40,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: add `update` lint rule to find element templates that need updating ([bpmn-io/bpmn-js-element-templates#250](https://github.com/bpmn-io/bpmn-js-element-templates/pull/250))
 * `FEAT`: use JSON editor for custom template properties with `language=json` ([bpmn-io/bpmn-js-element-templates#244](https://github.com/bpmn-io/bpmn-js-element-templates/pull/244))
 * `FEAT`: support multi-step pop-up menu entries in element template chooser ([bpmn-io/element-template-chooser#31](https://github.com/bpmn-io/element-template-chooser/pull/31))
+* `FEAT`: support `isEmpty` condition for Camunda 8 element templates ([#bpmn-io/bpmn-js-element-templates#259](https://github.com/bpmn-io/bpmn-js-element-templates/pull/259))
 
 ## 5.28.0
 
