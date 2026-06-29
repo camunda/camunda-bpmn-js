@@ -6,8 +6,11 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.29.0
+
 * `DEPS`: update to `@bpmn-io/element-template-chooser@3.0.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.46.0`
+* `DEPS`: update to `@bpmn-io/variable-resolver@3.1.0`
 * `DEPS`: update to `bpmn-js-properties-panel@5.60.0`
 * `DEPS`: update to `bpmn-js@18.19.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.3.0`
@@ -31,8 +34,10 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: support `zeebe:jobPriority` ([bpmn-io/bpmn-js-properties-panel#1235](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1235))
 * `FEAT`: default zeebe script task to FEEL expression ([camunda/camunda-bpmn-js-behaviors#136](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/136))
 * `FEAT`: default zeebe business rule task to DMN decision ([camunda/camunda-bpmn-js-behaviors#136](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/136))
+* `FEAT`: extract variables from more properties ([bpmn-io/variable-resolver#107](https://github.com/bpmn-io/variable-resolver/pull/107))
 * `FIX`: support translation of list component ([bpmn-io/properties-panel#504](https://github.com/bpmn-io/properties-panel/pull/504))
 * `FIX`: use semantic color name for tooltip underline ([bpmn-io/properties-panel#500](https://github.com/bpmn-io/properties-panel/pull/500))
+* `FIX`: add graceful handling for unparsable result expressions ([bpmn-io/variable-resolver#113](https://github.com/bpmn-io/variable-resolver/issues/113))
 
 ### Key Changes in Element Templates
 
