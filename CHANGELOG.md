@@ -28,6 +28,9 @@ ___Note:__ Yet to be released changes appear here._
 
 ### Key Changes in Properties Panel
 
+* `FEAT`: support `zeebe:jobPriority` ([bpmn-io/bpmn-js-properties-panel#1235](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1235))
+* `FEAT`: default zeebe script task to FEEL expression ([camunda/camunda-bpmn-js-behaviors#136](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/136))
+* `FEAT`: default zeebe business rule task to DMN decision ([camunda/camunda-bpmn-js-behaviors#136](https://github.com/camunda/camunda-bpmn-js-behaviors/pull/136))
 * `FIX`: support translation of list component ([bpmn-io/properties-panel#504](https://github.com/bpmn-io/properties-panel/pull/504))
 * `FIX`: use semantic color name for tooltip underline ([bpmn-io/properties-panel#500](https://github.com/bpmn-io/properties-panel/pull/500))
 
