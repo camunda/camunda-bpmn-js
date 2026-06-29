@@ -64,7 +64,7 @@
     "bpmn-js-element-templates": "^2.26.0",
     "bpmn-js-executable-fix": "^0.2.1",
     "bpmn-js-native-copy-paste": "^0.3.0",
-    "camunda-bpmn-js-behaviors": "^1.16.1",
+    "camunda-bpmn-js-behaviors": "^1.18.0",
     "camunda-bpmn-moddle": "^7.0.1",
     "diagram-js": "^15.18.0",
     "diagram-js-grid": "^2.0.1",
