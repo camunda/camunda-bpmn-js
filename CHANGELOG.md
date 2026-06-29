@@ -12,6 +12,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `bpmn-js@18.19.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@1.3.0`
 * `DEPS`: update to `bpmn-js-element-templates@2.26.0`
+* `DEPS`: update to `camunda-bpmn-js-behaviors@1.18.0`
 * `DEPS`: update to `diagram-js@15.18.0`
 * `DEPS`: update to `zeebe-bpmn-moddle@1.15.0`
 
