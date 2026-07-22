@@ -65,6 +65,10 @@ const styles = [
     src: resolve('@bpmn-io/element-template-chooser', '/dist/element-template-chooser.css'),
     dest: 'dist/assets'
   },
+  {
+    src: 'styles/popup-menu.css',
+    dest: 'dist/assets'
+  },
 ].concat(buildMatrix.map(function([ domain, dist ]) {
   return {
     src: `styles/${domain}-${toKebabCase(dist)}.css`,

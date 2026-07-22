@@ -168,6 +168,13 @@ describe('<CamundaPlatformModeler>', function() {
       expect(modeler.get('updateInputOutputBehavior')).to.exist;
       expect(modeler.get('userTaskFormsBehavior')).to.exist;
       expect(modeler.get('userTaskGeneratedFormsBehavior')).to.exist;
+
+      // create/append menu grouping
+      expect(modeler.get('createGroupsProvider')).to.exist;
+      expect(modeler.get('appendGroupsProvider')).to.exist;
+
+      // menu element descriptions
+      expect(modeler.get('elementDescriptions')).to.exist;
     });
 
   });
