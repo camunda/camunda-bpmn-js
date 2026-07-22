@@ -12,6 +12,10 @@ import {
   debounce
 } from 'min-dash';
 
+import {
+  query as domQuery
+} from 'min-dom';
+
 import Modeler from 'lib/camunda-cloud/Modeler';
 
 import diagramXml from './ModelerSpec.simple.bpmn';
@@ -183,6 +187,69 @@ describe('<CamundaCloudModeler>', function() {
   });
 
 
+  describe('menu width', function() {
+
+    it('should open the create menu at 360px', function() {
+
+      // when
+      return createModeler(simpleXml).then(function(result) {
+
+        var palette = result.modeler.get('palette');
+
+        // when
+        palette.triggerEntry('create', 'click', { x: 0, y: 0 });
+
+        // then
+        expect(popupWidth()).to.eql('360px');
+      });
+
+    });
+
+
+    it('should open the append menu at 360px', function() {
+
+      // when
+      return createModeler(simpleXml).then(function(result) {
+
+        var modeler = result.modeler,
+            contextPad = modeler.get('contextPad'),
+            task = modeler.get('elementRegistry').get('Activity_08bosyf');
+
+        contextPad.open(task);
+
+        // when
+        contextPad.triggerEntry('append', 'click', { x: 0, y: 0 });
+
+        // then
+        expect(popupWidth()).to.eql('360px');
+      });
+
+    });
+
+
+    it('should open the replace menu at 360px', function() {
+
+      // when
+      return createModeler(simpleXml).then(function(result) {
+
+        var modeler = result.modeler,
+            contextPad = modeler.get('contextPad'),
+            task = modeler.get('elementRegistry').get('Activity_08bosyf');
+
+        contextPad.open(task);
+
+        // when
+        contextPad.triggerEntry('replace', 'click', { x: 0, y: 0 });
+
+        // then
+        expect(popupWidth()).to.eql('360px');
+      });
+
+    });
+
+  });
+
+
   it('should inject element templates modules', function() {
 
     // when
@@ -293,3 +360,10 @@ describe('<CamundaCloudModeler>', function() {
   });
 
 });
+
+
+// helpers //////////
+
+function popupWidth() {
+  return getComputedStyle(domQuery('.djs-popup')).width;
+}
