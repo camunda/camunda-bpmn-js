@@ -8,8 +8,6 @@ import {
   getBpmnJS
 } from 'test/TestHelper';
 
-import { query as domQuery } from 'min-dom';
-
 import coreModule from 'bpmn-js/lib/core';
 import contexPadModule from 'diagram-js/lib/features/context-pad';
 import paletteModule from 'diagram-js/lib/features/palette';
@@ -32,6 +30,8 @@ import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe';
 import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
 
 import { RPA_MAIN_SCRIPT_LINK_NAME } from 'lib/camunda-cloud/features/external-resources/handlers/rpa/constants';
+
+import { findPopupEntry as findMenuEntry } from 'lib/util/PopupMenuEntriesUtil';
 
 import diagramXML from './Resources.bpmn';
 import resourcesJSON from '../../resources.json';
@@ -85,7 +85,29 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       // then
       for (const resource of resourcesJSON) {
-        expect(entries[`resources-create-${resource.type}-0`], `<create-${resource.type}> to exist`).to.exist;
+        expect(findMenuEntry(entries, `resources-create-${resource.type}-0`), `<create-${resource.type}> to exist`).to.exist;
+      }
+    }));
+
+
+    it('should nest create options under the templates category', inject(function(canvas, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const rootElement = canvas.getRootElement();
+
+      // when
+      const {
+        entries
+      } = openPopup(rootElement, 'bpmn-create');
+
+      // then the external resources live inside the shared Templates category
+      const templates = entries['create-templates'];
+
+      expect(templates, 'Templates category').to.exist;
+
+      for (const resource of resourcesJSON) {
+        expect(templates.entries[`resources-create-${resource.type}-0`], `<create-${resource.type}> nested`).to.exist;
       }
     }));
 
@@ -103,7 +125,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       // then
       for (const resource of resourcesJSON) {
-        const entry = entries[`resources-create-${resource.type}-0`];
+        const entry = findMenuEntry(entries, `resources-create-${resource.type}-0`);
 
         expect(entry.group.id).to.eql(TYPE_TO_GROUP_ID[resource.type]);
       }
@@ -210,7 +232,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       } = openPopup(rootElement, 'bpmn-create');
 
       // then
-      expect(entries['resources-create-rpa-0']).not.to.exist;
+      expect(findMenuEntry(entries, 'resources-create-rpa-0')).not.to.exist;
     }));
 
   });
@@ -231,7 +253,29 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       // then
       for (const resource of resourcesJSON) {
-        expect(entries[`resources-append-${resource.type}-0`], `<append-${resource.type}> to exist`).to.exist;
+        expect(findMenuEntry(entries, `resources-append-${resource.type}-0`), `<append-${resource.type}> to exist`).to.exist;
+      }
+    }));
+
+
+    it('should nest append options under the templates category', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-append');
+
+      // then the external resources live inside the shared Templates category
+      const templates = entries['append-templates'];
+
+      expect(templates, 'Templates category').to.exist;
+
+      for (const resource of resourcesJSON) {
+        expect(templates.entries[`resources-append-${resource.type}-0`], `<append-${resource.type}> nested`).to.exist;
       }
     }));
 
@@ -249,7 +293,7 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
 
       // then
       for (const resource of resourcesJSON) {
-        const entry = entries[`resources-append-${resource.type}-0`];
+        const entry = findMenuEntry(entries, `resources-append-${resource.type}-0`);
 
         expect(entry.group.id).to.eql(TYPE_TO_GROUP_ID[resource.type]);
       }
@@ -530,27 +574,16 @@ function openPopup(element, providerId) {
   });
 }
 
-function queryEntry(id) {
-  const container = getMenuContainer();
-
-  return domQuery('.djs-popup [data-id="' + id + '"]', container);
-}
-
-function getMenuContainer() {
-  const popup = getBpmnJS().get('popupMenu');
-  return popup._current.container;
-}
-
 function triggerAction(id) {
-  const entry = queryEntry(id);
-
-  if (!entry) {
-    throw new Error('entry "' + id + '" not found in append menu');
-  }
-
   const popupMenu = getBpmnJS().get('popupMenu');
 
-  return popupMenu.trigger(globalEvent(entry, { x: 0, y: 0 }));
+  const entry = findMenuEntry(popupMenu._current.entries, id);
+
+  if (!entry) {
+    throw new Error('entry "' + id + '" not found in menu');
+  }
+
+  return popupMenu.trigger(globalEvent(popupMenu._current.container, { x: 0, y: 0 }), entry);
 }
 
 function triggerCreateEntry(id) {
