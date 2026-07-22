@@ -24,6 +24,8 @@ import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
 import elementTemplatesChooserCSS from '@bpmn-io/element-template-chooser/dist/element-template-chooser.css';
 
+import popupMenuCSS from '../../styles/popup-menu.css';
+
 import templates from './element-templates.json';
 import resources from './resources.json';
 
@@ -47,6 +49,11 @@ insertCSS(
 insertCSS(
   'element-templates-chooser.css',
   elementTemplatesChooserCSS
+);
+
+insertCSS(
+  'popup-menu.css',
+  popupMenuCSS
 );
 
 insertCSS('test-panel.css', `

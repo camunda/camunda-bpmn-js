@@ -1,0 +1,15 @@
+/**
+ * Widen the create, append and replace menus to fit their grouped, described
+ * entries. The menus fall back to 300px when this stylesheet is not loaded.
+ */
+.djs-popup-parent[data-popup="bpmn-create"] {
+  --bpmn-create-popup-width: 360px;
+}
+
+.djs-popup-parent[data-popup="bpmn-append"] {
+  --bpmn-append-popup-width: 360px;
+}
+
+.djs-popup-parent[data-popup="bpmn-replace"] {
+  --bpmn-replace-popup-width: 360px;
+}
