@@ -33,6 +33,8 @@ import {
 
 import camundaDetailsPopupMenuModule from 'lib/camunda-cloud/features/popup-menu';
 
+import { findPopupEntry as findEntry } from 'lib/util/PopupMenuEntriesUtil';
+
 import diagramXML from './CamundaDetailsPopupMenuProvider.bpmn';
 
 
@@ -261,10 +263,10 @@ async function expectEntries(expectedEntryIds) {
 
 function expectAnnotated(entries, expectedAnnotatedIds) {
   for (const expectedId of expectedAnnotatedIds) {
-    expect(entries[expectedId]?.search, `<${expectedId}> annotated with search`).to.exists;
+    expect(findEntry(entries, expectedId)?.search, `<${expectedId}> annotated with search`).to.exists;
   }
 }
 
 function expectAnnotation(entries, entryId, annotation) {
-  expect(entries[entryId]?.search, `<${entryId}> to have annotation <${ annotation }>`).to.eql(annotation);
+  expect(findEntry(entries, entryId)?.search, `<${entryId}> to have annotation <${ annotation }>`).to.eql(annotation);
 }
