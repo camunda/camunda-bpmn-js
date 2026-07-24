@@ -7,9 +7,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 ___Note:__ Yet to be released changes appear here._
 
 * `DEPS`: update to `diagram-js-minimap@5.4.0`
+* `DEPS`: update to `bpmn-js-create-append-anything@2.0.0`
+* `DEPS`: update to `bpmn-js@18.22.0`
+* `DEPS`: update to `diagram-js@15.23.0`
 
 ### Key Changes in Modeling
 
+* `FEAT`: add grouping and describe elements for create/append/replace menu ([#485](https://github.com/camunda/camunda-bpmn-js/pull/485))
 * `FEAT`: improve minimap performance ([bpmn-io/diagram-js-minimap#96](https://github.com/bpmn-io/diagram-js-minimap/issues/96), [bpmn-io/diagram-js-minimap#81](https://github.com/bpmn-io/diagram-js-minimap/issues/81), [bpmn-io/diagram-js-minimap#115](https://github.com/bpmn-io/diagram-js-minimap/pull/115))
 
 ## 5.29.0
