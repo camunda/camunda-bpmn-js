@@ -6,15 +6,43 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.30.0
+
 * `DEPS`: update to `diagram-js-minimap@5.4.0`
 * `DEPS`: update to `bpmn-js-create-append-anything@2.0.0`
 * `DEPS`: update to `bpmn-js@18.22.0`
 * `DEPS`: update to `diagram-js@15.23.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.28.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.62.0`
+* `DEPS`: update to `@bpmn-io/properties-panel@3.48.0`
+* `DEPS`: update to `@bpmn-io/variable-resolver@3.3.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.17.0`
 
 ### Key Changes in Modeling
 
 * `FEAT`: add grouping and describe elements for create/append/replace menu ([#485](https://github.com/camunda/camunda-bpmn-js/pull/485))
 * `FEAT`: improve minimap performance ([bpmn-io/diagram-js-minimap#96](https://github.com/bpmn-io/diagram-js-minimap/issues/96), [bpmn-io/diagram-js-minimap#81](https://github.com/bpmn-io/diagram-js-minimap/issues/81), [bpmn-io/diagram-js-minimap#115](https://github.com/bpmn-io/diagram-js-minimap/pull/115))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add business ID group for Call Activities ([bpmn-io/bpmn-js-properties-panel#1240](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1240))
+* `FEAT`: allow rendering the header into a separate container ([bpmn-io/bpmn-js-properties-panel#1239](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1239))
+* `FEAT`: enable popup editor for text areas ([bpmn-io/properties-panel#523](https://github.com/bpmn-io/properties-panel/pull/523))
+* `FEAT`: allow registering custom popup providers ([bpmn-io/properties-panel#523](https://github.com/bpmn-io/properties-panel/pull/523))
+* `FEAT`: allow overriding popup providers via priority ([bpmn-io/properties-panel#523](https://github.com/bpmn-io/properties-panel/pull/523))
+* `FEAT`: resize `TextArea` on any interaction ([bpmn-io/properties-panel#529](https://github.com/bpmn-io/properties-panel/pull/529))
+* `FEAT`: enhance FEEL syntax highlighting ([bpmn-io/feel-editor#100](https://github.com/bpmn-io/feel-editor/pull/100))
+* `FEAT`: expose per-writer value `variants` on merged variables ([bpmn-io/variable-resolver#125](https://github.com/bpmn-io/variable-resolver/pull/125))
+* `FEAT`: recognize additional Camunda built-ins
+* `FEAT`: improved accuracy of expression analysis ([bpmn-io/feel-analyzer#10](https://github.com/bpmn-io/feel-analyzer/pull/10))
+* `FIX`: support snippet placeholder navigation in FEEL popup ([bpmn-io/properties-panel#524](https://github.com/bpmn-io/properties-panel/pull/524))
+* `FIX`: compare popup input against live value ([bpmn-io/properties-panel#530](https://github.com/bpmn-io/properties-panel/pull/530))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `businessId` in `zeebe:calledElement` binding ([bpmn-io/bpmn-js-element-templates#269](https://github.com/bpmn-io/bpmn-js-element-templates/pull/269))
+* `FEAT`: support job priority via `zeebe:jobPriorityDefinition` binding
+* `FIX`: assign `$parent` property in all cases for I/O mapping ([bpmn-io/bpmn-js-element-templates#265](https://github.com/bpmn-io/bpmn-js-element-templates/pull/265))
 
 ## 5.29.0
 
