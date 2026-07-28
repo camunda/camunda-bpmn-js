@@ -122,6 +122,29 @@ describe('camunda-cloud/features/element-descriptions', function() {
     expect(findEntry(entries, 'append-user-task').description).to.eql(ELEMENT_DESCRIPTIONS['user-task']);
   }));
 
+
+  it('should describe the remove-template replace entry as the element plain type', inject(
+    function(elementRegistry, popupMenu) {
+
+      // given a provider contributes the generic remove-template entry
+      // (create-append's RemoveTemplateReplaceProvider) before descriptions run
+      popupMenu.registerProvider('bpmn-replace', 600, {
+        getPopupMenuEntries: () => (entries) => ({
+          ...entries,
+          'replace-remove-element-template': { label: 'Task', action() {} }
+        })
+      });
+
+      const task = elementRegistry.get('Task_1');
+
+      // when
+      const entries = openReplace(task);
+
+      // then it is described as the element's plain type, not left blank
+      expect(entries['replace-remove-element-template'].description).to.eql(ELEMENT_DESCRIPTIONS['task']);
+    }
+  ));
+
 });
 
 
