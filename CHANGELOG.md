@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.30.1
+
+* `FIX`: describe the remove-template entry in the replace menu ([#489](https://github.com/camunda/camunda-bpmn-js/pull/489))
+
 ## 5.30.0
 
 * `DEPS`: update to `diagram-js-minimap@5.4.0`
