@@ -6,6 +6,13 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.30.2
+
+* `FIX`: prevent clipped strokes in exported diagrams ([bpmn-js#2476](https://github.com/bpmn-io/bpmn-js/pull/2476))
+* `FIX`: do not create outline for root element ([diagram-js#1093](https://github.com/bpmn-io/diagram-js/pull/1093))
+* `DEPS`: update to `diagram-js@15.23.2`
+* `DEPS`: update to `bpmn-js@18.22.1`
+
 ## 5.30.1
 
 * `FIX`: describe the remove-template entry in the replace menu ([#489](https://github.com/camunda/camunda-bpmn-js/pull/489))
