@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FEAT`: group element templates and linked resources into a Reusable Assets tab ([#490](https://github.com/camunda/camunda-bpmn-js/issues/490))
+
 ## 5.30.2
 
 * `FIX`: prevent clipped strokes in exported diagrams ([bpmn-js#2476](https://github.com/bpmn-io/bpmn-js/pull/2476))

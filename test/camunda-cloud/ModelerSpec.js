@@ -22,6 +22,7 @@ import diagramXml from './ModelerSpec.simple.bpmn';
 
 import simpleXml from 'test/fixtures/simple.bpmn';
 
+import diagramJSCSS from 'diagram-js/assets/diagram-js.css';
 import propertiesPanelCSS from '@bpmn-io/properties-panel/dist/assets/properties-panel.css';
 import elementTemplatesCSS from 'bpmn-js-element-templates/dist/assets/element-templates.css';
 import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
@@ -34,6 +35,13 @@ import templates from './element-templates.json';
 import resources from './resources.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-cloud-modeler';
+
+// load diagram-js' own stylesheet rather than relying on the copies bundled
+// into dependencies' dist output, so linked diagram-js changes are visible here
+insertCSS(
+  'diagram-js.css',
+  diagramJSCSS
+);
 
 insertCSS(
   'properties-panel.css',
