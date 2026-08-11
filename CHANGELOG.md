@@ -6,7 +6,14 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-* `FEAT`: group element templates and linked resources into a Reusable Assets tab ([#490](https://github.com/camunda/camunda-bpmn-js/issues/490))
+* `FEAT`: group popup menu elements into tabs ([#490](https://github.com/camunda/camunda-bpmn-js/issues/490))
+* `FEAT`: tag elements visually inside a group via `categoryValueRef` ([bpmn-io/bpmn-js#2469](https://github.com/bpmn-io/bpmn-js/pull/2469))
+* `FEAT`: eagerly create category value when creating or updating a group ([bpmn-io/bpmn-js#2469](https://github.com/bpmn-io/bpmn-js/pull/2469))
+* `FIX`: do not copy message flows without participants ([bpmn-io/bpmn-js#1902](https://github.com/bpmn-io/bpmn-js/issues/1902), [bpmn-io/bpmn-js#2475](https://github.com/bpmn-io/bpmn-js/pull/2475))
+* `FIX`: ignore labels in `laneRef` updates ([bpmn-io/bpmn-js#2469](https://github.com/bpmn-io/bpmn-js/pull/2469))
+* `FIX`: do not copy message flows without participants ([bpmn-io/bpmn-js#1902](https://github.com/bpmn-io/bpmn-js/issues/1902), [bpmn-io/bpmn-js#2475](https://github.com/bpmn-io/bpmn-js/pull/2475))
+* `DEPS`: update to `diagram-js@15.24.0`
+* `DEPS`: update to `bpmn-js@18.24.0`
 
 ## 5.30.2
 
