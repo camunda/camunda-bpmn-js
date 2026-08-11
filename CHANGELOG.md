@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.31.0
+
 * `FEAT`: group popup menu elements into tabs ([#490](https://github.com/camunda/camunda-bpmn-js/issues/490))
 * `FEAT`: tag elements visually inside a group via `categoryValueRef` ([bpmn-io/bpmn-js#2469](https://github.com/bpmn-io/bpmn-js/pull/2469))
 * `FEAT`: eagerly create category value when creating or updating a group ([bpmn-io/bpmn-js#2469](https://github.com/bpmn-io/bpmn-js/pull/2469))
