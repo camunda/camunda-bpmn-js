@@ -6,6 +6,9 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FIX`: set explicit `z-index` on minimap ([bpmn-io/diagram-js-minimap#118](https://github.com/bpmn-io/diagram-js-minimap/pull/118))
+* `DEPS`: update to `diagram-js-minimap@5.4.1`
+
 ## 5.31.0
 
 * `FEAT`: group popup menu elements into tabs ([#490](https://github.com/camunda/camunda-bpmn-js/issues/490))
