@@ -79,7 +79,7 @@ describe('camunda-cloud/features/create-append-tabs', function() {
 
   describe('create', function() {
 
-    it('should render a BPMN and a Reusable Assets tab', inject(function(canvas) {
+    it('should render a BPMN and a Reusable assets tab', inject(function(canvas) {
 
       // given
       contribute('bpmn-create', { 'create.template-foo': template() });
@@ -105,7 +105,7 @@ describe('camunda-cloud/features/create-append-tabs', function() {
     }));
 
 
-    it('should move reusable assets into the Reusable Assets tab', inject(async function(canvas) {
+    it('should move reusable assets into the Reusable assets tab', inject(async function(canvas) {
 
       // given
       contribute('bpmn-create', {
@@ -178,7 +178,7 @@ describe('camunda-cloud/features/create-append-tabs', function() {
 
   describe('replace', function() {
 
-    it('should move reusable assets into the Reusable Assets tab', inject(async function(elementRegistry) {
+    it('should move reusable assets into the Reusable assets tab', inject(async function(elementRegistry) {
 
       // given
       contribute('bpmn-replace', { 'replace.template-foo': template() });
