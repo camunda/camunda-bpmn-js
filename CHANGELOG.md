@@ -6,6 +6,23 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/properties-panel@3.49.2`
+* `DEPS`: update to `bpmn-js-element-templates@2.31.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.64.0`
+* `DEPS`: update to `diagram-js@15.24.1`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: use number inputs for priority and job priority ([bpmn-io/bpmn-js-properties-panel#1241](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1241))
+* `FEAT`: enable FEEL compatibility linting based on engine versions ([bpmn-io/properties-panel#533](https://github.com/bpmn-io/properties-panel/pull/533))
+* `FIX`: correctly render sticky headers with multiple properties panels ([bpmn-io/properties-panel#539](https://github.com/bpmn-io/properties-panel/pull/539))
+* `FIX`: only show the text popup editor scrollbar when content overflows ([bpmn-io/properties-panel#542](https://github.com/bpmn-io/properties-panel/issues/542))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support configuration templates via `zeebe:configuration` binding ([bpmn-io/bpmn-js-element-templates#263](https://github.com/bpmn-io/bpmn-js-element-templates/pull/263))
+* `FIX`: do not report errors for element templates incompatible with the configured engines ([bpmn-io/bpmn-js-element-templates#273](https://github.com/bpmn-io/bpmn-js-element-templates/pull/273))
+
 ## 5.31.1
 
 * `FIX`: set explicit `z-index` on minimap ([bpmn-io/diagram-js-minimap#118](https://github.com/bpmn-io/diagram-js-minimap/pull/118))
