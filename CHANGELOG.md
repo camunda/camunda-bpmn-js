@@ -6,6 +6,34 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/properties-panel@3.51.2`
+* `DEPS`: update to `bpmn-js@18.25.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.33.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.65.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@1.18.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: support `zeebe:agentDefinition` extension element ([camunda/zeebe-bpmn-moddle#94](https://github.com/camunda/zeebe-bpmn-moddle/pull/94))
+* `FIX`: make breadcrumbs keyboard accessible ([bpmn-io/bpmn-js#2487](https://github.com/bpmn-io/bpmn-js/pull/2487))
+* `FIX`: give breadcrumbs a background ([bpmn-io/bpmn-js#2487](https://github.com/bpmn-io/bpmn-js/pull/2487), [bpmn-io/bpmn-js#2482](https://github.com/bpmn-io/bpmn-js/issues/2482))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: allow updating FEEL language context ([bpmn-io/bpmn-js-properties-panel#1247](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/1247))
+* `FEAT`: add semantic warning tokens and `.has-warning` entry modifier ([bpmn-io/properties-panel#544](https://github.com/bpmn-io/properties-panel/pull/544))
+* `FEAT`: use CSS for textarea auto-resize ([bpmn-io/properties-panel#540](https://github.com/bpmn-io/properties-panel/pull/540))
+* `FIX`: react to `engines` change of FEEL editor ([bpmn-io/properties-panel#543](https://github.com/bpmn-io/properties-panel/issues/543))
+* `FIX`: force linting after engines change ([bpmn-io/feel-editor#114](https://github.com/bpmn-io/feel-editor/pull/114))
+* `FIX`: correct checkbox alignment ([bpmn-io/properties-panel#545](https://github.com/bpmn-io/properties-panel/pull/545))
+* `FIX`: unify line height across `warning`, `error` and `description` attachments ([bpmn-io/properties-panel#545](https://github.com/bpmn-io/properties-panel/pull/545))
+* `FIX`: increase description and label offset to accommodate for focus ring ([bpmn-io/properties-panel#545](https://github.com/bpmn-io/properties-panel/pull/545))
+
+### Key Changes in Element Templates
+
+* `FEAT`: support `zeebe:agentDefinition` binding for `bpmn:ServiceTask` and `bpmn:AdHocSubProcess` element templates ([bpmn-io/bpmn-js-element-templates#286](https://github.com/bpmn-io/bpmn-js-element-templates/pull/286))
+* `FEAT`: surface configuration state via standard warnings / descriptions ([bpmn-io/bpmn-js-element-templates#287](https://github.com/bpmn-io/bpmn-js-element-templates/pull/287))
+
 ## 5.32.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.49.2`
