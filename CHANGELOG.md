@@ -15,8 +15,8 @@ ___Note:__ Yet to be released changes appear here._
 ### Key Changes in Modeling
 
 * `FEAT`: support `zeebe:agentDefinition` extension element ([camunda/zeebe-bpmn-moddle#94](https://github.com/camunda/zeebe-bpmn-moddle/pull/94))
-* `FIX`: make breadcrumps keyboard accessible ([bpmn-io/bpmn-js#2487](https://github.com/bpmn-io/bpmn-js/pull/2487))
-* `FIX`: give breadcrumps a background ([bpmn-io/bpmn-js#2487](https://github.com/bpmn-io/bpmn-js/pull/2487), [bpmn-io/bpmn-js#2482](https://github.com/bpmn-io/bpmn-js/issues/2482))
+* `FIX`: make breadcrumbs keyboard accessible ([bpmn-io/bpmn-js#2487](https://github.com/bpmn-io/bpmn-js/pull/2487))
+* `FIX`: give breadcrumbs a background ([bpmn-io/bpmn-js#2487](https://github.com/bpmn-io/bpmn-js/pull/2487), [bpmn-io/bpmn-js#2482](https://github.com/bpmn-io/bpmn-js/issues/2482))
 
 ### Key Changes in Properties Panel
 
