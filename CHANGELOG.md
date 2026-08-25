@@ -1602,7 +1602,7 @@ This release reverts the breaking changes introduced via [`bpmn-js-element-templ
 
 ### Breaking Changes
 
-* `element-template-chooser` is now provided by default. To disable this, please use the `elementTemplatesChooser` option and set it to `false`.
+* `element-template-chooser` is now provided by default. To disable this, please use the `elementTemplateChooser` option and set it to `false`.
 * No longer ensures interoperability with `bpmn-js-connectors-extension`. This release replaces the connectors extension.
 
 ## 1.5.0
