@@ -24,8 +24,6 @@ import colorPickerCSS from 'bpmn-js-color-picker/colors/color-picker.css';
 
 import popupMenuCSS from '../../styles/popup-menu.css';
 
-import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser';
-
 import elementTemplates from './element-templates.json';
 
 var singleStart = window.__env__ && window.__env__.SINGLE_START === 'camunda-platform-modeler';
@@ -110,7 +108,7 @@ describe('<CamundaPlatformModeler>', function() {
     container.appendChild(propertiesContainer);
   });
 
-  function createModeler(xml) {
+  function createModeler(xml, options = {}) {
 
     clearBpmnJS();
 
@@ -119,9 +117,7 @@ describe('<CamundaPlatformModeler>', function() {
       propertiesPanel: {
         parent: propertiesContainer
       },
-      additionalModules: [
-        ElementTemplateChooserModule
-      ]
+      ...options
     });
 
     singleStart && modeler.on('commandStack.changed', debounce(function() {
@@ -211,6 +207,40 @@ describe('<CamundaPlatformModeler>', function() {
 
       // then
       expect(modeler.get('variableResolver')).to.exist;
+    });
+
+  });
+
+
+  describe('element template chooser', function() {
+
+    it('should inject element-template-chooser', function() {
+
+      // when
+      return createModeler(simpleXml).then(function(result) {
+
+        var modeler = result.modeler;
+
+        // then
+        expect(modeler.get('elementTemplateChooser')).to.exist;
+      });
+
+    });
+
+
+    it('should not inject element-template-chooser when disabled', function() {
+
+      // when
+      return createModeler(simpleXml, {
+        elementTemplateChooser: false
+      }).then(function(result) {
+
+        var modeler = result.modeler;
+
+        // then
+        expect(modeler.get.bind(modeler, 'elementTemplateChooser')).to.throw();
+      });
+
     });
 
   });
