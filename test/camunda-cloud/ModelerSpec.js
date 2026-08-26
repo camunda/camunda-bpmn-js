@@ -322,9 +322,7 @@ describe('<CamundaCloudModeler>', function() {
   describe('element template chooser', function() {
 
     const options = {
-      elementTemplatesChooser: {
-        enabled: false
-      }
+      elementTemplateChooser: false
     };
 
     it('should inject element-template-chooser', function() {
@@ -341,10 +339,10 @@ describe('<CamundaCloudModeler>', function() {
 
     it('should not inject element-template-chooser', function() {
 
-      createModeler(simpleXml, [], options).then(function(result) {
+      return createModeler(simpleXml, [], options).then(function(result) {
         let modeler = result.modeler;
 
-        expect(modeler.get.bind(this, 'elementTemplateChooser')).to.throw();
+        expect(modeler.get.bind(modeler, 'elementTemplateChooser')).to.throw();
       });
 
 
