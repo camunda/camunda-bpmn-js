@@ -6,6 +6,10 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+# 5.33.1
+
+* `FIX`: enable element template chooser in Camunda 7 ([#495](https://github.com/camunda/camunda-bpmn-js/pull/495))
+
 # 5.33.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.51.2`
