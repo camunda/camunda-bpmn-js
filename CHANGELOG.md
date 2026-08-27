@@ -6,6 +6,25 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+### 5.34.0
+
+* `DEPS`: update to `@bpmn-io/properties-panel@3.52.0`
+* `DEPS`: update to `@camunda/example-data-properties-provider@1.5.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.34.0`
+* `DEPS`: update to `bpmn-js-executable-fix@0.2.2`
+* `DEPS`: update to `camunda-bpmn-moddle@8.0.0`
+* `DEPS`: update to `diagram-js-grid@2.1.0`
+* `DEPS`: update to `zeebe-bpmn-moddle@2.0.0`
+
+### Key Changes in Properties Panel
+
+* `FEAT`: add `--warning-badge-*` and `--error-badge-*` theming tokens ([bpmn-io/properties-panel#547](https://github.com/bpmn-io/properties-panel/pull/547))
+* `FIX`: use accessible foreground color for warning list badge ([bpmn-io/properties-panel#547](https://github.com/bpmn-io/properties-panel/pull/547))
+
+### Key Changes in Element Templates
+
+* `FIX`: use standard warning color for incompatible template indicator ([bpmn-io/bpmn-js-element-templates@2.34.0](https://github.com/bpmn-io/bpmn-js-element-templates/releases/tag/v2.34.0))
+
 # 5.33.1
 
 * `FIX`: enable element template chooser in Camunda 7 ([#495](https://github.com/camunda/camunda-bpmn-js/pull/495))
