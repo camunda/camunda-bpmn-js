@@ -39,6 +39,10 @@ ___Note:__ Yet to be released changes appear here._
 
 * `FEAT`: support `zeebe:agentDefinition` binding for `bpmn:ServiceTask` and `bpmn:AdHocSubProcess` element templates ([bpmn-io/bpmn-js-element-templates#286](https://github.com/bpmn-io/bpmn-js-element-templates/pull/286))
 * `FEAT`: surface configuration state via standard warnings / descriptions ([bpmn-io/bpmn-js-element-templates#287](https://github.com/bpmn-io/bpmn-js-element-templates/pull/287))
+* `FEAT`: align menu select/hover states to muted gray ([bpmn-io/bpmn-js-element-templates#287](https://github.com/bpmn-io/bpmn-js-element-templates/pull/287))
+* `FEAT`: drop configuration card loading state ([bpmn-io/bpmn-js-element-templates#287](https://github.com/bpmn-io/bpmn-js-element-templates/pull/287))
+* `FEAT`: unify configuration cluster unavailable messages ([bpmn-io/bpmn-js-element-templates#287](https://github.com/bpmn-io/bpmn-js-element-templates/pull/287))
+* `FEAT`: show the identity logo instead of a warning glyph on configuration cards ([bpmn-io/bpmn-js-element-templates#287](https://github.com/bpmn-io/bpmn-js-element-templates/pull/287))
 
 ## 5.32.0
 
