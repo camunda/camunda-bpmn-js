@@ -25,7 +25,7 @@ import { CloudElementTemplatesPropertiesProviderModule } from 'bpmn-js-element-t
 
 import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
-import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe';
+import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe.json';
 
 import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
 
