@@ -67,7 +67,7 @@
     "camunda-bpmn-js-behaviors": "^1.18.0",
     "camunda-bpmn-moddle": "^8.0.0",
     "diagram-js": "^15.24.1",
-    "diagram-js-grid": "^2.0.1",
+    "diagram-js-grid": "^2.1.0",
     "diagram-js-minimap": "^5.4.1",
     "diagram-js-origin": "^1.4.0",
     "inherits-browser": "^0.1.0",
