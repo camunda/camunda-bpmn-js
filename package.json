@@ -81,7 +81,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
     "@testing-library/preact": "^3.2.4",
-    "babel-loader": "^10.0.0",
+    "babel-loader": "^10.1.1",
     "babel-plugin-istanbul": "^8.0.0",
     "bio-dts": "^0.13.0",
     "bpmn-js-properties-panel": "^5.65.0",
@@ -105,7 +105,7 @@
     "karma-tldr-reporter": "^1.0.0",
     "karma-webpack": "^5.0.1",
     "min-dom": "^5.1.1",
-    "mocha": "^11.7.6",
+    "mocha": "^11.8.0",
     "mocha-test-container-support": "^0.2.0",
     "npm-run-all2": "^9.0.2",
     "raw-loader": "^4.0.2",
@@ -114,7 +114,7 @@
     "rollup": "^4.59.0",
     "rollup-plugin-copy": "^3.5.0",
     "typescript": "^6.0.0",
-    "webpack": "^5.107.2"
+    "webpack": "^5.109.2"
   },
   "peerDependencies": {
     "bpmn-js-properties-panel": ">= 3.0.0"
