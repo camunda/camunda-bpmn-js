@@ -27,3 +27,7 @@ create, append, and replace entry:
 
 The descriptor contains only the resource type and its stable identifier.
 Custom resource types can expose an `id` property to add the same descriptor.
+
+`isExternalResourcePopupMenuEntry(entry)` narrows a generic popup entry to an
+`ExternalResourcePopupMenuEntry`, so typed consumers can access
+`entry.resource.type` and `entry.resource.id` without a cast.

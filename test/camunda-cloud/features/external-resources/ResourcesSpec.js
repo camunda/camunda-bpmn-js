@@ -27,7 +27,11 @@ import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
 import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe.json';
 
-import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
+import {
+  ResourcesModule,
+  DefaultHandlersModule,
+  isExternalResourcePopupMenuEntry
+} from 'lib/camunda-cloud/features/external-resources';
 
 import { RPA_MAIN_SCRIPT_LINK_NAME } from 'lib/camunda-cloud/features/external-resources/handlers/rpa/constants';
 
@@ -115,6 +119,28 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       expect(getResourceDescriptor()).to.be.null;
       expect(getResourceDescriptor({ type: 'customResource' })).to.be.null;
     });
+
+    it('should identify external-resource popup entries', inject(function(canvas, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const rootElement = canvas.getRootElement();
+
+      // when
+      const {
+        entries
+      } = openPopup(rootElement, 'bpmn-create');
+      const entry = findMenuEntry(entries, 'resources-create-form-0');
+
+      // then
+      expect(isExternalResourcePopupMenuEntry(entry)).to.be.true;
+      expect(isExternalResourcePopupMenuEntry({})).to.be.false;
+      expect(isExternalResourcePopupMenuEntry({
+        resource: {
+          type: 'form'
+        }
+      })).to.be.false;
+    }));
 
   });
 
