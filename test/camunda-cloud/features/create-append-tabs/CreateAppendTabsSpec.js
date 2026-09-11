@@ -125,6 +125,28 @@ describe('camunda-cloud/features/create-append-tabs', function() {
     }));
 
 
+    it('should preserve resource metadata when moving reusable assets into the Reusable assets tab', inject(function(canvas) {
+
+      // given
+      const resourceMetadata = {
+        type: 'rpa',
+        id: 'rpa-12345'
+      };
+
+      contribute('bpmn-create', {
+        'resources-create-rpa-0': resource(resourceMetadata)
+      });
+
+      // when
+      openMenu(canvas.getRootElement(), 'bpmn-create');
+
+      // then
+      const entry = getBpmnJS().get('popupMenu')._current.entries['resources-create-rpa-0'];
+
+      expect(entry.resource).to.eql(resourceMetadata);
+    }));
+
+
     it('should order groups as resources, categories, templates, connectors', inject(async function(canvas) {
 
       // given
@@ -209,11 +231,12 @@ function template(group) {
   };
 }
 
-function resource() {
+function resource(resourceMetadata) {
   return {
     label: 'Resource',
     action() {},
-    group: { id: 'rpa', name: 'RPA' }
+    group: { id: 'rpa', name: 'RPA' },
+    ...(resourceMetadata && { resource: resourceMetadata })
   };
 }
 

@@ -27,11 +27,16 @@ import { BpmnPropertiesPanelModule } from 'bpmn-js-properties-panel';
 
 import zeebeModdle from 'zeebe-bpmn-moddle/resources/zeebe.json';
 
-import { ResourcesModule, DefaultHandlersModule } from 'lib/camunda-cloud/features/external-resources';
+import {
+  ResourcesModule,
+  DefaultHandlersModule,
+  isExternalResourcePopupMenuEntry
+} from 'lib/camunda-cloud/features/external-resources';
 
 import { RPA_MAIN_SCRIPT_LINK_NAME } from 'lib/camunda-cloud/features/external-resources/handlers/rpa/constants';
 
 import { findPopupEntry as findMenuEntry } from 'lib/util/PopupMenuEntriesUtil';
+import { getResourceDescriptor } from 'lib/camunda-cloud/features/external-resources/handlers/util/getResourceDescriptor';
 
 import diagramXML from './Resources.bpmn';
 import resourcesJSON from '../../resources.json';
@@ -42,6 +47,25 @@ const TYPE_TO_GROUP_ID = {
   dmnDecision: 'decisions',
   form: 'forms',
   rpa: 'rpa scripts'
+};
+
+const TYPE_TO_RESOURCE_DESCRIPTOR = {
+  bpmnProcess: {
+    type: 'bpmnProcess',
+    id: 'paymentProcess'
+  },
+  dmnDecision: {
+    type: 'dmnDecision',
+    id: 'creditScore'
+  },
+  form: {
+    type: 'form',
+    id: 'invoiceForm'
+  },
+  rpa: {
+    type: 'rpa',
+    id: 'rpa-12345'
+  }
 };
 
 
@@ -69,6 +93,57 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
   beforeEach(inject(function(elementTemplatesLoader, eventBus) {
     elementTemplatesLoader.setTemplates(elementTemplates);
   }));
+
+  describe('resource descriptor', function() {
+
+    it('should use a generic resource id without exposing other resource data', function() {
+
+      // when
+      const descriptor = getResourceDescriptor({
+        type: 'customResource',
+        id: 'custom-123',
+        name: 'Custom resource',
+        token: 'not-exposed'
+      });
+
+      // then
+      expect(descriptor).to.eql({
+        type: 'customResource',
+        id: 'custom-123'
+      });
+    });
+
+    it('should not expose a descriptor without a resource type or identifier', function() {
+
+      // then
+      expect(getResourceDescriptor()).to.be.null;
+      expect(getResourceDescriptor({ type: 'customResource' })).to.be.null;
+    });
+
+    it('should identify external-resource popup entries', inject(function(canvas, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const rootElement = canvas.getRootElement();
+
+      // when
+      const {
+        entries
+      } = openPopup(rootElement, 'bpmn-create');
+      const entry = findMenuEntry(entries, 'resources-create-form-0');
+
+      // then
+      expect(isExternalResourcePopupMenuEntry(entry)).to.be.true;
+      expect(isExternalResourcePopupMenuEntry({})).to.be.false;
+      expect(isExternalResourcePopupMenuEntry({
+        resource: {
+          type: 'form'
+        }
+      })).to.be.false;
+    }));
+
+  });
+
 
   describe('create', function() {
 
@@ -109,6 +184,22 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       for (const resource of resourcesJSON) {
         expect(templates.entries[`resources-create-${resource.type}-0`], `<create-${resource.type}> nested`).to.exist;
       }
+    }));
+
+
+    it('should expose resource metadata on nested create options', inject(function(canvas, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const rootElement = canvas.getRootElement();
+
+      // when
+      const {
+        entries
+      } = openPopup(rootElement, 'bpmn-create');
+
+      // then
+      expectResourceDescriptors(entries['create-templates'].entries, 'create');
     }));
 
 
@@ -277,6 +368,22 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       for (const resource of resourcesJSON) {
         expect(templates.entries[`resources-append-${resource.type}-0`], `<append-${resource.type}> nested`).to.exist;
       }
+    }));
+
+
+    it('should expose resource metadata on nested append options', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-append');
+
+      // then
+      expectResourceDescriptors(entries['append-templates'].entries, 'append');
     }));
 
 
@@ -449,6 +556,22 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
     }));
 
 
+    it('should expose resource metadata on replace options', inject(function(elementRegistry, resources) {
+
+      // given
+      resources.set(resourcesJSON);
+      const task = elementRegistry.get('TASK');
+
+      // when
+      const {
+        entries
+      } = openPopup(task, 'bpmn-replace');
+
+      // then
+      expectResourceDescriptors(entries, 'replace');
+    }));
+
+
     it('should replace element with call activity', inject(function(elementRegistry, resources) {
 
       // given
@@ -611,4 +734,14 @@ function getLastActivity(elementRegistry) {
   const elements = elementRegistry.getAll();
 
   return elements.slice().reverse().find(e => is(e, 'bpmn:Activity'));
+}
+
+function expectResourceDescriptors(entries, action) {
+  for (const resource of resourcesJSON) {
+    const entryId = `resources-${action}-${resource.type}-0`;
+
+    expect(entries[entryId].resource, `<${entryId}> resource descriptor`).to.eql(
+      TYPE_TO_RESOURCE_DESCRIPTOR[resource.type]
+    );
+  }
 }
