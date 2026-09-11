@@ -109,6 +109,13 @@ describe('camunda-cloud/features/external-resources - Resources', function() {
       });
     });
 
+    it('should not expose a descriptor without a resource type or identifier', function() {
+
+      // then
+      expect(getResourceDescriptor()).to.be.null;
+      expect(getResourceDescriptor({ type: 'customResource' })).to.be.null;
+    });
+
   });
 
 
