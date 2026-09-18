@@ -43,9 +43,14 @@ jobs:
 
   upload_coverage:
     needs: build_browsers
+    # Vault/Codecov auth must not run from pull_request: the workflow definition
+    # itself is read from the PR head ref, so a same-repo PR could otherwise
+    # modify this job to exfiltrate the OIDC-authenticated secrets.
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      actions: read  # required by actions/download-artifact to read the artifact API
       id-token: write  # mint GitHub OIDC token for Vault JWT auth
     steps:
     - name: Download coverage artifact
