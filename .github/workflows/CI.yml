@@ -43,10 +43,10 @@ jobs:
 
   upload_coverage:
     needs: build_browsers
-    # Vault/Codecov auth must not run from pull_request: the workflow definition
-    # itself is read from the PR head ref, so a same-repo PR could otherwise
-    # modify this job to exfiltrate the OIDC-authenticated secrets.
-    if: github.event_name == 'push'
+    # Vault/Codecov auth must not run from an untrusted ref: the workflow
+    # definition is read from the triggering ref, so restricting to push alone
+    # still lets a pushed feature branch mint the OIDC token and CODECOV_TOKEN.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read
