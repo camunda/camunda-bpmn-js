@@ -3,9 +3,6 @@ on: [ push, pull_request ]
 jobs:
   build_browsers:
 
-    permissions:
-      contents: read
-      id-token: write  # mint GitHub OIDC token for Vault JWT auth
     strategy:
       fail-fast: false
       matrix:
@@ -37,8 +34,26 @@ jobs:
       env:
         TEST_BROWSERS: ${{ matrix.browser }}
       run: xvfb-run npm run all
-    - name: Import Secrets
+    - name: Upload coverage artifact
       if: matrix.browser == 'ChromeHeadless'
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage
+        path: coverage
+
+  upload_coverage:
+    needs: build_browsers
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write  # mint GitHub OIDC token for Vault JWT auth
+    steps:
+    - name: Download coverage artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: coverage
+        path: coverage
+    - name: Import Secrets
       id: secrets
       uses: hashicorp/vault-action@892a26828f195e65540a40b4768ae4571f51ebfc  # v4.0.0
       with:
@@ -51,12 +66,12 @@ jobs:
         secrets: |
           secret/data/products/desktop-modeler/camunda/camunda-bpmn-js CODECOV_TOKEN;
     - name: Upload coverage
-      if: matrix.browser == 'ChromeHeadless'
       uses: codecov/codecov-action@v7
       with:
         fail_ci_if_error: true
       env:
         CODECOV_TOKEN: ${{ steps.secrets.outputs.CODECOV_TOKEN }}
+
 
   build_os:
 
