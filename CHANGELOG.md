@@ -6,6 +6,45 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/properties-panel@3.55.0`
+* `DEPS`: update to `bpmn-js@18.28.0`
+* `DEPS`: update to `bpmn-js-create-append-anything@2.1.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.36.3`
+* `DEPS`: update to `camunda-bpmn-moddle@8.0.1`
+* `DEPS`: update to `diagram-js@15.26.0`
+* `DEPS`: update to `diagram-js-origin@1.4.1`
+
+### Key Changes in Modeling
+
+* `FEAT`: keep selection visible on canvas resize ([bpmn-io/diagram-js#1038](https://github.com/bpmn-io/diagram-js/pull/1038), [bpmn-io/bpmn-js#2435](https://github.com/bpmn-io/bpmn-js/pull/2435))
+* `FEAT`: add tooltip with title and shortcut on palette entries ([bpmn-io/diagram-js#1082](https://github.com/bpmn-io/diagram-js/pull/1082), [bpmn-io/bpmn-js#2465](https://github.com/bpmn-io/bpmn-js/pull/2465))
+* `FEAT`: add tooltip with shortcut for 'Create element' menu entry ([bpmn-io/bpmn-js-create-append-anything#91](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/91))
+* `FEAT`: give resize handle a border radius ([bpmn-io/diagram-js#1100](https://github.com/bpmn-io/diagram-js/pull/1100))
+* `FEAT`: give segment dragger a border radius ([bpmn-io/diagram-js#1100](https://github.com/bpmn-io/diagram-js/pull/1100))
+* `FEAT`: add `--accent-color` theming token ([bpmn-io/diagram-js#1099](https://github.com/bpmn-io/diagram-js/pull/1099), [bpmn-io/bpmn-js#2492](https://github.com/bpmn-io/bpmn-js/pull/2492))
+* `FIX`: do not move group label away from the group ([bpmn-io/bpmn-js#2495](https://github.com/bpmn-io/bpmn-js/pull/2495))
+* `FIX`: point label link to the closest point of the connection ([bpmn-io/bpmn-js#2493](https://github.com/bpmn-io/bpmn-js/pull/2493))
+* `FIX`: use WCAG AA compliant primary accent color ([bpmn-io/diagram-js#1099](https://github.com/bpmn-io/diagram-js/pull/1099), [bpmn-io/bpmn-js#2492](https://github.com/bpmn-io/bpmn-js/pull/2492))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: source color variables from `@bpmn-io/theme` ([bpmn-io/properties-panel#551](https://github.com/bpmn-io/properties-panel/pull/551))
+* `FEAT`: expose popup components ([bpmn-io/properties-panel#550](https://github.com/bpmn-io/properties-panel/pull/550))
+* `FEAT`: add `--accent-*` theming tokens and `--accent` list badge ([bpmn-io/properties-panel#549](https://github.com/bpmn-io/properties-panel/pull/549))
+* `FIX`: center popup based on its own size ([bpmn-io/properties-panel#550](https://github.com/bpmn-io/properties-panel/pull/550))
+* `FIX`: release popup element reference on close ([bpmn-io/properties-panel#550](https://github.com/bpmn-io/properties-panel/pull/550))
+* `FIX`: reserve space for open pop-up button in FEEL editor ([bpmn-io/properties-panel#525](https://github.com/bpmn-io/properties-panel/pull/525))
+* `FIX`: use WCAG AA compliant accent color ([bpmn-io/properties-panel#549](https://github.com/bpmn-io/properties-panel/pull/549))
+
+### Key Changes in Element Templates
+
+* `FEAT`: offer `Change` template action ([bpmn-io/bpmn-js-element-templates#294](https://github.com/bpmn-io/bpmn-js-element-templates/pull/294))
+* `FIX`: compare `zeebe:calledElement` against old template value ([bpmn-io/bpmn-js-element-templates#296](https://github.com/bpmn-io/bpmn-js-element-templates/issues/296))
+* `FIX`: wire `$parent` on task header and property setters ([bpmn-io/bpmn-js-element-templates#299](https://github.com/bpmn-io/bpmn-js-element-templates/pull/299))
+* `FIX`: keep explicitly configured properties on template (re-)application ([bpmn-io/bpmn-js-element-templates#297](https://github.com/bpmn-io/bpmn-js-element-templates/pull/297))
+* `FIX`: correct tooltip display for `type=Configuration` entry ([bpmn-io/bpmn-js-element-templates#291](https://github.com/bpmn-io/bpmn-js-element-templates/pull/291))
+* `FIX`: use WCAG AA compliant accent color for applied template badge ([bpmn-io/bpmn-js-element-templates#290](https://github.com/bpmn-io/bpmn-js-element-templates/pull/290))
+
 ## 5.34.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.52.0`
