@@ -3,6 +3,9 @@ on: [ push, pull_request ]
 jobs:
   build_browsers:
 
+    permissions:
+      contents: read
+      id-token: write  # mint GitHub OIDC token for Vault JWT auth
     strategy:
       fail-fast: false
       matrix:
@@ -37,12 +40,13 @@ jobs:
     - name: Import Secrets
       if: matrix.browser == 'ChromeHeadless'
       id: secrets
-      uses: hashicorp/vault-action@v4.0.0
+      uses: hashicorp/vault-action@892a26828f195e65540a40b4768ae4571f51ebfc  # v4.0.0
       with:
         url: ${{ secrets.VAULT_ADDR }}
-        method: approle
-        roleId: ${{ secrets.VAULT_ROLE_ID }}
-        secretId: ${{ secrets.VAULT_SECRET_ID }}
+        method: jwt
+        role: ${{ secrets.VAULT_JWT_ROLE }}
+        path: ${{ secrets.VAULT_JWT_PATH }}
+        jwtGithubAudience: ${{ secrets.VAULT_JWT_AUDIENCE }}
         exportEnv: false
         secrets: |
           secret/data/products/desktop-modeler/camunda/camunda-bpmn-js CODECOV_TOKEN;
