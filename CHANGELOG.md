@@ -6,6 +6,24 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+## 5.36.0
+
+* `FEAT`: source colors and corner radii from `@bpmn-io/theme` tokens in canvas, element templates and minimap ([bpmn-io/diagram-js#1102](https://github.com/bpmn-io/diagram-js/pull/1102), [bpmn-io/bpmn-js#2497](https://github.com/bpmn-io/bpmn-js/pull/2497), [bpmn-io/bpmn-js-element-templates#301](https://github.com/bpmn-io/bpmn-js-element-templates/pull/301), [bpmn-io/diagram-js-minimap#120](https://github.com/bpmn-io/diagram-js-minimap/pull/120))
+* `DEPS`: update to `bpmn-js@18.30.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.37.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.65.1`
+* `DEPS`: update to `diagram-js@15.27.1`
+* `DEPS`: update to `diagram-js-minimap@5.5.0`
+
+### Key Changes in Modeling
+
+* `FIX`: prevent overflowing of text when layouting it ([bpmn-io/diagram-js#1106](https://github.com/bpmn-io/diagram-js/pull/1106), [bpmn-io/diagram-js#1105](https://github.com/bpmn-io/diagram-js/pull/1105))
+* `FIX`: prevent text layouting from looping in certain scenarios ([bpmn-io/diagram-js#1106](https://github.com/bpmn-io/diagram-js/pull/1106), [bpmn-io/diagram-js#1105](https://github.com/bpmn-io/diagram-js/pull/1105))
+
+### Key Changes in Element Templates
+
+* `FIX`: do not sentence-case configuration name ([bpmn-io/bpmn-js-element-templates#303](https://github.com/bpmn-io/bpmn-js-element-templates/pull/303))
+
 ## 5.35.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.55.0`
