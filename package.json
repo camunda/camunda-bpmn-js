@@ -114,7 +114,7 @@
     "rollup": "^4.64.1",
     "rollup-plugin-copy": "^3.5.0",
     "typescript": "^6.0.0",
-    "webpack": "^5.109.2"
+    "webpack": "^5.111.1"
   },
   "peerDependencies": {
     "bpmn-js-properties-panel": ">= 3.0.0"
