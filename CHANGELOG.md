@@ -6,12 +6,45 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
-* `DEPS`: update to `diagram-js@15.28.1`
-* `DEPS`: update to `bpmn-js@18.31.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.57.0`
+* `DEPS`: update to `bpmn-js@18.31.0`
 * `DEPS`: update to `bpmn-js-element-templates@2.38.0`
+* `DEPS`: update to `bpmn-js-properties-panel@5.65.2`
 * `DEPS`: update to `camunda-bpmn-moddle@8.0.2`
+* `DEPS`: update to `diagram-js@15.28.1`
 * `DEPS`: update to `diagram-js-minimap@5.6.0`
+
+### Key Changes in Modeling
+
+* `FEAT`: support letter shortcuts on non-Latin keyboard layouts ([bpmn-io/diagram-js#1112](https://github.com/bpmn-io/diagram-js/pull/1112), [bpmn-io/bpmn-js#1888](https://github.com/bpmn-io/bpmn-js/issues/1888), [bpmn-io/bpmn-js#2108](https://github.com/bpmn-io/bpmn-js/issues/2108))
+* `FEAT`: make minimap toggle keyboard accessible ([bpmn-io/diagram-js-minimap#121](https://github.com/bpmn-io/diagram-js-minimap/pull/121))
+* `FIX`: remove `BPMNLabel` with external label ([bpmn-io/bpmn-js#2499](https://github.com/bpmn-io/bpmn-js/pull/2499), [bpmn-io/bpmn-js#1893](https://github.com/bpmn-io/bpmn-js/issues/1893))
+* `FIX`: cancel canvas move on diagram destroy ([bpmn-io/diagram-js#1110](https://github.com/bpmn-io/diagram-js/pull/1110), [bpmn-io/diagram-js#1109](https://github.com/bpmn-io/diagram-js/issues/1109))
+* `FIX`: cancel active drag on listener error ([bpmn-io/diagram-js#961](https://github.com/bpmn-io/diagram-js/issues/961))
+* `FIX`: display documentation link in the popup menu bottom when keyboard is used ([bpmn-io/diagram-js#1103](https://github.com/bpmn-io/diagram-js/issues/1103))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: support entry diagnostics with `info`, `warning` and `error` severity, displaying the most severe one ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FEAT`: set diagnostics through `propertiesPanel.setDiagnostics` ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FEAT`: allow diagnostics to carry an action with a custom label and tooltip ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FEAT`: allow `validate` to return a diagnostic ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FEAT`: indicate the most severe diagnostic in group and list markers ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FEAT`: display an icon on `info` diagnostics ([bpmn-io/properties-panel@3.56.0](https://github.com/bpmn-io/properties-panel/releases/tag/v3.56.0))
+* `FEAT`: allow `Tooltip` to skip its own tab stop via a `focusable` prop ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FEAT`: support `ariaLabel` on diagnostic actions ([bpmn-io/properties-panel#560](https://github.com/bpmn-io/properties-panel/pull/560))
+* `FEAT`: restore focus to the field when a focused diagnostic action unmounts ([bpmn-io/properties-panel#560](https://github.com/bpmn-io/properties-panel/pull/560))
+* `FIX`: mark checkbox entries with errors ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FIX`: report the most severe templating lint error, not the first report ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FIX`: show externally provided errors over local ones in templating entries ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+* `FIX`: convert empty optional FEEL number fields to FEEL on `=` key press ([bpmn-io/properties-panel#559](https://github.com/bpmn-io/properties-panel/pull/559))
+* `FIX`: correct failed import holding implicit root ([bpmn-io/bpmn-js-properties-panel#1256](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1256))
+* `CHORE`: deprecate `propertiesPanel.setErrors`, `ErrorsContext`, `useError` and `useErrors` in favor of their diagnostics counterparts ([bpmn-io/properties-panel#554](https://github.com/bpmn-io/properties-panel/pull/554))
+
+### Key Changes in Element Templates
+
+* `FEAT`: expose element template service utilities ([bpmn-io/bpmn-js-element-templates#305](https://github.com/bpmn-io/bpmn-js-element-templates/pull/305))
+* `FIX`: only show template section if there is a template to apply or change ([bpmn-io/bpmn-js-element-templates#302](https://github.com/bpmn-io/bpmn-js-element-templates/pull/302))
 
 ## 5.36.0
 
