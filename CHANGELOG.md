@@ -11,6 +11,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `@bpmn-io/properties-panel@3.57.0`
 * `DEPS`: update to `bpmn-js-element-templates@2.38.0`
 * `DEPS`: update to `camunda-bpmn-moddle@8.0.2`
+* `DEPS`: update to `diagram-js-minimap@5.6.0`
 
 ## 5.36.0
 
