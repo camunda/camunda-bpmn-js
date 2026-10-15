@@ -6,6 +6,8 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `diagram-js@15.28.1`
+
 ## 5.36.0
 
 * `FEAT`: source colors and corner radii from `@bpmn-io/theme` tokens in canvas, element templates and minimap ([bpmn-io/diagram-js#1102](https://github.com/bpmn-io/diagram-js/pull/1102), [bpmn-io/bpmn-js#2497](https://github.com/bpmn-io/bpmn-js/pull/2497), [bpmn-io/bpmn-js-element-templates#301](https://github.com/bpmn-io/bpmn-js-element-templates/pull/301), [bpmn-io/diagram-js-minimap#120](https://github.com/bpmn-io/diagram-js-minimap/pull/120))
