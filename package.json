@@ -66,7 +66,7 @@
     "bpmn-js-native-copy-paste": "^0.3.0",
     "camunda-bpmn-js-behaviors": "^1.18.0",
     "camunda-bpmn-moddle": "^8.0.1",
-    "diagram-js": "^15.27.1",
+    "diagram-js": "^15.28.1",
     "diagram-js-grid": "^2.1.0",
     "diagram-js-minimap": "^5.5.0",
     "diagram-js-origin": "^1.4.1",
