@@ -9,6 +9,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `diagram-js@15.28.1`
 * `DEPS`: update to `bpmn-js@18.31.0`
 * `DEPS`: update to `@bpmn-io/properties-panel@3.57.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.38.0`
 
 ## 5.36.0
 
