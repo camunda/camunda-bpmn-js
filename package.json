@@ -57,7 +57,7 @@
     "@bpmn-io/properties-panel": "^3.55.0",
     "@bpmn-io/variable-resolver": "^3.3.0",
     "@camunda/example-data-properties-provider": "^1.5.2",
-    "bpmn-js": "^18.30.1",
+    "bpmn-js": "^18.31.0",
     "bpmn-js-color-picker": "^0.7.2",
     "bpmn-js-copy-as-image": "^0.4.1",
     "bpmn-js-create-append-anything": "^2.1.0",
