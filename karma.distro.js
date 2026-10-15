@@ -25,6 +25,15 @@ module.exports = function(karma) {
 
     reporters: [ 'tldr' ],
 
+    client: {
+      mocha: {
+
+        // we verify that distributions work, not how fast
+        // they are; stay forgiving on slow CI machines
+        timeout: 10000
+      }
+    },
+
     browsers,
 
     browserNoActivityTimeout: 30000,
