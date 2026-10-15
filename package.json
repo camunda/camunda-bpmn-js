@@ -84,7 +84,7 @@
     "babel-loader": "^10.1.1",
     "babel-plugin-istanbul": "^8.0.0",
     "bio-dts": "^0.15.3",
-    "bpmn-js-properties-panel": "^5.65.1",
+    "bpmn-js-properties-panel": "^5.65.2",
     "chai": "^6.3.0",
     "cross-env": "^10.0.0",
     "del-cli": "^7.0.0",
