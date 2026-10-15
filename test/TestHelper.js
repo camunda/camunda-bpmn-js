@@ -28,22 +28,22 @@ import CamundaPlatformModeler from '../lib/camunda-platform/Modeler';
 
 insertCSS(
   'diagram.css',
-  require('bpmn-js/dist/assets/diagram-js.css').default
+  require('bpmn-js/dist/assets/diagram-js.css')
 );
 
 insertCSS(
   'bpmn-js.css',
-  require('bpmn-js/dist/assets/bpmn-js.css').default
+  require('bpmn-js/dist/assets/bpmn-js.css')
 );
 
 insertCSS(
   'bpmn-font.css',
-  require('bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css').default
+  require('bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css')
 );
 
 insertCSS(
   'minimap.css',
-  require('diagram-js-minimap/assets/diagram-js-minimap.css').default
+  require('diagram-js-minimap/assets/diagram-js-minimap.css')
 );
 
 export function bootstrapCamundaCloudModeler(diagram, options, locals) {
