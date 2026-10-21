@@ -149,6 +149,16 @@ describe('camunda-cloud/features/create-append-groups', function() {
       expect(templates.entries[ 'create.template-foo' ]).to.exist;
     }));
 
+
+    it('should show all types of a category', inject(function(canvas) {
+
+      // when
+      const entries = openMenu(canvas.getRootElement(), 'bpmn-create');
+
+      // then
+      expect(findEntry(entries, 'create-send-task').rank).not.to.exist;
+    }));
+
   });
 
 
