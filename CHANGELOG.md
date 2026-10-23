@@ -13,6 +13,7 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `bpmn-js-create-append-anything@2.2.0`
 * `DEPS`: update to `@bpmn-io/variable-resolver@3.3.1`
 * `DEPS`: update to `diagram-js-origin@1.4.2`
+* `DEPS`: update to `@bpmn-io/element-template-icon-renderer@1.0.1`
 
 ## 5.37.0
 
