@@ -15,6 +15,22 @@ ___Note:__ Yet to be released changes appear here._
 * `DEPS`: update to `diagram-js-origin@1.4.2`
 * `DEPS`: update to `@bpmn-io/element-template-icon-renderer@1.0.1`
 
+### Key Changes in Modeling
+
+* `FEAT`: list less common task and gateway options last in the create/append menu ([bpmn-io/bpmn-js-create-append-anything#93](https://github.com/bpmn-io/bpmn-js-create-append-anything/pull/93))
+* `FIX`: keep size of resized external labels on import ([bpmn-io/bpmn-js#2503](https://github.com/bpmn-io/bpmn-js/pull/2503))
+* `FIX`: snap external labels to nested elements ([bpmn-io/bpmn-js#2504](https://github.com/bpmn-io/bpmn-js/pull/2504))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: export `DiagnosticMessage` to render diagnostics in custom entries ([bpmn-io/properties-panel#564](https://github.com/bpmn-io/properties-panel/pull/564))
+* `FIX`: do not report property names after an index access as consumed variables ([bpmn-io/variable-resolver#130](https://github.com/bpmn-io/variable-resolver/pull/130))
+
+### Key Changes in Element Templates
+
+* `FIX`: keep correlation key of message start event in event sub-process when its label moves ([bpmn-io/bpmn-js-element-templates#310](https://github.com/bpmn-io/bpmn-js-element-templates/pull/310))
+* `FIX`: validate correlation key constraints of message start event in event sub-process ([bpmn-io/bpmn-js-element-templates#310](https://github.com/bpmn-io/bpmn-js-element-templates/pull/310))
+
 ## 5.37.0
 
 * `DEPS`: update to `@bpmn-io/properties-panel@3.57.0`
