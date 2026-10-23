@@ -8,6 +8,7 @@ ___Note:__ Yet to be released changes appear here._
 
 * `FEAT`: show all element types in create/append menu categories ([#504](https://github.com/camunda/camunda-bpmn-js/pull/504))
 * `DEPS`: update to `@bpmn-io/properties-panel@3.58.0`
+* `DEPS`: update to `bpmn-js-element-templates@2.40.1`
 
 ## 5.37.0
 
