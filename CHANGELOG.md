@@ -6,6 +6,30 @@ All notable changes to [camunda-bpmn-js](https://github.com/camunda/camunda-bpmn
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `@bpmn-io/properties-panel@3.60.2`
+* `DEPS`: update to `bpmn-js@18.33.1`
+* `DEPS`: update to `bpmn-js-element-templates@2.40.3`
+* `DEPS`: update to `bpmn-js-properties-panel@5.65.4`
+* `DEPS`: update to `diagram-js@15.30.1`
+
+### Key Changes in Modeling
+
+* `FEAT`: add `MoveCanvas#toggle` API and `config.moveCanvas.enabled` option ([bpmn-io/diagram-js#1123](https://github.com/bpmn-io/diagram-js/pull/1123))
+* `FIX`: place referenced message labels correctly on message flows ([bpmn-io/bpmn-js#2516](https://github.com/bpmn-io/bpmn-js/pull/2516))
+* `FIX`: preserve stroke color when dropping a shape on a flow ([bpmn-io/bpmn-js#2515](https://github.com/bpmn-io/bpmn-js/pull/2515))
+
+### Key Changes in Properties Panel
+
+* `FEAT`: resize FEEL popups, retain their size and position per panel layout, and commit edits without closing ([bpmn-io/properties-panel#568](https://github.com/bpmn-io/properties-panel/pull/568), [#569](https://github.com/bpmn-io/properties-panel/pull/569), [#570](https://github.com/bpmn-io/properties-panel/pull/570))
+* `FIX`: preserve the original FEEL mode when committing drafts ([bpmn-io/properties-panel#571](https://github.com/bpmn-io/properties-panel/pull/571))
+* `FIX`: avoid a crash when `IntersectionObserver` is unavailable ([bpmn-io/properties-panel#572](https://github.com/bpmn-io/properties-panel/pull/572))
+* `FIX`: handle selections made before the properties panel's first render ([bpmn-io/bpmn-js-properties-panel#1259](https://github.com/bpmn-io/bpmn-js-properties-panel/issues/1259))
+
+### Key Changes in Element Templates
+
+* `FIX`: handle element template IDs that collide with `Object.prototype` keys ([bpmn-io/bpmn-js-element-templates#312](https://github.com/bpmn-io/bpmn-js-element-templates/pull/312))
+* `FIX`: allow optional FEEL number fields to switch to FEEL via `=`
+
 ## 5.38.0
 
 * `FEAT`: show all element types in create/append menu categories ([#504](https://github.com/camunda/camunda-bpmn-js/pull/504))
